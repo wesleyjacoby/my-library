@@ -3,15 +3,26 @@
 //   node tools/check-book.mjs books/gull-rock/book.json
 // Reports: structure problems, syllable entries whose letters don't match the word,
 // and longer words (7+ letters) that have no syllable entry yet.
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 
 const file = process.argv[2];
 if (!file) { console.error('Usage: node tools/check-book.mjs path/to/book.json'); process.exit(1); }
 const book = JSON.parse(readFileSync(file, 'utf8'));
 const problems = [];
-const dict = book.syllables || {};
+const sharedPath = new URL('../data/syllables.json', import.meta.url);
+const shared = existsSync(sharedPath) ? JSON.parse(readFileSync(sharedPath, 'utf8')) : {};
+const dict = { ...shared, ...(book.syllables || {}) };
 
-// --- syllable dictionary sanity ---
+// Rough syllable estimate, only used to decide which words to ask you to check.
+function estimate(word) {
+  let w = word.toLowerCase();
+  if (w.length <= 3) return 1;
+  w = w.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '').replace(/^y/, '');
+  const m = w.match(/[aeiouy]{1,2}/g);
+  return m ? m.length : 1;
+}
+
+// --- syllable dictionary sanity (shared file and this book) ---
 for (const [word, hy] of Object.entries(dict)) {
   if (hy.replace(/-/g, '') !== word) problems.push(`syllables: "${word}" -> "${hy}" does not spell the word`);
   if (word !== word.toLowerCase()) problems.push(`syllables: key "${word}" must be lower case`);
@@ -81,13 +92,14 @@ if (/[—–]/.test(text)) problems.push('prose contains a dash character (— o
 const clean = text
   .replace(/\[\[\w+:([^\]]+)\]\]/g, (m, o) => o.split('|').map((p) => p.slice(p.indexOf('=') + 1)).join(' '))
   .replace(/\{[^}]+\}/g, ' ');
-const words = new Set((clean.match(/[A-Za-z]{7,}/g) || []).map((w) => w.toLowerCase()));
-const missing = [...words].filter((w) => !(w in dict)).sort();
+const words = new Set((clean.match(/[A-Za-z]{4,}/g) || []).map((w) => w.toLowerCase()));
+const missing = [...words].filter((w) => !(w in dict) && estimate(w) >= 2).sort();
 
 if (problems.length) { console.log('PROBLEMS:'); problems.forEach((p) => console.log('  - ' + p)); }
 else console.log('Structure OK.');
 if (missing.length) {
-  console.log('\nLonger words with no syllable entry (add each to "syllables"; use the word itself for one-syllable words):');
+  console.log('\nWords that look like 2+ syllables but have no entry. Add each to data/syllables.json (shared) or the book\'s "syllables".');
+  console.log('If one is really a single syllable, add it with no hyphen (e.g. "through": "through") so it is not flagged again:');
   console.log('  ' + missing.join(', '));
-} else console.log('All longer words have syllable entries.');
+} else console.log('All multi-syllable words have entries.');
 process.exit(problems.length ? 1 : 0);

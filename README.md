@@ -20,7 +20,7 @@ To rename the app: `js/config.js` (inside the app), `index.html` and `manifest.w
 
        node tools/check-book.mjs books/<id>/book.json
 
-   It checks the structure, choice and option ids, character tokens, dash characters, and lists every longer word that has no syllable entry yet.
+   It checks the structure, choice and option ids, character tokens, dash characters, and lists every word that looks like 2+ syllables but has no entry yet.
 
 Test locally with `python3 -m http.server` and open `http://localhost:8000`.
 
@@ -28,7 +28,7 @@ Test locally with `python3 -m http.server` and open `http://localhost:8000`.
 
 - `cast`: the characters the reader fills in. Each has a `key`, `label`, `default`, optional `altDefault` (used if the default clashes with another name), `pronouns` options, and optional `variants` (e.g. dog or cat).
 - `traits`: hidden scores, e.g. `["brave", "kind", "clever"]`.
-- `syllables`: `"lighthouse": "light-house"`. Only words listed here get a tap-for-syllables pop-up. Names never do.
+- `syllables`: `"lighthouse": "light-house"`. Only listed words get a tap-for-syllables pop-up, and names never do. Common words live in `data/syllables.json` (shared by every book); a book's own list adds to or overrides it. Every 2+ syllable word is tappable and only 3+ syllable words get the dotted underline. List one-syllable words without a hyphen (`"through": "through"`) so the checker stops flagging them.
 - `chapters[]`: `title`, `scene`, `blocks`. A block is a string (one paragraph), `{ "scene": {...} }`, `{ "choice": {...} }`, or `{ "when": {...}, "blocks": [...] }`.
 - `choice`: `id`, `prompt`, `options[]` each with `id`, `label`, `score` (e.g. `{ "brave": 1 }`) and `blocks` that appear after it is picked. The chapter does not finish until the choice is made.
 - `endings[]`: the first one whose `when` matches is shown, so put a catch-all last.
@@ -57,4 +57,4 @@ New elements go in `js/scenes.js` (a draw function) and `css/styles.css` (an ani
 ## Notes
 
 - Progress, names and settings are stored in the browser on that device only. Clearing Safari website data erases them.
-- Read-aloud and the pop-up's "Say it" use the iPad's built-in voices, so they work offline.
+- Read-aloud and the pop-up's "Say it" use the device's built-in voices, so they work offline. Quality varies a lot: on an iPad, download an Enhanced or Premium English voice under Settings > Accessibility > Spoken Content > Voices, then pick it in the app's Settings.

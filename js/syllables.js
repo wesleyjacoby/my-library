@@ -25,7 +25,8 @@ export function toFragment(parts, dict) {
         if (hy && hy.includes('-')) {
           const ps = pieces(bit, hy);
           if (ps.length > 1) {
-            frag.append(h('button', { class: 'syl', type: 'button', 'data-w': bit, 'data-s': ps.join('-') }, bit));
+            // Every 2+ syllable word is tappable; only 3+ syllables get the visible dotted underline.
+            frag.append(h('button', { class: ps.length >= 3 ? 'syl ul' : 'syl', type: 'button', 'data-w': bit, 'data-s': ps.join('-') }, bit));
             continue;
           }
         }

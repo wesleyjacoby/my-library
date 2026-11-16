@@ -15,9 +15,13 @@ const nav = (hash) => { location.hash = hash; };
 
 async function loadBooks() {
   const idx = await (await fetch('books/index.json')).json();
+  // Words shared by every book; each book can add to or override them.
+  let shared = {};
+  try { shared = await (await fetch('data/syllables.json')).json(); } catch (e) { /* books still work with their own list */ }
   const list = await Promise.all(idx.books.map(async (id) => {
     const b = await (await fetch(`books/${id}/book.json`)).json();
     b.baseUrl = `books/${id}/`;
+    b.syllables = { ...shared, ...(b.syllables || {}) };
     return b;
   }));
   list.forEach((b) => books.set(b.id, b));

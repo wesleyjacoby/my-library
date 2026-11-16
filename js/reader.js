@@ -68,7 +68,7 @@ function renderChoice(book, choice, host, next) {
 
 function toolbar(book, nav, label, article) {
   let reading = false;
-  const listen = h('button', { type: 'button', class: 'icon-btn', 'aria-label': 'Read this chapter aloud' }, '🔊');
+  const listen = h('button', { type: 'button', class: 'icon-btn listen-btn', 'aria-label': 'Read this chapter aloud' }, '🔊');
   const stop = () => {
     reading = false;
     tts.cancel();

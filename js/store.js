@@ -1,7 +1,7 @@
 // All progress lives on the device (localStorage), nothing is sent anywhere.
 import { STORAGE_KEY } from './config.js';
 
-const DEFAULT_SETTINGS = { size: 1, theme: 'paper', anim: true, rate: 0.9 };
+const DEFAULT_SETTINGS = { size: 1, theme: 'paper', anim: true, rate: 0.9, readAloud: true, voice: '' };
 let mem = null;
 
 function read() {

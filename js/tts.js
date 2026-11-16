@@ -1,17 +1,25 @@
 // Read-aloud using the browser's built-in voices (works offline on iPad).
+import * as store from './store.js';
+
 export const available = typeof window !== 'undefined' && 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
 
 let voice = null;
 let gen = 0; // bumps on cancel so stale callbacks are ignored
 
-function pickVoice() {
+const GOOD = /premium|enhanced|siri|neural|natural/i;
+
+// English voices, best first (enhanced / premium voices, then British, then the rest).
+export function englishVoices() {
+  if (!available) return [];
+  const score = (v) => (GOOD.test(v.name) ? 0 : 2) + (/^en[-_]GB/i.test(v.lang) ? 0 : 1);
+  return speechSynthesis.getVoices().filter((v) => /^en/i.test(v.lang)).sort((a, b) => score(a) - score(b));
+}
+
+export function pickVoice() {
   if (!available) return;
-  const vs = speechSynthesis.getVoices();
-  voice =
-    vs.find((v) => v.lang === 'en-GB' && /daniel|kate|serena|oliver|arthur|martha/i.test(v.name)) ||
-    vs.find((v) => /^en[-_]GB/i.test(v.lang)) ||
-    vs.find((v) => /^en/i.test(v.lang)) ||
-    null;
+  const wanted = store.getSettings().voice;
+  const list = englishVoices();
+  voice = (wanted && list.find((v) => v.name === wanted)) || list[0] || null;
 }
 
 if (available) {

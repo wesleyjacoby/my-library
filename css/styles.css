@@ -97,13 +97,17 @@ button { font-family: inherit; }
 .chap-num { font: 700 .95rem var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
 .chap-head h2 { margin: .15em 0 0; font: 800 calc(2rem * var(--scale)) / 1.15 var(--serif); }
 .para {
-  font-size: calc(1.35rem * var(--scale)); line-height: 1.95; margin: 0 0 .9em; hyphens: none; -webkit-hyphens: none;
+  font-size: calc(1.35rem * var(--scale)); line-height: 1.68; margin: 0 0 .7em; hyphens: none; -webkit-hyphens: none;
   border-radius: 8px; transition: background .25s;
 }
 .para.reading { background: rgba(242, 184, 75, .28); box-shadow: 0 0 0 .3em rgba(242, 184, 75, .28); }
+/* Every longer word is tappable; only the longest (3+ syllables) get the dotted underline. */
 .syl {
   font: inherit; color: inherit; background: none; border: 0; padding: 0; margin: 0; cursor: pointer; line-height: inherit;
-  border-bottom: 2px dotted var(--accent); border-radius: 2px; touch-action: manipulation;
+  border-radius: 4px; touch-action: manipulation; text-decoration: none;
+}
+.syl.ul {
+  text-decoration: underline dotted var(--accent); text-decoration-thickness: 2px; text-underline-offset: .09em;
 }
 .syl:active { background: var(--accent-soft); }
 
@@ -139,8 +143,11 @@ button { font-family: inherit; }
 .pop-btns button:active { background: rgba(255, 255, 255, .3); }
 
 /* ---------- settings sheet ---------- */
-.sheet-back { position: fixed; inset: 0; z-index: 60; background: rgba(5, 8, 20, .55); display: flex; align-items: flex-end; justify-content: center; }
-.sheet { width: min(560px, 100%); background: var(--card); color: var(--ink); border-radius: 26px 26px 0 0; padding: 1.3rem 1.4rem calc(env(safe-area-inset-bottom) + 1.4rem); display: flex; flex-direction: column; gap: 1rem; }
+.sheet-back { position: fixed; inset: 0; z-index: 60; background: rgba(5, 8, 20, .55); display: flex; align-items: center; justify-content: center; padding: 1rem; overflow-y: auto; animation: fadein .15s ease-out; }
+.sheet { width: min(560px, 100%); max-height: 100%; overflow-y: auto; background: var(--card); color: var(--ink); border-radius: 26px; padding: 1.4rem 1.5rem 1.5rem; display: flex; flex-direction: column; gap: 1rem; box-shadow: 0 20px 50px rgba(0, 0, 0, .35); animation: popin .18s ease-out; }
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+@keyframes popin { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+.srow select { max-width: 14rem; font: 600 .95rem var(--ui); padding: .45em .7em; border-radius: 12px; border: 2px solid var(--line); background: var(--bg); color: var(--ink); }
 .sheet h2 { margin: 0; font: 800 1.6rem var(--serif); }
 .srow { display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-weight: 700; }
 .srow input[type=range] { width: 11rem; accent-color: var(--accent); }
@@ -177,6 +184,37 @@ button { font-family: inherit; }
 .scene.static *, html[data-anim="off"] .scene * { animation: none !important; }
 html[data-anim="off"] .scene .beamA, .scene.static .beamA { opacity: .6 !important; }
 @media (prefers-reduced-motion: reduce) { .scene * { animation: none !important; } .scene .beamA { opacity: .6 !important; } }
+
+html[data-listen="off"] .listen-btn { display: none; }
+
+/* ---------- hover and focus (mouse only, so iPad taps never get stuck hovering) ---------- */
+.btn, .opt, .seg button, .icon-btn, .pop-btns button, .field input[type=text] {
+  transition: background-color .15s, transform .15s, box-shadow .15s, border-color .15s, filter .15s, color .15s;
+}
+.syl { transition: background-color .15s; }
+.book-card { transition: transform .2s, box-shadow .2s; }
+.cover svg, .cover img { transition: transform .6s ease; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+@media (hover: hover) {
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 5px 12px rgba(0, 0, 0, .16); }
+  .btn.primary:hover { filter: brightness(1.1); }
+  .btn:not(.primary):hover { background: var(--accent-soft); }
+  .btn.ghost:hover { color: var(--ink); }
+  .btn:active { transform: scale(.97); box-shadow: none; }
+  .icon-btn:hover { background: rgba(255, 255, 255, .16); }
+  .lib-head .icon-btn:hover { background: var(--accent-soft); color: var(--ink); }
+  .book-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(0, 0, 0, .18); }
+  .book-card:hover .cover svg, .book-card:hover .cover img { transform: scale(1.05); }
+  .opt:hover { background: var(--accent-soft); transform: translateX(4px); }
+  .choice.done .opt:hover { background: transparent; transform: none; }
+  .choice.done .opt.chosen:hover { background: var(--accent); }
+  .seg button:hover { border-color: var(--accent); }
+  .seg button.on:hover { filter: brightness(1.08); }
+  .syl:hover { background: var(--accent-soft); }
+  .pop-btns button:hover { background: rgba(255, 255, 255, .3); }
+  .field input[type=text]:hover { border-color: var(--accent); }
+  .bar .icon-btn:hover { background: rgba(255, 255, 255, .2); }
+}
 
 @media (min-width: 900px) { .reader .page { padding-top: 1.6rem; } }
 @media print { .bar, .chapter-end { display: none; } }
