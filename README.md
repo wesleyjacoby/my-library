@@ -1,0 +1,60 @@
+# My Library
+
+Interactive chapter books where the reader is the hero. A static PWA: no build step, no server, works offline on an iPad.
+
+## Put it on GitHub Pages
+
+1. Create a repo and push everything in this folder to the `main` branch.
+2. Repo **Settings > Pages > Build and deployment**: Source "Deploy from a branch", branch `main`, folder `/ (root)`.
+3. Open `https://<you>.github.io/<repo>/` in Safari on the iPad, then **Share > Add to Home Screen**.
+
+All paths are relative, so it works from a repo sub-folder. After you push changes, the app picks them up the next time it is opened (it may take two opens). To force old files out straight away, change `CACHE` in `sw.js` (for example `my-library-v2`).
+
+To rename the app: `js/config.js` (inside the app), `index.html` and `manifest.webmanifest` (home screen).
+
+## Adding a book
+
+1. Make `books/<id>/book.json` and add `<id>` to `books/index.json`.
+2. Optional cover: put `cover.jpg` in the book folder and set `"cover": { "image": "cover.jpg" }`. Without it, the cover is drawn from a scene.
+3. Run the checker and fix anything it reports:
+
+       node tools/check-book.mjs books/<id>/book.json
+
+   It checks the structure, choice and option ids, character tokens, dash characters, and lists every longer word that has no syllable entry yet.
+
+Test locally with `python3 -m http.server` and open `http://localhost:8000`.
+
+## Book format (see `books/gull-rock/book.json`)
+
+- `cast`: the characters the reader fills in. Each has a `key`, `label`, `default`, optional `altDefault` (used if the default clashes with another name), `pronouns` options, and optional `variants` (e.g. dog or cat).
+- `traits`: hidden scores, e.g. `["brave", "kind", "clever"]`.
+- `syllables`: `"lighthouse": "light-house"`. Only words listed here get a tap-for-syllables pop-up. Names never do.
+- `chapters[]`: `title`, `scene`, `blocks`. A block is a string (one paragraph), `{ "scene": {...} }`, `{ "choice": {...} }`, or `{ "when": {...}, "blocks": [...] }`.
+- `choice`: `id`, `prompt`, `options[]` each with `id`, `label`, `score` (e.g. `{ "brave": 1 }`) and `blocks` that appear after it is picked. The chapter does not finish until the choice is made.
+- `endings[]`: the first one whose `when` matches is shown, so put a catch-all last.
+- Conditions: `{ "pick": "choiceId", "is": "optionId" }`, `{ "score": "brave", "atLeast": 2 }`, `{ "top": "brave" }`, plus `all`, `any`, `not`.
+
+### Text tokens
+
+| Write | Shows |
+|---|---|
+| `{hero}` / `{hero’s}` | the name / possessive (James’) |
+| `{hero.he}` `{hero.him}` `{hero.his}` `{hero.hers}` `{hero.self}` | he/she/they, him/her/them, his/her/their ... (`{hero.He}` capitalises) |
+| `{hero.is}` `{hero.has}` `{hero.was}` `{hero.does}` | verbs that agree (is/are, has/have ...) |
+| `{hero.s}` | "s" for he/she/it, nothing for they (`walk{hero.s}`) |
+| `[[pet:dog=barked\|cat=miaowed]]` | text that depends on the dog/cat choice |
+
+## Scenes
+
+A scene is `{ "mood": "night", "elements": [...], "alt": "..." }`.
+
+- Moods: `day`, `dawn`, `dusk`, `night`, `storm`, `cave`.
+- Elements: `stars`, `moon`, `clouds`, `gulls`, `hills`, `sea`, `village`, `cliff`, `lighthouse`, `beam`, `boat`, `house`, `trees`, `tunnel`, `glow`, `fog`, `rain`.
+- Optional `align` (e.g. `xMaxYMid`) controls which part shows when a scene is cropped, such as on covers.
+
+New elements go in `js/scenes.js` (a draw function) and `css/styles.css` (an animation). Animation switches off with the Settings toggle or the iPad's Reduce Motion setting.
+
+## Notes
+
+- Progress, names and settings are stored in the browser on that device only. Clearing Safari website data erases them.
+- Read-aloud and the pop-up's "Say it" use the iPad's built-in voices, so they work offline.

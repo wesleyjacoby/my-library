@@ -1,0 +1,282 @@
+{
+  "id": "gull-rock",
+  "title": "The Light on Gull Rock",
+  "tagline": "Someone is signalling from the empty lighthouse. Will you go and find out who?",
+  "blurb": "You are on holiday in the seaside village of Gull Cove. The old lighthouse has been empty for years. So who switched on the light?",
+  "ages": "8+",
+  "draft": true,
+  "cover": {
+    "scene": {
+      "mood": "night",
+      "elements": ["stars", "moon", "sea", "cliff", "lighthouse", "beam", "fog"],
+      "align": "xMaxYMid",
+      "alt": "A lighthouse on a rock at night, its beam sweeping over the sea."
+    }
+  },
+  "traits": ["brave", "kind", "clever"],
+  "cast": [
+    {
+      "key": "hero", "label": "Your name", "placeholder": "Type your name", "default": "Alex", "required": true,
+      "pronouns": ["she", "he", "they"], "pronounLabel": "Which fits you best?"
+    },
+    {
+      "key": "friend", "label": "Your best friend’s name", "placeholder": "Best friend", "default": "Sam", "altDefault": "Jess",
+      "pronouns": ["she", "he", "they"], "pronounLabel": "Which fits your best friend?"
+    },
+    {
+      "key": "pet", "label": "Your pet’s name", "placeholder": "Pet", "default": "Biscuit", "altDefault": "Pepper",
+      "pronouns": ["he", "she", "it"], "pronounDefault": "he", "pronounLabel": "Is your pet a…",
+      "variants": { "label": "Dog or cat?", "options": [{ "id": "dog", "label": "Dog" }, { "id": "cat", "label": "Cat" }] }
+    },
+    {
+      "key": "grownup", "label": "The grown-up on holiday with you (Mum, Gran, Uncle Pete…)", "placeholder": "Mum, Gran, Dad…", "default": "Gran", "altDefault": "Grandpa",
+      "pronouns": ["she", "he", "they"], "pronounLabel": "Which fits them?"
+    }
+  ],
+  "syllables": {
+    "lighthouse": "light-house",
+    "rooftops": "roof-tops",
+    "dangerous": "dan-ger-ous",
+    "forehead": "fore-head",
+    "opinion": "o-pin-ion",
+    "periwinkle": "per-i-win-kle",
+    "cottage": "cot-tage",
+    "crooked": "crook-ed",
+    "sloping": "slop-ing",
+    "whispered": "whis-pered",
+    "breathing": "breath-ing",
+    "already": "al-read-y",
+    "somebody": "some-bod-y",
+    "anyone": "an-y-one",
+    "nobody": "no-bod-y",
+    "curtain": "cur-tain",
+    "glowing": "glow-ing",
+    "flashes": "flash-es",
+    "against": "a-gainst",
+    "floorboards": "floor-boards",
+    "snoring": "snor-ing",
+    "stairs": "stairs",
+    "squeaks": "squeaks",
+    "squeaked": "squeaked",
+    "actually": "ac-tu-al-ly",
+    "bedroom": "bed-room",
+    "bedtime": "bed-time",
+    "between": "be-tween",
+    "blanket": "blan-ket",
+    "blinking": "blink-ing",
+    "careful": "care-ful",
+    "certain": "cer-tain",
+    "changed": "changed",
+    "chimney": "chim-ney",
+    "coastguards": "coast-guards",
+    "creaked": "creaked",
+    "evening": "eve-ning",
+    "everything": "ev-ery-thing",
+    "explain": "ex-plain",
+    "exploring": "ex-plor-ing",
+    "finished": "fin-ished",
+    "fisherman": "fish-er-man",
+    "grabbed": "grabbed",
+    "happened": "hap-pened",
+    "harbour": "har-bour",
+    "knocked": "knocked",
+    "laughing": "laugh-ing",
+    "morning": "morn-ing",
+    "neither": "nei-ther",
+    "notebook": "note-book",
+    "patient": "pa-tient",
+    "pattern": "pat-tern",
+    "perfectly": "per-fect-ly",
+    "pressed": "pressed",
+    "pricked": "pricked",
+    "putting": "put-ting",
+    "quietly": "qui-et-ly",
+    "reaching": "reach-ing",
+    "sandbar": "sand-bar",
+    "scraped": "scraped",
+    "seconds": "sec-onds",
+    "shaking": "shak-ing",
+    "shouted": "shout-ed",
+    "someone": "some-one",
+    "something": "some-thing",
+    "spotted": "spot-ted",
+    "squeaky": "squeak-y",
+    "standing": "stand-ing",
+    "stopped": "stopped",
+    "talking": "talk-ing",
+    "thought": "thought",
+    "through": "through",
+    "together": "to-geth-er",
+    "tomorrow": "to-mor-row",
+    "trotted": "trot-ted",
+    "village": "vil-lage",
+    "waiting": "wait-ing",
+    "watching": "watch-ing",
+    "whatever": "what-ev-er",
+    "windows": "win-dows",
+    "winking": "wink-ing",
+    "written": "writ-ten"
+  },
+  "chapters": [
+    {
+      "title": "The Empty Lighthouse",
+      "scene": {
+        "mood": "dusk",
+        "elements": ["clouds", "gulls", "hills", "sea", "village", "cliff", "lighthouse"],
+        "alt": "Gull Cove at sunset, with the old white lighthouse on its rock."
+      },
+      "blocks": [
+        "The car turned the last bend, and there was the sea.",
+        "{hero} pressed {hero.his} forehead to the window. Gulls hung in the air above the road. Beyond the rooftops of Gull Cove, a tall white tower stood alone on a rock at the end of the bay.",
+        "“That’s the old lighthouse,” said {grownup}.",
+        "“Does anyone live in it?” asked {friend}.",
+        "“Not for years. The rocks round it are dangerous, so nobody goes near.”",
+        "{pet} [[pet:dog=barked at the window|cat=put one paw flat against the glass]] as if {pet.he} {pet.has} an opinion about that.",
+        "Periwinkle Cottage sat at the top of a lane so narrow that the hedges scraped both sides of the car. It had a blue door, a crooked chimney and a garden gate that squeaked.",
+        "“Supper first,” said {grownup}. “Exploring tomorrow.”",
+        "Supper was fish and chips on the harbour wall, with a gull watching every single chip. The sun sank into the water. One by one, lights came on in the windows of the village.",
+        "By bedtime, the cottage creaked in every corner. {hero} and {friend} shared the room under the sloping roof, and {pet} curled up on the end of {hero.his} bed.",
+        "“Do you think anyone will ever live in the lighthouse again?” whispered {friend}.",
+        "“Maybe,” said {hero}. “If somebody fixed the light.”",
+        "{friend} did not answer. {friend.He} {friend.is} already breathing slowly.",
+        "Some time later, something woke {hero}. It was {pet}, standing on the bed with {pet.his} ears pricked and {pet.his} eyes fixed on the window.",
+        "{hero} crept across the cold floorboards and pulled back the curtain.",
+        {
+          "scene": {
+            "mood": "night",
+            "elements": ["stars", "moon", "sea", "cliff", "lighthouse", "beam", "fog"],
+            "align": "xMaxYMid",
+            "alt": "At night, the empty lighthouse glowing, its beam sweeping across black water."
+          }
+        },
+        "Out on Gull Rock, the empty lighthouse was glowing. A beam of light swept slowly across the black water, once, twice. Then it stopped.",
+        "“{friend},” hissed {hero}. “Wake up. Now.”",
+        "{friend} was at the window in seconds. “That lighthouse is empty,” {friend.he} whispered.",
+        "“I know.”",
+        "The light began to blink. Three short flashes. A pause. Three long flashes. A pause. Three short flashes again.",
+        "“I’ve seen that in a book,” said {friend}. {friend.His} voice had gone very small. “It means someone needs help.”",
+        "Out in the dark, on a rock where nobody had lived for years, somebody was asking for help."
+      ]
+    },
+    {
+      "title": "Three Short, Three Long",
+      "scene": {
+        "mood": "night",
+        "elements": ["stars", "moon", "house", "trees", "fog"],
+        "alt": "Periwinkle Cottage at night, one window still glowing."
+      },
+      "blocks": [
+        "“We have to tell {grownup},” said {friend}.",
+        "“And say what? That the empty lighthouse is winking at us?” {hero} looked back at the window. The light was still blinking. Three short. Three long. Three short.",
+        "{pet} jumped off the bed and trotted to the bedroom door. {pet.He} looked back at them. Waiting.",
+        {
+          "choice": {
+            "id": "night-plan",
+            "prompt": "What should {hero} do?",
+            "options": [
+              {
+                "id": "sneak",
+                "label": "Sneak out and follow the signal right now",
+                "score": { "brave": 1 },
+                "blocks": [
+                  "{hero} grabbed a torch and a coat. “Quietly,” {hero.he} whispered. Down the stairs they went, past {grownup}’s door, and out through the squeaky gate, which squeaked only once.",
+                  {
+                    "scene": {
+                      "mood": "night",
+                      "elements": ["stars", "moon", "trees", "fog", "sea", "cliff", "lighthouse", "beam"],
+                      "alt": "A dark path through the trees towards the glowing lighthouse."
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "wake",
+                "label": "Wake {grownup} and tell them everything",
+                "score": { "kind": 1 },
+                "blocks": [
+                  "{hero} knocked softly on {grownup}’s door. It took a long time to explain. {grownup} did not laugh. {grownup.He} {grownup.was} out of bed and reaching for a phone before {hero} had finished talking.",
+                  {
+                    "scene": {
+                      "mood": "night",
+                      "elements": ["stars", "moon", "house", "trees"],
+                      "alt": "Every window of the cottage now lit up."
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "wait",
+                "label": "Write down every flash, then work out a plan",
+                "score": { "clever": 1 },
+                "blocks": [
+                  "{friend} found a notebook. {hero} found a pencil. Together they wrote down every flash, and the time of each one, until the pattern was perfectly clear. It never changed. Someone out there was very, very patient.",
+                  {
+                    "scene": {
+                      "mood": "dawn",
+                      "elements": ["clouds", "gulls", "hills", "sea", "village", "cliff", "lighthouse"],
+                      "alt": "The first light of morning over Gull Cove."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "Whatever happened next, one thing was certain. The lighthouse was not empty any more."
+      ]
+    },
+    {
+      "title": "The Answer on the Rock",
+      "scene": {
+        "mood": "day",
+        "elements": ["clouds", "gulls", "hills", "sea", "cliff", "lighthouse", "boat"],
+        "alt": "A bright, windy morning at Gull Rock."
+      },
+      "blocks": [
+        "Morning on Gull Rock was loud with wind.",
+        { "when": { "pick": "night-plan", "is": "sneak" }, "blocks": ["{hero}’s socks were still wet from the night before, and the torch had a crack across its glass."] },
+        { "when": { "pick": "night-plan", "is": "wake" }, "blocks": ["{grownup} had already phoned the harbour, and a small boat was putting out from the cove."] },
+        { "when": { "pick": "night-plan", "is": "wait" }, "blocks": ["{friend} held the notebook open. Every flash of the night was written in it, with the time beside each one."] },
+        "The tide was rising fast around the rocks, and a man was waving both arms from the lighthouse steps.",
+        "“Over here!” he shouted. “Please, over here!”"
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "id": "brave",
+      "title": "The Brave Way",
+      "when": { "top": "brave" },
+      "scene": { "mood": "day", "elements": ["clouds", "gulls", "sea", "cliff", "lighthouse", "boat"], "alt": "A small boat heading home from the lighthouse in bright sunshine." },
+      "blocks": [
+        "{hero} did not wait for the boat. {hero.He} waded out along the sandbar with a rope round {hero.his} waist, the water cold and rising, and held out a hand.",
+        "The man was Old Tom, the fisherman. His engine had died in the night, and the lighthouse switch was the only thing he could find that still worked.",
+        "“Three short, three long, three short,” he said, laughing and shaking. “And somebody actually saw it.”",
+        "{pet} [[pet:dog=barked|cat=purred]] all the way home."
+      ]
+    },
+    {
+      "id": "kind",
+      "title": "The Kind Way",
+      "when": { "top": "kind" },
+      "scene": { "mood": "day", "elements": ["clouds", "gulls", "sea", "cliff", "lighthouse", "boat"], "alt": "A boat full of people coming back from the lighthouse." },
+      "blocks": [
+        "It was {grownup} who spotted the fisherman first, and it was {hero} who thought of the blanket and the flask of tea.",
+        "The man was Old Tom. His engine had died in the night, and the lighthouse switch was the only thing he could find that still worked.",
+        "“Most people would have gone back to sleep,” he said. “You woke the right person.”",
+        "That evening, the whole village came to Periwinkle Cottage with cake."
+      ]
+    },
+    {
+      "id": "clever",
+      "title": "The Clever Way",
+      "when": { "top": "clever" },
+      "scene": { "mood": "dawn", "elements": ["clouds", "gulls", "sea", "cliff", "lighthouse", "boat"], "alt": "A boat reaching the lighthouse at dawn." },
+      "blocks": [
+        "{friend} read out the notebook to the harbour master, line by line. The flashes had never changed, and neither had the time between them. “That is a person,” the harbour master said slowly. “Not a fault in the wiring.”",
+        "The man was Old Tom. His engine had died in the night, and the lighthouse switch was the only thing he could find that still worked.",
+        "“Every single flash, written down,” he said, shaking his head. “I’ve known coastguards who were less careful.”"
+      ]
+    }
+  ]
+}
