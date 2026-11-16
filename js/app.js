@@ -384,8 +384,49 @@ async function init() {
 	window.addEventListener("hashchange", route);
 	route();
 	if ("serviceWorker" in navigator) {
+		// A new version takes over in the background. Offer a reload instead of interrupting her mid-story.
+		const hadController = !!navigator.serviceWorker.controller;
+		let shown = false;
+		navigator.serviceWorker.addEventListener("controllerchange", () => {
+			if (!hadController || shown) return;
+			shown = true;
+			document.body.append(
+				h(
+					"div",
+					{ class: "update-bar", role: "status" },
+					h("span", {}, "✨ A new version is ready"),
+					h(
+						"button",
+						{
+							type: "button",
+							class: "update-go",
+							onclick: () => location.reload(),
+						},
+						"Update",
+					),
+					h(
+						"button",
+						{
+							type: "button",
+							class: "update-later",
+							"aria-label": "Later",
+							onclick: (e) => e.target.closest(".update-bar").remove(),
+						},
+						"✕",
+					),
+				),
+			);
+		});
 		const register = () =>
-			navigator.serviceWorker.register("sw.js").catch(() => {});
+			navigator.serviceWorker
+				.register("sw.js")
+				.then((reg) => {
+					// An installed iPad app is resumed, not reopened, so look for updates whenever she comes back to it.
+					document.addEventListener("visibilitychange", () => {
+						if (!document.hidden) reg.update().catch(() => {});
+					});
+				})
+				.catch(() => {});
 		if (document.readyState === "complete") register();
 		else window.addEventListener("load", register);
 	}
