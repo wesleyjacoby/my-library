@@ -36,20 +36,20 @@ Test locally with `python3 -m http.server` and open `http://localhost:8000`.
 
 ### Text tokens
 
-| Write | Shows |
-|---|---|
-| `{hero}` / `{hero’s}` | the name / possessive (James’) |
+| Write                                                             | Shows                                                                  |
+| ----------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `{hero}` / `{hero’s}`                                             | the name / possessive (James’)                                         |
 | `{hero.he}` `{hero.him}` `{hero.his}` `{hero.hers}` `{hero.self}` | he/she/they, him/her/them, his/her/their ... (`{hero.He}` capitalises) |
-| `{hero.is}` `{hero.has}` `{hero.was}` `{hero.does}` | verbs that agree (is/are, has/have ...) |
-| `{hero.s}` | "s" for he/she/it, nothing for they (`walk{hero.s}`) |
-| `[[pet:dog=barked\|cat=miaowed]]` | text that depends on the dog/cat choice |
+| `{hero.is}` `{hero.has}` `{hero.was}` `{hero.does}`               | verbs that agree (is/are, has/have ...)                                |
+| `{hero.s}`                                                        | "s" for he/she/it, nothing for they (`walk{hero.s}`)                   |
+| `[[pet:dog=barked\|cat=miaowed]]`                                 | text that depends on the dog/cat choice                                |
 
 ## Scenes
 
 A scene is `{ "mood": "night", "elements": [...], "alt": "..." }`.
 
 - Moods: `day`, `dawn`, `dusk`, `night`, `storm`, `cave`.
-- Elements: `stars`, `moon`, `clouds`, `gulls`, `hills`, `sea`, `village`, `cliff`, `lighthouse`, `beam`, `boat`, `house`, `trees`, `tunnel`, `glow`, `fog`, `rain`.
+- Elements: `stars`, `moon`, `clouds`, `gulls`, `hills`, `sea`, `causeway`, `village`, `cliff`, `lighthouse`, `beam`, `boat`, `house`, `trees`, `tunnel`, `stairs`, `lens`, `keeper`, `glow`, `fog`, `rain`.
 - Optional `align` (e.g. `xMaxYMid`) controls which part shows when a scene is cropped, such as on covers.
 
 New elements go in `js/scenes.js` (a draw function) and `css/styles.css` (an animation). Animation switches off with the Settings toggle or the iPad's Reduce Motion setting.

@@ -1,201 +1,749 @@
 {
-  "id": "gull-rock",
-  "title": "The Light on Gull Rock",
-  "tagline": "Someone is signalling from the empty lighthouse. Will you go and find out who?",
-  "blurb": "You are on holiday in the seaside village of Gull Cove. The old lighthouse has been empty for years. So who switched on the light?",
-  "ages": "8+",
-  "draft": true,
-  "cover": {
-    "scene": {
-      "mood": "night",
-      "elements": ["stars", "moon", "sea", "cliff", "lighthouse", "beam", "fog"],
-      "align": "xMaxYMid",
-      "alt": "A lighthouse on a rock at night, its beam sweeping over the sea."
-    }
-  },
-  "traits": ["brave", "kind", "clever"],
-  "cast": [
-    {
-      "key": "hero", "label": "Your name", "placeholder": "Type your name", "default": "Alex", "required": true,
-      "pronouns": ["she", "he", "they"], "pronounLabel": "Which fits you best?"
-    },
-    {
-      "key": "friend", "label": "Your best friend’s name", "placeholder": "Best friend", "default": "Sam", "altDefault": "Jess",
-      "pronouns": ["she", "he", "they"], "pronounLabel": "Which fits your best friend?"
-    },
-    {
-      "key": "pet", "label": "Your pet’s name", "placeholder": "Pet", "default": "Biscuit", "altDefault": "Pepper",
-      "pronouns": ["he", "she", "it"], "pronounDefault": "he", "pronounLabel": "Is your pet a…",
-      "variants": { "label": "Dog or cat?", "options": [{ "id": "dog", "label": "Dog" }, { "id": "cat", "label": "Cat" }] }
-    },
-    {
-      "key": "grownup", "label": "The grown-up on holiday with you (Mum, Gran, Uncle Pete…)", "placeholder": "Mum, Gran, Dad…", "default": "Gran", "altDefault": "Grandpa",
-      "pronouns": ["she", "he", "they"], "pronounLabel": "Which fits them?"
-    }
-  ],
-  "syllables": {
-    "periwinkle": "per-i-win-kle"
-  },
-  "chapters": [
-    {
-      "title": "The Empty Lighthouse",
-      "scene": {
-        "mood": "dusk",
-        "elements": ["clouds", "gulls", "hills", "sea", "village", "cliff", "lighthouse"],
-        "alt": "Gull Cove at sunset, with the old white lighthouse on its rock."
-      },
-      "blocks": [
-        "The car turned the last bend, and there was the sea.",
-        "{hero} pressed {hero.his} forehead to the window. Gulls hung in the air above the road. Beyond the rooftops of Gull Cove, a tall white tower stood alone on a rock at the end of the bay.",
-        "“That’s the old lighthouse,” said {grownup}.",
-        "“Does anyone live in it?” asked {friend}.",
-        "“Not for years. The rocks round it are dangerous, so nobody goes near.”",
-        "{pet} [[pet:dog=barked at the window|cat=put one paw flat against the glass]] as if {pet.he} {pet.has} an opinion about that.",
-        "Periwinkle Cottage sat at the top of a lane so narrow that the hedges scraped both sides of the car. It had a blue door, a crooked chimney and a garden gate that squeaked.",
-        "“Supper first,” said {grownup}. “Exploring tomorrow.”",
-        "Supper was fish and chips on the harbour wall, with a gull watching every single chip. The sun sank into the water. One by one, lights came on in the windows of the village.",
-        "By bedtime, the cottage creaked in every corner. {hero} and {friend} shared the room under the sloping roof, and {pet} curled up on the end of {hero.his} bed.",
-        "“Do you think anyone will ever live in the lighthouse again?” whispered {friend}.",
-        "“Maybe,” said {hero}. “If somebody fixed the light.”",
-        "{friend} did not answer. {friend.He} {friend.is} already breathing slowly.",
-        "Some time later, something woke {hero}. It was {pet}, standing on the bed with {pet.his} ears pricked and {pet.his} eyes fixed on the window.",
-        "{hero} crept across the cold floorboards and pulled back the curtain.",
-        {
-          "scene": {
-            "mood": "night",
-            "elements": ["stars", "moon", "sea", "cliff", "lighthouse", "beam", "fog"],
-            "align": "xMaxYMid",
-            "alt": "At night, the empty lighthouse glowing, its beam sweeping across black water."
-          }
-        },
-        "Out on Gull Rock, the empty lighthouse was glowing. A beam of light swept slowly across the black water, once, twice. Then it stopped.",
-        "“{friend},” hissed {hero}. “Wake up. Now.”",
-        "{friend} was at the window in seconds. “That lighthouse is empty,” {friend.he} whispered.",
-        "“I know.”",
-        "The light began to blink. Three short flashes. A pause. Three long flashes. A pause. Three short flashes again.",
-        "“I’ve seen that in a book,” said {friend}. {friend.His} voice had gone very small. “It means someone needs help.”",
-        "Out in the dark, on a rock where nobody had lived for years, somebody was asking for help."
-      ]
-    },
-    {
-      "title": "Three Short, Three Long",
-      "scene": {
-        "mood": "night",
-        "elements": ["stars", "moon", "house", "trees", "fog"],
-        "alt": "Periwinkle Cottage at night, one window still glowing."
-      },
-      "blocks": [
-        "“We have to tell {grownup},” said {friend}.",
-        "“And say what? That the empty lighthouse is winking at us?” {hero} looked back at the window. The light was still blinking. Three short. Three long. Three short.",
-        "{pet} jumped off the bed and trotted to the bedroom door. {pet.He} looked back at them. Waiting.",
-        {
-          "choice": {
-            "id": "night-plan",
-            "prompt": "What should {hero} do?",
-            "options": [
-              {
-                "id": "sneak",
-                "label": "Sneak out and follow the signal right now",
-                "score": { "brave": 1 },
-                "blocks": [
-                  "{hero} grabbed a torch and a coat. “Quietly,” {hero.he} whispered. Down the stairs they went, past {grownup}’s door, and out through the squeaky gate, which squeaked only once.",
-                  {
-                    "scene": {
-                      "mood": "night",
-                      "elements": ["stars", "moon", "trees", "fog", "sea", "cliff", "lighthouse", "beam"],
-                      "alt": "A dark path through the trees towards the glowing lighthouse."
-                    }
-                  }
-                ]
-              },
-              {
-                "id": "wake",
-                "label": "Wake {grownup} and tell them everything",
-                "score": { "kind": 1 },
-                "blocks": [
-                  "{hero} knocked softly on {grownup}’s door. It took a long time to explain. {grownup} did not laugh. {grownup.He} {grownup.was} out of bed and reaching for a phone before {hero} had finished talking.",
-                  {
-                    "scene": {
-                      "mood": "night",
-                      "elements": ["stars", "moon", "house", "trees"],
-                      "alt": "Every window of the cottage now lit up."
-                    }
-                  }
-                ]
-              },
-              {
-                "id": "wait",
-                "label": "Write down every flash, then work out a plan",
-                "score": { "clever": 1 },
-                "blocks": [
-                  "{friend} found a notebook. {hero} found a pencil. Together they wrote down every flash, and the time of each one, until the pattern was perfectly clear. It never changed. Someone out there was very, very patient.",
-                  {
-                    "scene": {
-                      "mood": "dawn",
-                      "elements": ["clouds", "gulls", "hills", "sea", "village", "cliff", "lighthouse"],
-                      "alt": "The first light of morning over Gull Cove."
-                    }
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        "Whatever happened next, one thing was certain. The lighthouse was not empty any more."
-      ]
-    },
-    {
-      "title": "The Answer on the Rock",
-      "scene": {
-        "mood": "day",
-        "elements": ["clouds", "gulls", "hills", "sea", "cliff", "lighthouse", "boat"],
-        "alt": "A bright, windy morning at Gull Rock."
-      },
-      "blocks": [
-        "Morning on Gull Rock was loud with wind.",
-        { "when": { "pick": "night-plan", "is": "sneak" }, "blocks": ["{hero}’s socks were still wet from the night before, and the torch had a crack across its glass."] },
-        { "when": { "pick": "night-plan", "is": "wake" }, "blocks": ["{grownup} had already phoned the harbour, and a small boat was putting out from the cove."] },
-        { "when": { "pick": "night-plan", "is": "wait" }, "blocks": ["{friend} held the notebook open. Every flash of the night was written in it, with the time beside each one."] },
-        "The tide was rising fast around the rocks, and a man was waving both arms from the lighthouse steps.",
-        "“Over here!” he shouted. “Please, over here!”"
-      ]
-    }
-  ],
-  "endings": [
-    {
-      "id": "brave",
-      "title": "The Brave Way",
-      "when": { "top": "brave" },
-      "scene": { "mood": "day", "elements": ["clouds", "gulls", "sea", "cliff", "lighthouse", "boat"], "alt": "A small boat heading home from the lighthouse in bright sunshine." },
-      "blocks": [
-        "{hero} did not wait for the boat. {hero.He} waded out along the sandbar with a rope round {hero.his} waist, the water cold and rising, and held out a hand.",
-        "The man was Old Tom, the fisherman. His engine had died in the night, and the lighthouse switch was the only thing he could find that still worked.",
-        "“Three short, three long, three short,” he said, laughing and shaking. “And somebody actually saw it.”",
-        "{pet} [[pet:dog=barked|cat=purred]] all the way home."
-      ]
-    },
-    {
-      "id": "kind",
-      "title": "The Kind Way",
-      "when": { "top": "kind" },
-      "scene": { "mood": "day", "elements": ["clouds", "gulls", "sea", "cliff", "lighthouse", "boat"], "alt": "A boat full of people coming back from the lighthouse." },
-      "blocks": [
-        "It was {grownup} who spotted the fisherman first, and it was {hero} who thought of the blanket and the flask of tea.",
-        "The man was Old Tom. His engine had died in the night, and the lighthouse switch was the only thing he could find that still worked.",
-        "“Most people would have gone back to sleep,” he said. “You woke the right person.”",
-        "That evening, the whole village came to Periwinkle Cottage with cake."
-      ]
-    },
-    {
-      "id": "clever",
-      "title": "The Clever Way",
-      "when": { "top": "clever" },
-      "scene": { "mood": "dawn", "elements": ["clouds", "gulls", "sea", "cliff", "lighthouse", "boat"], "alt": "A boat reaching the lighthouse at dawn." },
-      "blocks": [
-        "{friend} read out the notebook to the harbour master, line by line. The flashes had never changed, and neither had the time between them. “That is a person,” the harbour master said slowly. “Not a fault in the wiring.”",
-        "The man was Old Tom. His engine had died in the night, and the lighthouse switch was the only thing he could find that still worked.",
-        "“Every single flash, written down,” he said, shaking his head. “I’ve known coastguards who were less careful.”"
-      ]
-    }
-  ]
+	"id": "gull-rock",
+	"title": "The Light on Gull Rock",
+	"cover": {
+		"scene": {
+			"mood": "night",
+			"elements": [
+				"stars",
+				"moon",
+				"sea",
+				"cliff",
+				"lighthouse",
+				"beam",
+				"fog"
+			],
+			"align": "xMaxYMid",
+			"alt": "A lighthouse on a rock at night, its beam sweeping over the sea."
+		}
+	},
+	"traits": ["brave", "kind", "clever"],
+	"cast": [
+		{
+			"key": "hero",
+			"label": "Your name",
+			"placeholder": "Type your name",
+			"default": "Alex",
+			"required": true,
+			"pronouns": ["she", "he", "they"],
+			"pronounLabel": "Which fits you best?"
+		},
+		{
+			"key": "friend",
+			"label": "Your best friend’s name",
+			"placeholder": "Best friend",
+			"default": "Sam",
+			"altDefault": "Jess",
+			"pronouns": ["she", "he", "they"],
+			"pronounLabel": "Which fits your best friend?"
+		},
+		{
+			"key": "pet",
+			"label": "Your pet’s name",
+			"placeholder": "Pet",
+			"default": "Biscuit",
+			"altDefault": "Pepper",
+			"pronouns": ["he", "she", "it"],
+			"pronounDefault": "he",
+			"pronounLabel": "Is your pet a…",
+			"variants": {
+				"label": "Dog or cat?",
+				"options": [
+					{
+						"id": "dog",
+						"label": "Dog"
+					},
+					{
+						"id": "cat",
+						"label": "Cat"
+					}
+				]
+			}
+		},
+		{
+			"key": "grownup",
+			"label": "The grown-up on holiday with you (Mum, Gran, Uncle Pete…)",
+			"placeholder": "Mum, Gran, Dad…",
+			"default": "Gran",
+			"altDefault": "Grandpa",
+			"pronouns": ["she", "he", "they"],
+			"pronounLabel": "Which fits them?"
+		}
+	],
+	"tagline": "Someone is signalling from the empty lighthouse. Do not look at the light.",
+	"blurb": "You are on holiday in the seaside village of Gull Cove. The old lighthouse has been empty for forty years. Tonight, its light came on. A scary adventure with choices that change how the night ends.",
+	"ages": "8+",
+	"syllables": {
+		"periwinkle": "per-i-win-kle"
+	},
+	"chapters": [
+		{
+			"title": "Three Short, Three Long",
+			"scene": {
+				"mood": "dusk",
+				"elements": [
+					"clouds",
+					"gulls",
+					"hills",
+					"sea",
+					"village",
+					"cliff",
+					"lighthouse"
+				],
+				"alt": "Gull Cove at sunset, with the old white lighthouse on its rock."
+			},
+			"blocks": [
+				"The car turned the last bend, and there was the sea.",
+				"{hero} pressed {hero.his} forehead against the window. Gulls hung in the air above the road. Beyond the rooftops of Gull Cove, a tall white tower stood alone on a rock at the end of the bay.",
+				"“That’s the old lighthouse,” said {grownup}.",
+				"“Can we go and see it?” asked {friend}.",
+				"“It’s been empty for years. The tide cuts that rock off twice a day, and nobody goes near it.” {grownup} glanced in the mirror. “Not that anyone would want to.”",
+				"{hero} looked at {friend}. {friend} looked at {hero}. That was exactly the sort of thing a grown-up says when they want you to want to.",
+				"In the back, {pet} [[pet:dog=stood up on the seat and growled at the window|cat=flattened both ears and stared at the tower without blinking]]. {pet} had never done that before.",
+				"Periwinkle Cottage sat at the top of a lane so narrow that the hedges scraped both sides of the car. It had a blue door, a crooked chimney and a garden gate that squeaked.",
+				"“Supper first,” said {grownup}. “Exploring tomorrow.”",
+				"The chip shop on the harbour was the only place still open. Behind the counter stood an old man with white eyebrows and hands as big as shovels. The sign above his head said PASCOE’S.",
+				"“Visitors,” he said, tipping chips into paper. “Staying up at Periwinkle?”",
+				"“Just for the week,” said {grownup}.",
+				"The old man’s eyes drifted past them, to the window, and the dark shape of the lighthouse beyond it. He stopped tipping.",
+				"“See that tower?” he said quietly. “My father kept that light. Forty years ago, on a stormy night, he climbed up to mend the lamp.”",
+				"“What happened?” asked {friend}.",
+				"“He never came down.”",
+				"For a moment, the only sound was the fryer, hissing in the corner.",
+				"Then Mr Pascoe leaned across the counter. His eyes were a very pale grey, and {hero} found there was nowhere else to look.",
+				"“If that light ever comes on,” he said, “you do not look at it. Not for one second. Do you understand?”",
+				"{grownup} laughed, a little too loudly, and paid for the chips.",
+				"Outside, on the harbour wall, {hero} and {friend} ate supper with a gull watching every single chip. Neither of them said one word about the lighthouse. The sun sank into the sea. Behind them, the lights of the village came on, one window at a time. Out on the rock, the tower stayed dark.",
+				"By bedtime, the cottage creaked in every corner. {hero} and {friend} shared the room under the sloping roof, and {pet} curled up at the end of {hero’s} bed.",
+				"“He was joking,” whispered {friend}. “Mr Pascoe. It’s what they say to tourists.”",
+				"“Obviously,” said {hero}.",
+				"“I’m not scared.”",
+				"“Neither am I.”",
+				"They lay very still, and listened to the sea.",
+				"Some time after midnight, {hero} woke up. It took a moment to work out why. Then {hero} saw {pet}, standing on the bed, perfectly still, with {pet.his} eyes fixed on the curtains.",
+				"A white light was moving across the ceiling. It slid from one corner to the other. Then it was gone. Then it slid back again.",
+				"{hero} crept over the cold floorboards and pulled the curtain open.",
+				{
+					"scene": {
+						"mood": "night",
+						"elements": [
+							"stars",
+							"moon",
+							"sea",
+							"cliff",
+							"lighthouse",
+							"beam",
+							"fog"
+						],
+						"align": "xMaxYMid",
+						"alt": "At night, the empty lighthouse glowing, its beam sweeping across black water."
+					}
+				},
+				"Out on Gull Rock, the empty lighthouse was glowing. A beam turned slowly over the black water, once, twice.",
+				"“{friend},” hissed {hero}. “Wake up. Now.”",
+				"{friend} was at the window in seconds. “That’s not possible,” {friend.he} whispered. “It’s empty.”",
+				"Then the beam stopped turning, and began to blink. Three short flashes. A pause. Three long flashes. A pause. Three short flashes again.",
+				"“I know that one,” said {friend}, in a voice that had gone very small. “It’s from a book. It means someone needs help.”",
+				"{hero} thought of Mr Pascoe’s pale grey eyes. You do not look at it. Not for one second.",
+				"{hero} had already been looking for a full minute.",
+				"The beam swung away from the sea. It crossed the harbour, climbed the hill, and came creeping up the lane towards the cottage. It reached the window and stopped.",
+				"White light poured into the bedroom. And on the wall behind them, a shadow that belonged to nobody in the room slowly raised one hand."
+			]
+		},
+		{
+			"title": "The Shadow on the Wall",
+			"scene": {
+				"mood": "night",
+				"elements": ["stars", "moon", "house", "trees", "fog"],
+				"alt": "Periwinkle Cottage at night, one window glowing."
+			},
+			"blocks": [
+				"Nobody moved.",
+				"The shadow on the wall had the shape of a person, but it was too tall and too thin, and its arm stretched all the way up to the ceiling. Its fingers were spread wide. Slowly, they began to open and close. Three short. Three long. Three short.",
+				"“That’s a trick,” whispered {friend}. “It’s the window frame. It’s our shadows.”",
+				"“We’re not holding our hands up.”",
+				"{friend} looked at {friend’s} own hands. Then at the wall. Then at {hero}. Neither of them could think of a single thing to say.",
+				"{pet} [[pet:dog=barked once, sharp and loud|cat=let out a yowl that went right through the house]].",
+				"The light went out.",
+				"The bedroom dropped into a blackness so complete that {hero} could hear {hero.his} own heartbeat. Something small and warm pressed against {hero’s} ankle. It was {pet}, shaking from nose to tail.",
+				"“Torch,” said {friend}. “Where’s the torch?”",
+				"There was a clatter and a click, and a thin yellow circle jumped across the floor. It landed on the bedroom door. The door was open. It had been shut when they went to bed.",
+				"They crept out onto the landing. At the bottom of the stairs, the front door was closed and locked. But the kitchen light was on, and a trail of wet marks ran across the tiles.",
+				"{hero} crouched down. Small, bare footprints. Each one shone with seawater, and each one smelled of salt and cold stone.",
+				"“They’re a kid’s,” said {friend} slowly.",
+				"The prints crossed the kitchen and went out through the back door, which stood a little open. They led away down the garden, towards the squeaky gate. They were still wet. Whoever had made them had been here a minute ago.",
+				"Across the bay, three short flashes lit up the night. Three long. Three short.",
+				"“It wants us to follow,” said {hero}, and was surprised at how steady {hero.his} voice sounded.",
+				"{friend} swallowed. “We could wake {grownup}.”",
+				"“And say what?”",
+				"They stood in the cold kitchen. The sea was louder in here, as if it had crept up to the house to listen.",
+				{
+					"choice": {
+						"id": "night-plan",
+						"prompt": "What should {hero} do?",
+						"options": [
+							{
+								"id": "go",
+								"label": "Follow the footprints right now, before they dry",
+								"score": {
+									"brave": 1
+								},
+								"blocks": [
+									"“There’s no time,” said {hero}. “Come on.” {hero} shoved {hero.his} feet into the nearest wellies, which turned out to be two different sizes, and dragged open the back door.",
+									"{friend} snatched up the first torch {friend.he} could find. It was the small one. That was a mistake, but nobody knew it yet."
+								]
+							},
+							{
+								"id": "plan",
+								"label": "Check the kitchen for clues first. There might be a tide table",
+								"score": {
+									"clever": 1
+								},
+								"blocks": [
+									"{hero} flicked on the main light and looked around. A tide table hung on the fridge, held up by a magnet shaped like a crab. Somebody had circled tonight in red pen. Causeway open 1.10 to 2.40 a.m. After that, the sea comes back fast.",
+									"“That’s now,” said {friend}. “We’ve got about an hour.”",
+									"“Then we’d better take the big torch.” {hero} lifted it down from the hook by the door. It was as long as {hero.his} arm, and it worked."
+								]
+							},
+							{
+								"id": "note",
+								"label": "Write {grownup} a note so nobody worries, then follow the footprints",
+								"score": {
+									"kind": 1
+								},
+								"blocks": [
+									"{hero} found a pencil and the back of an envelope. Gone to look at the lighthouse. Back soon. Don’t worry. {hero} propped it against the kettle, where nobody could possibly miss it.",
+									"“A note?” said {friend}. “Really?”",
+									"“If we don’t come back, somebody should know where to look.”",
+									"That was a sensible thing to say. It was also not at all a comforting one, and both of them noticed."
+								]
+							}
+						]
+					}
+				},
+				"The back door opened onto the garden. The grass was soaking, and the footprints went on through it, pale and glistening. {pet} had not been invited. {pet} came anyway, nose down, following the same trail.",
+				"At the bottom of the garden, the gate hung open. Beyond it, a path of pale sand ran down to the beach. And across the bay, a path of pale sand ran out over the sea, all the way to the foot of the lighthouse.",
+				{
+					"scene": {
+						"mood": "night",
+						"elements": [
+							"stars",
+							"moon",
+							"sea",
+							"causeway",
+							"cliff",
+							"lighthouse",
+							"beam",
+							"fog"
+						],
+						"align": "xMaxYMid",
+						"alt": "A wet sandy causeway stretching across the dark sea to the lighthouse."
+					}
+				},
+				"The causeway.",
+				"Behind them, the garden gate squeaked and swung shut. Nobody had touched it."
+			]
+		},
+		{
+			"title": "The Causeway",
+			"scene": {
+				"mood": "night",
+				"elements": [
+					"stars",
+					"sea",
+					"causeway",
+					"cliff",
+					"lighthouse",
+					"beam",
+					"fog"
+				],
+				"align": "xMaxYMid",
+				"alt": "Two small figures on a long wet causeway, the lighthouse blinking ahead."
+			},
+			"blocks": [
+				{
+					"when": {
+						"pick": "night-plan",
+						"is": "go"
+					},
+					"blocks": [
+						"The small torch was already fading. It made a circle of light about the size of a dinner plate, and every step took them into the dark beyond it. {friend} shook it. It flickered, and recovered.",
+						"“It’s fine,” said {friend}. It was not fine."
+					]
+				},
+				{
+					"when": {
+						"pick": "night-plan",
+						"is": "plan"
+					},
+					"blocks": [
+						"The big torch threw a long white road across the sand. Every shell glittered. {friend} kept checking the time.",
+						"“Fifty minutes,” {friend} muttered, every few steps. “Forty-nine.”",
+						"“You don’t have to count it out loud.”",
+						"“I do, actually.”"
+					]
+				},
+				{
+					"when": {
+						"pick": "night-plan",
+						"is": "note"
+					},
+					"blocks": [
+						"The torch was a medium torch, neither good nor bad, and it lit the way well enough. Every so often, {hero} glanced back at the one small window of the cottage, where a note sat propped against a kettle. It didn’t feel like much. It felt like something."
+					]
+				},
+				"The causeway was a ribbon of wet sand, no wider than a road, with the sea lying flat and black on either side. It smelled of seaweed. It sounded like breathing.",
+				"Halfway across, {pet} stopped.",
+				"{pet} [[pet:dog=planted all four paws in the sand and would not move|cat=sat down in the middle of the causeway and began to wash one paw, very slowly]]. Then {pet.he} looked back the way they had come.",
+				"“What is it?” said {hero}. “What’s wrong?”",
+				"{hero} turned and swung the torch behind them. The beach was a long way off now, a thin line of tiny lights. The causeway stretched back in a silver strip. And in the wet sand, next to their own footprints, there was a second set. Small. Bare. Walking a few steps behind theirs.",
+				"The second set of footprints stopped exactly where the torchlight ended.",
+				"“Don’t look,” whispered {friend}. “Just walk.”",
+				"They walked. Faster.",
+				"From the water on both sides came a soft sound. Hush. Hush. Hush. It took {hero} a long time to realise that the hush had words in it. {hero}. {friend}. {hero}. {friend}.",
+				"Then {friend} stepped on a rope of seaweed, flapped both arms, and sat down hard in a puddle.",
+				"“Not a word,” said {friend}. “Not one.”",
+				"“I didn’t say anything.”",
+				"“Your face did.”",
+				"That helped, a little. It helped for about ten steps.",
+				"Ahead of them, the lighthouse grew until it filled the sky. The door at its foot stood open. A rectangle of yellow light lay across the rocks, and high above, the beam blinked, and blinked, and blinked.",
+				"They stepped inside. The air was cold enough to hurt. It smelled of salt and lamp oil and something older than both. A spiral staircase wound up into the dark.",
+				"“We’re only looking,” said {friend}. “Then we go home.”",
+				"“Agreed.”",
+				"The door slammed behind them.",
+				"There was no wind and no hand. It simply shut, and the bang ran up the tower and came back down as an echo. Far above, at the very top of the stairs, a voice began to call. It was soft and dry as sand, and it knew both their names."
+			]
+		},
+		{
+			"title": "Two Hundred Steps",
+			"scene": {
+				"mood": "night",
+				"elements": ["stairs", "glow"],
+				"alt": "A spiral staircase climbing inside the lighthouse, light sweeping the walls."
+			},
+			"blocks": [
+				"The voice stopped. The tower held its breath.",
+				"“Don’t answer it,” whispered {friend}.",
+				"“I wasn’t going to.”",
+				"The stairs wound up and up, iron steps bolted into the curved wall, with a rope for a handrail. Every step rang under their shoes. {pet} went first, nose low, tail stiff. Every few steps, {pet.he} stopped, looked back to check they were still coming, and then went on.",
+				"On the first landing hung a row of yellow raincoats. They were old and stiff with salt. Every one of them was dripping, though the floor beneath was bone dry.",
+				"On the second landing, a window showed the sea. It was closer than it should have been. {hero} was sure the causeway had not been that narrow.",
+				"On the third landing, a door. A brass plate was screwed to it, green with age. KEEPER. Behind the door, something scraped across the floor. Then it stopped, as if it had heard them.",
+				"They climbed faster after that.",
+				"{friend} counted the steps under {friend.his} breath. At sixty, the light from above changed. It stopped sweeping and began to pulse, slowly, like a lantern held by someone breathing. At a hundred, the walls began to hum. At a hundred and fifty, {hero} noticed that the raincoats on the landings had all been hung facing the wall.",
+				"Now they were facing the stairs.",
+				"“I’m not looking,” said {hero}, to nobody. “I’m looking at my feet.”",
+				"At two hundred, the voice came again. It was no longer far away. It came from just round the curve of the stair, patient and dry and kind.",
+				"“{hero},” it said. “{friend}. You came. Nobody comes. Come up and help me. I have been alone with the light for such a very long time.”",
+				{
+					"choice": {
+						"id": "stairs-voice",
+						"prompt": "The voice is close now. What does {hero} do?",
+						"options": [
+							{
+								"id": "shout",
+								"label": "Shout back: “Who are you? Show yourself!”",
+								"score": {
+									"brave": 1
+								},
+								"blocks": [
+									"“Who are you?” {hero} shouted. It came out much louder than {hero} had planned. The tower shuddered, and dust sifted down from the stairs above. “Show yourself!”",
+									"The humming stopped. Somewhere above, something that had been getting ready to speak again thought better of it."
+								]
+							},
+							{
+								"id": "listen",
+								"label": "Say nothing. Listen to how the voice sounds",
+								"score": {
+									"clever": 1
+								},
+								"blocks": [
+									"{hero} put a finger to {hero.his} lips, and {friend} nodded. They stood quite still on the iron step and listened.",
+									"The voice said the same words again. It used exactly the same pauses, and put the same crack in the word alone. It was not talking to them. It was playing something it had learned.",
+									"“It’s repeating itself,” breathed {friend}. “It doesn’t know us at all. It only knows our names.”"
+								]
+							},
+							{
+								"id": "comfort",
+								"label": "Pick up {pet}, who is shaking too hard to climb",
+								"score": {
+									"kind": 1
+								},
+								"blocks": [
+									"{pet} had stopped on the step and would not go on. {pet.His} legs trembled, and {pet.his} eyes had gone wide and wet.",
+									"{hero} scooped {pet.him} up and held {pet.him} tight against {hero.his} chest. A warm heartbeat is a good thing to carry up a dark staircase. It made {hero} feel less like running."
+								]
+							}
+						]
+					}
+				},
+				"They rounded the last curve. The stairs ended at an open trapdoor, and white light poured down through it, so bright that they had to shield their eyes.",
+				"The lamp room.",
+				"{friend} climbed through first. {hero} heard {friend.him} gasp. Then {friend} did not make another sound at all.",
+				"“{friend}?” said {hero}. “{friend}, what is it?”",
+				"{hero} pulled {hero.self} up through the trapdoor, onto cold glass-smooth boards, and looked at the great lamp. Eight faces were pressed against the glass from the inside. They were looking out at {hero}.",
+				"One of them was a small girl in a yellow raincoat. Her mouth moved. {hero} could not hear the word through the glass. {hero} could only read it.",
+				"Run."
+			]
+		},
+		{
+			"title": "The Room of Faces",
+			"scene": {
+				"mood": "night",
+				"elements": ["lens", "glow", "keeper"],
+				"alt": "The great lamp, its glass full of pale faces, and a dripping hooded shape beside it."
+			},
+			"blocks": [
+				"The great lens turned slowly, one rotation every ten seconds. Each time it came round, a different face slid into view.",
+				"A man with a moustache. A woman in a woolly hat. Two boys, side by side, with the same freckles. An old fisherman. A girl of about {hero’s} age with plaits and a surprised mouth, as if she had just been about to say something.",
+				"And the small one in the yellow raincoat, who looked about seven, and who had not stopped mouthing the same word.",
+				"“They’re alive,” whispered {friend}. “Look. They’re blinking.”",
+				"{hero} did look. The faces blinked slowly, in turn, like a row of candles guttering in a draught. None of them could move anything else.",
+				"Behind {hero}, something went drip.",
+				"Drip.",
+				"Drip.",
+				"There was a figure in the corner. {hero} had walked right past it. It was tall and bent, wrapped in a long yellow coat with the hood pulled forward. It stood perfectly still beside a little brass lantern on a hook, and from the hem of its coat, seawater ran across the boards in a dark, widening stain.",
+				"The hood turned. Inside it was darkness, and two small points of grey light.",
+				"“Visitors,” said the Keeper. It was the voice from the stairs, but close up, and not at all kind. “I called. I am so glad that you came.”",
+				"{pet} put {pet.his} head down and [[pet:dog=growled, a long low sound from deep in the chest|cat=hissed, back arched, every hair standing straight up]]. The Keeper did not look at {pet.him}. It looked only at {hero} and {friend}.",
+				"“The light must be kept,” it said. “Every night, someone must watch. Someone must give the light something to look at. I have kept it for forty years, but I am tired. Eight faces are not enough. The light is hungry. It wants a ninth.”",
+				"It took one step forward. The water came with it.",
+				"“Look into the lens,” said the Keeper gently. “Just for a moment. It won’t hurt. It is only a very long sleep.”",
+				"“Mr Pascoe warned us,” said {friend}, in a thin voice. “He told us not to look at it.”",
+				"“Pascoe.” The Keeper’s hood tilted. “Yes. I remember a boy who followed me up these stairs, once. He was very frightened, too.”",
+				"{hero}’s stomach turned over. {hero} remembered the old man in the chip shop. My father kept that light. He never came down.",
+				"The faces in the glass had all begun to turn their eyes towards {hero}.",
+				"In the second row, the girl in the yellow raincoat pressed both small hands flat against the glass. She mouthed it again, slowly, so there could be no mistake.",
+				"Not him. Behind him. The lantern.",
+				"{hero} glanced at the little brass lantern on its hook. Its flame was no bigger than a thumbnail. It was burning with a steady, ordinary yellow light, quite unlike the cold white flare of the great lamp. The Keeper’s grey eyes flickered. For the first time, it looked afraid.",
+				{
+					"choice": {
+						"id": "keeper-face",
+						"prompt": "The Keeper is between {hero} and the trapdoor. What now?",
+						"options": [
+							{
+								"id": "stand",
+								"label": "Stand up to the Keeper. Tell it to let the faces go",
+								"score": {
+									"brave": 1
+								},
+								"blocks": [
+									"{hero} stood as straight as {hero.he} could. {hero’s} knees were not at all straight, but nobody could see them under the coat.",
+									"“You can’t keep people,” said {hero}. “They’re not yours. Let them go.”",
+									"The Keeper stopped moving. The drip stopped too. For one long second, even the sea seemed to listen."
+								]
+							},
+							{
+								"id": "trick",
+								"label": "Ask the Keeper a question. Make it talk. Buy time to think",
+								"score": {
+									"clever": 1
+								},
+								"blocks": [
+									"“How does it work?” asked {hero}, keeping {hero.his} voice as level as a ruler. “The light, I mean. How does it catch people?”",
+									"The Keeper turned its head. Nobody had asked it anything in forty years.",
+									"“It takes the first thing it sees,” it began, almost eagerly. “A face that looks. A face that wonders. If nothing looks, it has nothing to take, and so it sleeps. But it never sleeps, because always someone looks. Always.”",
+									"{friend} was staring at the lamp. {friend’s} lips were moving. {hero} could see {friend.him} working it out."
+								]
+							},
+							{
+								"id": "wren",
+								"label": "Look at the small girl in the glass. Tell her you can see her",
+								"score": {
+									"kind": 1
+								},
+								"blocks": [
+									"{hero} stepped right up to the glass, so close that {hero.his} breath fogged it. The little girl’s eyes had followed {hero} the whole way.",
+									"“I see you,” said {hero}, very quietly. “I’m {hero}. What’s your name?”",
+									"The girl’s lips moved. One syllable. Wren.",
+									"The Keeper made a harsh dry sound. “Nobody talks to them,” it said. “Nobody has ever talked to them.”"
+								]
+							}
+						]
+					}
+				},
+				"A wave struck the tower. The whole lamp room rang like a bell, and every one of the eight faces flinched at once.",
+				"Far below, a door crashed open. Water was coming up the stairs.",
+				"The Keeper’s hood lifted, and for the first time {hero} could see what was inside it. A face the colour of old candle wax. Two grey eyes. It was smiling.",
+				"“The tide,” said the Keeper. “I do so hate to hurry people.”"
+			]
+		},
+		{
+			"title": "The Tide Comes In",
+			"scene": {
+				"mood": "night",
+				"elements": [
+					"stars",
+					"sea",
+					"cliff",
+					"lighthouse",
+					"beam",
+					"fog",
+					"rain"
+				],
+				"align": "xMaxYMid",
+				"alt": "The lighthouse in a storm, waves breaking against the rock below."
+			},
+			"blocks": [
+				{
+					"when": {
+						"pick": "keeper-face",
+						"is": "stand"
+					},
+					"blocks": [
+						"“You are brave,” said the Keeper, advancing across the boards. “They were all brave. It makes no difference.”"
+					]
+				},
+				{
+					"when": {
+						"pick": "keeper-face",
+						"is": "trick"
+					},
+					"blocks": [
+						"“Clever,” said the Keeper, advancing across the boards. “Clever ones look hardest of all. They always want to see how it works.”"
+					]
+				},
+				{
+					"when": {
+						"pick": "keeper-face",
+						"is": "wren"
+					},
+					"blocks": [
+						"“Kind,” said the Keeper, advancing across the boards, and the word sounded like an insult. “Kind ones stay longest. They look back.”"
+					]
+				},
+				"Seawater swept across the floor, an inch deep, then two. It was freezing. It rose from the trapdoor in a smooth black dome and spilled over the edge. The only way back down the stairs was under it.",
+				"{pet} bolted. {pet.He} shot straight between the Keeper’s legs, spun round on the wet boards and leapt at the hook on the wall. The lantern fell. It hit the floor, rolled, and {friend} snatched it up before it could go out.",
+				"“Door!” shouted {friend}. “There’s a door!”",
+				"A little iron door stood open in the glass wall of the lamp room, with a gale screaming through the gap. {hero} grabbed {friend’s} sleeve and they threw themselves at it. Behind them, the Keeper’s boots ground slowly through the water.",
+				"They burst out onto the gallery. The wind hit {hero} like a shove from a giant. A narrow iron balcony ran round the outside of the tower, with a rail that came up only to {hero’s} hip. Below it there was nothing at all.",
+				"The sky had gone black and ragged. Rain came sideways in handfuls. Out on the bay, the lights of Gull Cove shone small and warm and impossibly far away. Between the village and the rock, where the causeway should have been, there was only the sea. White waves marched across the sand where {hero} had walked an hour ago.",
+				"“It’s gone,” whispered {friend}. “We can’t get home. The tide’s covered it.”",
+				"{hero} did not answer. {hero} was clutching the rail, because the iron was shaking. A voice had begun to speak at {hero’s} elbow. It was small, and it did not belong to the Keeper. It was coming from the lantern in {friend’s} hand.",
+				"“Don’t be frightened.” The flame trembled. In the glass of the little lantern, a girl’s face had appeared, tiny and clear, with her hair stuck to her forehead. “I’m Wren. I only get to talk when someone holds the real fire.”",
+				"{friend} nearly dropped it. {hero} caught {friend’s} wrist and held it steady.",
+				"“There are three ways to stop the light,” said Wren, very fast, with the wind tearing at her words. “I’ve watched people try them all. Break the big glass. Turn the lens round. Or make the light honest again. But you have to pick one, and you must pick right now.”",
+				"“Why now?” said {hero}.",
+				"The iron door behind them boomed, and the Keeper filled the doorway, water streaming from its coat. It raised one long white hand.",
+				"“Because,” said Wren, “it has already started to look at you.”",
+				"{hero} felt it. It was a gentle, warm pull behind {hero’s} eyes, as if someone were drawing a curtain across the back of {hero’s} head. It felt nice. It felt like falling asleep in the car.",
+				"{hero} turned, very slowly, and looked at the light."
+			]
+		},
+		{
+			"title": "Three Ways Out",
+			"scene": {
+				"mood": "night",
+				"elements": ["lens", "glow", "beam"],
+				"alt": "The great lens blazing white, filling the lamp room with light."
+			},
+			"blocks": [
+				"White. That was all there was. White and very quiet.",
+				"{hero} could no longer feel the rain. {hero} could not feel {hero.his} hands. The faces in the glass had gone soft and far away, and the Keeper’s voice came from the bottom of a well. “That’s it. Just a little longer. Nobody will be cross.”",
+				"Then something warm and wet and furious bit down on {hero’s} sleeve.",
+				"{pet} hauled backwards with every ounce of {pet.his} weight. {hero’s} head snapped round. The light slid off {hero’s} face like water off a window, and the cold hit all at once, the wind and the rain and the stink of the sea.",
+				"“Choose!” screamed {friend}. “{hero}, choose!”",
+				"The lamp room was back in front of them. The Keeper was ten steps away, and its hood was lifting. The little lantern burned in {friend’s} fist. On the far wall stood the three things Wren had pointed out. The lens, huge and blazing. A long brass handle on the wall, with a rusted sign above it that read ROTATE LENS. And a heavy iron hammer hanging beside the lamp, with a sign that said, quite simply, EMERGENCY.",
+				"{hero} looked at them all and drew a breath. There was no time for another.",
+				{
+					"choice": {
+						"id": "final",
+						"prompt": "Which way out does {hero} take?",
+						"options": [
+							{
+								"id": "smash",
+								"label": "Seize the hammer and smash the lens to pieces",
+								"blocks": [
+									"“Everybody down!” yelled {hero}. {hero.He} tore the hammer from its hook. It was far heavier than {hero.he} had expected, and {hero.his} arms shook as {hero.he} swung it up."
+								]
+							},
+							{
+								"id": "mirror",
+								"label": "Wrench the brass handle and turn the light on the Keeper",
+								"blocks": [
+									"{hero} threw {hero.his} whole weight on the brass handle. It was rusted solid. {hero} stamped, and heaved, and {friend} grabbed on beside {hero.him}, and with a shriek of old metal the handle began to move."
+								]
+							},
+							{
+								"id": "lantern",
+								"label": "Take the small lantern and carry its flame up to the great lamp",
+								"blocks": [
+									"“Give it to me.” {hero} held out both hands. {friend} laid the lantern in them. It was warm, and its little flame stood up straight despite the gale. It was the plainest, smallest light {hero} had ever seen, and it had never once gone out."
+								]
+							}
+						]
+					}
+				},
+				"{pet} flattened {pet.self} against {hero’s} legs and refused to move.",
+				"The Keeper stopped. Its head tilted, and its hood slipped back a little further. {hero} saw, for the first time, what the Keeper had really been looking at all this time. It was not looking at {hero}, nor at {friend}. It was looking at the lantern.",
+				"And behind it, the great lens gave a deep, grinding groan, and every one of the eight faces turned to watch."
+			]
+		},
+		{
+			"title": "The Last Flash",
+			"scene": {
+				"mood": "night",
+				"elements": ["lens", "glow", "keeper"],
+				"alt": "The Keeper facing the blazing lens, the little lantern held out between them."
+			},
+			"blocks": [
+				{
+					"when": {
+						"pick": "final",
+						"is": "smash"
+					},
+					"blocks": [
+						"The hammer came down on the great lens with a crack like a gunshot.",
+						"Nothing happened. Then a hairline ran across the glass, from top to bottom, silver and perfect. The Keeper screamed. It was the first sound it had made that was not a word, and it was the worst thing {hero} had ever heard.",
+						"{hero} swung again."
+					]
+				},
+				{
+					"when": {
+						"pick": "final",
+						"is": "mirror"
+					},
+					"blocks": [
+						"The great lens ground slowly round on its bed of oil. The blaze of white swept across the room, over the faces, over the water, over {friend}, who flung up an arm and did not look. It reached the Keeper.",
+						"The Keeper stopped dead. For the first time, the light had found something to look at. And what it found was the Keeper."
+					]
+				},
+				{
+					"when": {
+						"pick": "final",
+						"is": "lantern"
+					},
+					"blocks": [
+						"{hero} walked straight at the lens. The Keeper’s hand shot out, but it was shaking, and it did not quite close.",
+						"“Not that,” the Keeper whispered. “Not the real fire. Please. It has been so long since I saw it.”",
+						"{hero} held the lantern up to the great glass, and opened its little door."
+					]
+				},
+				"Every one of the eight faces drew a breath at once. The sound filled the lamp room, a sigh from eight chests, each of them holding something they had held for years.",
+				"The beam stuttered. It blinked once, twice, and then, very faintly, in a rhythm that no ship at sea had ever needed, three short flashes went out over the black water. Three long. Three short.",
+				"And across the bay, in the village of Gull Cove, a window lit.",
+				"Someone had woken up. Someone had seen it. At the far end of the harbour, in a flat above the chip shop, an old man with white eyebrows pulled on his boots.",
+				"“Hold on,” said {hero}, to the faces, to Wren, to the sea. “Please hold on. Somebody’s coming.”",
+				"The tower shook.",
+				"Then the light went out, and the whole world went dark."
+			]
+		}
+	],
+	"endings": [
+		{
+			"id": "secret",
+			"title": "The Ninth Keeper",
+			"when": {
+				"all": [
+					{
+						"score": "brave",
+						"atLeast": 1
+					},
+					{
+						"score": "clever",
+						"atLeast": 1
+					},
+					{
+						"score": "kind",
+						"atLeast": 1
+					}
+				]
+			},
+			"scene": {
+				"mood": "dawn",
+				"elements": [
+					"clouds",
+					"gulls",
+					"sea",
+					"causeway",
+					"cliff",
+					"lighthouse",
+					"boat"
+				],
+				"alt": "At dawn, a line of people walking back across the causeway beside a small yellow lantern."
+			},
+			"blocks": [
+				"It should not have worked. {hero} knew that afterwards. Any of the three would have been enough on its own, and none of them was meant to.",
+				"But {hero} had shouted at the dark and meant it. {friend} had worked out how the light chose its victims, and {hero} had listened. And a small girl called Wren had been seen by a stranger, for the first time in twenty years. Together, they made a kind of key.",
+				"The glass did not shatter. It opened. Eight faces slid out of it as easily as people stepping off a bus, blinking and bewildered and soaked to the skin. The woman in the woolly hat was crying. The two freckled boys had hold of each other’s sleeves. Wren ran straight to {hero} and hugged {hero.him} so hard that {hero.he} could not breathe.",
+				"The Keeper stood alone in the middle of the room. Its hood was down. Under it, there was only an old man, thin and grey and worn out, with seawater running from his white eyebrows.",
+				"“Eli,” said the old man in the chip shop doorway, forty years later, when they walked him down the causeway at dawn. He had not sat down since the light went out. “Father.”",
+				"No one in Gull Cove talked about it afterwards. {grownup} found a note propped against the kettle and read it very slowly, three times, and then made {hero} and {friend} the biggest breakfast they had ever eaten.",
+				"The lighthouse stayed dark for the rest of the week. On the last night, {hero} looked out of the window anyway.",
+				"On the rock, one small yellow light burned. It was just an ordinary lantern, in an ordinary window, burning all night long for any ship that needed it.",
+				"{pet} [[pet:dog=wagged once, then went to sleep on {hero’s} feet|cat=sat on the windowsill and watched it for hours, purring]]. It was very peaceful.",
+				"THE END. (You found the secret ending. You were brave, clever and kind, all in one night.)"
+			]
+		},
+		{
+			"id": "smash",
+			"title": "Broken Glass",
+			"when": {
+				"pick": "final",
+				"is": "smash"
+			},
+			"scene": {
+				"mood": "dawn",
+				"elements": ["clouds", "gulls", "sea", "cliff", "lighthouse", "boat"],
+				"alt": "The dark lighthouse at dawn, gulls wheeling around it."
+			},
+			"blocks": [
+				"The lens burst. A thousand pieces of glass flew out into the night, and each piece, for one bright second, held a face. Then every one of them was gone, as if a window had been thrown open.",
+				"Eight gulls rose from the lamp room. They were white and enormous and screaming with joy. They circled the tower once, twice, and flew out across the sea to the east, where the sky was starting to turn grey.",
+				"The Keeper was nowhere. A yellow coat lay in the water on the floor, empty. The hood floated for a moment, then sank.",
+				"The tide went out at dawn. {hero}, {friend} and {pet} walked home along the causeway on legs that did not feel like their own, with shards of glass crunching under their shoes. {grownup} met them halfway, in pyjamas and one wellington boot, and did not say a single word until the hugging was over.",
+				"The lighthouse never lit again. The council came and put a fence around it, and a sign, and a padlock.",
+				"But {hero} noticed, for the rest of that week, that eight gulls followed {hero.him} everywhere. They sat on the roof of Periwinkle Cottage and watched {hero} eat chips, and when {hero} laughed, they laughed too, in their harsh, wild way.",
+				"One of them was smaller than the others, and its feathers were a little yellow at the edges.",
+				"THE END. (There are three more ways this night could have ended. Can you find them?)"
+			]
+		},
+		{
+			"id": "mirror",
+			"title": "The Keeper’s Reflection",
+			"when": {
+				"pick": "final",
+				"is": "mirror"
+			},
+			"scene": {
+				"mood": "dawn",
+				"elements": ["clouds", "gulls", "sea", "cliff", "lighthouse", "boat"],
+				"alt": "Dawn over the bay, the lighthouse quiet and pale."
+			},
+			"blocks": [
+				"In the great glass, the light folded back on itself. The Keeper’s own face stared out at it, enormous, from every one of the lens’s hundred prisms.",
+				"It was an old face. A tired, kind, ordinary one, with grey stubble and white eyebrows. It looked puzzled. It looked as though it had been trying to remember something for forty years and had just been handed it.",
+				"“Oh,” said the Keeper, in a different voice. “Oh, I see. I only wanted someone to come.”",
+				"The faces in the glass began to drift out one at a time, like bubbles rising in a glass. The little girl in the yellow raincoat was last. She squeezed {hero’s} hand, and was gone.",
+				"By morning, the tower was empty, and the sea had gone back out. {hero} and {friend} walked home along the causeway in the first thin sunlight, with {pet} trotting ahead as if nothing had happened.",
+				"Mr Pascoe was waiting at the garden gate. He did not ask a single question. He looked at {hero} for a long time, and then he took off his cap and held it against his chest.",
+				"“Thank you,” he said. “Thank you for turning the light round.”",
+				"He did not say how he knew.",
+				"THE END. (There are three more ways this night could have ended. Can you find them?)"
+			]
+		},
+		{
+			"id": "lantern",
+			"title": "The Honest Flame",
+			"when": {
+				"pick": "final",
+				"is": "lantern"
+			},
+			"scene": {
+				"mood": "dawn",
+				"elements": ["clouds", "gulls", "sea", "cliff", "lighthouse", "boat"],
+				"alt": "Sunrise behind the lighthouse, a small steady light in its window."
+			},
+			"blocks": [
+				"The little flame leapt from the lantern to the great wick. The huge lens kindled, not white and hungry, but gold, soft and warm as a kitchen at night.",
+				"The Keeper dropped to its knees. It was weeping, and the tears ran silver down its hood. “That’s it,” it said. “That is the one. I forgot.”",
+				"One by one, the faces in the glass were lit from within. They turned to gold. They smiled. And then they were not faces any more, only light, rising up the beam and out to sea. The last of them was a small girl in a yellow raincoat, and she waved.",
+				"The Keeper did not rise from the floor. When {hero} looked again, there was only a coat, folded neatly on the boards, and a brass lantern with a very small, very steady flame.",
+				"“Keep it,” whispered the empty room. “But not for always. Only for tonight.”",
+				"At dawn, the fishing boats came out past the rock. Every skipper saw the golden beam, turning gently in the pink light, and none of them had ever seen it so bright. One of them was a boat with PASCOE painted on the bow.",
+				"{hero} carried the lantern back along the causeway, with {friend} on one side and {pet} on the other. It never went out. Not once, all the way home.",
+				"THE END. (There are three more ways this night could have ended. Can you find them?)"
+			]
+		}
+	]
 }

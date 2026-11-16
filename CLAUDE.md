@@ -33,3 +33,8 @@ The owner wants prose that does not sound AI-written: **no em dashes**, avoid "l
 
 - Done: reader engine, personalisation, choices and endings, syllable pop-ups, animated scenes, settings, PWA shell, offline cache. A 3-chapter demo book (`gull-rock`) exercises every feature and uses placeholder story text.
 - Next: write the real first book (8 chapters, 3-4 choices, about 3 endings). Premise under consideration: the lighthouse mystery from the demo. The owner will pick the setting and genre mix once the daughter shows what she prefers.
+
+## Book status
+- `gull-rock` is now the full Goosebumps-style story "The Light on Gull Rock": 8 chapters, 4 choices (`night-plan`, `stairs-voice`, `keeper-face` score brave/clever/kind; `final` = smash/mirror/lantern, unscored) and 4 endings (secret needs brave, clever and kind all at least 1; checked first).
+- Prose rules: no em dashes, no "like the way" similes, show don't tell.
+- Cache is `my-library-v3`; bump it whenever shipped files change.
