@@ -974,3 +974,22 @@ html[data-listen="off"] .listen-btn {
 		color: #fff;
 	}
 }
+
+/* plain words: tappable for read-aloud, but visually quiet */
+.wd {
+	-webkit-tap-highlight-color: transparent;
+	cursor: pointer;
+	border-radius: 0.2em;
+	transition: background-color 0.15s;
+}
+.wd:active {
+	background: var(--accent-soft);
+}
+@media (hover: hover) {
+	.wd:hover {
+		background: var(--accent-soft);
+	}
+}
+.pop-btns button[hidden] {
+	display: none;
+}
