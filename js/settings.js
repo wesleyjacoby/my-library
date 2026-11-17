@@ -12,6 +12,7 @@ export function applySettings() {
 	const root = document.documentElement;
 	root.dataset.theme = s.theme;
 	root.dataset.anim = s.anim ? "on" : "off";
+	root.dataset.font = s.font === "clean" ? "clean" : "book";
 	root.dataset.listen = s.readAloud === false ? "off" : "on";
 	root.dataset.focus = s.coach && s.coachFocus ? "on" : "off";
 	root.dataset.marks = s.coach && s.coachMarks ? "on" : "off";
@@ -188,6 +189,23 @@ export function openSettings() {
 				s.theme,
 				(v) => {
 					store.setSetting("theme", v);
+					applySettings();
+				},
+			),
+		),
+		h(
+			"div",
+			{ class: "srow" },
+			h("span", {}, "Text style"),
+			seg(
+				"font",
+				[
+					["book", "Book"],
+					["clean", "Clean"],
+				],
+				s.font === "clean" ? "clean" : "book",
+				(v) => {
+					store.setSetting("font", v);
 					applySettings();
 				},
 			),

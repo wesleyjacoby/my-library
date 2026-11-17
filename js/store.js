@@ -8,6 +8,7 @@ const DEFAULT_SETTINGS = {
 	rate: 0.9,
 	readAloud: true,
 	voice: "",
+	font: "book",
 	coach: false,
 	coachFocus: true,
 	coachMarks: true,
