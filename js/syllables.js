@@ -16,64 +16,84 @@ export function pieces(word, hyph) {
 	return out;
 }
 
-// parts come from personalise.compile(); returns a DocumentFragment
+// parts come from personalise.compile(); returns a DocumentFragment.
+// Punctuation is wrapped (.pn) and speech is tagged (.dlg) so the Reading Coach can style them.
 export function toFragment(parts, dict) {
 	const frag = document.createDocumentFragment();
+	let q = false; // inside speech
+	const dl = (cls) => (q ? `${cls} dlg` : cls);
+	const hyph = (w) => {
+		const hy = dict && dict[w.toLowerCase()];
+		if (!hy || !hy.includes("-")) return null;
+		const ps = pieces(w, hy);
+		return ps.length > 1 ? ps : null;
+	};
+	const sylNode = (w, ps) =>
+		frag.append(
+			h(
+				"button",
+				{
+					class: dl(ps.length >= 3 ? "syl ul" : "syl"),
+					type: "button",
+					"data-w": w,
+					"data-s": ps.join("-"),
+				},
+				w,
+			),
+		);
+	const plainWord = (w) =>
+		frag.append(h("span", { class: dl("wd"), "data-w": w }, w));
+
+	const word = (bit) => {
+		if (/[’']/.test(bit)) {
+			// contractions (don’t, it’s) are one tappable word; only possessives of listed words split
+			const m = bit.match(/^([A-Za-z]+)[’']s$/);
+			const ps = m && hyph(m[1]);
+			if (ps) {
+				sylNode(m[1], ps);
+				frag.append(document.createTextNode(bit.slice(m[1].length)));
+				return;
+			}
+			plainWord(bit);
+			return;
+		}
+		const ps = hyph(bit);
+		if (ps) sylNode(bit, ps);
+		else plainWord(bit);
+	};
+
+	const punct = (bit) => {
+		for (const t of bit.split(/([.!?…]+|[,;:]|[“”])/)) {
+			if (!t) continue;
+			if (/^[.!?…]+$/.test(t))
+				frag.append(h("span", { class: dl("pn stop"), "data-end": "1" }, t));
+			else if (/^[,;:]$/.test(t))
+				frag.append(h("span", { class: dl("pn comma") }, t));
+			else if (t === "“") {
+				q = true;
+				frag.append(h("span", { class: dl("pn oq") }, t));
+			} else if (t === "”") {
+				frag.append(h("span", { class: dl("pn cq") }, t));
+				q = false;
+			} else frag.append(document.createTextNode(t));
+		}
+	};
+
 	for (const part of parts) {
 		if (part.name) {
-			frag.append(h("span", { class: "nm" }, part.text));
+			frag.append(h("span", { class: dl("nm") }, part.text));
 			continue;
 		}
-		for (const bit of part.text.split(/([A-Za-z]+(?:[’'][A-Za-z]+)*)/)) {
+		let text = part.text;
+		const poss = text.match(/^[’']s(?![A-Za-z])/); // the ’s after a name
+		if (poss) {
+			frag.append(document.createTextNode(poss[0]));
+			text = text.slice(poss[0].length);
+		}
+		for (const bit of text.split(/([A-Za-z]+(?:[’'][A-Za-z]+)*)/)) {
 			if (!bit) continue;
-			if (
-				/[’']/.test(bit) &&
-				!(
-					/^[A-Za-z]+[’']s$/i.test(bit) &&
-					dict &&
-					(dict[bit.slice(0, -2).toLowerCase()] || "").includes("-")
-				)
-			) {
-				// contractions (don’t, it’s) are one tappable word; only possessives of listed words split
-				frag.append(h("span", { class: "wd", "data-w": bit }, bit));
-				continue;
-			}
-			if (/^[A-Za-z]+[’']s$/i.test(bit)) {
-				const base = bit.slice(0, -2);
-				frag.append(
-					...toFragment([{ text: base }], dict).childNodes,
-					document.createTextNode(bit.slice(-2)),
-				);
-				continue;
-			}
-			if (/^[A-Za-z]+$/.test(bit)) {
-				const hy = dict && dict[bit.toLowerCase()];
-				if (hy && hy.includes("-")) {
-					const ps = pieces(bit, hy);
-					if (ps.length > 1) {
-						// Every 2+ syllable word is tappable; only 3+ syllables get the visible dotted underline.
-						frag.append(
-							h(
-								"button",
-								{
-									class: ps.length >= 3 ? "syl ul" : "syl",
-									type: "button",
-									"data-w": bit,
-									"data-s": ps.join("-"),
-								},
-								bit,
-							),
-						);
-						continue;
-					}
-				}
-			}
-			if (/^[A-Za-z]+$/.test(bit)) {
-				// Every other word is tappable too (no underline), so she can hear it said aloud.
-				frag.append(h("span", { class: "wd", "data-w": bit }, bit));
-				continue;
-			}
-			frag.append(document.createTextNode(bit));
+			if (/^[A-Za-z]/.test(bit)) word(bit);
+			else punct(bit);
 		}
 	}
 	return frag;

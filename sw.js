@@ -1,7 +1,7 @@
 // Offline support. Serves from cache first and refreshes the cache in the background,
 // so changes you push to GitHub show up the next time the app is opened (or the time after).
 // Bump CACHE when you want to force old files out immediately.
-const CACHE = "my-library-v6";
+const CACHE = "my-library-v7";
 // On your own computer (localhost) always load the newest files, falling back to the cache only offline.
 // On GitHub Pages the cache is used first for speed, and refreshed in the background.
 const DEV = ["localhost", "127.0.0.1", "[::1]"].includes(
@@ -24,6 +24,7 @@ const CORE = [
 	"js/reader.js",
 	"js/settings.js",
 	"js/confirm.js",
+	"js/coach.js",
 	"icons/icon-192.png",
 	"icons/icon-512.png",
 	"icons/icon-maskable-512.png",

@@ -12,10 +12,13 @@ export function applySettings() {
 	root.dataset.theme = s.theme;
 	root.dataset.anim = s.anim ? "on" : "off";
 	root.dataset.listen = s.readAloud === false ? "off" : "on";
+	root.dataset.focus = s.coach && s.coachFocus ? "on" : "off";
+	root.dataset.marks = s.coach && s.coachMarks ? "on" : "off";
 	root.style.setProperty("--scale", SIZES[s.size] ?? 1);
 	const meta = document.querySelector("meta[name=theme-color]");
 	if (meta)
 		meta.setAttribute("content", s.theme === "night" ? "#10162b" : "#1b2547");
+	window.dispatchEvent(new Event("settingschange"));
 }
 
 export function bumpSize(delta) {
@@ -129,6 +132,43 @@ export function openSettings() {
 		oninput: (e) => store.setSetting("rate", Number(e.target.value)),
 	});
 
+	const onoff = (key) => (v) => {
+		store.setSetting(key, v === "on");
+		applySettings();
+	};
+	const coachRows = h(
+		"div",
+		{ class: "coach-rows", hidden: s.coach ? null : true },
+		h(
+			"div",
+			{ class: "srow sub" },
+			h("span", {}, "One sentence at a time"),
+			seg(
+				"focus",
+				[
+					["on", "On"],
+					["off", "Off"],
+				],
+				s.coachFocus ? "on" : "off",
+				onoff("coachFocus"),
+			),
+		),
+		h(
+			"div",
+			{ class: "srow sub" },
+			h("span", {}, "Show punctuation"),
+			seg(
+				"marks",
+				[
+					["on", "On"],
+					["off", "Off"],
+				],
+				s.coachMarks ? "on" : "off",
+				onoff("coachMarks"),
+			),
+		),
+	);
+
 	const sheet = h(
 		"div",
 		{ class: "sheet", role: "dialog", "aria-label": "Settings" },
@@ -185,6 +225,24 @@ export function openSettings() {
 				},
 			),
 		),
+		h(
+			"div",
+			{ class: "srow" },
+			h("span", {}, "🎯 Reading Coach"),
+			seg(
+				"coach",
+				[
+					["on", "On"],
+					["off", "Off"],
+				],
+				s.coach ? "on" : "off",
+				(v) => {
+					onoff("coach")(v);
+					coachRows.hidden = v !== "on";
+				},
+			),
+		),
+		coachRows,
 		tts.available ? voiceRow(s) : null,
 		h("div", { class: "srow" }, h("span", {}, "Voice speed"), rate),
 		h(

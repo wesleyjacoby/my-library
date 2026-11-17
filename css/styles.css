@@ -1031,3 +1031,134 @@ html[data-listen="off"] .listen-btn {
 	padding: 0.4em 0.6em;
 	cursor: pointer;
 }
+
+/* ---------- Reading Coach ---------- */
+html[data-theme="paper"] {
+	--stop: #c0392b;
+	--comma: #d2691e;
+	--speech: #1f6f8b;
+	--focus-bg: rgba(242, 184, 75, 0.28);
+}
+html[data-theme="night"] {
+	--stop: #ff8a7a;
+	--comma: #ffb36b;
+	--speech: #7cc8e8;
+	--focus-bg: rgba(242, 184, 75, 0.18);
+}
+
+/* punctuation marks */
+html[data-marks="on"] .pn.stop {
+	color: var(--stop);
+	font-weight: 900;
+	font-size: 1.5em;
+	line-height: 0;
+}
+html[data-marks="on"] .pn.comma {
+	color: var(--comma);
+	font-weight: 900;
+	font-size: 1.2em;
+	margin-right: 0.08em;
+}
+html[data-marks="on"] .pn.oq,
+html[data-marks="on"] .pn.cq {
+	color: var(--speech);
+	font-weight: 900;
+	font-size: 1.15em;
+}
+html[data-marks="on"] .dlg {
+	color: var(--speech);
+}
+
+/* sentence focus */
+html[data-focus="on"] .story .sn {
+	opacity: 0.3;
+	border-radius: 0.3em;
+	transition:
+		opacity 0.2s,
+		background-color 0.2s;
+}
+html[data-focus="on"] .story .sn.past {
+	opacity: 0.65;
+}
+html[data-focus="on"] .story .sn.cur {
+	opacity: 1;
+	background: var(--focus-bg);
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+	padding: 0.08em 0.15em;
+	margin: 0 -0.15em;
+}
+html[data-focus="on"] .story.tts-on .sn {
+	opacity: 1;
+	background: none;
+}
+html[data-focus="on"] .story .choice.ahead {
+	opacity: 0.3;
+	pointer-events: none;
+}
+html[data-focus="on"] .reader .page {
+	padding-bottom: 8rem;
+}
+html[data-focus="on"] .update-bar {
+	bottom: calc(5.5rem + env(safe-area-inset-bottom));
+}
+
+.coach-bar {
+	position: fixed;
+	left: 50%;
+	bottom: max(1rem, env(safe-area-inset-bottom));
+	transform: translateX(-50%);
+	z-index: 40;
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	background: var(--navy);
+	color: #fff;
+	border-radius: 999px;
+	padding: 0.45rem;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+.coach-bar[hidden] {
+	display: none;
+}
+.coach-count {
+	min-width: 4.5rem;
+	text-align: center;
+	font: 700 0.9rem var(--ui);
+	opacity: 0.8;
+}
+.coach-btn {
+	border: 0;
+	border-radius: 999px;
+	font: 800 1.1rem var(--ui);
+	padding: 0.7em 1.4em;
+	cursor: pointer;
+	touch-action: manipulation;
+}
+.coach-btn.next {
+	background: var(--gold);
+	color: #1b2342;
+}
+.coach-btn.back {
+	background: rgba(255, 255, 255, 0.16);
+	color: #fff;
+}
+.coach-btn:disabled {
+	opacity: 0.35;
+}
+.coach-toggle.on {
+	background: var(--accent-soft);
+	box-shadow: inset 0 0 0 2px var(--gold);
+}
+.coach-rows[hidden] {
+	display: none;
+}
+.coach-rows {
+	display: flex;
+	flex-direction: column;
+	gap: 0.8rem;
+}
+.srow.sub {
+	padding-left: 1.2rem;
+	font-weight: 600;
+}
