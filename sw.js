@@ -1,7 +1,7 @@
 // Offline support. Serves from cache first and refreshes the cache in the background,
 // so changes you push to GitHub show up the next time the app is opened (or the time after).
 // Bump CACHE when you want to force old files out immediately.
-const CACHE = "my-library-v12";
+const CACHE = "my-library-v13";
 // On your own computer (localhost) always load the newest files, falling back to the cache only offline.
 // On GitHub Pages the cache is used first for speed, and refreshed in the background.
 const DEV = ["localhost", "127.0.0.1", "[::1]"].includes(
@@ -28,10 +28,10 @@ const CORE = [
 	"js/quiz.js",
 	"js/rewards.js",
 	"js/rewardsui.js",
-	"fonts/atkinson-hyperlegible-latin-400-normal.woff2",
-	"fonts/atkinson-hyperlegible-latin-400-italic.woff2",
-	"fonts/atkinson-hyperlegible-latin-700-normal.woff2",
-	"fonts/atkinson-hyperlegible-latin-700-italic.woff2",
+	"fonts/andika-latin-400-normal.woff2",
+	"fonts/andika-latin-400-italic.woff2",
+	"fonts/andika-latin-700-normal.woff2",
+	"fonts/andika-latin-700-italic.woff2",
 	"icons/icon-192.png",
 	"icons/icon-512.png",
 	"icons/icon-maskable-512.png",

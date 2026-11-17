@@ -1,34 +1,30 @@
 @font-face {
-	font-family: "Atkinson Hyperlegible";
+	font-family: "Andika";
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
-	src: url("../fonts/atkinson-hyperlegible-latin-400-normal.woff2")
-		format("woff2");
+	src: url("../fonts/andika-latin-400-normal.woff2") format("woff2");
 }
 @font-face {
-	font-family: "Atkinson Hyperlegible";
+	font-family: "Andika";
 	font-style: italic;
 	font-weight: 400;
 	font-display: swap;
-	src: url("../fonts/atkinson-hyperlegible-latin-400-italic.woff2")
-		format("woff2");
+	src: url("../fonts/andika-latin-400-italic.woff2") format("woff2");
 }
 @font-face {
-	font-family: "Atkinson Hyperlegible";
+	font-family: "Andika";
 	font-style: normal;
 	font-weight: 700;
 	font-display: swap;
-	src: url("../fonts/atkinson-hyperlegible-latin-700-normal.woff2")
-		format("woff2");
+	src: url("../fonts/andika-latin-700-normal.woff2") format("woff2");
 }
 @font-face {
-	font-family: "Atkinson Hyperlegible";
+	font-family: "Andika";
 	font-style: italic;
 	font-weight: 700;
 	font-display: swap;
-	src: url("../fonts/atkinson-hyperlegible-latin-700-italic.woff2")
-		format("woff2");
+	src: url("../fonts/andika-latin-700-italic.woff2") format("woff2");
 }
 
 :root {
@@ -43,7 +39,7 @@
 	--scale: 1;
 }
 html[data-font="clean"] {
-	--serif: "Atkinson Hyperlegible", var(--ui);
+	--serif: "Andika", var(--ui);
 }
 html[data-theme="paper"] {
 	--bg: #f5eedd;
