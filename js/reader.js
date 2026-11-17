@@ -6,6 +6,7 @@ import { sceneHTML } from "./scenes.js";
 import { toFragment } from "./syllables.js";
 import * as tts from "./tts.js";
 import { sentencify, initFocus } from "./coach.js";
+import { quizCard } from "./quiz.js";
 import { bumpSize, openSettings, applySettings } from "./settings.js";
 
 const st = (book) => store.getBook(book.id);
@@ -292,7 +293,22 @@ export function renderReader(root, book, idx, nav) {
 				),
 			);
 		}
-		article.append(end);
+		const qs = chapter.questions || [];
+		const doneAlready = (st(book).quiz || {})[idx] !== undefined;
+		if (qs.length && !doneAlready) {
+			end.hidden = true;
+			article.append(
+				quizCard(book, chapter, article, (n) => {
+					store.patchBook(book.id, {
+						quiz: { ...(st(book).quiz || {}), [idx]: n },
+					});
+					end.hidden = false;
+				}),
+				end,
+			);
+		} else {
+			article.append(end);
+		}
 	});
 }
 

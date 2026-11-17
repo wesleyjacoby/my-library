@@ -53,6 +53,7 @@ const blankBook = () => ({
 	started: false,
 	finished: false,
 	endings: [],
+	quiz: {},
 });
 
 export function getBook(id) {
@@ -75,6 +76,7 @@ export function restartBook(id, cast) {
 		chapter: 0,
 		started: true,
 		finished: false,
+		quiz: {},
 	});
 }
 

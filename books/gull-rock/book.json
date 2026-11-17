@@ -148,6 +148,44 @@
 				"{hero} had already been looking for a full minute.",
 				"The beam swung away from the sea. It crossed the harbour, climbed the hill, and came creeping up the lane towards the cottage. It reached the window and stopped.",
 				"White light poured into the bedroom. And on the wall behind them, a shadow that belonged to nobody in the room slowly raised one hand."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What did Mr Pascoe say happened to his father?",
+					"options": [
+						"He sailed away on a stormy night and never came back",
+						"He climbed up to mend the lamp and never came down",
+						"He sold the lighthouse and moved away"
+					],
+					"answer": 1,
+					"find": "never came down",
+					"hint": "Listen to what Mr Pascoe told them in the chip shop."
+				},
+				{
+					"id": "q2",
+					"q": "What did {hero} see when {hero.he} pulled open the curtain?",
+					"options": [
+						"The empty lighthouse glowing, with a beam turning over the water",
+						"A ship in trouble out in the bay",
+						"A fire in the village"
+					],
+					"answer": 0,
+					"find": "empty lighthouse was glowing",
+					"hint": "Think about what was out on Gull Rock."
+				},
+				{
+					"id": "q3",
+					"q": "Why did the blinking light worry {friend}?",
+					"options": [
+						"It was brighter than any light {friend} had seen",
+						"It was pointing straight at the harbour",
+						"{friend} knew from a book that it meant someone needed help"
+					],
+					"answer": 2,
+					"find": "someone needs help",
+					"hint": "Look for what {friend} said about the flashes."
+				}
 			]
 		},
 		{
@@ -242,6 +280,44 @@
 				},
 				"The causeway.",
 				"Behind them, the garden gate squeaked and swung shut. Nobody had touched it."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What was strange about the shadow on the wall?",
+					"options": [
+						"It belonged to nobody in the room",
+						"It was far too small to be a person",
+						"It was only the shadow of the curtains"
+					],
+					"answer": 0,
+					"find": "We’re not holding our hands up",
+					"hint": "Think about what {hero} said when {friend} blamed their own shadows."
+				},
+				{
+					"id": "q2",
+					"q": "What did {hero} find on the kitchen tiles?",
+					"options": [
+						"Muddy boot prints from the garden",
+						"A trail of white feathers",
+						"Small bare footprints that were wet with seawater"
+					],
+					"answer": 2,
+					"find": "Small, bare footprints",
+					"hint": "Look at what {hero} found when {hero.he} crouched down."
+				},
+				{
+					"id": "q3",
+					"q": "Where did the footprints lead?",
+					"options": [
+						"Up the stairs to the bedroom",
+						"Out of the back door and down the garden",
+						"Down into the cellar"
+					],
+					"answer": 1,
+					"find": "led away down the garden",
+					"hint": "Follow the trail from the kitchen."
+				}
 			]
 		},
 		{
@@ -312,6 +388,40 @@
 				"“Agreed.”",
 				"The door slammed behind them.",
 				"There was no wind and no hand. It simply shut, and the bang ran up the tower and came back down as an echo. Far above, at the very top of the stairs, a voice began to call. It was soft and dry as sand, and it knew both their names."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What did {friend} trip over on the causeway?",
+					"options": ["A lobster pot", "{pet}", "A rope of seaweed"],
+					"answer": 2,
+					"find": "rope of seaweed",
+					"hint": "Look for the moment {friend} sat down in a puddle."
+				},
+				{
+					"id": "q2",
+					"q": "What did {hero} notice in the wet sand beside their own footprints?",
+					"options": [
+						"The tracks of a car",
+						"A second set of small bare footprints, a few steps behind",
+						"Nothing at all, only their own prints"
+					],
+					"answer": 1,
+					"find": "second set of footprints",
+					"hint": "Think about what {hero} saw when the torch swung behind them."
+				},
+				{
+					"id": "q3",
+					"q": "What happened when they stepped inside the lighthouse?",
+					"options": [
+						"The door slammed shut behind them",
+						"The light went out",
+						"The stairs fell down"
+					],
+					"answer": 0,
+					"find": "The door slammed behind them",
+					"hint": "Look at the very end of the chapter."
+				}
 			]
 		},
 		{
@@ -384,6 +494,44 @@
 				"{hero} pulled {hero.self} up through the trapdoor, onto cold glass-smooth boards, and looked at the great lamp. Eight faces were pressed against the glass from the inside. They were looking out at {hero}.",
 				"One of them was a small girl in a yellow raincoat. Her mouth moved. {hero} could not hear the word through the glass. {hero} could only read it.",
 				"Run."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What was odd about the yellow raincoats on the landings?",
+					"options": [
+						"They were all brand new",
+						"They were dripping, but the floor beneath was dry",
+						"They were far too small to wear"
+					],
+					"answer": 1,
+					"find": "dripping, though the floor",
+					"hint": "Read the first landing again."
+				},
+				{
+					"id": "q2",
+					"q": "What did the voice ask them to do?",
+					"options": [
+						"Go home straight away",
+						"Bring a torch up the stairs",
+						"Come up and help, because it had been alone for a long time"
+					],
+					"answer": 2,
+					"find": "Come up and help me",
+					"hint": "Think about what the voice said at two hundred steps."
+				},
+				{
+					"id": "q3",
+					"q": "What did {hero} see when {hero.he} climbed into the lamp room?",
+					"options": [
+						"Eight faces pressed against the glass, looking out",
+						"A sleeping lighthouse keeper",
+						"An empty room with the lamp switched off"
+					],
+					"answer": 0,
+					"find": "Eight faces",
+					"hint": "Look at the end of the chapter."
+				}
 			]
 		},
 		{
@@ -466,6 +614,44 @@
 				"Far below, a door crashed open. Water was coming up the stairs.",
 				"The Keeper’s hood lifted, and for the first time {hero} could see what was inside it. A face the colour of old candle wax. Two grey eyes. It was smiling.",
 				"“The tide,” said the Keeper. “I do so hate to hurry people.”"
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What was the girl in the yellow raincoat trying to tell {hero}?",
+					"options": [
+						"To look at the little brass lantern",
+						"To jump out of the window",
+						"To be very quiet"
+					],
+					"answer": 0,
+					"find": "Behind him",
+					"hint": "Think about what she mouthed to {hero}."
+				},
+				{
+					"id": "q2",
+					"q": "What did the Keeper want from the visitors?",
+					"options": [
+						"Help finding the way home",
+						"A ninth face for the hungry light",
+						"Their supper"
+					],
+					"answer": 1,
+					"find": "wants a ninth",
+					"hint": "Listen to what the Keeper said about the light."
+				},
+				{
+					"id": "q3",
+					"q": "What did the Keeper’s words about a boy make {hero} think of?",
+					"options": [
+						"Mr Pascoe, the old man from the chip shop",
+						"{grownup}, back at the cottage",
+						"The girl in the yellow raincoat"
+					],
+					"answer": 0,
+					"find": "followed me up these stairs",
+					"hint": "Remember who told {hero} about the lighthouse at supper."
+				}
 			]
 		},
 		{
@@ -528,6 +714,44 @@
 				"“Because,” said Wren, “it has already started to look at you.”",
 				"{hero} felt it. It was a gentle, warm pull behind {hero’s} eyes, as if someone were drawing a curtain across the back of {hero’s} head. It felt nice. It felt like falling asleep in the car.",
 				"{hero} turned, very slowly, and looked at the light."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What did {friend} snatch up before they ran for the door?",
+					"options": [
+						"The big torch",
+						"The iron hammer",
+						"The little brass lantern"
+					],
+					"answer": 2,
+					"find": "snatched it up",
+					"hint": "Think about what fell from the hook."
+				},
+				{
+					"id": "q2",
+					"q": "Why couldn’t they walk home along the causeway?",
+					"options": [
+						"The sea had covered it",
+						"The Keeper had locked the gate",
+						"The sand had turned to ice"
+					],
+					"answer": 0,
+					"find": "covered it",
+					"hint": "Look at what they saw from the gallery."
+				},
+				{
+					"id": "q3",
+					"q": "Which of these did Wren NOT say was a way to stop the light?",
+					"options": [
+						"Break the big glass",
+						"Blow out the lamp",
+						"Turn the lens round"
+					],
+					"answer": 1,
+					"find": "Break the big glass",
+					"hint": "Read what Wren said on the balcony."
+				}
 			]
 		},
 		{
@@ -577,6 +801,36 @@
 				"{pet} flattened {pet.self} against {hero’s} legs and refused to move.",
 				"The Keeper stopped. Its head tilted, and its hood slipped back a little further. {hero} saw, for the first time, what the Keeper had really been looking at all this time. It was not looking at {hero}, nor at {friend}. It was looking at the lantern.",
 				"And behind it, the great lens gave a deep, grinding groan, and every one of the eight faces turned to watch."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What pulled {hero} out of the spell of the light?",
+					"options": [
+						"{friend} shouting from the stairs",
+						"{pet} tugging hard on {hero’s} sleeve",
+						"A bucket of cold sea water"
+					],
+					"answer": 1,
+					"find": "hauled backwards",
+					"hint": "Think about who was warm and wet and furious."
+				},
+				{
+					"id": "q2",
+					"q": "What did the sign above the brass handle say?",
+					"options": ["EMERGENCY", "KEEPER", "ROTATE LENS"],
+					"answer": 2,
+					"find": "ROTATE LENS",
+					"hint": "Look at the three things on the far wall."
+				},
+				{
+					"id": "q3",
+					"q": "What had the Keeper really been looking at all along?",
+					"options": ["The little lantern", "{hero}’s face", "The sea"],
+					"answer": 0,
+					"find": "looking at the lantern",
+					"hint": "Think about what made the Keeper look afraid."
+				}
 			]
 		},
 		{
@@ -626,6 +880,44 @@
 				"“Hold on,” said {hero}, to the faces, to Wren, to the sea. “Please hold on. Somebody’s coming.”",
 				"The tower shook.",
 				"Then the light went out, and the whole world went dark."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What signal did the light flash across the water?",
+					"options": [
+						"Three short, three long, three short",
+						"Two long and two short",
+						"One slow flash, then darkness"
+					],
+					"answer": 0,
+					"find": "Three short",
+					"hint": "It is the same signal from the very first chapter."
+				},
+				{
+					"id": "q2",
+					"q": "Who saw the signal and pulled on his boots?",
+					"options": [
+						"A fisherman out at sea",
+						"Mr Pascoe, the chip shop owner",
+						"{grownup}"
+					],
+					"answer": 1,
+					"find": "pulled on his boots",
+					"hint": "Think about who lives above the chip shop."
+				},
+				{
+					"id": "q3",
+					"q": "What did {hero} tell the faces?",
+					"options": [
+						"That the light would never go out",
+						"That {hero.he} would stay with them for ever",
+						"That somebody was coming"
+					],
+					"answer": 2,
+					"find": "Please hold on",
+					"hint": "Look for the words {hero} said before the tower shook."
+				}
 			]
 		}
 	],
