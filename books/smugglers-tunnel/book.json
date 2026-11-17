@@ -8,8 +8,8 @@
 		"scene": {
 			"mood": "cave",
 			"elements": ["map"],
-			"align": "xMidYMid",
-			"alt": "An old harbour map, torn along one edge, with its missing corner and a red cross lying beside it."
+			"alt": "An old harbour map, torn along one edge, with its missing corner and a red cross lying beside it.",
+			"align": "xMidYMid"
 		}
 	},
 	"traits": ["brave", "kind", "clever"],
@@ -291,8 +291,8 @@
 			"title": "The Lantern with a Secret",
 			"scene": {
 				"mood": "dusk",
-				"elements": ["clouds", "gulls", "hills", "sea", "village"],
-				"alt": "Saltwick harbour at sunset, with every boat lying on its side in the mud."
+				"elements": ["clouds", "gulls", "shop"],
+				"alt": "The Old Rope Shop at dusk, a lantern-filled window glowing beside its door."
 			},
 			"blocks": [
 				"The bus dropped them at the end of the harbour wall and drove off, as if it had somewhere better to be.",
@@ -319,8 +319,8 @@
 				{
 					"scene": {
 						"mood": "night",
-						"elements": ["stars", "moon", "sea", "village"],
-						"alt": "An attic room lit by one small lantern."
+						"elements": ["attic"],
+						"alt": "An attic room, with a single lantern glowing on the floor."
 					}
 				},
 				"{hero} noticed that this lantern had a dent in its brass base. Something inside it rattled.",
@@ -378,8 +378,8 @@
 			"title": "Lamps on the Quay",
 			"scene": {
 				"mood": "night",
-				"elements": ["stars", "moon", "sea", "village"],
-				"alt": "A small round window looking out over a dark harbour."
+				"elements": ["attic"],
+				"alt": "The attic: a round window over the moonlit harbour, three beds, one small lantern."
 			},
 			"blocks": [
 				"{hero} shoved the map under the pillow and the lantern under the bed, and pulled the blanket up to {hero.his} chin. {friend} and {cousin} did the same, a little too fast. Three lumps in three beds. {cousin} began to snore. It was the worst snoring any of them had ever heard.",
@@ -446,8 +446,8 @@
 				{
 					"scene": {
 						"mood": "night",
-						"elements": ["stars", "moon", "sea", "village", "fog"],
-						"alt": "The harbour wall at night, lobster pots stacked in the shadows."
+						"elements": ["stars", "moon", "crates"],
+						"alt": "The quay at night: stacked crates and a shaded lantern."
 					}
 				},
 				"Whichever way the night had begun, the three of them ended up crouching on the quay in the dark with {pet} between their feet, while the lowest tide of the year pulled the sea away from Saltwick.",
@@ -498,8 +498,8 @@
 			"title": "What Hangs in the Bell",
 			"scene": {
 				"mood": "night",
-				"elements": ["stars", "moon", "sea", "village", "fog"],
-				"alt": "The quay at night, with one shaded lantern and men carrying crates."
+				"elements": ["stars", "moon", "crates", "fog"],
+				"alt": "The quay at night: stacked crates, one shaded lantern, the boathouse beyond."
 			},
 			"blocks": [
 				"The beam held on the trainers. Then it climbed, up {cousin}’s legs, along the lobster pots, and settled with a click in the middle of {hero}’s face.",
@@ -579,6 +579,13 @@
 						"Rudd’s head snapped round. “Stay there,” he said, quietly, and he pointed one thick finger at each of them in turn. “All of you. I’ll be back.” He strode away along the wall."
 					]
 				},
+				{
+					"scene": {
+						"mood": "night",
+						"elements": ["stars", "moon", "bell", "fog"],
+						"alt": "The old iron bell on its post at the end of the quay, with a stone slab at its foot."
+					}
+				},
 				"The moment his footsteps were gone, {friend} grabbed {hero}’s sleeve. “The bell,” {friend} breathed. “Where the bell hangs silent, look up. {hero}, it’s right there.”",
 				"At the very end of the quay, on a post of black iron, hung a bell as big as a bucket. It was green with age. Its rope had been cut off long ago, and the stump of it swung in the fog.",
 				"They dragged a lobster crate to the foot of the post. {hero} climbed up, and looked up into the dark inside of the bell.",
@@ -630,8 +637,8 @@
 			"title": "Fog on the Mud",
 			"scene": {
 				"mood": "night",
-				"elements": ["stars", "moon", "sea", "village", "fog"],
-				"alt": "The quay at night, with a thin fog creeping in."
+				"elements": ["stars", "moon", "bell", "fog"],
+				"alt": "The bell at the end of the quay, with a thin fog creeping in."
 			},
 			"blocks": [
 				"Mr Fenn pulled them all into the shadow of the net locker, just as a torch beam swept the stretch of quay where they had been crouching.",
@@ -696,8 +703,8 @@
 				{
 					"scene": {
 						"mood": "night",
-						"elements": ["stars", "moon", "sea", "fog", "house"],
-						"alt": "A great grey plain of mud under the stars, with the black shape of the Old Boathouse ahead."
+						"elements": ["stars", "moon", "mud", "fog"],
+						"alt": "A great grey plain of mud, with a plank path leading to the dark Old Boathouse."
 					}
 				},
 				"He led them down the slimy steps at the end of the quay and out onto the floor of the harbour. The sea had gone. In its place lay a great grey plain of mud, shining under the stars, with forty boats lying on it like sleeping cows. A path of old planks ran across it toward the boathouse.",
@@ -754,8 +761,8 @@
 			"title": "The Dark Between",
 			"scene": {
 				"mood": "cave",
-				"elements": ["tunnel", "glow"],
-				"alt": "A low stone tunnel lit by a single yellow lamp."
+				"elements": ["chamber"],
+				"alt": "A vaulted chamber stacked with crates, one lamp hanging over a table."
 			},
 			"blocks": [
 				"“Behind the crates!” hissed {hero}.",
@@ -874,8 +881,8 @@
 			"title": "Water at Their Ankles",
 			"scene": {
 				"mood": "cave",
-				"elements": ["tunnel", "glow"],
-				"alt": "Seawater creeping across the stone floor of a tunnel."
+				"elements": ["chamber"],
+				"alt": "The crate chamber, with seawater creeping across its floor."
 			},
 			"blocks": [
 				"The water was at their ankles. It was cold enough to make {cousin} squeak.",
@@ -920,6 +927,13 @@
 								]
 							}
 						]
+					}
+				},
+				{
+					"scene": {
+						"mood": "cave",
+						"elements": ["shaft"],
+						"alt": "Looking up the Back Way: an iron ladder, a broken rung, a small square of sky with the bell in it."
 					}
 				},
 				"The ladder was old and black and slick with weed. {friend} went first, then {cousin}, then {hero}, with {pet} [[pet:dog=tucked under {hero’s} arm, wriggling, outraged|cat=clinging to {hero’s} jumper with all four sets of claws]].",
@@ -992,8 +1006,8 @@
 			"title": "Who Opened the Door?",
 			"scene": {
 				"mood": "night",
-				"elements": ["stars", "moon", "sea", "village", "fog"],
-				"alt": "The quay in thin fog, with a green old bell on its iron post."
+				"elements": ["stars", "moon", "bell", "fog"],
+				"alt": "The old bell on the quay in thin fog, with the stone slab at its foot."
 			},
 			"blocks": [
 				"Mr Fenn stood on the quay with his lantern turned low. He did not look like a villain. He looked like a tired old man who had been up much too late, and who still had a long way to go.",
@@ -1084,7 +1098,7 @@
 			"title": "Slack Water",
 			"scene": {
 				"mood": "night",
-				"elements": ["stars", "moon", "sea", "village", "fog"],
+				"elements": ["stars", "moon", "bell", "headlamps", "fog"],
 				"alt": "The lorry’s headlamps washing over the old bell in the fog."
 			},
 			"blocks": [
@@ -1208,8 +1222,8 @@
 			},
 			"scene": {
 				"mood": "dawn",
-				"elements": ["clouds", "gulls", "sea", "village", "boat"],
-				"alt": "Dawn over Saltwick harbour, with the tide coming back in around the boats."
+				"elements": ["clouds", "gulls", "shop"],
+				"alt": "Dawn over the Old Rope Shop, a small lantern still glowing in its window."
 			},
 			"blocks": [
 				"Mr Fenn did not move for what felt like a whole minute. Headlamps washed over him. Down in the shaft, boots rang closer.",
@@ -1259,8 +1273,8 @@
 			},
 			"scene": {
 				"mood": "dawn",
-				"elements": ["clouds", "gulls", "sea", "village", "boat"],
-				"alt": "Dawn over Saltwick harbour, with police lights on the quay."
+				"elements": ["clouds", "mud"],
+				"alt": "Dawn over the harbour floor, the plank path leading to the boathouse."
 			},
 			"blocks": [
 				"Mr Fenn looked at {hero} for a long time. Boots rang on the ladder. The boat’s engine growled in the fog.",
@@ -1307,8 +1321,8 @@
 			},
 			"scene": {
 				"mood": "dawn",
-				"elements": ["clouds", "gulls", "sea", "village", "boat"],
-				"alt": "Dawn over Saltwick harbour, with a small boat drifting far out."
+				"elements": ["clouds", "gulls", "bell", "dinghy"],
+				"alt": "Dawn at the old bell, with a small boat drifting far out to sea."
 			},
 			"blocks": [
 				"{hero} swung the bar at the bell with both arms.",
@@ -1357,8 +1371,8 @@
 			},
 			"scene": {
 				"mood": "dawn",
-				"elements": ["clouds", "gulls", "sea", "village"],
-				"alt": "Dawn over an empty harbour, and a bench with a tin of biscuits on it."
+				"elements": ["clouds", "gulls", "bench"],
+				"alt": "Dawn over the harbour, and an empty bench with a tin of biscuits on it."
 			},
 			"blocks": [
 				"Mr Fenn took what {hero} held out. He looked at it for a long time. Then he looked at the lorry, and at the boat in the fog, and at the slab beneath their feet, where a hand was just beginning to come up through the gap.",

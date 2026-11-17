@@ -77,6 +77,16 @@ const ORDER = [
 	"house",
 	"trees",
 	"map",
+	"shop",
+	"attic",
+	"crates",
+	"mud",
+	"chamber",
+	"shaft",
+	"bell",
+	"bench",
+	"dinghy",
+	"headlamps",
 	"tunnel",
 	"stairs",
 	"lens",
@@ -306,6 +316,187 @@ const DRAW = {
 			`</g></g>`
 		);
 	},
+
+	// ---- Smugglers' Tunnel kit: flat, minimal, no figures ----
+
+	// The Old Rope Shop front: crooked sign, glowing window of lanterns, door with a bell over it.
+	shop: ({ id, m }) => {
+		let lanterns = "";
+		[
+			[278, 200],
+			[304, 214],
+			[330, 200],
+			[356, 214],
+		].forEach(([x, y]) => {
+			lanterns += `<line x1="${x}" y1="186" x2="${x}" y2="${y - 6}" stroke="#2a1d12" stroke-width="2"/><rect x="${x - 6}" y="${y - 6}" width="12" height="16" rx="3" fill="#ffc86b"/>`;
+		});
+		return (
+			`<g>` +
+			`<rect x="0" y="296" width="800" height="64" fill="${m.land}"/>` +
+			`<path d="M215 300 L215 150 L400 84 L585 150 L585 300Z" fill="${m.land}"/>` +
+			`<path d="M205 154 L400 80 L595 154" fill="none" stroke="${m.far}" stroke-width="8" stroke-linejoin="round"/>` +
+			`<rect x="260" y="176" width="112" height="86" rx="4" fill="#ffd98a" opacity=".92"/>` +
+			`<ellipse class="flk" cx="316" cy="230" rx="130" ry="90" fill="url(#warm${id})"/>` +
+			`<rect x="260" y="176" width="112" height="86" rx="4" fill="none" stroke="#1b1208" stroke-width="5"/><path d="M316 176 V262 M260 219 H372" stroke="#1b1208" stroke-width="3"/>` +
+			lanterns +
+			`<rect x="438" y="196" width="62" height="104" rx="3" fill="#0e0a07"/><circle cx="487" cy="250" r="3" fill="#d6a74e"/>` +
+			`<path d="M462 176 q-7 0 -7 12 l14 0 q0 -12 -7 -12z" fill="#c9a24a"/><line x1="462" y1="170" x2="462" y2="176" stroke="#c9a24a" stroke-width="2"/>` +
+			`<g transform="rotate(-4 400 142)"><rect x="340" y="128" width="116" height="26" rx="3" fill="#2a1d12"/><circle cx="360" cy="141" r="6" fill="none" stroke="#d6a74e" stroke-width="2.4"/><circle cx="360" cy="141" r="2.4" fill="#d6a74e"/><path d="M376 141 H440" stroke="#d6a74e" stroke-width="2.4" stroke-dasharray="10 5"/></g>` +
+			`<circle cx="540" cy="284" r="14" fill="none" stroke="#8a6a3a" stroke-width="5"/><circle cx="540" cy="284" r="6" fill="none" stroke="#8a6a3a" stroke-width="4"/>` +
+			`</g>`
+		);
+	},
+
+	// Inside the attic: a round window with the moonlit harbour in it, three beds below, one lantern.
+	attic: ({ id, m }) => {
+		return (
+			`<g>` +
+			`<rect width="800" height="360" fill="#120e18"/>` +
+			`<path d="M0 0 L800 0 L800 40 L400 118 L0 40Z" fill="#0b0810"/><path d="M0 40 L400 118 L800 40" fill="none" stroke="#2a2030" stroke-width="6"/>` +
+			`<clipPath id="aw${id}"><circle cx="400" cy="178" r="84"/></clipPath>` +
+			`<g clip-path="url(#aw${id})"><rect x="300" y="90" width="200" height="180" fill="url(#sky${id})"/>` +
+			`<circle cx="446" cy="132" r="14" fill="#f7f1d0"/><rect x="300" y="196" width="200" height="80" fill="#0a1330"/>` +
+			`<path d="M300 226 H500" stroke="#1a2a5a" stroke-width="2"/>` +
+			`<circle cx="352" cy="214" r="2.6" fill="#ffc86b"/><circle cx="388" cy="218" r="2.6" fill="#ffc86b"/><circle cx="424" cy="214" r="2.6" fill="#ffc86b"/>` +
+			`<path d="M330 230 l22 0 l-4 8 l-14 0z M440 232 l24 0 l-4 8 l-16 0z" fill="#03050c"/></g>` +
+			`<circle cx="400" cy="178" r="86" fill="none" stroke="#3a2a1a" stroke-width="10"/><path d="M400 92 V264 M314 178 H486" stroke="#3a2a1a" stroke-width="6"/>` +
+			`<path d="M60 360 L60 290 Q60 270 90 270 L250 270 Q270 270 270 290 L270 360Z M300 360 L300 296 Q300 278 326 278 L474 278 Q496 278 496 296 L496 360Z M530 360 L530 290 Q530 270 560 270 L720 270 Q740 270 740 290 L740 360Z" fill="#0a0710"/>` +
+			`<ellipse class="flk" cx="400" cy="318" rx="130" ry="46" fill="url(#warm${id})"/>` +
+			`<rect x="390" y="296" width="20" height="28" rx="4" fill="#ffc86b"/><path d="M390 296 q10 -12 20 0" fill="none" stroke="#c9a24a" stroke-width="3"/>` +
+			`</g>`
+		);
+	},
+
+	// The quay at night: stacked crates, one shaded lantern with its pool of light, lobster pots, the boathouse beyond.
+	crates: ({ id, m }) => {
+		const crate = (x, y, w, h) =>
+			`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#1a130d"/><path d="M${x} ${y + h / 2} H${x + w} M${x + w / 3} ${y} V${y + h} M${x + (2 * w) / 3} ${y} V${y + h}" stroke="#0a0705" stroke-width="2.4"/>`;
+		return (
+			`<g>` +
+			`<rect x="0" y="206" width="800" height="62" fill="${m.sea}"/>` +
+			`<path d="M0 214 H800 M0 232 H800 M0 250 H800" stroke="${m.wave}" stroke-width="1.4" opacity=".22"/>` +
+			`<path d="M70 206 L70 150 L110 128 L170 128 L210 150 L210 206Z" fill="${m.land}"/><rect x="128" y="168" width="24" height="38" fill="#0a0a12"/>` +
+			`<rect x="0" y="262" width="800" height="98" fill="${m.land}"/><path d="M0 262 H800" stroke="${m.far}" stroke-width="4"/>` +
+			`<ellipse class="flk" cx="330" cy="304" rx="170" ry="40" fill="url(#warm${id})"/>` +
+			crate(470, 236, 58, 40) +
+			crate(530, 252, 50, 36) +
+			crate(486, 196, 50, 40) +
+			crate(580, 240, 62, 46) +
+			crate(600, 198, 54, 44) +
+			`<rect x="318" y="270" width="26" height="30" rx="3" fill="#0a0705"/><rect x="322" y="276" width="18" height="16" fill="#ffc86b"/><path d="M318 270 q13 -14 26 0" fill="none" stroke="#0a0705" stroke-width="4"/>` +
+			`<path d="M120 336 q0 -34 36 -34 q36 0 36 34Z M672 340 q0 -30 30 -30 q30 0 30 30Z" fill="#0a0705"/><path d="M138 336 V312 M156 336 V304 M174 336 V312 M684 340 V320 M702 340 V312 M720 340 V320" stroke="#1a130d" stroke-width="2.4"/>` +
+			`</g>`
+		);
+	},
+
+	// The old iron bell on its post at the end of the quay, with the stone slab and its ring below it.
+	bell: ({ id, m }) =>
+		`<g>` +
+		`<rect x="0" y="236" width="800" height="124" fill="${m.sea}"/><path d="M0 248 H800 M0 266 H800" stroke="${m.wave}" stroke-width="1.4" opacity=".22"/>` +
+		`<rect x="0" y="296" width="800" height="64" fill="${m.land}"/><path d="M0 296 H800" stroke="${m.far}" stroke-width="4"/>` +
+		`<rect x="372" y="318" width="56" height="34" rx="3" fill="${m.far}"/><circle cx="400" cy="335" r="7" fill="none" stroke="#8a8f99" stroke-width="3"/>` +
+		`<path d="M395 142 H405 V296 H395Z" fill="#0b1210"/><path d="M340 142 H460" stroke="#0b1210" stroke-width="8"/>` +
+		`<path d="M366 190 Q366 146 400 142 Q434 146 434 190 L444 204 H356Z" fill="#26413a"/><path d="M376 190 Q378 158 396 150" fill="none" stroke="#4d7a6c" stroke-width="3" opacity=".7"/>` +
+		`<circle cx="400" cy="210" r="6" fill="#0b1210"/>` +
+		`</g>`,
+
+	// The harbour floor at low tide: wet mud, boats on their sides, a plank path to the boathouse.
+	mud: ({ id, m }) => {
+		const hull = (x, y, s, t) =>
+			`<g transform="translate(${x},${y}) scale(${s}) rotate(${t})"><path d="M-40 0 Q0 24 40 0 L34 -8 Q0 8 -34 -8Z" fill="#05070f"/><path d="M-4 -6 L-2 -46" stroke="#05070f" stroke-width="3"/></g>`;
+		return (
+			`<g>` +
+			`<rect x="0" y="176" width="800" height="184" fill="#1d2133"/>` +
+			`<path d="M0 214 H800 M0 244 H800 M0 284 H800 M0 330 H800" stroke="${m.wave}" stroke-width="2" opacity=".18"/>` +
+			`<path d="M560 176 L640 176 L640 140 L600 118 L560 140Z" fill="#05070f"/><rect x="590" y="146" width="22" height="30" fill="#ffc86b" opacity=".85"/>` +
+			`<polygon points="392,360 436,360 612,178 598,178" fill="#3a2d22"/>` +
+			`<path d="M404 336 H438 M430 300 H466 M476 268 H508 M520 238 H548 M556 212 H580 M584 192 H602" stroke="#1a130d" stroke-width="2.4"/>` +
+			hull(150, 236, 1, -8) +
+			hull(300, 210, 0.7, 6) +
+			hull(220, 300, 1.3, -5) +
+			hull(700, 256, 1.1, 9) +
+			hull(470, 214, 0.6, -6) +
+			`</g>`
+		);
+	},
+
+	// The crate chamber under the harbour: vaulted roof, crate stacks, one hanging lamp over a table with a ledger.
+	chamber: ({ id, m }) => {
+		const stack = (x, w) => {
+			let s = "";
+			for (let row = 0; row < 4; row++)
+				for (let c = 0; c < 2; c++) {
+					const cw = w / 2,
+						cx = x + c * cw,
+						cy = 330 - (row + 1) * 36;
+					s += `<rect x="${cx}" y="${cy}" width="${cw - 2}" height="34" fill="#16110d"/><path d="M${cx} ${cy + 17} H${cx + cw - 2}" stroke="#070504" stroke-width="2"/>`;
+				}
+			return s;
+		};
+		return (
+			`<g>` +
+			`<rect width="800" height="360" fill="#07080e"/>` +
+			`<path d="M0 360 V150 Q400 -40 800 150 V360Z" fill="#0b0d16"/>` +
+			`<path d="M60 360 V160 Q400 -10 740 160 V360 M170 360 V176 Q400 40 630 176 V360" fill="none" stroke="#1a1c2a" stroke-width="5"/>` +
+			`<path d="M0 330 H800 V360 H0Z" fill="#0e1018"/><path d="M0 338 H800" stroke="${m.wave}" stroke-width="1.6" opacity=".25"/>` +
+			`<path d="M360 300 V230 Q360 196 400 196 Q440 196 440 230 V300Z" fill="#020308"/>` +
+			stack(70, 150) +
+			stack(580, 150) +
+			`<line x1="400" y1="0" x2="400" y2="132" stroke="#2a2430" stroke-width="2"/><path d="M386 142 Q400 112 414 142Z" fill="#2a2430"/><circle cx="400" cy="144" r="5" fill="#fff0b3"/>` +
+			`<ellipse class="flk" cx="400" cy="230" rx="170" ry="130" fill="url(#warm${id})"/>` +
+			`<rect x="352" y="268" width="96" height="10" fill="#2a1d12"/><path d="M364 278 V330 M436 278 V330" stroke="#2a1d12" stroke-width="5"/>` +
+			`<path d="M372 268 L400 262 L428 268 L428 258 L400 252 L372 258Z" fill="#f1e2b8"/><path d="M400 252 V264" stroke="#5a3f24" stroke-width="2"/>` +
+			`</g>`
+		);
+	},
+
+	// Looking straight up the Back Way: ladder, one broken rung, the bell in the square of sky, water coming in below.
+	shaft: ({ id, m }) => {
+		let rungs = "";
+		for (let i = 0; i < 11; i++) {
+			const y = 300 - i * 24;
+			rungs +=
+				i === 2
+					? `<path d="M386 ${y + 2} L398 ${y + 12} M414 ${y + 2} L404 ${y + 12}" stroke="#7a6a58" stroke-width="3.4" stroke-linecap="round"/>`
+					: `<path d="M386 ${y} H414" stroke="#7a6a58" stroke-width="3.4" stroke-linecap="round"/>`;
+		}
+		let bricks = "";
+		for (let y = 40; y < 340; y += 28)
+			bricks += `<path d="M300 ${y} H500" stroke="#161822" stroke-width="2"/>`;
+		return (
+			`<g>` +
+			`<rect width="800" height="360" fill="#04050a"/>` +
+			`<rect x="300" y="0" width="200" height="360" fill="#0d0f18"/>` +
+			bricks +
+			`<path d="M300 0 V360 M500 0 V360" stroke="#04050a" stroke-width="10"/>` +
+			`<rect x="350" y="0" width="100" height="44" fill="#8b97b8"/><rect x="350" y="0" width="100" height="44" fill="url(#lg${id})" opacity=".4"/>` +
+			`<path d="M388 38 Q388 14 400 12 Q412 14 412 38 L416 42 H384Z" fill="#26413a"/>` +
+			`<path d="M386 40 V320 M414 40 V320" stroke="#7a6a58" stroke-width="4"/>` +
+			rungs +
+			`<rect x="300" y="300" width="200" height="60" fill="${m.sea}"/><path d="M300 312 q25 -8 50 0 t50 0 t50 0 t50 0" fill="none" stroke="${m.wave}" stroke-width="2" opacity=".6"/>` +
+			`</g>`
+		);
+	},
+
+	// Headlamps of the lorry coming down the quay: two pale beams from the right edge.
+	headlamps: () =>
+		`<g><polygon points="800,206 250,170 250,290 800,250" fill="#fff6c8" opacity=".1"/>` +
+		`<polygon points="800,214 320,196 320,262 800,242" fill="#fff6c8" opacity=".12"/>` +
+		`<circle class="flk" cx="796" cy="214" r="22" fill="#fffbe0" opacity=".85"/><circle class="flk" cx="796" cy="246" r="22" fill="#fffbe0" opacity=".85"/></g>`,
+
+	// A small rowing boat drifting out past the harbour mouth.
+	dinghy: ({ m }) =>
+		`<g class="bob"><path d="M590 252 L650 252 L640 266 L600 266Z" fill="${m.land}"/><path d="M596 250 L574 238 M644 250 L666 238" stroke="${m.land}" stroke-width="2.4" stroke-linecap="round"/></g>`,
+
+	// Mr Fenn's empty bench on the harbour wall: net over the arm, tin of biscuits on the seat.
+	bench: ({ m }) =>
+		`<g>` +
+		`<rect x="0" y="226" width="800" height="70" fill="${m.sea}"/><path d="M0 240 H800 M0 258 H800" stroke="${m.wave}" stroke-width="1.4" opacity=".3"/>` +
+		`<rect x="0" y="292" width="800" height="68" fill="${m.land}"/><path d="M0 292 H800" stroke="${m.far}" stroke-width="4"/>` +
+		`<rect x="300" y="250" width="200" height="12" rx="3" fill="#1b130c"/><rect x="300" y="214" width="200" height="8" rx="3" fill="#1b130c"/><path d="M312 262 V294 M488 262 V294 M312 222 V250 M488 222 V250" stroke="#1b130c" stroke-width="7"/>` +
+		`<path d="M300 228 Q282 256 296 296 L330 296 Q322 262 336 244Z" fill="none" stroke="#2a2232" stroke-width="3"/><path d="M290 244 H330 M288 262 H326 M290 280 H322 M300 232 V296 M312 236 V296" stroke="#2a2232" stroke-width="1.6" opacity=".8"/>` +
+		`<rect x="424" y="236" width="30" height="14" rx="2" fill="#d6a74e"/><path d="M424 242 H454" stroke="#8a6a3a" stroke-width="2"/>` +
+		`</g>`,
 
 	tunnel: ({ id, r }) => {
 		let tex = "";
