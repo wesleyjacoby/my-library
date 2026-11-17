@@ -75,30 +75,57 @@ export function postcardEl(book, pc) {
 	);
 }
 
-// The strip on the library screen: stars so far and how far to the next prize
+// The banner on the library screen: stars so far and how far to the next prize
 export function strip(nav) {
 	const t = R.total();
 	const pend = R.pending();
 	const next = R.nextPrize();
-	let line;
+	let title;
+	let sub;
 	let pct = 0;
+	let icon = "🎁";
 	if (pend.length) {
-		line = `🏆 ${pend[0].name} is ready! Show a grown-up`;
+		title = pend[0].name;
+		sub = "Ready! Show a grown-up";
 		pct = 100;
+		icon = "🏆";
 	} else if (next) {
-		line = `${plural(next.stars - t, "star")} to go for ${next.name}`;
+		title = next.name;
+		sub = `${plural(next.stars - t, "star")} to go`;
 		pct = Math.min(100, Math.round((t / next.stars) * 100));
-	} else if (R.prizes().length) line = "You have collected every prize!";
-	else line = "Ask a grown-up to set a prize";
+	} else if (R.prizes().length) {
+		title = "Every prize collected!";
+		sub = "Ask a grown-up for a new one";
+		pct = 100;
+		icon = "🏆";
+	} else {
+		title = "Collect stars as you read";
+		sub = "Ask a grown-up to set a prize";
+	}
 	return h(
 		"button",
-		{ type: "button", class: "rewards-strip", onclick: () => nav("#/rewards") },
-		h("span", { class: "rs-count" }, `⭐ ${t}`),
+		{
+			type: "button",
+			class: `rewards-strip${pend.length ? " ready" : ""}`,
+			onclick: () => nav("#/rewards"),
+		},
+		h(
+			"span",
+			{ class: "rs-badge", "aria-label": plural(t, "star") },
+			h("span", { class: "rs-star", "aria-hidden": "true" }, "⭐"),
+			h("span", { class: "rs-num" }, String(t)),
+		),
 		h(
 			"span",
 			{ class: "rs-mid" },
-			h("span", { class: "rs-line" }, line),
-			h("span", { class: "rs-bar" }, h("i", { style: `width:${pct}%` })),
+			h("span", { class: "rs-title" }, title),
+			h(
+				"span",
+				{ class: "rs-bar" },
+				h("i", { style: `width:${pct}%` }),
+				h("b", { class: "rs-end", "aria-hidden": "true" }, icon),
+			),
+			h("span", { class: "rs-sub" }, sub),
 		),
 		h("span", { class: "rs-go", "aria-hidden": "true" }, "›"),
 	);
