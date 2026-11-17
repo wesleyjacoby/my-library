@@ -88,7 +88,11 @@ export function quizCard(book, chapter, article, onDone) {
 					b.classList.add("wrong");
 					b.disabled = true;
 					msg.replaceChildren(
-						`Not quite. ${plain(q.hint || "Have another look.", cast)} `,
+						h(
+							"span",
+							{},
+							`Not quite. ${plain(q.hint || "Have another look.", cast)}`,
+						),
 						h(
 							"button",
 							{
