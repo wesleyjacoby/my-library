@@ -100,6 +100,13 @@
 				"“It’s been empty for years. The tide cuts that rock off twice a day, and nobody goes near it.” {grownup} glanced in the mirror. “Not that anyone would want to.”",
 				"{hero} looked at {friend}. {friend} looked at {hero}. That was exactly the sort of thing a grown-up says when they want you to want to.",
 				"In the back, {pet} [[pet:dog=stood up on the seat and growled at the window|cat=flattened both ears and stared at the tower without blinking]]. {pet} had never done that before.",
+				{
+					"scene": {
+						"mood": "dusk",
+						"elements": ["house", "trees", "stars"],
+						"alt": "Periwinkle Cottage at dusk, one window glowing, the hedges close around it."
+					}
+				},
 				"Periwinkle Cottage sat at the top of a lane so narrow that the hedges scraped both sides of the car. It had a blue door, a crooked chimney and a garden gate that squeaked.",
 				"“Supper first,” said {grownup}. “Exploring tomorrow.”",
 				"The chip shop on the harbour was the only place still open. Behind the counter stood an old man with white eyebrows and hands as big as shovels. The sign above his head said PASCOE’S.",
@@ -126,15 +133,7 @@
 				{
 					"scene": {
 						"mood": "night",
-						"elements": [
-							"stars",
-							"moon",
-							"sea",
-							"cliff",
-							"lighthouse",
-							"beam",
-							"fog"
-						],
+						"elements": ["stars", "sea", "cliff", "lighthouse", "beam"],
 						"align": "xMaxYMid",
 						"alt": "At night, the empty lighthouse glowing, its beam sweeping across black water."
 					}
@@ -192,8 +191,8 @@
 			"title": "The Shadow on the Wall",
 			"scene": {
 				"mood": "night",
-				"elements": ["stars", "moon", "house", "trees", "fog"],
-				"alt": "Periwinkle Cottage at night, one window glowing."
+				"elements": ["shadow"],
+				"alt": "A white light on the bedroom wall, and a hand-shaped shadow raised inside it."
 			},
 			"blocks": [
 				"Nobody moved.",
@@ -264,16 +263,7 @@
 				{
 					"scene": {
 						"mood": "night",
-						"elements": [
-							"stars",
-							"moon",
-							"sea",
-							"causeway",
-							"cliff",
-							"lighthouse",
-							"beam",
-							"fog"
-						],
+						"elements": ["stars", "sea", "causeway", "cliff", "lighthouse"],
 						"align": "xMaxYMid",
 						"alt": "A wet sandy causeway stretching across the dark sea to the lighthouse."
 					}
@@ -324,17 +314,8 @@
 			"title": "The Causeway",
 			"scene": {
 				"mood": "night",
-				"elements": [
-					"stars",
-					"sea",
-					"causeway",
-					"cliff",
-					"lighthouse",
-					"beam",
-					"fog"
-				],
-				"align": "xMaxYMid",
-				"alt": "Two small figures on a long wet causeway, the lighthouse blinking ahead."
+				"elements": ["stars", "moon", "sea", "causeway", "fog"],
+				"alt": "A long wet causeway shining under the moon, with nothing at the end of it but dark."
 			},
 			"blocks": [
 				{
@@ -657,18 +638,10 @@
 		{
 			"title": "The Tide Comes In",
 			"scene": {
-				"mood": "night",
-				"elements": [
-					"stars",
-					"sea",
-					"cliff",
-					"lighthouse",
-					"beam",
-					"fog",
-					"rain"
-				],
-				"align": "xMaxYMid",
-				"alt": "The lighthouse in a storm, waves breaking against the rock below."
+				"mood": "storm",
+				"elements": ["sea", "cliff", "lighthouse", "beam", "rain", "fog"],
+				"alt": "The lighthouse in a storm, waves breaking against the rock below.",
+				"align": "xMaxYMid"
 			},
 			"blocks": [
 				{
@@ -758,8 +731,8 @@
 			"title": "Three Ways Out",
 			"scene": {
 				"mood": "night",
-				"elements": ["lens", "glow", "beam"],
-				"alt": "The great lens blazing white, filling the lamp room with light."
+				"elements": ["flare"],
+				"alt": "The great lamp at full blaze, white light filling everything."
 			},
 			"blocks": [
 				"White. That was all there was. White and very quiet.",
@@ -837,8 +810,8 @@
 			"title": "The Last Flash",
 			"scene": {
 				"mood": "night",
-				"elements": ["lens", "glow", "keeper"],
-				"alt": "The Keeper facing the blazing lens, the little lantern held out between them."
+				"elements": ["flare", "keeper", "glow"],
+				"alt": "The Keeper facing the white blaze, the little lantern held out between them."
 			},
 			"blocks": [
 				{
@@ -975,9 +948,9 @@
 				"is": "smash"
 			},
 			"scene": {
-				"mood": "dawn",
-				"elements": ["clouds", "gulls", "sea", "cliff", "lighthouse", "boat"],
-				"alt": "The dark lighthouse at dawn, gulls wheeling around it."
+				"mood": "day",
+				"elements": ["clouds", "gulls", "sea", "cliff", "lighthouse"],
+				"alt": "The dark lighthouse on a bright morning, gulls wheeling around it."
 			},
 			"blocks": [
 				"The lens burst. A thousand pieces of glass flew out into the night, and each piece, for one bright second, held a face. Then every one of them was gone, as if a window had been thrown open.",
@@ -999,8 +972,8 @@
 			},
 			"scene": {
 				"mood": "dawn",
-				"elements": ["clouds", "gulls", "sea", "cliff", "lighthouse", "boat"],
-				"alt": "Dawn over the bay, the lighthouse quiet and pale."
+				"elements": ["moon", "sea", "cliff", "lighthouse", "fog"],
+				"alt": "Dawn over the bay, a pale moon fading and the lighthouse quiet in the mist."
 			},
 			"blocks": [
 				"In the great glass, the light folded back on itself. The Keeper’s own face stared out at it, enormous, from every one of the lens’s hundred prisms.",
@@ -1023,8 +996,8 @@
 			},
 			"scene": {
 				"mood": "dawn",
-				"elements": ["clouds", "gulls", "sea", "cliff", "lighthouse", "boat"],
-				"alt": "Sunrise behind the lighthouse, a small steady light in its window."
+				"elements": ["sun", "sea", "cliff", "lighthouse"],
+				"alt": "Sunrise behind the lighthouse, golden light on the water."
 			},
 			"blocks": [
 				"The little flame leapt from the lantern to the great wick. The huge lens kindled, not white and hungry, but gold, soft and warm as a kitchen at night.",

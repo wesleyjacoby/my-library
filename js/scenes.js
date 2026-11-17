@@ -64,6 +64,7 @@ const MOODS = {
 const ORDER = [
 	"stars",
 	"moon",
+	"sun",
 	"clouds",
 	"gulls",
 	"hills",
@@ -89,6 +90,8 @@ const ORDER = [
 	"headlamps",
 	"tunnel",
 	"stairs",
+	"shadow",
+	"flare",
 	"lens",
 	"keeper",
 	"glow",
@@ -497,6 +500,38 @@ const DRAW = {
 		`<path d="M300 228 Q282 256 296 296 L330 296 Q322 262 336 244Z" fill="none" stroke="#2a2232" stroke-width="3"/><path d="M290 244 H330 M288 262 H326 M290 280 H322 M300 232 V296 M312 236 V296" stroke="#2a2232" stroke-width="1.6" opacity=".8"/>` +
 		`<rect x="424" y="236" width="30" height="14" rx="2" fill="#d6a74e"/><path d="M424 242 H454" stroke="#8a6a3a" stroke-width="2"/>` +
 		`</g>`,
+
+	// ---- Gull Rock extras ----
+
+	// A low sun on the horizon, half hidden by the sea.
+	sun: ({ id }) =>
+		`<g><circle class="flk" cx="500" cy="242" r="190" fill="url(#warm${id})"/><circle cx="500" cy="242" r="38" fill="#ffe2b0"/></g>`,
+
+	// The bedroom wall: a slanted patch of white light from the window, and a hand-shaped shadow raised inside it.
+	shadow: () =>
+		`<g><rect width="800" height="360" fill="#0c0a13"/>` +
+		`<polygon points="420,0 700,0 760,360 380,360" fill="#dfe6fa" opacity=".42"/>` +
+		`<path d="M560 0 L570 360 M420 150 L730 160" stroke="#0c0a13" stroke-width="10" opacity=".55"/>` +
+		`<g fill="#05040a"><path d="M556 360 L566 262 L610 262 L620 360Z"/><ellipse cx="588" cy="244" rx="30" ry="34"/>` +
+		`<rect x="552" y="168" width="11" height="68" rx="5.5" transform="rotate(-14 557 236)"/><rect x="568" y="146" width="11" height="84" rx="5.5" transform="rotate(-5 573 230)"/>` +
+		`<rect x="584" y="142" width="11" height="88" rx="5.5" transform="rotate(4 589 230)"/><rect x="600" y="154" width="11" height="78" rx="5.5" transform="rotate(12 605 232)"/>` +
+		`<rect x="618" y="214" width="11" height="52" rx="5.5" transform="rotate(62 623 238)"/></g>` +
+		`<path d="M0 0 L120 0 Q90 180 130 360 L0 360Z" fill="#17111f"/></g>`,
+
+	// Blinding white light: a flare with spokes, used for the lamp at full blaze.
+	flare: ({ id }) => {
+		let spokes = "";
+		for (let i = 0; i < 24; i++) {
+			const a = (i * Math.PI) / 12;
+			spokes += `<line x1="400" y1="180" x2="${n0(400 + Math.cos(a) * 520)}" y2="${n0(180 + Math.sin(a) * 520)}"/>`;
+		}
+		return (
+			`<g><rect width="800" height="360" fill="#14100a"/>` +
+			`<circle cx="400" cy="180" r="360" fill="url(#lg${id})"/><circle cx="400" cy="180" r="220" fill="url(#lg${id})"/>` +
+			`<g stroke="#fffbe0" stroke-width="3" opacity=".22">${spokes}</g>` +
+			`<circle class="pulse" cx="400" cy="180" r="70" fill="#fffef2"/></g>`
+		);
+	},
 
 	tunnel: ({ id, r }) => {
 		let tex = "";
