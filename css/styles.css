@@ -1813,3 +1813,19 @@ html[data-anim="on"] .rw-star {
 	font-size: 1.8rem;
 	color: rgba(255, 255, 255, 0.6);
 }
+
+/* coming-soon card */
+.book-card.soon .cover {
+	filter: saturate(0.55) brightness(0.85);
+}
+.book-card.soon .btn:disabled {
+	opacity: 0.55;
+	cursor: default;
+}
+.book-card.soon:hover {
+	transform: none;
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+.book-card.soon:hover .cover svg {
+	transform: none;
+}

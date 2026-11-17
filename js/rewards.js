@@ -145,15 +145,17 @@ export const postcards = () => R().postcards;
 
 // Most stars the library can pay out (chapters, bonuses, book finish, endings)
 export function maxStars(books) {
-	return [...books].reduce(
-		(n, b) =>
-			n +
-			b.chapters.length +
-			b.chapters.filter((c) => (c.questions || []).length).length +
-			1 +
-			2 * b.endings.length,
-		0,
-	);
+	return [...books]
+		.filter((b) => !b.soon)
+		.reduce(
+			(n, b) =>
+				n +
+				b.chapters.length +
+				b.chapters.filter((c) => (c.questions || []).length).length +
+				1 +
+				2 * b.endings.length,
+			0,
+		);
 }
 
 // ---- grown-ups PIN ----

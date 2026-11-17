@@ -1,0 +1,1384 @@
+{
+	"id": "smugglers-tunnel",
+	"title": "The Smugglers’ Tunnel",
+	"tagline": "A secret under the harbour. A map with a piece missing. One night to find it.",
+	"blurb": "You are staying in the fishing village of Saltwick. Tonight is the lowest tide of the year, and someone has just broken into the shop where you sleep. A tense mystery with tough choices that change how the night ends.",
+	"ages": "8+",
+	"cover": {
+		"scene": {
+			"mood": "dusk",
+			"elements": [
+				"stars",
+				"moon",
+				"clouds",
+				"gulls",
+				"hills",
+				"sea",
+				"village"
+			],
+			"alt": "A harbour village at dusk, windows glowing under a rising moon.",
+			"align": "xMinYMid"
+		}
+	},
+	"traits": ["brave", "kind", "clever"],
+	"cast": [
+		{
+			"key": "hero",
+			"label": "Your name",
+			"placeholder": "Type your name",
+			"default": "Alex",
+			"required": true,
+			"pronouns": ["she", "he", "they"],
+			"pronounLabel": "Which fits you best?"
+		},
+		{
+			"key": "friend",
+			"label": "Your best friend’s name",
+			"placeholder": "Best friend",
+			"default": "Sam",
+			"altDefault": "Jess",
+			"pronouns": ["she", "he", "they"],
+			"pronounLabel": "Which fits your best friend?"
+		},
+		{
+			"key": "cousin",
+			"label": "A cousin or second friend",
+			"placeholder": "Cousin or friend",
+			"default": "Max",
+			"altDefault": "Zoe",
+			"pronouns": ["she", "he", "they"],
+			"pronounLabel": "Which fits them?"
+		},
+		{
+			"key": "pet",
+			"label": "Your pet’s name",
+			"placeholder": "Pet",
+			"default": "Biscuit",
+			"altDefault": "Pepper",
+			"pronouns": ["he", "she", "it"],
+			"pronounDefault": "he",
+			"pronounLabel": "Is your pet a…",
+			"variants": {
+				"label": "Dog or cat?",
+				"options": [
+					{
+						"id": "dog",
+						"label": "Dog"
+					},
+					{
+						"id": "cat",
+						"label": "Cat"
+					}
+				]
+			}
+		}
+	],
+	"syllables": {
+		"saltwick": "salt-wick",
+		"quay": "quay",
+		"afternoon": "af-ter-noon",
+		"aloud": "a-loud",
+		"although": "al-though",
+		"angry": "an-gry",
+		"ankles": "an-kles",
+		"answered": "an-swered",
+		"apart": "a-part",
+		"apology": "a-pol-o-gy",
+		"armchair": "arm-chair",
+		"attic": "at-tic",
+		"awake": "a-wake",
+		"barely": "bare-ly",
+		"beginning": "be-gin-ning",
+		"believe": "be-lieve",
+		"believed": "be-lieved",
+		"bellowed": "bel-lowed",
+		"biscuit": "bis-cuit",
+		"biscuits": "bis-cuits",
+		"boathouse": "boat-house",
+		"boatman": "boat-man",
+		"bobbing": "bob-bing",
+		"body": "bod-y",
+		"borrowed": "bor-rowed",
+		"bravest": "brav-est",
+		"breathlessly": "breath-less-ly",
+		"bucket": "buck-et",
+		"buoys": "buoys",
+		"calmest": "calm-est",
+		"cannot": "can-not",
+		"captain": "cap-tain",
+		"cargo": "car-go",
+		"carrying": "car-ry-ing",
+		"cellar": "cel-lar",
+		"chamber": "cham-ber",
+		"cheerfully": "cheer-ful-ly",
+		"children": "chil-dren",
+		"clapper": "clap-per",
+		"clinging": "cling-ing",
+		"clinking": "clink-ing",
+		"coastguard": "coast-guard",
+		"compasses": "com-pass-es",
+		"counting": "count-ing",
+		"crashing": "crash-ing",
+		"crouching": "crouch-ing",
+		"cutter": "cut-ter",
+		"dangling": "dan-gling",
+		"daniel": "dan-iel",
+		"decide": "de-cide",
+		"diesel": "die-sel",
+		"dinghy": "ding-hy",
+		"directly": "di-rect-ly",
+		"dolly": "dol-ly",
+		"downstairs": "down-stairs",
+		"dozen": "doz-en",
+		"dozens": "doz-ens",
+		"drawer": "draw-er",
+		"drifting": "drift-ing",
+		"early": "ear-ly",
+		"eleven": "e-lev-en",
+		"embarrassed": "em-bar-rassed",
+		"endless": "end-less",
+		"everyone": "ev-ery-one",
+		"evidence": "ev-i-dence",
+		"exit": "ex-it",
+		"expect": "ex-pect",
+		"familiar": "fa-mil-iar",
+		"fancy": "fan-cy",
+		"fifteen": "fif-teen",
+		"finish": "fin-ish",
+		"fishermen": "fish-er-men",
+		"folding": "fold-ing",
+		"footsteps": "foot-steps",
+		"forgotten": "for-got-ten",
+		"fourteen": "four-teen",
+		"furthest": "fur-thest",
+		"ginger": "gin-ger",
+		"grumbling": "grum-bling",
+		"gurgling": "gur-gling",
+		"hammered": "ham-mered",
+		"handwriting": "hand-writ-ing",
+		"happen": "hap-pen",
+		"haven": "hav-en",
+		"headlamps": "head-lamps",
+		"hearing": "hear-ing",
+		"hesitate": "hes-i-tate",
+		"hidden": "hid-den",
+		"higher": "high-er",
+		"himself": "him-self",
+		"holiday": "hol-i-day",
+		"hollow": "hol-low",
+		"hopping": "hop-ping",
+		"hunting": "hunt-ing",
+		"idea": "i-de-a",
+		"jigsaw": "jig-saw",
+		"jumper": "jump-er",
+		"ladder": "lad-der",
+		"lamplight": "lamp-light",
+		"lanterns": "lan-terns",
+		"leather": "leath-er",
+		"ledger": "ledg-er",
+		"lightly": "light-ly",
+		"listening": "lis-ten-ing",
+		"littered": "lit-tered",
+		"loading": "load-ing",
+		"lobster": "lob-ster",
+		"locker": "lock-er",
+		"lorry": "lor-ry",
+		"lower": "low-er",
+		"lowest": "low-est",
+		"marching": "march-ing",
+		"marigold": "mar-i-gold",
+		"matter": "mat-ter",
+		"mattered": "mat-tered",
+		"mending": "mend-ing",
+		"missing": "miss-ing",
+		"moments": "mo-ments",
+		"money": "mon-ey",
+		"muscle": "mus-cle",
+		"myself": "my-self",
+		"nightie": "night-ie",
+		"oilskin": "oil-skin",
+		"opening": "o-pen-ing",
+		"outraged": "out-raged",
+		"overhead": "o-ver-head",
+		"paving": "pav-ing",
+		"peppermints": "pep-per-mints",
+		"perhaps": "per-haps",
+		"picture": "pic-ture",
+		"piling": "pil-ing",
+		"pillow": "pil-low",
+		"pointing": "point-ing",
+		"poking": "pok-ing",
+		"police": "po-lice",
+		"policeman": "po-lice-man",
+		"policemen": "po-lice-men",
+		"postcard": "post-card",
+		"potatoes": "po-ta-toes",
+		"pouring": "pour-ing",
+		"probably": "prob-a-bly",
+		"problem": "prob-lem",
+		"properly": "prop-er-ly",
+		"quickly": "quick-ly",
+		"rather": "rath-er",
+		"regret": "re-gret",
+		"repeated": "re-peat-ed",
+		"respect": "re-spect",
+		"reversed": "re-versed",
+		"ripping": "rip-ping",
+		"rolling": "roll-ing",
+		"rubber": "rub-ber",
+		"secrets": "se-crets",
+		"seeing": "see-ing",
+		"several": "sev-er-al",
+		"shining": "shin-ing",
+		"shortest": "short-est",
+		"shoulder": "shoul-der",
+		"shoulders": "shoul-ders",
+		"signalling": "sig-nal-ling",
+		"signals": "sig-nals",
+		"silent": "si-lent",
+		"silly": "sil-ly",
+		"sitting": "sit-ting",
+		"slamming": "slam-ming",
+		"sleeping": "sleep-ing",
+		"sliding": "slid-ing",
+		"slimy": "slim-y",
+		"smelling": "smell-ing",
+		"sometimes": "some-times",
+		"sorry": "sor-ry",
+		"squeak": "squeak",
+		"steadily": "stead-i-ly",
+		"station": "sta-tion",
+		"story": "sto-ry",
+		"studied": "stud-ied",
+		"stupid": "stu-pid",
+		"sucking": "suck-ing",
+		"sweating": "sweat-ing",
+		"taking": "tak-ing",
+		"taller": "tall-er",
+		"teacup": "tea-cup",
+		"thinking": "think-ing",
+		"thirteen": "thir-teen",
+		"thirty": "thir-ty",
+		"tilda": "til-da",
+		"tiptoe": "tip-toe",
+		"tongue": "tongue",
+		"toward": "to-ward",
+		"towers": "tow-ers",
+		"trainers": "train-ers",
+		"travelled": "trav-elled",
+		"treasure": "treas-ure",
+		"tunnel": "tun-nel",
+		"underneath": "un-der-neath",
+		"unfolded": "un-fold-ed",
+		"unlock": "un-lock",
+		"unlocked": "un-locked",
+		"upward": "up-ward",
+		"urgent": "ur-gent",
+		"villain": "vil-lain",
+		"wellingtons": "wel-ling-tons",
+		"whenever": "when-ev-er",
+		"whichever": "which-ev-er",
+		"whisper": "whis-per",
+		"whistle": "whis-tle",
+		"wildly": "wild-ly",
+		"winter": "win-ter",
+		"wooden": "wood-en",
+		"wriggling": "wrig-gling",
+		"writing": "writ-ing",
+		"yourselves": "your-selves",
+		"while": "while",
+		"rule": "rule",
+		"sale": "sale",
+		"smile": "smile",
+		"miles": "miles",
+		"using": "using",
+		"dorothea": "dor-o-the-a"
+	},
+	"chapters": [
+		{
+			"title": "The Lantern with a Secret",
+			"scene": {
+				"mood": "dusk",
+				"elements": ["clouds", "gulls", "hills", "sea", "village"],
+				"alt": "Saltwick harbour at sunset, with every boat lying on its side in the mud."
+			},
+			"blocks": [
+				"The bus dropped them at the end of the harbour wall and drove off, as if it had somewhere better to be.",
+				"Saltwick was one street, one church and about forty boats. Every boat lay tipped on its side in the mud, because the tide was out. The air smelled of salt, seaweed and, very faintly, chips.",
+				"{hero}, {friend} and {cousin} stood in a row with their bags. {pet} [[pet:dog=sat down on the wet stones and sighed|cat=climbed into the biggest bag and refused to come out]].",
+				"“She said she’d meet us,” said {friend}. “She’s probably forgotten.”",
+				"“Forgotten what?” said a voice.",
+				"On the bench behind them sat an old man with a white beard, mending a fishing net. He had a tin of ginger biscuits open on his knee, and one thumbnail was as black as a tarred plank.",
+				"“You’ll be Tilda Ames’s lot,” he said. “Up at the Old Rope Shop. Biscuit?”",
+				"Nobody said no. They were very good biscuits.",
+				"“Fenn,” said the old man, shaking {hero’s} hand with one finger, because the rest of his hand was full of net. “Mr Fenn. Boatman. Fifty years. Ask me anything about Saltwick.”",
+				"“Why are all the boats lying down?” asked {cousin}.",
+				"“Low water. The tide goes out a long way here.” Mr Fenn did not look at the sea, or at a watch, or at anything. “Tonight it goes out furthest of all. The lowest water of the year, at ten to midnight. After that it comes back fast, and anyone standing in the wrong place gets wet to the knees. Or the neck.”",
+				"“How do you know without looking it up?” asked {friend}.",
+				"“Fifty years of looking,” said Mr Fenn, and winked, and passed the biscuits round again.",
+				"“There you are!” A small woman in a yellow raincoat came marching along the quay, although the sun was out. (Quay is spelled q-u-a-y and said “key”. The people of Saltwick were very proud of this.) She was {friend}’s Gran, Mrs Ames, and she hugged {friend} so hard that {friend}’s feet left the ground.",
+				"“Fenn,” she said, with a nod. “Don’t feed them. They’ll not eat their supper.”",
+				"“Wouldn’t dream of it,” said Mr Fenn, with a crumb in his beard.",
+				"The Old Rope Shop stood at the top of the quay, with a crooked sign and a window full of brass. Inside, it was dim and cool and packed to the ceiling. Coils of rope hung from hooks. Tins of paint stood in towers. There were buoys and compasses and about forty lanterns, dangling from the beams and clinking together whenever anyone walked past. A bell over the door went clack.",
+				"“Rule one,” said Mrs Ames. “Nothing in the back room is for sale. Rule two: nobody climbs the ladder. Rule three: supper is at six, and I don’t care who’s hungry at five.”",
+				"Supper was fish pie, and it was enormous. Afterwards, Mrs Ames took out her hearing aid and dropped it into a teacup.",
+				"“That’s me finished,” she said cheerfully, and much too loudly. “A brass band could march through this kitchen and I’d never hear it. Bed at nine. The village turns the street lights off at nine anyway, to save money.”",
+				"The attic had a sloping ceiling, three camp beds, and one small round window that looked out over the whole harbour. At nine o’clock, every light in Saltwick went out at once. Mrs Ames had handed them an oil lantern from the shop. “Mind it,” she had said. “It’s old.”",
+				{
+					"scene": {
+						"mood": "night",
+						"elements": ["stars", "moon", "sea", "village"],
+						"alt": "An attic room lit by one small lantern."
+					}
+				},
+				"{hero} noticed that this lantern had a dent in its brass base. Something inside it rattled.",
+				"{hero} shook it. Something slid about under the base.",
+				"The base twisted off. Inside was a flat hollow, no bigger than a playing card, and in the hollow lay a sheet of folded paper, as thin and brown as a dry leaf.",
+				"They spread it out on the blanket, under the light. It was a map, drawn in faded ink. {hero} knew it at once. That was the harbour, with the quay, the church and the long curved wall. That square was the Old Boathouse. From the boathouse, a dotted line ran under the water to a small black cross.",
+				"The right-hand side of the map was missing. Someone had torn it away, and the edge was jagged and brown.",
+				"At the bottom, in careful old handwriting, were two lines. Where the bell hangs silent, look up. And underneath: The door is open for one hour at low water.",
+				"“Low water,” whispered {friend}. “Ten to midnight.”",
+				"“Mr Fenn said that,” said {cousin}. “Tonight.”",
+				"Nobody said anything for a while. {pet} sniffed the map, then [[pet:dog=whined, very quietly|cat=backed away with {pet.his} tail twice as thick as before]].",
+				"Far below them, the bell over the shop door went clack.",
+				"Nobody had heard the front door open, because the front door was locked. But someone had opened it.",
+				"Footsteps crossed the shop. A drawer slid out. Then another. Something heavy was dragged across the floor, and a low voice muttered, “It’s here somewhere. It has to be.”",
+				"{hero} turned the lantern down until it was only a glow.",
+				"The footsteps found the stairs. They climbed slowly, one at a time. They stopped outside the attic door.",
+				"And the handle began to turn."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "When did Mr Fenn say the lowest water would be tonight?",
+					"options": ["Ten to midnight", "Ten past six", "Half past nine"],
+					"answer": 0,
+					"find": "ten to midnight",
+					"hint": "Mr Fenn told them at the harbour, before they met Mrs Ames."
+				},
+				{
+					"id": "q2",
+					"q": "Where was the map hidden?",
+					"options": [
+						"Under a floorboard",
+						"In the base of a lantern",
+						"In a teapot"
+					],
+					"answer": 1,
+					"find": "flat hollow",
+					"hint": "Something rattled inside one of the lanterns."
+				},
+				{
+					"id": "q3",
+					"q": "What was wrong with the map?",
+					"options": [
+						"It was in a different language",
+						"It was wet",
+						"The right-hand side was torn away"
+					],
+					"answer": 2,
+					"find": "torn it away",
+					"hint": "Look at the jagged brown edge."
+				}
+			]
+		},
+		{
+			"title": "Lamps on the Quay",
+			"scene": {
+				"mood": "night",
+				"elements": ["stars", "moon", "sea", "village"],
+				"alt": "A small round window looking out over a dark harbour."
+			},
+			"blocks": [
+				"{hero} shoved the map under the pillow and the lantern under the bed, and pulled the blanket up to {hero.his} chin. {friend} and {cousin} did the same, a little too fast. Three lumps in three beds. {cousin} began to snore. It was the worst snoring any of them had ever heard.",
+				"The door opened one inch. Then two.",
+				"A torch came round the edge of it, pointing at the floor. Behind the torch, in the dark, a man stood and breathed. {hero} could see one boot, a green woolly cap, and a gap where one of his front teeth should have been.",
+				"The beam crossed the beds. It crossed {pet}, who [[pet:dog=lifted one lip and said nothing, which was the bravest thing {hero} had ever seen {pet.him} do|cat=stared straight into it, without blinking, with eyes like two green coins]].",
+				"The beam travelled up the wall, over the sloping ceiling, to the round window, and stopped there for a very long time. {hero} did not breathe at all.",
+				"“Nothing up here,” the man muttered, to nobody. He pulled the door shut.",
+				"Footsteps went down. The bell over the shop door went clack. Then, from the quay, came a whistle: two short notes and one long. From somewhere out on the dark water, the same whistle answered.",
+				"{friend} was out of bed first. “That was the man from the shop,” {friend.he} whispered. “The one with the green woolly cap.”",
+				"They crowded at the round window. Down on the quay, three men were moving about. They had no lights, apart from one shaded lantern that threw a small yellow puddle onto the stones. Between them they carried wooden crates, one at a time, along the harbour wall toward the Old Boathouse. Each crate looked heavy. Each man glanced over his shoulder every few steps.",
+				"A tall, thin shape stood at the boathouse door, counting the crates in. He held up one finger for each. Eleven. Twelve. Thirteen.",
+				"“Fishermen,” said {cousin}, in a very small voice. “Loading up before the tide.”",
+				"“In the dark?” said {friend}. “With no lights? Fishermen have loads of lights.”",
+				"{hero} unfolded the map again. The Old Boathouse was in exactly the right place. The dotted line ran out from its door, under the harbour, and ended at a black cross. The crates were going in at the very spot where the dotted line began.",
+				"Down in the shop, the old clock struck once. {hero} counted on {hero.his} fingers. It was twelve minutes past eleven. The lowest water of the year was at ten to midnight. They had thirty-eight minutes.",
+				"Mrs Ames was fast asleep downstairs, with her hearing aid in a teacup. The police station was in the next town, and the next town was nine miles away. Whatever was going to happen tonight was going to happen right here, and there were only three of them, and {pet}.",
+				"{friend} looked at {hero}. {cousin} looked at {hero}. They always did that when it came to this.",
+				{
+					"choice": {
+						"id": "quay-night",
+						"prompt": "What should {hero} do?",
+						"options": [
+							{
+								"id": "go",
+								"label": "Slip out and follow the men along the quay, right now",
+								"score": {
+									"brave": 1
+								},
+								"blocks": [
+									"“Shoes,” whispered {hero}. “Quietly.” They went down the back stairs one step at a time, missing the third one, which creaked, and the sixth, which groaned. In the kitchen, Mrs Ames slept in her armchair with a rug over her knees. The back door opened without a sound.",
+									"The quay was cold and wet. They kept to the shadows by the lobster pots, where the smell of old fish was so strong that {cousin} had to hold a sleeve over {cousin.his} nose."
+								]
+							},
+							{
+								"id": "watch",
+								"label": "Stay at the window, count every crate, and work out who is signalling to whom",
+								"score": {
+									"clever": 1
+								},
+								"blocks": [
+									"{hero} knelt at the glass and counted. Fourteen crates. Fifteen. The signals came from three places: the boathouse, the end of the quay, and a pale light far out at sea that blinked once and was gone.",
+									"“Three of them on land,” whispered {friend}. “And somebody out on the water.”",
+									"“Which means,” said {hero}, “that whatever is on that boat is coming in on the tide.”",
+									"By the time the last crate was inside, they knew the pattern. Two men carried. One watched the quay. One watched the sea. Nobody was watching the old iron bell at the very end of the quay, because it had been silent for years. {hero} read the two lines on the map again. Then {hero} pulled on {hero.his} shoes."
+								]
+							},
+							{
+								"id": "gran",
+								"label": "Wake Mrs Ames, even though she cannot hear a thing without her hearing aid",
+								"score": {
+									"kind": 1
+								},
+								"blocks": [
+									"{hero} shook Mrs Ames by the shoulder. She opened one eye, found the teacup, fitted the hearing aid and listened to the whole story with her eyebrows going higher and higher. Then she pulled her yellow raincoat on over her nightie, took the big torch from its hook and went out. The bell over the door went clack behind her.",
+									"She was gone for ten minutes. When she came back, she was pink in the face. “Fenn was down there,” she said. “Says it’s a boat from up the coast, landing a night catch. He’ll keep an eye. Back to bed, the lot of you.”",
+									"{hero} looked out of the window. The three men had stopped working. One of them was staring straight up at the attic. {hero} turned the lantern right down.",
+									"Within a minute, Mrs Ames was snoring in her armchair again. “She believed him,” whispered {friend}. “And now they know someone’s awake.” {hero} reached for {hero.his} shoes."
+								]
+							}
+						]
+					}
+				},
+				{
+					"scene": {
+						"mood": "night",
+						"elements": ["stars", "moon", "sea", "village", "fog"],
+						"alt": "The harbour wall at night, lobster pots stacked in the shadows."
+					}
+				},
+				"Whichever way the night had begun, the three of them ended up crouching on the quay in the dark with {pet} between their feet, while the lowest tide of the year pulled the sea away from Saltwick.",
+				"They had crept barely twenty steps along the wall when a torch clicked on behind them.",
+				"The beam slid along the stones, over the lobster pots, over a heap of old rope, and stopped. It had found a pair of white trainers.",
+				"They belonged to {cousin}."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What was the signal whistled on the quay?",
+					"options": [
+						"One long note",
+						"Two short notes and one long",
+						"Three short notes"
+					],
+					"answer": 1,
+					"find": "two short notes and one long",
+					"hint": "It was whistled after the man left the shop, and answered from the water."
+				},
+				{
+					"id": "q2",
+					"q": "What was strange about the men on the quay?",
+					"options": [
+						"They were singing",
+						"They had no lights apart from one shaded lantern",
+						"They were wearing uniforms"
+					],
+					"answer": 1,
+					"find": "shaded lantern",
+					"hint": "Fishermen have loads of lights."
+				},
+				{
+					"id": "q3",
+					"q": "Where were the crates being carried?",
+					"options": [
+						"To the church",
+						"Onto a boat",
+						"Toward the Old Boathouse"
+					],
+					"answer": 2,
+					"find": "toward the Old Boathouse",
+					"hint": "The dotted line on the map began in the same place."
+				}
+			]
+		},
+		{
+			"title": "What Hangs in the Bell",
+			"scene": {
+				"mood": "night",
+				"elements": ["stars", "moon", "sea", "village", "fog"],
+				"alt": "The quay at night, with one shaded lantern and men carrying crates."
+			},
+			"blocks": [
+				"The beam held on the trainers. Then it climbed, up {cousin}’s legs, along the lobster pots, and settled with a click in the middle of {hero}’s face.",
+				"“Well, well,” said a voice. “Visitors.”",
+				"It was the man with the green woolly cap and the gap in his teeth, and up close he was a great deal bigger than he had been in the doorway.",
+				"“Rudd!” hissed another voice from the boathouse. “What is it?”",
+				"“Little problem,” Rudd called back. He crouched until his face was level with {hero}’s. He smelled of diesel and peppermints. “Past your bedtime, I’d say. So what are three small people doing out on my quay at midnight?”",
+				{
+					"choice": {
+						"id": "rudd",
+						"prompt": "What should {hero} say?",
+						"options": [
+							{
+								"id": "lie",
+								"label": "“We’re looking for {pet}. {pet.he} ran off.”",
+								"score": {
+									"clever": 1
+								},
+								"blocks": [
+									"“We’re looking for {pet},” said {hero}. “{pet} ran off, and we’re scared.”",
+									"Rudd looked down. {pet} was sitting on {hero’s} foot.",
+									"“Is that so,” said Rudd. He gave a slow smile with the gap in it. “Then I expect you won’t mind if I walk you home.”",
+									"It was the worst possible answer, and it was the only one {hero} had."
+								]
+							},
+							{
+								"id": "blame",
+								"label": "Step in front of the others and say it was all {hero}’s idea",
+								"score": {
+									"kind": 1
+								},
+								"blocks": [
+									"“It was my idea,” said {hero}, stepping in front of {friend} and {cousin}. {hero’s} knees were not working properly. “I wanted to see the boats. They only came because I made them.”",
+									"Rudd looked at {hero} for a long time. Something flickered across his face that, on a different night, might have been respect.",
+									"“Brave,” he said. “Stupid, though. Very stupid.”"
+								]
+							},
+							{
+								"id": "run",
+								"label": "Grab the others and run",
+								"score": {
+									"brave": 1
+								},
+								"blocks": [
+									"“Run!” {hero} grabbed {cousin}’s hand and ran, and the other two ran after. Rudd was faster, but the quay was littered with crab pots, and the third one he kicked sent him crashing into a heap of nets. He said several words that {hero} had never heard before, and has never repeated since.",
+									"They dived into a wooden net locker and pulled the lid down over their heads. Boots thudded to a stop outside. A torch beam poked through the slats, and moved over {friend}’s shoe, and moved on."
+								]
+							}
+						]
+					}
+				},
+				"A whistle came from the dark water: two short notes, and a long one that did not stop. It was urgent. It was angry.",
+				{
+					"when": {
+						"pick": "rudd",
+						"is": "run"
+					},
+					"blocks": [
+						"Outside the locker, Rudd stood very still, listening with his whole body. “Not now,” he muttered. Then his boots went away."
+					]
+				},
+				{
+					"when": {
+						"pick": "rudd",
+						"is": "lie"
+					},
+					"blocks": [
+						"Rudd’s head snapped round. “Stay,” he said, pointing at them. “Don’t move. I’ll be back.” He strode away along the wall."
+					]
+				},
+				{
+					"when": {
+						"pick": "rudd",
+						"is": "blame"
+					},
+					"blocks": [
+						"Rudd’s head snapped round. “Stay there,” he said, quietly, and he pointed one thick finger at each of them in turn. “All of you. I’ll be back.” He strode away along the wall."
+					]
+				},
+				"The moment his footsteps were gone, {friend} grabbed {hero}’s sleeve. “The bell,” {friend} breathed. “Where the bell hangs silent, look up. {hero}, it’s right there.”",
+				"At the very end of the quay, on a post of black iron, hung a bell as big as a bucket. It was green with age. Its rope had been cut off long ago, and the stump of it swung in the fog.",
+				"They dragged a lobster crate to the foot of the post. {hero} climbed up, and looked up into the dark inside of the bell.",
+				"There was something tucked behind the iron clapper. {hero} reached in and pulled out a tube of tarred leather, no longer than a pencil. Inside it was a tight roll of paper.",
+				"The paper was torn along one edge. {hero} fitted it against the jagged brown side of the map, and it slotted in, as neatly as the last piece of a jigsaw.",
+				"Now they could see the whole of it. The dotted line ran under the harbour and ended in a square room, and from the room, a narrow shaft led upward. In the shaft, drawn very small, was a ladder. At the top of the ladder was a drawing of a bell.",
+				"Underneath, the old handwriting said: The Back Way. Mind the third rung.",
+				"“The bell,” whispered {cousin}. “It’s on top of the exit.” {cousin} stamped lightly on the paving under the post. A square slab sat there, with an iron ring set into it, half-hidden under years of moss.",
+				"{hero} jumped down from the crate. The three of them stood over the slab, and for a moment nobody spoke.",
+				"Then a hand came down on {hero}’s shoulder. It was a big hand. It smelled of tar and ginger biscuits.",
+				"“Not a sound,” whispered Mr Fenn."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "Where did the old map say to look?",
+					"options": [
+						"Under the church",
+						"Up inside the silent bell",
+						"Behind the boathouse door"
+					],
+					"answer": 1,
+					"find": "Where the bell hangs silent, look up",
+					"hint": "It was written at the bottom of the first piece of map."
+				},
+				{
+					"id": "q2",
+					"q": "Where was the missing corner of the map hidden?",
+					"options": [
+						"Behind the iron clapper in the bell",
+						"Under a lobster pot",
+						"In Rudd’s pocket"
+					],
+					"answer": 0,
+					"find": "behind the iron clapper",
+					"hint": "The children had to climb up and look inside."
+				},
+				{
+					"id": "q3",
+					"q": "What did the drawing at the top of the ladder show?",
+					"options": ["A boat", "A lighthouse", "A bell"],
+					"answer": 2,
+					"find": "At the top of the ladder was a drawing of a bell",
+					"hint": "Look at the whole map, now that both pieces fit."
+				}
+			]
+		},
+		{
+			"title": "Fog on the Mud",
+			"scene": {
+				"mood": "night",
+				"elements": ["stars", "moon", "sea", "village", "fog"],
+				"alt": "The quay at night, with a thin fog creeping in."
+			},
+			"blocks": [
+				"Mr Fenn pulled them all into the shadow of the net locker, just as a torch beam swept the stretch of quay where they had been crouching.",
+				"“Rudd’s hunting for you,” he breathed. “Three small ones by the lobster pots, he said. I told him I’d seen you running for the church. That buys us five minutes. Not six.”",
+				"“You lied for us,” whispered {cousin}.",
+				"“I did,” said Mr Fenn. He did not smile. “Don’t make me regret it.”",
+				{
+					"when": {
+						"pick": "quay-night",
+						"is": "gran"
+					},
+					"blocks": [
+						"{friend} frowned. “Gran said you told her it was only fishermen.”",
+						"“I tell your Gran whatever keeps her in bed,” said Mr Fenn. “Her heart’s not what it was. Best she sleeps.” It sounded kind. It also came out very fast."
+					]
+				},
+				"His eyes dropped to the paper in {hero’s} hand.",
+				"“What have you got there?” he said.",
+				{
+					"choice": {
+						"id": "trust",
+						"prompt": "Mr Fenn held out one big hand. What should {hero} do?",
+						"options": [
+							{
+								"id": "show",
+								"label": "Give him both pieces. He is the only grown-up awake, and he just helped",
+								"score": {
+									"kind": 1
+								},
+								"blocks": [
+									"{hero} laid both pieces of the map in his hand. Mr Fenn tilted them toward the faint glow from the harbour. His thumb moved along the torn edge and stopped on the drawing of the ladder.",
+									"“The Back Way,” he said, almost to himself. “Well, I never.”",
+									"For one second his hand shook. Then he folded the pieces, gave them back, and closed {hero’s} fingers over them. “Keep them safe,” he said. “And don’t show them to anyone else.”"
+								]
+							},
+							{
+								"id": "keep",
+								"label": "Fold both pieces away and tell him it is only a game",
+								"score": {
+									"clever": 1
+								},
+								"blocks": [
+									"“It’s only a game,” said {hero}, folding the pieces away. “A treasure hunt. Mrs Ames set it up.”",
+									"Mr Fenn studied {hero} for a long moment. “Did she,” he said. “Clever woman.” He did not ask again."
+								]
+							},
+							{
+								"id": "test",
+								"label": "Ask him one question first: how did he know where to find them?",
+								"score": {
+									"brave": 1
+								},
+								"blocks": [
+									"“How did you know where to find us?” said {hero}.",
+									"Mr Fenn’s smile stayed exactly where it was, but it stopped reaching his eyes. “I’ve got eyes, haven’t I? Fifty years of looking.” He glanced at the map in {hero’s} hand, and away again, very quickly. “Now. Time’s short.”"
+								]
+							}
+						]
+					}
+				},
+				"“Listen,” said Mr Fenn. “Rudd and his lot are using the old tunnel. If you are set on seeing it, I would rather you saw it with me beside you than found it by yourselves.”",
+				{
+					"scene": {
+						"mood": "night",
+						"elements": ["stars", "moon", "sea", "fog", "house"],
+						"alt": "A great grey plain of mud under the stars, with the black shape of the Old Boathouse ahead."
+					}
+				},
+				"He led them down the slimy steps at the end of the quay and out onto the floor of the harbour. The sea had gone. In its place lay a great grey plain of mud, shining under the stars, with forty boats lying on it like sleeping cows. A path of old planks ran across it toward the boathouse.",
+				"“Keep to the planks,” said Mr Fenn. “Step off, and the mud takes your boot. Then it takes your leg.”",
+				"Fog was creeping in off the sea, thin and cold. It wound around their ankles. {pet} [[pet:dog=pressed against {hero’s} knees at every step|cat=rode on {hero’s} shoulder, with claws, and made no apology]]. Halfway across, {cousin} stopped and could not be moved until {friend} took {cousin.his} hand.",
+				"The Old Boathouse was black and huge. Its big doors stood open one inch. On the ground in front of them lay a padlock, unlocked, with the key still in it.",
+				"{hero} noticed that, and did not yet know why it mattered.",
+				"Inside, it smelled of tar and old rope. In the middle of the stone floor stood an iron hatch, propped open. Cold air breathed up out of it, smelling of wet stone and diesel.",
+				"“I’ll keep watch up here,” said Mr Fenn. “Rudd’s lot are on the quay. The other lot are out on the water. If anyone comes, I’ll whistle. Two short, one long.”",
+				"“That’s their whistle,” said {friend}.",
+				"“Is it?” said Mr Fenn. “Well. Fancy that.”",
+				"“How long have we got?” asked {hero}.",
+				"“Low water is at ten to midnight. The door is open for an hour, and after that the sea fills the tunnel from the far end. You have forty minutes. Don’t be longer.”",
+				"{friend} looked at {hero}. {cousin} looked at {hero}. Down in the dark, something dripped.",
+				"They went down. Forty-one steps; {cousin} counted. At the bottom, a tunnel ran away into the dark, low and curved, with a floor of old black boards and walls that sweated.",
+				"They had gone about ten paces when a chain rattled, far ahead. A yellow light swung around the bend, bobbing, coming straight toward them, and with it came the sound of two men talking."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What did Mr Fenn say would happen if you stepped off the planks?",
+					"options": [
+						"The mud takes your boot, then your leg",
+						"The tide comes in at once",
+						"A crab bites your toe"
+					],
+					"answer": 0,
+					"find": "the mud takes your boot",
+					"hint": "He warned them on the harbour floor."
+				},
+				{
+					"id": "q2",
+					"q": "How long did Mr Fenn say they had before the sea filled the tunnel?",
+					"options": ["Four hours", "Forty minutes", "Four minutes"],
+					"answer": 1,
+					"find": "forty minutes",
+					"hint": "He said it just before they went down the steps."
+				},
+				{
+					"id": "q3",
+					"q": "What would Mr Fenn whistle if anyone came?",
+					"options": [
+						"Three long notes",
+						"One short note",
+						"Two short, one long"
+					],
+					"answer": 2,
+					"find": "Two short, one long",
+					"hint": "Friend noticed something about it."
+				}
+			]
+		},
+		{
+			"title": "The Dark Between",
+			"scene": {
+				"mood": "cave",
+				"elements": ["tunnel", "glow"],
+				"alt": "A low stone tunnel lit by a single yellow lamp."
+			},
+			"blocks": [
+				"“Behind the crates!” hissed {hero}.",
+				"The tunnel had opened into a long, low chamber with an arched roof, and the crates stood in it in stacks as high as a man. There were dozens. Each one was stamped in black paint with the name of a ship. Marigold. Sea Hawk. Dorothea. Not one of them was from Saltwick.",
+				"The three of them crushed into a gap between two stacks, with {pet} squashed in the middle. The yellow light came closer. Two men walked into the chamber, carrying a crate between them. One was Rudd. The other was much taller, and wore a long dark coat, and walked with a slow, heavy step. {hero} never saw his face. {hero} saw only a ring that glinted on the hand that held the lamp.",
+				"“Thirty-one crates,” said Rudd. “That’s the lot from the Marigold. The Sea Hawk’s cargo comes in at one.”",
+				"“And the Back Way?” said the tall man. His voice was low and slow and very calm. It was the calmest voice {hero} had ever heard, and the least comforting.",
+				"“Not yet. We need the corner of the map.”",
+				"“Our man says the children have it.”",
+				"“Our man says he’ll have it off them before midnight.”",
+				"“He had better,” said the tall man. “Tomorrow the coastguard seals the boathouse. Tonight is our last night with the Back Way, or we do not have it at all.”",
+				"“He’ll do it,” said Rudd. “He owes us.”",
+				"“Everybody owes us,” said the tall man.",
+				"They dropped the crate onto a stack. Rudd rolled his shoulders. “Three kids poking about the quay, though. I told them to stay put.”",
+				"“And did they?”",
+				"Rudd said nothing, which was an answer.",
+				"At that moment, {pet} [[pet:dog=wagged {pet.his} tail against a crate, thump, thump, thump|cat=let out a tiny, high sneeze]].",
+				"The talking stopped. The lamp turned.",
+				"“What was that?”",
+				"“Rats,” said Rudd.",
+				"“Big rats,” said the tall man. He took one slow step toward the crates.",
+				"{hero} put a hand over {pet}. Nobody breathed. A drip fell from the roof, plink, into the dark. {cousin} was shaking so hard that {cousin.his} teeth clicked, and {friend} held on to {cousin} with both arms.",
+				"From far away came a sound like a door slamming at the other end of the world. Both men looked up, toward the sea end of the tunnel.",
+				"“Tide’s turned early,” said Rudd.",
+				"“It does not matter,” said the tall man. “Bring the rest. Quickly, and keep the lamp low.”",
+				"They went away toward the boathouse with the lantern, and the dark poured back into the chamber behind them. But they had left one lamp, hanging at the far end of the chamber, over a table. It lit the table, a patch of bare floor, and, beyond it, a low stone arch.",
+				"On the table lay a ledger, open, with a pen beside it.",
+				"“The arch,” whispered {friend}. “It’s the square room on the map. The Back Way.”",
+				"Between them and the table lay twenty paces of open stone, lit by that lamp. And in the dark behind them, a man’s boots were already coming back.",
+				{
+					"choice": {
+						"id": "cross",
+						"prompt": "What should {hero} do?",
+						"options": [
+							{
+								"id": "dash",
+								"label": "Run across the open floor, all three of you, as fast as you can",
+								"score": {
+									"brave": 1
+								},
+								"blocks": [
+									"“Now!” said {hero}. They ran. Their shoes slapped on the stone, and every slap rang round the chamber.",
+									"“Who’s there?” bellowed a voice behind them. The boots stopped. Then they started again, much faster.",
+									"“Keep going,” gasped {hero}. “Don’t look back.”"
+								]
+							},
+							{
+								"id": "wall",
+								"label": "Take the long way round, in the shadows along the wall",
+								"score": {
+									"clever": 1
+								},
+								"blocks": [
+									"{hero} took {friend}’s hand, and {friend} took {cousin}’s, and they went along the wall in a chain, one step at a time, with their backs against the sweating stone. It took far longer than twenty paces.",
+									"Twice a lantern swung across the chamber, and twice they froze, flat against the wall, until it moved on. Their hearts hammered the whole way."
+								]
+							},
+							{
+								"id": "alone",
+								"label": "Tell the others to wait here, and cross alone, so only one of you can be caught",
+								"score": {
+									"kind": 1
+								},
+								"blocks": [
+									"“Wait here,” whispered {hero}. “If I’m caught, run for the steps.”",
+									"“Don’t be stupid,” breathed {friend}. “Don’t,” said {cousin}. But {hero} was already moving.",
+									"Twenty paces is a long way when you are alone. {hero} did it on tiptoe, with {hero.his} breath held, and every step took a year. Behind {hero}, {friend} and {cousin} crept after in the dark, because neither of them could bear to be left behind."
+								]
+							}
+						]
+					}
+				},
+				"They reached the table in a heap, in the lamplight, with their hearts going like drums.",
+				"The ledger lay open under the lamp. Its pages were crowded with cramped black writing: names of ships down one side and sums down the other. At the bottom of the last page, in ink so fresh it was still wet, were four words. Tonight. Back Way. Lorry. Quay.",
+				"Beyond the table was the arch, and beyond the arch, in the lamplight, a stone shaft rose into the dark. An iron ladder was bolted to its wall. Very far above, there was a small grey square. It might have been the sky.",
+				"“We can go up,” whispered {cousin}. “We can just go.”",
+				"Something cold touched {hero}’s ankle. {hero} looked down. A thin silver tongue of seawater was sliding across the stone floor, quietly and steadily, from the far end of the tunnel.",
+				"The tide had not waited."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What was stamped on the crates?",
+					"options": [
+						"The names of ships, none from Saltwick",
+						"Rudd’s initials",
+						"Mrs Ames’s name"
+					],
+					"answer": 0,
+					"find": "Not one of them was from Saltwick",
+					"hint": "They were painted in black on every crate."
+				},
+				{
+					"id": "q2",
+					"q": "What did the two men say they needed?",
+					"options": [
+						"A bigger lorry",
+						"The corner of the map",
+						"A new lantern"
+					],
+					"answer": 1,
+					"find": "the corner of the map",
+					"hint": "They said it while carrying a crate."
+				},
+				{
+					"id": "q3",
+					"q": "What was lying open on the table?",
+					"options": ["A ledger", "A letter", "A sandwich"],
+					"answer": 0,
+					"find": "a ledger, open",
+					"hint": "It was under the lamp at the far end of the chamber."
+				}
+			]
+		},
+		{
+			"title": "Water at Their Ankles",
+			"scene": {
+				"mood": "cave",
+				"elements": ["tunnel", "glow"],
+				"alt": "Seawater creeping across the stone floor of a tunnel."
+			},
+			"blocks": [
+				"The water was at their ankles. It was cold enough to make {cousin} squeak.",
+				"Behind them, boots were coming back across the chamber. Rudd’s voice drifted over, grumbling, and the tall man’s lower voice answered. They would be at the table in a minute. Perhaps less.",
+				"“Up,” said {friend}. “Now. Go.”",
+				"{hero} was looking at the ledger. It lay wide open in the lamplight, with all its ships and all its sums. Names. Dates. Proof. Without it, who would ever believe three children, {pet}, and a story about a tunnel?",
+				"The water was at their shins now. And {cousin} had pulled a shoe loose in the silt and was hopping on one foot, trying to find it.",
+				{
+					"choice": {
+						"id": "carry",
+						"prompt": "What should {hero} do?",
+						"options": [
+							{
+								"id": "whole",
+								"label": "Grab the whole ledger. It is heavy, but it is proof",
+								"score": {
+									"brave": 1
+								},
+								"blocks": [
+									"{hero} scooped up the ledger in both arms. It weighed as much as a bag of potatoes, and the damp had made it heavier. {hero} hugged it to {hero.his} chest and went to the ladder with it."
+								]
+							},
+							{
+								"id": "page",
+								"label": "Tear out the last page only, and tuck it away",
+								"score": {
+									"clever": 1
+								},
+								"blocks": [
+									"{hero} held the book flat, gripped the last page, and tore it out in one long ripping sound that seemed to fill the whole chamber. Then {hero} folded it into a square and pushed it into {hero.his} sock. A page weighs nothing at all. That was the point."
+								]
+							},
+							{
+								"id": "shoe",
+								"label": "Leave it. Find {cousin}’s shoe, and get everyone to the ladder together",
+								"score": {
+									"kind": 1
+								},
+								"blocks": [
+									"{hero} left the ledger where it lay. “Hold the lamp,” {hero} told {friend}, and waded in to feel for {cousin}’s shoe in the cold silt. It took an age. When it came up, with a loud sucking noise, {cousin} laughed once, breathlessly, and very nearly cried.",
+									"“You didn’t have to,” said {cousin}. “I did,” said {hero}."
+								]
+							}
+						]
+					}
+				},
+				"The ladder was old and black and slick with weed. {friend} went first, then {cousin}, then {hero}, with {pet} [[pet:dog=tucked under {hero’s} arm, wriggling, outraged|cat=clinging to {hero’s} jumper with all four sets of claws]].",
+				"“Third rung!” called {friend}, from above. “The map said! Step over it!”",
+				{
+					"when": {
+						"pick": "carry",
+						"is": "whole"
+					},
+					"blocks": [
+						"{hero} had both arms full. {hero} reached for the fourth rung, missed, and put a foot on the third without thinking. It snapped like a dry biscuit. {hero} swung out over the black water with the ledger sliding, and caught it with {hero.his} chin, and held on to a rung with one hand while every muscle shouted. Below, the water roared. Far down, a man’s voice bellowed, “Who’s been at my book?”"
+					]
+				},
+				{
+					"when": {
+						"pick": "carry",
+						"is": "page"
+					},
+					"blocks": [
+						"The page crackled in {hero’s} sock. Far below, a man’s voice bellowed, “The last page! Someone’s torn out the last page!” A lamp began to swing wildly about the chamber. {hero} climbed faster than {hero.he} had ever climbed in {hero.his} life, one long step over the third rung, and on."
+					]
+				},
+				{
+					"when": {
+						"pick": "carry",
+						"is": "shoe"
+					},
+					"blocks": [
+						"Nobody shouted. There was nothing missing to shout about. But the water was at {hero’s} knees when {hero} swung onto the ladder, and the next moment a lamp swung into the shaft below them, and Rudd looked up. “Oi!” he roared, and his boots hit the bottom rung."
+					]
+				},
+				"The shaft seemed endless. {cousin} counted aloud, in a whisper. Ten. Twenty. Thirty. At forty, {friend} stopped, and a hand came down in the dark and pulled {cousin} up beside {friend}, and then reached for {hero}.",
+				"At the top was a slab of stone, dead overhead, with a thread of grey light around its edge. “Push,” whispered {friend}.",
+				"They pushed. Nothing. They pushed again, all three, with their shoulders, and the slab ground upward one inch, and cold air came pouring down. Another inch. A gap. A foot. They heaved it clear, and one by one they crawled out onto wet paving, under the stars.",
+				"The fog hung low. The harbour lay silent. Directly above them, huge against the sky, hung the old bell. It was silent. Of course it was.",
+				"Below them, water was gurgling up the shaft. Boots rang on the iron rungs. “Quick,” breathed {friend}. “Which way? The quay’s that way, the church is…”",
+				"A boot came down on the paving, right beside {hero}’s hand.",
+				"“Well done,” said a calm voice. “Let’s have a look at what you’ve got, then.”",
+				"{hero} looked up, past the boot, past the oilskin coat, into a white beard, and a tired, familiar face.",
+				"It was Mr Fenn."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "Which rung of the ladder was rotten?",
+					"options": ["The first", "The third", "The last"],
+					"answer": 1,
+					"find": "Third rung",
+					"hint": "The map warned about it, and Friend called it out."
+				},
+				{
+					"id": "q2",
+					"q": "How high had the water risen while they chose what to take?",
+					"options": ["It had gone down", "To their shins", "To the roof"],
+					"answer": 1,
+					"find": "shins",
+					"hint": "It started at their ankles."
+				},
+				{
+					"id": "q3",
+					"q": "What hung directly above them when they climbed out?",
+					"options": ["A lantern", "A flag", "The old bell"],
+					"answer": 2,
+					"find": "hung the old bell",
+					"hint": "It had been silent for years."
+				}
+			]
+		},
+		{
+			"title": "Who Opened the Door?",
+			"scene": {
+				"mood": "night",
+				"elements": ["stars", "moon", "sea", "village", "fog"],
+				"alt": "The quay in thin fog, with a green old bell on its iron post."
+			},
+			"blocks": [
+				"Mr Fenn stood on the quay with his lantern turned low. He did not look like a villain. He looked like a tired old man who had been up much too late, and who still had a long way to go.",
+				"“Don’t shout,” he said. “Please. Not yet.”",
+				"Nobody shouted. {hero}’s mind had gone quiet and clear, and the pieces slid together one by one.",
+				"Ten to midnight. He had known it at four o’clock that afternoon, without looking at a thing. “Fifty years of looking,” he had said.",
+				"A padlock on the ground, with the key still in it.",
+				"Two short, one long. Well, fancy that.",
+				"The door is open for one hour at low water. Somebody had to unlock it. Somebody who knew the hour exactly.",
+				"“It was you,” said {hero}.",
+				"“Yes,” said Mr Fenn.",
+				{
+					"when": {
+						"pick": "trust",
+						"is": "show"
+					},
+					"blocks": [
+						"“You put both pieces in my hand yourself,” he said quietly. “All I had to do was walk away with them. I gave them back. I couldn’t do it. I have been trying to be a certain sort of man for thirty years, and I find I can’t be him.”"
+					]
+				},
+				{
+					"when": {
+						"pick": "trust",
+						"is": "keep"
+					},
+					"blocks": [
+						"“You told me it was a game,” he said. “That was when I knew you were nobody’s fool. I tried hard not to be glad.”"
+					]
+				},
+				{
+					"when": {
+						"pick": "trust",
+						"is": "test"
+					},
+					"blocks": [
+						"“You asked how I knew where to find you,” he said. “A good man would have had an answer ready.”"
+					]
+				},
+				"“Thirty years ago I borrowed money against the Dolly May,” said Mr Fenn. “More than I could ever pay back. The man who bought the debt is the one they call the Captain. He said he wanted nothing but a little help. A door left unlocked. An old man’s eyes on the quay. They only carry boxes, I told myself. Nobody gets hurt.” He looked at the lantern. “Nobody has. Not yet.”",
+				"“Tonight is the last night they can use the boathouse. Tomorrow the coastguard seals it. The Captain wants the Back Way, and the Back Way needs the corner. I never found the corner in thirty years. And three children found it in a single night.”",
+				"He held out his hand, palm up. It was steady now. That was almost the worst part.",
+				"“I’m not going to hurt you. I need you to believe that. I only need what you are carrying.”",
+				"Out at the mouth of the harbour, an engine started. A boat with no lights was coming in fast, with white water piling at its bow. At the head of the quay, headlamps flared as a lorry began to back down the slope.",
+				"And beneath {hero}’s feet, the slab shuddered. A voice boomed up the shaft, hoarse and furious: “Fenn! Fenn, I know you’re up there! They’ve been at my book!”",
+				"Mr Fenn closed his eyes. When he opened them, he looked ten years older.",
+				"“In about ten seconds,” he said, “this stops being a thing any of us can walk away from. So decide, {hero}. Decide now.”"
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What did Mr Fenn say when asked how he knew the time of the tide?",
+					"options": [
+						"He read it from a watch",
+						"Fifty years of looking",
+						"A fisherman told him"
+					],
+					"answer": 1,
+					"find": "Fifty years of looking",
+					"hint": "He said it when they first met."
+				},
+				{
+					"id": "q2",
+					"q": "What had Mr Fenn borrowed money against?",
+					"options": [
+						"His house",
+						"The Old Rope Shop",
+						"His boat, the Dolly May"
+					],
+					"answer": 2,
+					"find": "against the Dolly May",
+					"hint": "He explained it on the quay."
+				},
+				{
+					"id": "q3",
+					"q": "What did the voice in the shaft shout?",
+					"options": [
+						"That supper was ready",
+						"That they had been at his book",
+						"That the tide was coming"
+					],
+					"answer": 1,
+					"find": "been at my book",
+					"hint": "It was hoarse and furious."
+				}
+			]
+		},
+		{
+			"title": "Slack Water",
+			"scene": {
+				"mood": "night",
+				"elements": ["stars", "moon", "sea", "village", "fog"],
+				"alt": "The lorry’s headlamps washing over the old bell in the fog."
+			},
+			"blocks": [
+				"The lorry’s headlamps swung across the fog and lit the old bell like a lantern.",
+				"Boots rang up the ladder, one rung at a time. Rudd’s head would be in the shaft in moments. Out on the water, the engine of the dark boat dropped to a low, slow growl.",
+				"{hero} looked at Mr Fenn. Mr Fenn was looking at the bell.",
+				"It hung there in the glow. Big, green, silent for twenty years. Where the bell hangs silent, look up. Whoever had hidden the map had known that a bell was the one thing in Saltwick that every sleeping person would hear.",
+				"An iron bar leaned against the post, left by someone who had once meant to mend the bell and never had.",
+				"Three people on a quay. One bar. About ten seconds.",
+				{
+					"choice": {
+						"id": "final",
+						"prompt": "What should {hero} do?",
+						"options": [
+							{
+								"id": "ask",
+								"label": "Look Mr Fenn in the eye. Ask him to stand with you and tell the truth",
+								"blocks": [
+									"“Mr Fenn,” said {hero}. {hero’s} voice came out smaller than {hero.he} had meant it to. “Please. Stand here with us. Tell them what you told me.”"
+								]
+							},
+							{
+								"id": "ring",
+								"label": "Seize the iron bar and ring the bell with everything you have",
+								"blocks": [
+									"{hero} did not stop to think. {hero} snatched the iron bar from the post."
+								]
+							},
+							{
+								"id": "hand",
+								"label": "Give Mr Fenn what you are carrying, and trust him to do the right thing",
+								"blocks": [
+									{
+										"when": {
+											"pick": "carry",
+											"is": "whole"
+										},
+										"blocks": [
+											"{hero} held out the ledger, with both arms. Mr Fenn took the whole weight of it."
+										]
+									},
+									{
+										"when": {
+											"pick": "carry",
+											"is": "page"
+										},
+										"blocks": [
+											"{hero} pulled the folded page out of {hero.his} sock and held it out. It was damp and warm."
+										]
+									},
+									{
+										"when": {
+											"pick": "carry",
+											"is": "shoe"
+										},
+										"blocks": [
+											"{hero} held out the two pieces of the old map. They were all there was."
+										]
+									}
+								]
+							}
+						]
+					}
+				}
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What did Mr Fenn say about the bell?",
+					"options": [
+						"It had been silent for twenty years",
+						"It was brand new",
+						"It had been stolen"
+					],
+					"answer": 0,
+					"find": "silent for twenty years",
+					"hint": "Look at the first lines of this chapter."
+				},
+				{
+					"id": "q2",
+					"q": "What leaned against the post of the bell?",
+					"options": ["A broom", "An iron bar", "A fishing rod"],
+					"answer": 1,
+					"find": "An iron bar",
+					"hint": "Someone had meant to mend the bell."
+				},
+				{
+					"id": "q3",
+					"q": "What was coming up the ladder?",
+					"options": ["Seawater only", "Mrs Ames", "Boots, one rung at a time"],
+					"answer": 2,
+					"find": "Boots rang up the ladder",
+					"hint": "Rudd was in the shaft."
+				}
+			]
+		}
+	],
+	"endings": [
+		{
+			"id": "secret",
+			"title": "The Bell Rings Twice",
+			"when": {
+				"all": [
+					{
+						"pick": "final",
+						"is": "ask"
+					},
+					{
+						"score": "brave",
+						"atLeast": 1
+					},
+					{
+						"score": "clever",
+						"atLeast": 1
+					},
+					{
+						"score": "kind",
+						"atLeast": 1
+					}
+				]
+			},
+			"scene": {
+				"mood": "dawn",
+				"elements": ["clouds", "gulls", "sea", "village", "boat"],
+				"alt": "Dawn over Saltwick harbour, with the tide coming back in around the boats."
+			},
+			"blocks": [
+				"Mr Fenn did not move for what felt like a whole minute. Headlamps washed over him. Down in the shaft, boots rang closer.",
+				"“My name,” he said, in a voice as thin as paper, “is Daniel Fenn. I opened the door tonight. I have been opening it for thirty years. I am sorry.”",
+				"Then he took the iron bar from the post, and he swung it at the bell.",
+				"The sound went through Saltwick like a wave. Once. Twice. Every window on the quay lit up, one after another. Doors banged. Dogs barked. A dozen fishermen in pyjamas and wellingtons came pouring down the street with boat hooks, and Mrs Ames came last of all, in her yellow raincoat, with the big torch in one hand and a teacup in the other, and her hearing aid in her ear.",
+				"Rudd came up out of the shaft into six boat hooks, and had the grace to look embarrassed. The tall man in the dark coat never made it out of the tunnel. The tide had got there first, and the coastguard fished him out at dawn, soaked to the skin and perfectly calm. The lorry reversed into a lamp-post. The boat with no lights turned for the open sea and met the coastguard cutter coming the other way.",
+				{
+					"when": {
+						"pick": "carry",
+						"is": "whole"
+					},
+					"blocks": [
+						"The ledger, which {hero} had carried up forty rungs and hugged for the rest of the night, was read by three policemen, one after another, with their mouths open. Every ship. Every date. Every name. It took them a week to finish it."
+					]
+				},
+				{
+					"when": {
+						"pick": "carry",
+						"is": "page"
+					},
+					"blocks": [
+						"The last page, still damp from {hero’s} sock, was enough. It named the lorry, the boat and the night. The policeman who read it said it was the shortest and best piece of evidence he had ever been handed."
+					]
+				},
+				{
+					"when": {
+						"pick": "carry",
+						"is": "shoe"
+					},
+					"blocks": [
+						"There was no proof but the word of three children and a tunnel full of crates. It was enough, because the crates were still there, and the tide had only just reached the lowest stacks."
+					]
+				},
+				"Mr Fenn sat down on his bench, with his net across his knee, and waited for the police. Mrs Ames brought him a cup of tea. She called him a silly old fool, twice, and then she sat down next to him and said nothing at all for a long while.",
+				"He was away for most of the winter. In spring, when the first boats went out on the tide, a postcard came for {hero}, with a picture of a boat on it: the Dolly May, lying on the mud at low water. On the back, in careful handwriting, it said: Mind the third rung.",
+				"Mrs Ames hung the dented lantern in the window of the Old Rope Shop, with the base screwed on tight and a small light burning inside. It burned every night, for anyone who needed to find their way home.",
+				"THE END. (You found the best ending. You were brave, clever and kind, and an old man put things right.)"
+			]
+		},
+		{
+			"id": "confess",
+			"title": "A Long Night",
+			"when": {
+				"pick": "final",
+				"is": "ask"
+			},
+			"scene": {
+				"mood": "dawn",
+				"elements": ["clouds", "gulls", "sea", "village", "boat"],
+				"alt": "Dawn over Saltwick harbour, with police lights on the quay."
+			},
+			"blocks": [
+				"Mr Fenn looked at {hero} for a long time. Boots rang on the ladder. The boat’s engine growled in the fog.",
+				"“My name is Daniel Fenn,” he said. “I opened the door tonight.” And he stepped in front of the slab, with his big hands held out wide, and said to the face rising out of the shaft, “That’s enough, Rudd.”",
+				"It did not make Rudd stop. It made him hesitate. In Saltwick, that was enough. A window lit up, and then another, and then Mrs Ames came down the quay at a run, in her yellow raincoat, with the big torch in one hand and a rolling pin in the other.",
+				"Rudd was caught before he got his second foot out of the shaft. The lorry was caught as well, with its back wheels in a ditch. But the boat with no lights turned in the fog and slid away to sea, and the tall man in the dark coat went out by the far end of the tunnel in a rubber dinghy, so they said, and nobody ever saw him again.",
+				{
+					"when": {
+						"pick": "carry",
+						"is": "whole"
+					},
+					"blocks": [
+						"The ledger, which {hero} had carried up forty rungs and hugged for the rest of the night, was read by three policemen, one after another, with their mouths open. Every ship. Every date. Every name. It took them a week to finish it."
+					]
+				},
+				{
+					"when": {
+						"pick": "carry",
+						"is": "page"
+					},
+					"blocks": [
+						"The last page, still damp from {hero’s} sock, was enough. It named the lorry, the boat and the night. The policeman who read it said it was the shortest and best piece of evidence he had ever been handed."
+					]
+				},
+				{
+					"when": {
+						"pick": "carry",
+						"is": "shoe"
+					},
+					"blocks": [
+						"There was no proof but the word of three children and a tunnel full of crates. It was enough, because the crates were still there, and the tide had only just reached the lowest stacks."
+					]
+				},
+				"Mr Fenn walked to the police station himself, in the grey light, with his net over his shoulder. He did not look back. Mrs Ames held {hero’s} hand the whole way home, and did not say anything, and did not need to.",
+				"THE END. (A good ending. Mr Fenn told the truth. Not everyone paid for what they did.)"
+			]
+		},
+		{
+			"id": "bell",
+			"title": "The Silent Bell Speaks",
+			"when": {
+				"pick": "final",
+				"is": "ring"
+			},
+			"scene": {
+				"mood": "dawn",
+				"elements": ["clouds", "gulls", "sea", "village", "boat"],
+				"alt": "Dawn over Saltwick harbour, with a small boat drifting far out."
+			},
+			"blocks": [
+				"{hero} swung the bar at the bell with both arms.",
+				"The sound was enormous. It rolled over the harbour and up the street and shook the fog out of the air. {hero} swung again. And again.",
+				"Windows lit up. Doors banged. Dogs barked. A dozen fishermen in pyjamas and wellingtons came pouring down the street with boat hooks, and Mrs Ames came last, in her yellow raincoat, with the big torch.",
+				"Mr Fenn did not try to stop {hero}. He stood very still, with his hands at his sides, and listened to the bell with an odd, quiet look on his face, as if it were a song he had known once.",
+				"Then, as the first fishermen reached the quay, he stepped back into the fog, and there was the sound of oars. When they looked for him, there was only the dinghy of the Dolly May, drifting out past the harbour mouth. Nobody saw Mr Fenn in Saltwick again.",
+				"Rudd was caught coming up the slab. The tall man was caught by the tide. The lorry was found in a ditch.",
+				{
+					"when": {
+						"pick": "carry",
+						"is": "whole"
+					},
+					"blocks": [
+						"The ledger, which {hero} had carried up forty rungs and hugged for the rest of the night, was read by three policemen, one after another, with their mouths open. Every ship. Every date. Every name. It took them a week to finish it."
+					]
+				},
+				{
+					"when": {
+						"pick": "carry",
+						"is": "page"
+					},
+					"blocks": [
+						"The last page, still damp from {hero’s} sock, was enough. It named the lorry, the boat and the night. The policeman who read it said it was the shortest and best piece of evidence he had ever been handed."
+					]
+				},
+				{
+					"when": {
+						"pick": "carry",
+						"is": "shoe"
+					},
+					"blocks": [
+						"There was no proof but the word of three children and a tunnel full of crates. It was enough, because the crates were still there, and the tide had only just reached the lowest stacks."
+					]
+				},
+				"On the bench where Mr Fenn used to sit, there was a tin of ginger biscuits. Inside was a note. I am sorry. Mind the third rung. {hero} ate one biscuit. It tasted of salt, and nobody ever worked out why.",
+				"THE END. (You rang the bell. The village woke, and the crew was caught. Mr Fenn was not.)"
+			]
+		},
+		{
+			"id": "hand",
+			"title": "Fifty Years of Looking",
+			"when": {
+				"pick": "final",
+				"is": "hand"
+			},
+			"scene": {
+				"mood": "dawn",
+				"elements": ["clouds", "gulls", "sea", "village"],
+				"alt": "Dawn over an empty harbour, and a bench with a tin of biscuits on it."
+			},
+			"blocks": [
+				"Mr Fenn took what {hero} held out. He looked at it for a long time. Then he looked at the lorry, and at the boat in the fog, and at the slab beneath their feet, where a hand was just beginning to come up through the gap.",
+				"He tore it in half, then in half again. The pieces went into the harbour, white against the black water, and the tide took them.",
+				"“Nothing here, Rudd,” called Mr Fenn, in a perfectly steady voice. “Just three children who couldn’t sleep. I’m taking them home.”",
+				"Rudd climbed out of the shaft and looked at the children. Mr Fenn looked at Rudd. Something passed between them that {hero} did not understand. “See that they stay home,” said Rudd.",
+				"“I will,” said Mr Fenn. And he meant it.",
+				"By dawn, the crates were gone from the tunnel, the boathouse was empty, and the sea had filled the Back Way to the roof. Nobody in Saltwick believed a word of the story. Mrs Ames believed, but she had no proof. The police found only a flooded cellar and a tin of ginger biscuits on a bench.",
+				"On the last day of the holiday, Mr Fenn was on his bench with his net and his tin. He gave each of them a biscuit and said nothing at all. A week later, the Dolly May was gone from the harbour. A week after that, so were the men with the lorry. Nobody ever found out which of them had left first.",
+				"{hero} kept the dented lantern, and never screwed the base back on. Some secrets are better left half told.",
+				"THE END. (You trusted Mr Fenn. Sometimes that works, but nobody can ever prove it.)"
+			]
+		}
+	]
+}

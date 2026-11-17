@@ -93,6 +93,31 @@ function card(book) {
 		cover.innerHTML = sceneHTML(book.cover.scene, { static: true });
 	cover.append(h("div", { class: "cover-title" }, h("span", {}, book.title)));
 	if (book.draft) cover.append(h("span", { class: "badge" }, "Demo"));
+	if (book.soon) cover.append(h("span", { class: "badge" }, "Coming soon"));
+
+	if (book.soon) {
+		return h(
+			"article",
+			{ class: "book-card soon" },
+			cover,
+			h(
+				"div",
+				{ class: "card-body" },
+				h("p", { class: "tagline" }, book.tagline || ""),
+				h("p", { class: "meta" }, `Ages ${book.ages || ""}`),
+				h("p", { class: "status" }, "Being written"),
+				h(
+					"div",
+					{ class: "card-btns" },
+					h(
+						"button",
+						{ type: "button", class: "btn primary", disabled: true },
+						"Coming soon",
+					),
+				),
+			),
+		);
+	}
 
 	const inProgress = b.started && !b.finished;
 	const primary = inProgress
@@ -355,7 +380,10 @@ function route() {
 	if (seg[0] === "rewards") return showRewardsPage(root, nav, books);
 	if (seg[0] !== "b") return showLibrary();
 	const book = books.get(seg[1]);
-	if (!book) return showLibrary();
+	if (!book || book.soon) {
+		if (seg[0] === "b") return location.replace("#/");
+		return showLibrary();
+	}
 	const b = store.getBook(book.id);
 
 	if (seg[2] === "setup") return showSetup(book);
