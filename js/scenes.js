@@ -76,6 +76,7 @@ const ORDER = [
 	"boat",
 	"house",
 	"trees",
+	"map",
 	"tunnel",
 	"stairs",
 	"lens",
@@ -256,6 +257,54 @@ const DRAW = {
 			s += pine(x, 300, sc, -(r() * 3).toFixed(1));
 		});
 		return s;
+	},
+
+	// The torn treasure map on a dark wooden table, lit from the side, with its missing corner lying apart.
+	map: ({ id }) => {
+		const ink = "#5a3f24";
+		const tear = [
+			[492, 52],
+			[485, 74],
+			[494, 96],
+			[483, 122],
+			[493, 146],
+			[484, 174],
+			[494, 200],
+			[485, 228],
+			[492, 262],
+		];
+		const edge = tear.map(([x, y]) => `L${x} ${y}`).join(" ");
+		let planks = "";
+		for (let y = 30; y < 380; y += 46)
+			planks += `<path d="M0 ${y} L800 ${y + 2}" stroke="#0b0705" stroke-width="3" opacity=".7"/>`;
+		return (
+			`<g>` +
+			`<rect width="800" height="360" fill="#1a110c"/>` +
+			planks +
+			`<ellipse class="flk" cx="380" cy="150" rx="300" ry="210" fill="url(#warm${id})"/>` +
+			`<g transform="translate(54,22) scale(.85)">` +
+			`<path d="M268 58 L492 58 ${edge.replace("L492 52 ", "")} L262 270Z" fill="#000" opacity=".45" transform="translate(7,9)"/>` +
+			`<path d="M262 52 ${edge} L262 268Z" fill="#d8bd8a"/>` +
+			`<path d="M262 52 ${edge} L262 268Z" fill="none" stroke="#b08d58" stroke-width="3" opacity=".7"/>` +
+			`<path d="M262 52 L492 52 L492 70 L262 90Z" fill="#fff" opacity=".07"/>` +
+			`<g fill="none" stroke="${ink}" stroke-width="2" stroke-linecap="round">` +
+			`<path d="M276 96 q10 -6 20 0 t20 0 M300 114 q10 -6 20 0 t20 0 M338 84 q10 -6 20 0 t20 0 M290 132 q10 -6 20 0 t20 0" opacity=".7"/>` +
+			`<path d="M262 160 Q300 138 336 156 T398 148 Q432 130 460 166 T492 158" stroke-width="2.6"/>` +
+			`<path d="M338 156 Q372 122 410 142" stroke-width="3.4"/>` +
+			`<path d="M388 150 L388 134 L418 134 L418 150Z" fill="#c9a96e" stroke-width="2.4"/>` +
+			`<path d="M272 196 l8 -8 l8 8 v10 h-16z M296 200 l8 -8 l8 8 v10 h-16z M322 190 l8 -8 l8 8 v10 h-16z" stroke-width="1.8"/>` +
+			`<path d="M452 196 v-18 M446 184 h12" stroke-width="2.4"/>` +
+			`<path d="M276 238 h60 M276 248 h86 M276 258 h44" opacity=".55" stroke-width="2"/>` +
+			`<circle cx="296" cy="72" r="13" stroke-width="1.6"/><path d="M296 56 v32 M280 72 h32" stroke-width="1.6"/><path d="M296 58 l-4 10 h8z" fill="${ink}" stroke="none"/>` +
+			`</g>` +
+			`<path d="M403 154 Q424 190 452 204 T492 214" fill="none" stroke="#9c2f22" stroke-width="2.6" stroke-dasharray="2 6" stroke-linecap="round"/>` +
+			`<g transform="translate(14,10) rotate(7 520 210)">` +
+			`<path d="M500 168 L514 184 L503 204 L517 226 L507 248 L540 256 L552 196 L538 172Z" fill="#000" opacity=".4" transform="translate(5,7)"/>` +
+			`<path d="M500 168 L514 184 L503 204 L517 226 L507 248 L540 256 L552 196 L538 172Z" fill="#d8bd8a" stroke="#b08d58" stroke-width="2.4"/>` +
+			`<path d="M522 204 l16 16 M538 204 l-16 16" stroke="#9c2f22" stroke-width="4.2" stroke-linecap="round"/>` +
+			`</g>` +
+			`</g></g>`
+		);
 	},
 
 	tunnel: ({ id, r }) => {

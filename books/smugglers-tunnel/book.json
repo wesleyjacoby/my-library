@@ -6,18 +6,10 @@
 	"ages": "8+",
 	"cover": {
 		"scene": {
-			"mood": "dusk",
-			"elements": [
-				"stars",
-				"moon",
-				"clouds",
-				"gulls",
-				"hills",
-				"sea",
-				"village"
-			],
-			"alt": "A harbour village at dusk, windows glowing under a rising moon.",
-			"align": "xMinYMid"
+			"mood": "cave",
+			"elements": ["map"],
+			"align": "xMidYMid",
+			"alt": "An old harbour map, torn along one edge, with its missing corner and a red cross lying beside it."
 		}
 	},
 	"traits": ["brave", "kind", "clever"],
