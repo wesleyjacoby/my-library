@@ -38,3 +38,9 @@ The owner wants prose that does not sound AI-written: **no em dashes**, avoid "l
 - `gull-rock` is now the full Goosebumps-style story "The Light on Gull Rock": 8 chapters, 4 choices (`night-plan`, `stairs-voice`, `keeper-face` score brave/clever/kind; `final` = smash/mirror/lantern, unscored) and 4 endings (secret needs brave, clever and kind all at least 1; checked first).
 - Prose rules: no em dashes, no "like the way" similes, show don't tell.
 - Cache is `my-library-v3`; bump it whenever shipped files change.
+
+## Rewards (js/rewards.js, js/rewardsui.js)
+- Stars live in `store.getRewards()` as `earned: {key: stars}`; keys are unique per chapter/bonus/ending/book so replays never pay twice. Rules: chapter 1, all quiz answers right first time 1, surprise 1 (1 in 6), new ending 2, book finished 1. Parents can add bonus stars.
+- Prizes are star-total milestones (`{id,name,stars,given}`), set on the PIN-protected grown-ups sheet (Settings > Prizes & PIN, or the lock on the rewards page). PIN is a SHA-256 hash stored on the device; "Forgot the PIN?" erases everything.
+- One postcard per finished book (cover scene + hero name + date). Reading days feed the "This week" row.
+- Cache is `my-library-v10`.

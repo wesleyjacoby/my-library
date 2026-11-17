@@ -8,6 +8,7 @@ import { applySettings, openSettings } from "./settings.js";
 import { askConfirm } from "./confirm.js";
 import { renderReader, renderEnding } from "./reader.js";
 import * as tts from "./tts.js";
+import { strip, showRewardsPage, setLibrary } from "./rewardsui.js";
 
 const root = document.getElementById("app");
 const books = new Map();
@@ -34,6 +35,7 @@ async function loadBooks() {
 		}),
 	);
 	list.forEach((b) => books.set(b.id, b));
+	setLibrary(books);
 }
 
 // ---------- Library ----------
@@ -70,6 +72,7 @@ function showLibrary() {
 				{ class: "lib-intro" },
 				"Pick a story. In every one of them, you are the hero.",
 			),
+			strip(nav),
 			h("div", { class: "grid" }, cards),
 		),
 	);
@@ -349,6 +352,7 @@ function route() {
 	closePopup();
 	window.scrollTo(0, 0);
 	const seg = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
+	if (seg[0] === "rewards") return showRewardsPage(root, nav, books);
 	if (seg[0] !== "b") return showLibrary();
 	const book = books.get(seg[1]);
 	if (!book) return showLibrary();

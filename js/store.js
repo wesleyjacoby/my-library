@@ -12,6 +12,14 @@ const DEFAULT_SETTINGS = {
 	coachFocus: true,
 	coachMarks: true,
 };
+const blankRewards = () => ({
+	earned: {},
+	log: [],
+	days: [],
+	prizes: [],
+	postcards: [],
+	pin: null,
+});
 let mem = null;
 
 function read() {
@@ -26,6 +34,7 @@ function read() {
 		settings: { ...DEFAULT_SETTINGS, ...((saved && saved.settings) || {}) },
 		books: (saved && saved.books) || {},
 		lastCast: (saved && saved.lastCast) || {},
+		rewards: { ...blankRewards(), ...((saved && saved.rewards) || {}) },
 	};
 	return mem;
 }
@@ -36,6 +45,13 @@ function write() {
 	} catch (e) {
 		/* private mode etc: keep in memory */
 	}
+}
+
+export function getRewards() {
+	return read().rewards;
+}
+export function saveRewards() {
+	write();
 }
 
 export function getSettings() {
@@ -90,6 +106,6 @@ export function setLastCast(cast) {
 
 export function resetAll() {
 	const settings = read().settings;
-	mem = { settings, books: {}, lastCast: {} };
+	mem = { settings, books: {}, lastCast: {}, rewards: blankRewards() };
 	write();
 }

@@ -8,6 +8,7 @@ export function askConfirm({
 	yes = "OK",
 	no = "Cancel",
 	danger = false,
+	single = false,
 }) {
 	return new Promise((resolve) => {
 		const prevFocus = document.activeElement;
@@ -25,15 +26,17 @@ export function askConfirm({
 			{ type: "button", class: "btn primary", onclick: () => done(!danger) },
 			danger ? no : yes,
 		);
-		const go = h(
-			"button",
-			{
-				type: "button",
-				class: danger ? "btn danger solid" : "btn ghost",
-				onclick: () => done(danger),
-			},
-			danger ? yes : no,
-		);
+		const go = single
+			? null
+			: h(
+					"button",
+					{
+						type: "button",
+						class: danger ? "btn danger solid" : "btn ghost",
+						onclick: () => done(danger),
+					},
+					danger ? yes : no,
+				);
 		const box = h(
 			"div",
 			{

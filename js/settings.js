@@ -3,6 +3,7 @@ import * as store from "./store.js";
 import { APP_NAME } from "./config.js";
 import { askConfirm } from "./confirm.js";
 import * as tts from "./tts.js";
+import { openGrownups, requirePin } from "./rewardsui.js";
 
 export const SIZES = [0.85, 1, 1.15, 1.3, 1.5];
 
@@ -248,6 +249,16 @@ export function openSettings() {
 		h(
 			"div",
 			{ class: "srow" },
+			h("span", {}, "Grown-ups"),
+			h(
+				"button",
+				{ type: "button", class: "btn small", onclick: () => openGrownups() },
+				"🔒 Prizes & PIN",
+			),
+		),
+		h(
+			"div",
+			{ class: "srow" },
 			h("span", {}, "Progress"),
 			h(
 				"button",
@@ -255,11 +266,12 @@ export function openSettings() {
 					type: "button",
 					class: "btn small danger",
 					onclick: async () => {
+						if (!(await requirePin())) return;
 						const yes = await askConfirm({
 							icon: "🗑️",
 							title: "Erase everything?",
 							message:
-								"This removes all reading progress, found endings and saved names on this device.",
+								"This removes all reading progress, stars, prizes, postcards and saved names on this device.",
 							yes: "Erase it all",
 							no: "Keep it",
 							danger: true,

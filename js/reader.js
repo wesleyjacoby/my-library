@@ -7,6 +7,8 @@ import { toFragment } from "./syllables.js";
 import * as tts from "./tts.js";
 import { sentencify, initFocus } from "./coach.js";
 import { quizCard } from "./quiz.js";
+import * as rewards from "./rewards.js";
+import { toast, celebrate, endingRewards } from "./rewardsui.js";
 import { bumpSize, openSettings, applySettings } from "./settings.js";
 
 const st = (book) => store.getBook(book.id);
@@ -228,6 +230,7 @@ export function renderReader(root, book, idx, nav) {
 	idx = Math.max(0, Math.min(last, idx));
 	const chapter = book.chapters[idx];
 	store.patchBook(book.id, { chapter: idx, started: true });
+	rewards.noteReadingDay();
 
 	const article = h("article", { class: "story" });
 	if (chapter.scene) article.append(scene(chapter.scene));
@@ -302,12 +305,20 @@ export function renderReader(root, book, idx, nav) {
 					store.patchBook(book.id, {
 						quiz: { ...(st(book).quiz || {}), [idx]: n },
 					});
+					const res = rewards.chapterDone(book, idx, n, qs.length);
+					toast(res.items);
+					if (res.newly.length) setTimeout(() => celebrate(res.newly), 1500);
 					end.hidden = false;
 				}),
 				end,
 			);
 		} else {
 			article.append(end);
+			if (!qs.length) {
+				const res = rewards.chapterDone(book, idx, 0, 0);
+				toast(res.items);
+				if (res.newly.length) setTimeout(() => celebrate(res.newly), 1500);
+			}
 		}
 	});
 }
@@ -321,6 +332,11 @@ export function renderEnding(root, book, nav) {
 	const found = b.endings.includes(ending.id)
 		? b.endings
 		: [...b.endings, ending.id];
+	const earned = rewards.endingDone(
+		book,
+		ending,
+		b.cast && b.cast.hero ? b.cast.hero.name : "",
+	);
 	store.patchBook(book.id, { endings: found, finished: true });
 
 	const article = h("article", { class: "story ending" });
@@ -358,6 +374,9 @@ export function renderEnding(root, book, nav) {
 				),
 			),
 		);
+		const earnedCard = endingRewards(earned, new Map([[book.id, book]]));
+		if (earnedCard) article.append(earnedCard);
+		if (earned.newly.length) setTimeout(() => celebrate(earned.newly), 1200);
 		article.append(
 			h(
 				"section",
