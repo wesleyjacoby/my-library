@@ -1829,3 +1829,8 @@ html[data-anim="on"] .rw-star {
 .book-card.soon:hover .cover svg {
 	transform: none;
 }
+
+/* A word and the punctuation touching it never separate across lines */
+.tk {
+	white-space: nowrap;
+}

@@ -3,7 +3,7 @@
 import { h } from "./dom.js";
 import * as store from "./store.js";
 import { compile, plain } from "./personalise.js";
-import { toFragment } from "./syllables.js";
+import { toFragment, glue } from "./syllables.js";
 
 function lookBack(article, find, card) {
 	const els = [...article.querySelectorAll(".sn")].filter(
@@ -123,10 +123,12 @@ export function quizCard(book, chapter, article, onDone) {
 				h("span", { class: "quiz-tag" }, "Quick check"),
 				h("span", { class: "quiz-count" }, `${qi + 1} of ${qs.length}`),
 			),
-			h(
-				"p",
-				{ class: "quiz-q" },
-				toFragment(compile(q.q, cast), book.syllables || {}),
+			glue(
+				h(
+					"p",
+					{ class: "quiz-q" },
+					toFragment(compile(q.q, cast), book.syllables || {}),
+				),
 			),
 			h("div", { class: "choice-options" }, buttons),
 			msg,

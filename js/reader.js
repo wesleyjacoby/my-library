@@ -3,7 +3,7 @@ import { h } from "./dom.js";
 import * as store from "./store.js";
 import { compile, plain, evalCond, computeScores } from "./personalise.js";
 import { sceneHTML } from "./scenes.js";
-import { toFragment } from "./syllables.js";
+import { toFragment, glue } from "./syllables.js";
 import * as tts from "./tts.js";
 import { sentencify, initFocus } from "./coach.js";
 import { quizCard } from "./quiz.js";
@@ -21,6 +21,8 @@ const frag = (book, str) =>
 const para = (book, str) => {
 	const p = h("p", { class: "para" }, frag(book, str));
 	sentencify(p);
+	p.querySelectorAll(":scope > .sn").forEach(glue);
+	glue(p);
 	return p;
 };
 const scene = (def) => h("div", { class: "scene-wrap", html: sceneHTML(def) });
@@ -70,7 +72,7 @@ function renderChoice(book, choice, host, next) {
 	const box = h(
 		"section",
 		{ class: "choice" },
-		h("p", { class: "choice-prompt" }, frag(book, choice.prompt)),
+		glue(h("p", { class: "choice-prompt" }, frag(book, choice.prompt))),
 		h("div", { class: "choice-options" }, buttons),
 	);
 	host.append(box);

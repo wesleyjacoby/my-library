@@ -18,6 +18,37 @@ export function pieces(word, hyph) {
 
 // parts come from personalise.compile(); returns a DocumentFragment.
 // Punctuation is wrapped (.pn) and speech is tagged (.dlg) so the Reading Coach can style them.
+// Keeps every word together with the punctuation and quote marks touching it, so a full stop, comma
+// or opening quote can never be left alone at the start or end of a line.
+export function glue(root) {
+	const out = [];
+	let cur = null;
+	const take = (node) => {
+		if (!cur) {
+			cur = document.createElement("span");
+			cur.className = "tk";
+			out.push(cur);
+		}
+		cur.append(node);
+	};
+	for (const n of [...root.childNodes]) {
+		if (n.nodeType === 3) {
+			for (const t of n.textContent.split(/(\s+)/)) {
+				if (!t) continue;
+				if (/^\s+$/.test(t)) {
+					cur = null;
+					out.push(document.createTextNode(t));
+				} else take(document.createTextNode(t));
+			}
+		} else if (n.nodeType === 1 && n.classList.contains("sn")) {
+			cur = null;
+			out.push(n);
+		} else take(n);
+	}
+	root.replaceChildren(...out);
+	return root;
+}
+
 export function toFragment(parts, dict) {
 	const frag = document.createDocumentFragment();
 	let q = false; // inside speech
