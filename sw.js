@@ -1,7 +1,7 @@
 // Offline support. Serves from cache first and refreshes the cache in the background,
 // so changes you push to GitHub show up the next time the app is opened (or the time after).
 // Bump CACHE when you want to force old files out immediately.
-const CACHE = "my-library-v31";
+const CACHE = "my-library-v32";
 // On your own computer (localhost) always load the newest files, falling back to the cache only offline.
 // On GitHub Pages the cache is used first for speed, and refreshed in the background.
 const DEV = ["localhost", "127.0.0.1", "[::1]"].includes(
@@ -49,7 +49,14 @@ self.addEventListener("install", (event) => {
 	event.waitUntil(
 		(async () => {
 			const cache = await caches.open(CACHE);
-			await cache.addAll(CORE);
+			// 'reload' skips the browser's HTTP cache (GitHub Pages lets it keep files for ~10 minutes), so a new version never installs stale files.
+			await Promise.all(
+				CORE.map(async (u) => {
+					const r = await fetch(new Request(u, { cache: "reload" }));
+					if (!r.ok) throw new Error(u);
+					await cache.put(u, r);
+				}),
+			);
 			try {
 				const idx = await (
 					await fetch("books/index.json", { cache: "no-cache" })
@@ -100,7 +107,7 @@ self.addEventListener("fetch", (event) => {
 					return cached || Response.error();
 				}
 			}
-			const network = fetch(req)
+			const network = fetch(req, { cache: "no-cache" })
 				.then((res) => {
 					if (res && res.ok) cache.put(req, res.clone());
 					return res;
