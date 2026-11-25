@@ -68,6 +68,7 @@ const ORDER = [
 	"clouds",
 	"gulls",
 	"hills",
+	"peaks",
 	"sea",
 	"causeway",
 	"village",
@@ -86,6 +87,12 @@ const ORDER = [
 	"cake",
 	"cart",
 	"sleepwalker",
+	"tower",
+	"gorge",
+	"hoard",
+	"egg",
+	"eye",
+	"dragon",
 	"map",
 	"shop",
 	"attic",
@@ -104,6 +111,7 @@ const ORDER = [
 	"lens",
 	"keeper",
 	"glow",
+	"snow",
 	"fog",
 	"rain",
 ];
@@ -643,6 +651,84 @@ const DRAW = {
 		`<circle cx="22" cy="322" r="13" fill="#2a2118"/><circle cx="178" cy="322" r="13" fill="#2a2118"/>` +
 		`<rect x="40" y="244" width="120" height="32" rx="4" fill="#f4e27a" stroke="#c9a24a" stroke-width="2"/><rect x="56" y="214" width="88" height="30" rx="4" fill="#f8eeaa" stroke="#c9a24a" stroke-width="2"/><rect x="70" y="186" width="60" height="28" rx="4" fill="#f4e27a" stroke="#c9a24a" stroke-width="2"/>` +
 		`<ellipse cx="100" cy="180" rx="10" ry="7" fill="#fff"/><circle cx="110" cy="171" r="5" fill="#fff"/></g></g>`,
+
+	// ---- The Egg on Ember Hill kit ----
+
+	// Far mountain range with pale snow caps.
+	peaks: ({ m }) =>
+		`<g><path d="M0 250 L90 150 L150 200 L250 100 L340 210 L430 140 L520 214 L620 120 L720 190 L800 150 L800 262 L0 262Z" fill="${m.far}"/>` +
+		`<path d="M250 100 L226 134 L246 128 L258 142 L274 126 L290 138Z M620 120 L598 152 L616 146 L628 160 L644 144 L660 154Z M90 150 L74 172 L90 168 L102 180 L110 166Z" fill="#e8eef8" opacity=".75"/></g>`,
+
+	// A ruined round watchtower on a bare black hill, one side broken away.
+	tower: ({ m }) =>
+		`<g><path d="M470 360 L560 262 Q620 220 700 216 Q760 216 800 226 L800 360Z" fill="${m.land}"/>` +
+		`<path d="M640 222 L640 150 L664 150 L668 164 L688 156 L694 176 L710 170 L714 222Z" fill="${m.land}"/>` +
+		`<rect x="656" y="182" width="12" height="18" fill="${m.far}"/></g>`,
+
+	// The nest of black ash with the dark egg cracking open, lit orange from inside.
+	egg: ({ id }) =>
+		`<g><ellipse class="flk" cx="400" cy="200" rx="270" ry="160" fill="url(#warm${id})" opacity=".7"/>` +
+		`<path d="M200 350 Q250 296 330 292 Q400 284 470 292 Q550 296 600 350Z" fill="#1c1a24"/><path d="M250 330 Q330 304 400 306 Q470 304 550 330" fill="none" stroke="#35323f" stroke-width="4"/>` +
+		`<path d="M326 300 Q316 212 360 176 L374 192 L388 170 L404 196 L420 172 L436 192 L446 176 Q488 212 478 300 Q402 322 326 300Z" fill="#2c2a34" stroke="#14121a" stroke-width="3"/>` +
+		`<path class="pulse" d="M374 192 L388 170 L404 196 L420 172 L436 192 Q404 214 374 192Z" fill="#ffb13b"/>` +
+		`<path class="pulse" d="M352 270 L370 240 L358 222 M452 266 L438 236 L452 214" fill="none" stroke="#ff9a3c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>` +
+		`<path d="M520 304 L548 284 L556 308Z M262 308 L286 292 L296 312Z" fill="#2c2a34"/></g>`,
+
+	// A deep gorge with a rope bridge hanging between two cliffs.
+	gorge: ({ m }) =>
+		`<g><rect y="226" width="800" height="134" fill="#05060c"/>` +
+		`<path d="M0 360 L0 214 L210 214 L236 244 L224 360Z" fill="${m.land}"/><path d="M800 360 L800 190 L590 190 L564 230 L576 360Z" fill="${m.land}"/>` +
+		`<path d="M236 214 Q400 276 564 190" fill="none" stroke="#6b5a42" stroke-width="3"/><path d="M236 232 Q400 292 564 208" fill="none" stroke="#6b5a42" stroke-width="3"/>` +
+		[260, 292, 324, 356, 388, 420, 452, 484, 516, 548]
+			.map(
+				(x, i) =>
+					`<rect x="${x - 7}" y="${n0(236 + 18 * Math.sin(((x - 236) / 328) * Math.PI) + (i > 6 ? -8 : 0))}" width="16" height="5" fill="#8a6a3a"/>`,
+			)
+			.join("") +
+		`<path d="M300 360 Q360 330 420 360 T540 360" fill="none" stroke="${m.wave}" stroke-width="3" opacity=".5"/>` +
+		`</g>`,
+
+	// The dragon's hoard: heaped coins, spoons, a teapot and a bicycle bell glinting in the dark.
+	hoard: ({ r }) => {
+		let s = `<g><path d="M0 360 L0 290 Q140 210 300 250 T560 236 T800 262 L800 360Z" fill="#2a2418"/>`;
+		for (let i = 0; i < 64; i++) {
+			const x = n0(r() * 800),
+				y = n0(240 + r() * 110);
+			s += `<ellipse cx="${x}" cy="${y}" rx="${n0(7 + r() * 5)}" ry="3.4" fill="${r() > 0.35 ? "#e6b84a" : "#c8ccd6"}" opacity=".85"/>`;
+		}
+		s +=
+			`<path d="M120 290 q0 -34 34 -34 q34 0 34 34Z" fill="#7a8fb0"/><rect x="186" y="270" width="26" height="6" fill="#7a8fb0"/><path d="M118 276 q-14 4 -8 18" fill="none" stroke="#7a8fb0" stroke-width="5"/>` +
+			`<circle cx="560" cy="270" r="22" fill="none" stroke="#9aa0ae" stroke-width="5"/><circle cx="640" cy="272" r="22" fill="none" stroke="#9aa0ae" stroke-width="5"/><path d="M560 270 L600 250 L640 272 M600 250 L596 232 H614" fill="none" stroke="#9aa0ae" stroke-width="5"/>`;
+		return s + "</g>";
+	},
+
+	// One huge golden eye, just opening.
+	eye: () =>
+		`<g><path d="M200 210 Q400 70 600 210 Q400 330 200 210Z" fill="#20120c"/>` +
+		`<path d="M236 210 Q400 104 564 210 Q400 306 236 210Z" fill="#f2b84b"/>` +
+		`<path d="M236 210 Q400 104 564 210 Q400 306 236 210Z" fill="none" stroke="#a96a14" stroke-width="6"/>` +
+		`<ellipse class="pulse" cx="400" cy="208" rx="16" ry="78" fill="#150a05"/><ellipse cx="392" cy="176" rx="5" ry="12" fill="#fff6c8" opacity=".8"/></g>`,
+
+	// Snow falling over the whole picture.
+	snow: ({ r }) => {
+		let s = '<g fill="#fff" opacity=".85">';
+		for (let i = 0; i < 60; i++)
+			s += `<circle class="drift" style="--t:${n0(14 + r() * 20)}s" cx="${n0(r() * 800)}" cy="${n0(r() * 340)}" r="${(1.4 + r() * 2.2).toFixed(1)}"/>`;
+		return s + "</g>";
+	},
+
+	// A small grey dragon with glowing orange lines down its back, sitting and looking out.
+	dragon: ({ id, m }) =>
+		`<g><ellipse class="flk" cx="500" cy="250" rx="130" ry="84" fill="url(#warm${id})" opacity=".8"/>` +
+		`<path d="M340 360 Q430 286 540 300 Q640 296 700 360Z" fill="${m.land}"/>` +
+		`<path d="M556 300 Q620 300 640 262 Q650 240 630 236 Q634 262 600 276 Q580 284 552 284Z" fill="#59606e"/>` +
+		`<path d="M446 300 Q440 232 478 216 Q500 208 522 216 Q560 232 554 300Z" fill="#59606e"/>` +
+		`<path d="M456 262 Q500 246 544 262 M460 282 Q500 268 540 282" fill="none" stroke="#ff9a3c" stroke-width="3.4" opacity=".95"/>` +
+		`<path d="M452 250 Q404 216 392 160 Q430 190 468 226Z M548 250 Q596 216 608 160 Q570 190 532 226Z" fill="#4a505c" stroke="#3a3f4a" stroke-width="2"/>` +
+		`<path d="M470 214 Q472 184 500 180 Q532 184 532 214Q500 226 470 214Z" fill="#59606e"/>` +
+		`<path d="M504 196 Q540 192 548 210 Q540 222 506 218Z" fill="#59606e"/><circle cx="534" cy="204" r="1.8" fill="#2a2e38"/>` +
+		`<path d="M478 188 L466 164 L492 182Z M518 182 L536 160 L530 186Z" fill="#3a3f4a"/>` +
+		`<ellipse cx="496" cy="198" rx="7" ry="8" fill="#ffd45a"/><rect x="493" y="191" width="3.4" height="14" fill="#1a1208"/></g>`,
 
 	// ---- Gull Rock extras ----
 

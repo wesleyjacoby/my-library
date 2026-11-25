@@ -360,6 +360,40 @@ const ART = {
 					`<ellipse cx="${x}" cy="${y}" rx="${r}" ry="${r - 4}" fill="${C.stone}" stroke="${C.rock}" stroke-width="2"/>`,
 			)
 			.join("")}`,
+	watchtower: () =>
+		bg(C.sky) +
+		`<path d="M0 66 Q50 54 120 62 L120 90 L0 90Z" fill="${C.green}"/>
+    <path d="M40 72 L44 24 L56 24 L58 30 L68 26 L70 36 L80 32 L82 72Z" fill="${C.stone}" stroke="${C.rock}" stroke-width="2.2" stroke-linejoin="round"/>
+    <rect x="56" y="38" width="8" height="12" fill="#14121c"/><path d="M42 50 H80 M42 62 H82" stroke="${C.rock}" stroke-width="1.6" opacity=".7"/>`,
+
+	gorge: () =>
+		bg(C.sky) +
+		`<path d="M0 34 L40 34 L50 90 L0 90Z" fill="${C.rock}"/><path d="M120 28 L80 28 L70 90 L120 90Z" fill="${C.rock}"/>
+    <rect x="46" y="40" width="28" height="50" fill="#1b2547"/><path d="M36 34 Q60 52 84 28" fill="none" stroke="${C.dark}" stroke-width="2.4"/>
+    ${[44, 54, 64, 74].map((x) => `<rect x="${x - 3}" y="${40 + (x < 60 ? 2 : -1)}" width="7" height="3" fill="${C.wood}"/>`).join("")}`,
+
+	hoard: () =>
+		bg("#2a2418") +
+		`<path d="M0 90 L0 62 Q40 36 80 52 T120 58 L120 90Z" fill="#4a3d22"/>
+    ${[
+			[22, 66],
+			[44, 60],
+			[66, 64],
+			[88, 58],
+			[32, 76],
+			[60, 74],
+			[92, 72],
+			[14, 84],
+			[48, 84],
+			[78, 84],
+			[104, 80],
+		]
+			.map(
+				([x, y], i) =>
+					`<ellipse cx="${x}" cy="${y}" rx="8" ry="3.4" fill="${i % 3 ? C.gold : "#c8ccd6"}"/>`,
+			)
+			.join("")}
+    <path d="M52 52 q0 -18 18 -18 q18 0 18 18Z" fill="#7a8fb0" stroke="${C.ink}" stroke-width="1.6"/><path d="M50 44 q-8 2 -4 10" fill="none" stroke="#7a8fb0" stroke-width="3"/>`,
 };
 
 export const ART_NAMES = Object.keys(ART);

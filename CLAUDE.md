@@ -46,7 +46,7 @@ The owner wants prose that does not sound AI-written: **no em dashes**, avoid "l
 - Cache is `my-library-v10`.
 
 ## Book 2, profiles and the grown-ups report
-- Books: `gull-rock`, `smugglers-tunnel` ("The Smugglers' Tunnel", Saltwick) and `cake-chase` ("The Great Cake Chase", Puddlecombe; a light comedy-adventure, 5 choices, no cousin slot). All have 8 chapters and `"level": 2`. Humour is light and never tied to a friend's personality: running gags (Mr Podmore's speeches, the squeaking trolley, Duchess the goat) plus the odd dry line in the older books, never inside the tense moments. Each book uses its own scene elements; keep new books visually distinct from earlier ones. Scene kit order lives in `js/scenes.js`.
+- Books: `gull-rock`, `smugglers-tunnel` ("The Smugglers' Tunnel", Saltwick) and `cake-chase` ("The Great Cake Chase", Puddlecombe; a light comedy-adventure, 5 choices, no cousin slot). `ember-hill` ("The Egg on Ember Hill", Kettleridge; a mountain dragon adventure with a player-named hatchling in the extra `dragon` cast slot, 5 choices). All have 8 chapters and `"level": 2`. Humour is light and never tied to a friend's personality: running gags (Mr Podmore's speeches, the squeaking trolley, Duchess the goat) plus the odd dry line in the older books, never inside the tense moments. Each book uses its own scene elements; keep new books visually distinct from earlier ones. Scene kit order lives in `js/scenes.js`.
 - Prose rules for new books: no em dashes, no "like the way" similes, and keep similes simple, concrete and realistic (things a 10-year-old can picture straight away, e.g. "as black as coal", never abstract or poetic ones).
 - Storage is `mylib.v2`: `{ profiles, order, current, pin }`. `js/store.js` keeps the same function names (`getBook`, `getSettings`, ...) but they act on the current reader. Never read `localStorage` directly in new code.
 - Reading stats (`js/stats.js`, per profile): sessions per chapter, tapped words, quiz tries. `js/insights.js` holds the pure maths (tested by `node` directly). `js/parent.js` is the report page, `js/profiles.js` the reader switcher.
@@ -80,3 +80,6 @@ The owner wants prose that does not sound AI-written: **no em dashes**, avoid "l
 
 ## Cake Chase scene elements (v40)
 `hall`, `bunting`, `sleepwalker`, `farm`, `mill`, `stones`, `bull`, `cake`, `cart` were added to `js/scenes.js` (and `ORDER`). Six word pictures were added to `js/wordart.js`: `bunting`, `trolley`, `scarecrow`, `stile`, `millwheel`, `stones`.
+
+## Ember Hill scene elements and word art (v41)
+Scene elements `peaks`, `tower`, `gorge`, `hoard`, `egg`, `eye`, `dragon`, `snow` were added to `js/scenes.js`; word pictures `watchtower`, `gorge`, `hoard` to `js/wordart.js`. The book adds a fifth cast slot, `dragon` (name plus it/he/she), which the setup form builds automatically.

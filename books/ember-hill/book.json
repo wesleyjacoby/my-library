@@ -1,0 +1,1701 @@
+{
+	"id": "ember-hill",
+	"title": "The Egg on Ember Hill",
+	"cover": {
+		"scene": {
+			"mood": "night",
+			"elements": ["egg"],
+			"alt": "A glowing dark egg in a ring of ash, cracking open.",
+			"align": "xMidYMid"
+		}
+	},
+	"traits": ["brave", "kind", "clever"],
+	"cast": [
+		{
+			"key": "hero",
+			"label": "Your name",
+			"placeholder": "Type your name",
+			"default": "Alex",
+			"required": true,
+			"pronouns": ["she", "he", "they"],
+			"pronounLabel": "Which fits you best?"
+		},
+		{
+			"key": "friend",
+			"label": "Your best friend’s name",
+			"placeholder": "Best friend",
+			"default": "Sam",
+			"altDefault": "Jess",
+			"pronouns": ["she", "he", "they"],
+			"pronounLabel": "Which fits your best friend?"
+		},
+		{
+			"key": "pet",
+			"label": "Your pet’s name",
+			"placeholder": "Pet",
+			"default": "Biscuit",
+			"altDefault": "Pepper",
+			"pronouns": ["he", "she", "it"],
+			"pronounDefault": "he",
+			"pronounLabel": "Is your pet a…",
+			"variants": {
+				"label": "Dog or cat?",
+				"options": [
+					{
+						"id": "dog",
+						"label": "Dog"
+					},
+					{
+						"id": "cat",
+						"label": "Cat"
+					}
+				]
+			}
+		},
+		{
+			"key": "grownup",
+			"label": "The grown-up staying with you (Mum, Gran, Uncle Pete…)",
+			"placeholder": "Mum, Gran, Dad…",
+			"default": "Gran",
+			"altDefault": "Grandpa",
+			"pronouns": ["she", "he", "they"],
+			"pronounLabel": "Which fits them?"
+		},
+		{
+			"key": "dragon",
+			"label": "Name your baby dragon",
+			"placeholder": "Dragon name",
+			"default": "Cinder",
+			"altDefault": "Spark",
+			"pronouns": ["it", "he", "she"],
+			"pronounDefault": "it",
+			"pronounLabel": "Is your dragon a…"
+		}
+	],
+	"tagline": "A warm egg. A closed bridge. One night to get a baby dragon home before the snow.",
+	"blurb": "Nobody goes up Ember Hill after dark. Tonight, something is glowing at the top. A mountain adventure with a dragon to name, a Warden with a secret and tough choices that change how the night ends.",
+	"ages": "8+",
+	"level": 2,
+	"syllables": {
+		"admit": "ad-mit",
+		"allowed": "al-lowed",
+		"amount": "a-mount",
+		"animal": "an-i-mal",
+		"annoyed": "an-noyed",
+		"annoying": "an-noy-ing",
+		"anthem": "an-them",
+		"anybody": "an-y-bod-y",
+		"anywhere": "an-y-where",
+		"apart": "a-part",
+		"aren": "aren",
+		"arrest": "ar-rest",
+		"arrive": "ar-rive",
+		"arrived": "ar-rived",
+		"attention": "at-ten-tion",
+		"audience": "au-di-ence",
+		"baker": "ba-ker",
+		"baking": "bak-ing",
+		"balance": "bal-ance",
+		"bales": "bales",
+		"beetroot": "beet-root",
+		"beginning": "be-gin-ning",
+		"begins": "be-gins",
+		"believe": "be-lieve",
+		"belongs": "be-longs",
+		"bitter": "bit-ter",
+		"bobble": "bob-ble",
+		"bucket": "buck-et",
+		"bunting": "bunt-ing",
+		"buttering": "but-ter-ing",
+		"cancelled": "can-celled",
+		"carefully": "care-ful-ly",
+		"centenary": "cen-ten-a-ry",
+		"cheerful": "cheer-ful",
+		"cheerfully": "cheer-ful-ly",
+		"chewing": "chew-ing",
+		"children": "chil-dren",
+		"climbing": "climb-ing",
+		"committed": "com-mit-ted",
+		"committee": "com-mit-tee",
+		"competition": "com-pe-ti-tion",
+		"completely": "com-plete-ly",
+		"conduct": "con-duct",
+		"conducted": "con-duct-ed",
+		"creatures": "crea-tures",
+		"cushion": "cush-ion",
+		"custard": "cus-tard",
+		"darker": "dark-er",
+		"daylight": "day-light",
+		"decide": "de-cide",
+		"decided": "de-cid-ed",
+		"deeply": "deep-ly",
+		"dewy": "dew-y",
+		"dignity": "dig-ni-ty",
+		"disasters": "dis-as-ters",
+		"downstairs": "down-stairs",
+		"dragging": "drag-ging",
+		"dramatic": "dra-mat-ic",
+		"drawer": "draw-er",
+		"dreamy": "dream-y",
+		"dressing": "dress-ing",
+		"duchess": "duch-ess",
+		"easier": "eas-i-er",
+		"easy": "eas-y",
+		"eating": "eat-ing",
+		"eeeek": "eeeek",
+		"eeek": "eeek",
+		"effect": "ef-fect",
+		"elbows": "el-bows",
+		"eleven": "e-lev-en",
+		"enthusiasm": "en-thu-si-asm",
+		"everyone": "ev-ery-one",
+		"evidence": "ev-i-dence",
+		"except": "ex-cept",
+		"excuse": "ex-cuse",
+		"explained": "ex-plained",
+		"exploded": "ex-plod-ed",
+		"extremely": "ex-treme-ly",
+		"feeling": "feel-ing",
+		"finish": "fin-ish",
+		"firmly": "firm-ly",
+		"folding": "fold-ing",
+		"footbridge": "foot-bridge",
+		"forgive": "for-give",
+		"funny": "fun-ny",
+		"gentlest": "gen-tlest",
+		"gerald": "ger-ald",
+		"given": "giv-en",
+		"glaring": "glar-ing",
+		"handles": "han-dles",
+		"happen": "hap-pen",
+		"happens": "hap-pens",
+		"harvest": "har-vest",
+		"hasty": "hast-y",
+		"higher": "high-er",
+		"himself": "him-self",
+		"hundredth": "hun-dredth",
+		"icing": "ic-ing",
+		"idea": "i-de-a",
+		"interested": "in-ter-est-ed",
+		"ironed": "i-roned",
+		"island": "is-land",
+		"judging": "judg-ing",
+		"jumper": "jump-er",
+		"kindness": "kind-ness",
+		"lady": "la-dy",
+		"layer": "lay-er",
+		"layers": "lay-ers",
+		"lemon": "lem-on",
+		"lemons": "lem-ons",
+		"lemony": "lem-on-y",
+		"letters": "let-ters",
+		"licking": "lick-ing",
+		"listening": "lis-ten-ing",
+		"lowered": "low-ered",
+		"machinery": "ma-chin-er-y",
+		"marrow": "mar-row",
+		"mayor": "may-or",
+		"mention": "men-tion",
+		"mentioned": "men-tioned",
+		"missing": "miss-ing",
+		"money": "mon-ey",
+		"moonlight": "moon-light",
+		"mother": "moth-er",
+		"mouthful": "mouth-ful",
+		"neatest": "neat-est",
+		"nightcap": "night-cap",
+		"nineteen": "nine-teen",
+		"noisy": "nois-y",
+		"number": "num-ber",
+		"offer": "of-fer",
+		"outstanding": "out-stand-ing",
+		"panic": "pan-ic",
+		"pedal": "ped-al",
+		"pennyfeather": "pen-ny-feath-er",
+		"picking": "pick-ing",
+		"pile": "pile",
+		"pocket": "pock-et",
+		"podmore": "pod-more",
+		"polish": "pol-ish",
+		"polishing": "pol-ish-ing",
+		"polite": "po-lite",
+		"politely": "po-lite-ly",
+		"potatoes": "po-ta-toes",
+		"problem": "prob-lem",
+		"programme": "pro-gramme",
+		"proper": "prop-er",
+		"puddlecombe": "pud-dle-combe",
+		"purpose": "pur-pose",
+		"pushing": "push-ing",
+		"pyjama": "py-ja-ma",
+		"questions": "ques-tions",
+		"quickly": "quick-ly",
+		"quieter": "qui-et-er",
+		"quivering": "quiv-er-ing",
+		"rabbit": "rab-bit",
+		"rattle": "rat-tle",
+		"remove": "re-move",
+		"respect": "re-spect",
+		"rosette": "ro-sette",
+		"sausage": "sau-sage",
+		"scarecrow": "scare-crow",
+		"sentence": "sen-tence",
+		"series": "se-ries",
+		"serious": "se-ri-ous",
+		"settle": "set-tle",
+		"sharply": "sharp-ly",
+		"shining": "shin-ing",
+		"shoulder": "shoul-der",
+		"shoulders": "shoul-ders",
+		"shouting": "shout-ing",
+		"silence": "si-lence",
+		"silent": "si-lent",
+		"sitting": "sit-ting",
+		"sleeping": "sleep-ing",
+		"sleepwalked": "sleep-walked",
+		"sleepwalker": "sleep-walk-er",
+		"sleepwalkers": "sleep-walk-ers",
+		"sleepwalking": "sleep-walk-ing",
+		"slicer": "sli-cer",
+		"slipper": "slip-per",
+		"slippers": "slip-pers",
+		"slippery": "slip-per-y",
+		"slowing": "slow-ing",
+		"smile": "smile",
+		"sniffing": "sniff-ing",
+		"special": "spe-cial",
+		"spoken": "spo-ken",
+		"squeak": "squeak",
+		"squeaking": "squeak-ing",
+		"stile": "stile",
+		"stolen": "sto-len",
+		"stopping": "stop-ping",
+		"studied": "stud-ied",
+		"suddenly": "sud-den-ly",
+		"sugar": "sug-ar",
+		"surprisingly": "sur-pris-ing-ly",
+		"suspect": "sus-pect",
+		"suspects": "sus-pects",
+		"suspicious": "sus-pi-cious",
+		"tablecloth": "ta-ble-cloth",
+		"taken": "tak-en",
+		"taking": "tak-ing",
+		"taller": "tall-er",
+		"tartan": "tar-tan",
+		"tastier": "tast-i-er",
+		"teaspoons": "tea-spoons",
+		"teatime": "tea-time",
+		"testing": "test-ing",
+		"thirty": "thir-ty",
+		"thorough": "thor-ough",
+		"thoroughly": "thor-ough-ly",
+		"tinkle": "tin-kle",
+		"tiptoe": "tip-toe",
+		"tongue": "tongue",
+		"touching": "touch-ing",
+		"travel": "trav-el",
+		"travels": "trav-els",
+		"tremble": "trem-ble",
+		"trifle": "tri-fle",
+		"trolley": "trol-ley",
+		"trolleys": "trol-leys",
+		"trousers": "trou-sers",
+		"uncle": "un-cle",
+		"upright": "up-right",
+		"upstairs": "up-stairs",
+		"useful": "use-ful",
+		"vegetables": "veg-e-ta-bles",
+		"vicar": "vic-ar",
+		"waking": "wak-ing",
+		"wandered": "wan-dered",
+		"wearing": "wear-ing",
+		"welcome": "wel-come",
+		"wellingtons": "wel-ling-tons",
+		"wherever": "wher-ev-er",
+		"while": "while",
+		"wobble": "wob-ble",
+		"wobbling": "wob-bling",
+		"wobbly": "wob-bly",
+		"wondered": "won-dered",
+		"wooden": "wood-en",
+		"worried": "wor-ried",
+		"periwinkle": "per-i-win-kle",
+		"echoed": "ech-oed",
+		"finally": "fi-nal-ly",
+		"fizzy": "fiz-zy",
+		"flickering": "flick-er-ing",
+		"howling": "howl-ing",
+		"jelly": "jel-ly",
+		"relieved": "re-lieved",
+		"saltwick": "salt-wick",
+		"quay": "quay",
+		"afternoon": "af-ter-noon",
+		"aloud": "a-loud",
+		"although": "al-though",
+		"angry": "an-gry",
+		"ankles": "an-kles",
+		"answered": "an-swered",
+		"apology": "a-pol-o-gy",
+		"armchair": "arm-chair",
+		"attic": "at-tic",
+		"awake": "a-wake",
+		"barely": "bare-ly",
+		"believed": "be-lieved",
+		"bellowed": "bel-lowed",
+		"biscuit": "bis-cuit",
+		"biscuits": "bis-cuits",
+		"boathouse": "boat-house",
+		"boatman": "boat-man",
+		"bobbing": "bob-bing",
+		"body": "bod-y",
+		"borrowed": "bor-rowed",
+		"bravest": "brav-est",
+		"breathlessly": "breath-less-ly",
+		"buoys": "buoys",
+		"calmest": "calm-est",
+		"cannot": "can-not",
+		"captain": "cap-tain",
+		"cargo": "car-go",
+		"carrying": "car-ry-ing",
+		"cellar": "cel-lar",
+		"chamber": "cham-ber",
+		"clapper": "clap-per",
+		"clinging": "cling-ing",
+		"clinking": "clink-ing",
+		"coastguard": "coast-guard",
+		"compasses": "com-pass-es",
+		"counting": "count-ing",
+		"crashing": "crash-ing",
+		"crouching": "crouch-ing",
+		"cutter": "cut-ter",
+		"dangling": "dan-gling",
+		"daniel": "dan-iel",
+		"diesel": "die-sel",
+		"dinghy": "ding-hy",
+		"directly": "di-rect-ly",
+		"dolly": "dol-ly",
+		"dozen": "doz-en",
+		"dozens": "doz-ens",
+		"drifting": "drift-ing",
+		"early": "ear-ly",
+		"embarrassed": "em-bar-rassed",
+		"endless": "end-less",
+		"exit": "ex-it",
+		"expect": "ex-pect",
+		"familiar": "fa-mil-iar",
+		"fancy": "fan-cy",
+		"fifteen": "fif-teen",
+		"fishermen": "fish-er-men",
+		"footsteps": "foot-steps",
+		"forgotten": "for-got-ten",
+		"fourteen": "four-teen",
+		"furthest": "fur-thest",
+		"ginger": "gin-ger",
+		"grumbling": "grum-bling",
+		"gurgling": "gur-gling",
+		"hammered": "ham-mered",
+		"handwriting": "hand-writ-ing",
+		"haven": "hav-en",
+		"headlamps": "head-lamps",
+		"hearing": "hear-ing",
+		"hesitate": "hes-i-tate",
+		"hidden": "hid-den",
+		"holiday": "hol-i-day",
+		"hollow": "hol-low",
+		"hopping": "hop-ping",
+		"hunting": "hunt-ing",
+		"jigsaw": "jig-saw",
+		"ladder": "lad-der",
+		"lamplight": "lamp-light",
+		"lanterns": "lan-terns",
+		"leather": "leath-er",
+		"ledger": "ledg-er",
+		"lightly": "light-ly",
+		"littered": "lit-tered",
+		"loading": "load-ing",
+		"lobster": "lob-ster",
+		"locker": "lock-er",
+		"lorry": "lor-ry",
+		"lower": "low-er",
+		"lowest": "low-est",
+		"marching": "march-ing",
+		"marigold": "mar-i-gold",
+		"matter": "mat-ter",
+		"mattered": "mat-tered",
+		"mending": "mend-ing",
+		"moments": "mo-ments",
+		"muscle": "mus-cle",
+		"myself": "my-self",
+		"nightie": "night-ie",
+		"oilskin": "oil-skin",
+		"opening": "o-pen-ing",
+		"outraged": "out-raged",
+		"overhead": "o-ver-head",
+		"paving": "pav-ing",
+		"peppermints": "pep-per-mints",
+		"perhaps": "per-haps",
+		"picture": "pic-ture",
+		"piling": "pil-ing",
+		"pillow": "pil-low",
+		"pointing": "point-ing",
+		"poking": "pok-ing",
+		"police": "po-lice",
+		"policeman": "po-lice-man",
+		"policemen": "po-lice-men",
+		"postcard": "post-card",
+		"pouring": "pour-ing",
+		"probably": "prob-a-bly",
+		"properly": "prop-er-ly",
+		"rather": "rath-er",
+		"regret": "re-gret",
+		"repeated": "re-peat-ed",
+		"reversed": "re-versed",
+		"ripping": "rip-ping",
+		"rolling": "roll-ing",
+		"rubber": "rub-ber",
+		"secrets": "se-crets",
+		"seeing": "see-ing",
+		"several": "sev-er-al",
+		"shortest": "short-est",
+		"signalling": "sig-nal-ling",
+		"signals": "sig-nals",
+		"silly": "sil-ly",
+		"slamming": "slam-ming",
+		"sliding": "slid-ing",
+		"slimy": "slim-y",
+		"smelling": "smell-ing",
+		"sometimes": "some-times",
+		"sorry": "sor-ry",
+		"steadily": "stead-i-ly",
+		"station": "sta-tion",
+		"story": "sto-ry",
+		"stupid": "stu-pid",
+		"sucking": "suck-ing",
+		"sweating": "sweat-ing",
+		"teacup": "tea-cup",
+		"thinking": "think-ing",
+		"thirteen": "thir-teen",
+		"tilda": "til-da",
+		"toward": "to-ward",
+		"towers": "tow-ers",
+		"trainers": "train-ers",
+		"travelled": "trav-elled",
+		"treasure": "treas-ure",
+		"tunnel": "tun-nel",
+		"underneath": "un-der-neath",
+		"unfolded": "un-fold-ed",
+		"unlock": "un-lock",
+		"unlocked": "un-locked",
+		"upward": "up-ward",
+		"urgent": "ur-gent",
+		"villain": "vil-lain",
+		"whenever": "when-ev-er",
+		"whichever": "which-ev-er",
+		"whisper": "whis-per",
+		"whistle": "whis-tle",
+		"wildly": "wild-ly",
+		"winter": "win-ter",
+		"wriggling": "wrig-gling",
+		"writing": "writ-ing",
+		"yourselves": "your-selves",
+		"rule": "rule",
+		"sale": "sale",
+		"miles": "miles",
+		"using": "using",
+		"dorothea": "dor-o-the-a",
+		"marbles": "mar-bles",
+		"shaky": "shak-y",
+		"thumping": "thump-ing",
+		"addressed": "ad-dressed",
+		"admired": "ad-mired",
+		"alarming": "a-larm-ing",
+		"appetite": "ap-pe-tite",
+		"argument": "ar-gu-ment",
+		"arguments": "ar-gu-ments",
+		"baby": "ba-by",
+		"bicycle": "bi-cy-cle",
+		"bottle": "bot-tle",
+		"brannock": "bran-nock",
+		"brightened": "bright-ened",
+		"brighter": "bright-er",
+		"broken": "bro-ken",
+		"bumpy": "bump-y",
+		"bundle": "bun-dle",
+		"butterfly": "but-ter-fly",
+		"button": "but-ton",
+		"calmly": "calm-ly",
+		"canoe": "ca-noe",
+		"canvas": "can-vas",
+		"casual": "cas-u-al",
+		"certificate": "cer-tif-i-cate",
+		"cheeping": "cheep-ing",
+		"chocolate": "choc-o-late",
+		"chocolates": "choc-o-lates",
+		"city": "cit-y",
+		"clanking": "clank-ing",
+		"clearly": "clear-ly",
+		"closely": "close-ly",
+		"closing": "clos-ing",
+		"colder": "cold-er",
+		"collar": "col-lar",
+		"collect": "col-lect",
+		"collection": "col-lec-tion",
+		"compliments": "com-pli-ments",
+		"contented": "con-tent-ed",
+		"cooling": "cool-ing",
+		"copper": "cop-per",
+		"cotton": "cot-ton",
+		"covers": "cov-ers",
+		"crossing": "cross-ing",
+		"definitely": "def-i-nite-ly",
+		"disappear": "dis-ap-pear",
+		"disappeared": "dis-ap-peared",
+		"discuss": "dis-cuss",
+		"dislike": "dis-like",
+		"distant": "dis-tant",
+		"doormat": "door-mat",
+		"doorstep": "door-step",
+		"dragon": "drag-on",
+		"dragons": "drag-ons",
+		"driver": "driv-er",
+		"dustbin": "dust-bin",
+		"ember": "em-ber",
+		"entrance": "en-trance",
+		"entry": "en-try",
+		"especially": "es-pe-cial-ly",
+		"excellent": "ex-cel-lent",
+		"expensive": "ex-pen-sive",
+		"expression": "ex-pres-sion",
+		"fairy": "fair-y",
+		"fallen": "fall-en",
+		"final": "fi-nal",
+		"fireworks": "fire-works",
+		"flickers": "flick-ers",
+		"flowerbed": "flow-er-bed",
+		"football": "foot-ball",
+		"freshly": "fresh-ly",
+		"fussy": "fuss-y",
+		"gasping": "gasp-ing",
+		"gathering": "gath-er-ing",
+		"glossy": "gloss-y",
+		"goodbye": "good-bye",
+		"grandfather": "grand-fa-ther",
+		"handlebars": "han-dle-bars",
+		"handy": "hand-y",
+		"happily": "hap-pi-ly",
+		"happy": "hap-py",
+		"hatching": "hatch-ing",
+		"hatchling": "hatch-ling",
+		"hello": "hel-lo",
+		"hiccup": "hic-cup",
+		"hiccuped": "hic-cuped",
+		"hiccupped": "hic-cupped",
+		"highest": "high-est",
+		"hillside": "hill-side",
+		"hole": "hole",
+		"hopefully": "hope-ful-ly",
+		"however": "how-ev-er",
+		"huddle": "hud-dle",
+		"hurrying": "hur-ry-ing",
+		"importance": "im-por-tance",
+		"important": "im-por-tant",
+		"instead": "in-stead",
+		"intend": "in-tend",
+		"interest": "in-ter-est",
+		"interesting": "in-ter-est-ing",
+		"junior": "jun-ior",
+		"kettleridge": "ket-tle-ridge",
+		"kettles": "ket-tles",
+		"label": "la-bel",
+		"larder": "lard-er",
+		"liberty": "lib-er-ty",
+		"lighters": "light-ers",
+		"lonely": "lone-ly",
+		"lovely": "love-ly",
+		"luggage": "lug-gage",
+		"marvellous": "mar-vel-lous",
+		"mentioning": "men-tion-ing",
+		"mitten": "mit-ten",
+		"mostly": "most-ly",
+		"mountain": "moun-tain",
+		"mountains": "moun-tains",
+		"netting": "net-ting",
+		"newspaper": "news-pa-per",
+		"normal": "nor-mal",
+		"nostril": "nos-tril",
+		"nostrils": "nos-trils",
+		"nuisance": "nui-sance",
+		"offence": "of-fence",
+		"offended": "of-fend-ed",
+		"office": "of-fice",
+		"orange": "or-ange",
+		"order": "or-der",
+		"otherwise": "oth-er-wise",
+		"padding": "pad-ding",
+		"particular": "par-tic-u-lar",
+		"permit": "per-mit",
+		"personal": "per-son-al",
+		"pillows": "pil-lows",
+		"pinholes": "pin-holes",
+		"pleasant": "pleas-ant",
+		"porridge": "por-ridge",
+		"property": "prop-er-ty",
+		"proudly": "proud-ly",
+		"reason": "rea-son",
+		"reasons": "rea-sons",
+		"receipt": "re-ceipt",
+		"regards": "re-gards",
+		"relief": "re-lief",
+		"remarkable": "re-mark-a-ble",
+		"returned": "re-turned",
+		"ringing": "ring-ing",
+		"rocking": "rock-ing",
+		"rotten": "rot-ten",
+		"rubbing": "rub-bing",
+		"rucksack": "ruck-sack",
+		"rules": "rules",
+		"rumour": "ru-mour",
+		"safest": "saf-est",
+		"saluted": "sa-lut-ed",
+		"sandwiches": "sand-wich-es",
+		"satisfaction": "sat-is-fac-tion",
+		"satisfied": "sat-is-fied",
+		"saucepan": "sauce-pan",
+		"scales": "scales",
+		"scratching": "scratch-ing",
+		"seriously": "se-ri-ous-ly",
+		"service": "ser-vice",
+		"shiny": "shin-y",
+		"shivering": "shiv-er-ing",
+		"shoelace": "shoe-lace",
+		"shower": "show-er",
+		"showing": "show-ing",
+		"signature": "sig-na-ture",
+		"singing": "sing-ing",
+		"slapping": "slap-ping",
+		"sleeper": "sleep-er",
+		"sleepy": "sleep-y",
+		"smoking": "smok-ing",
+		"snowflake": "snow-flake",
+		"softened": "soft-ened",
+		"soles": "soles",
+		"sooner": "soon-er",
+		"steadier": "stead-i-er",
+		"stony": "ston-y",
+		"straighter": "straight-er",
+		"strangers": "stran-gers",
+		"suggestion": "sug-ges-tion",
+		"summer": "sum-mer",
+		"sundays": "sun-days",
+		"sunshine": "sun-shine",
+		"survive": "sur-vive",
+		"suspiciously": "sus-pi-cious-ly",
+		"swaying": "sway-ing",
+		"swinging": "swing-ing",
+		"tale": "tale",
+		"teapot": "tea-pot",
+		"teapots": "tea-pots",
+		"teaspoon": "tea-spoon",
+		"telling": "tell-ing",
+		"terribly": "ter-ri-bly",
+		"thoughtful": "thought-ful",
+		"thousands": "thou-sands",
+		"thumbprint": "thumb-print",
+		"tidy": "ti-dy",
+		"treading": "tread-ing",
+		"trembling": "trem-bling",
+		"trumpet": "trum-pet",
+		"tuesday": "tues-day",
+		"umbrellas": "um-brel-las",
+		"untied": "un-tied",
+		"upturned": "up-turned",
+		"valley": "val-ley",
+		"villages": "vil-lag-es",
+		"waistcoat": "waist-coat",
+		"warden": "war-den",
+		"washing": "wash-ing",
+		"watchtower": "watch-tow-er",
+		"whistling": "whis-tling",
+		"wondering": "won-der-ing",
+		"woodsmoke": "wood-smoke",
+		"wriggle": "wrig-gle",
+		"yawning": "yawn-ing",
+		"zigzagged": "zig-zagged"
+	},
+	"glossary": {
+		"watchtower": {
+			"mean": "A tall stone tower where someone stood to watch for danger.",
+			"art": "watchtower",
+			"forms": ["watchtowers"]
+		},
+		"warden": {
+			"mean": "A person whose job is to look after a place and keep its rules.",
+			"forms": ["wardens"]
+		},
+		"hatchling": {
+			"mean": "A baby animal that has just come out of an egg.",
+			"forms": ["hatchlings"]
+		},
+		"gorge": {
+			"mean": "A very deep, narrow valley with steep rock sides.",
+			"art": "gorge",
+			"forms": ["gorges"]
+		},
+		"hoard": {
+			"mean": "A secret pile of treasure that someone keeps.",
+			"art": "hoard",
+			"forms": ["hoards"]
+		},
+		"ember": {
+			"mean": "A piece of wood or coal that is still glowing after a fire has died down.",
+			"forms": ["embers"]
+		},
+		"rucksack": {
+			"mean": "A bag you carry on your back.",
+			"forms": ["rucksacks"]
+		},
+		"lantern": {
+			"mean": "A lamp in a case that you can carry. Some use a candle.",
+			"art": "lantern",
+			"forms": ["lanterns"]
+		},
+		"scorch": {
+			"mean": "To burn something a little, so it goes brown or black.",
+			"forms": ["scorched"]
+		},
+		"anthem": {
+			"mean": "A special song for a country, a team or a village."
+		},
+		"certificate": {
+			"mean": "A piece of paper that says you have done or won something."
+		},
+		"suspicious": {
+			"mean": "Feeling that something is not quite right."
+		},
+		"moustache": {
+			"mean": "The hair that grows on a man’s top lip.",
+			"sounds": "muh-stash"
+		},
+		"permit": {
+			"mean": "Official permission, written down, to do something.",
+			"forms": ["permits"]
+		}
+	},
+	"chapters": [
+		{
+			"title": "Nobody Goes Up Ember Hill",
+			"scene": {
+				"mood": "dusk",
+				"elements": ["clouds", "peaks", "village", "tower"],
+				"alt": "A mountain village at dusk, with a ruined stone tower on the hill above it."
+			},
+			"blocks": [
+				"The bus from the city stopped at the bottom of the village, and the driver would go no further. “Kettleridge,” he said. He looked up at the hill behind the houses and then quickly looked at the road again. “Nobody goes up Ember Hill, you know.”",
+				"“Why not?” asked {friend}.",
+				"“Nobody does,” said the driver, which was not an answer, and he drove away rather fast.",
+				"{hero}, {friend}, {pet} and {grownup} had come to Kettleridge for a week in the mountains. The village was a huddle of grey stone houses with steep roofs and a chimney smoking on every one. Above it rose Ember Hill, bare and black, with the broken stump of a watchtower on the very top.",
+				"At the foot of the hill stood a wooden sign. It said NO ENTRY AFTER DARK. BY ORDER OF THE FIRE WARDEN. Underneath, in smaller letters, was a list of rules. Rule 1 was NO FIRES. Rule 4 was NO WHISTLING, for reasons nobody had written down. Rule 9 was SEE RULE 1.",
+				"The Fire Warden himself was standing beside the sign. He was a tall, stiff man with a grey moustache, and from his belt hung a leather bucket that clanked when he moved. His name, said the badge on his coat, was MR BRANNOCK.",
+				"“Matches,” said Mr Brannock.",
+				"“I’m sorry?” said {grownup}.",
+				"“Matches, lighters, fireworks, candles, anything that burns.” He held out his hand. {grownup} gave him the box of matches from the bag. Mr Brannock wrote out a receipt, folded the box into his pocket, and said that it would be returned when they left. Then he looked at {hero}, {friend} and {pet} for a long, hard moment.",
+				"“Stay off the hill,” he said. “Especially tonight. The snow comes before morning, and the first snow is when things on that hill go to sleep.”",
+				"“Things?” said {friend}.",
+				"“People,” said Mr Brannock. “I meant people. Good afternoon.” He clanked away.",
+				"“That,” said {friend}, “was the most suspicious thing I have ever heard.”",
+				"They had hot chocolate at the café on the green, because it was the only place open. At the next table sat a neat man in a very clean waistcoat and boots so shiny that the lamps shone in them. A butterfly net leaned against his chair. He smiled at them and paid for all four hot chocolates before anyone could stop him. “Mr Vane,” he said. “I collect rare things. Do tell me, have you been up to the hill yet?”",
+				"“We only just got here,” said {hero}.",
+				"“Of course,” said Mr Vane, still smiling. Later, {hero} noticed that he had not drunk a single sip of his own chocolate. {hero} could not have said why that seemed important, but it did.",
+				"{grownup}’s cottage had a stove, three beds in the attic and a window that looked straight up at Ember Hill. By nine o’clock, {grownup} had yawned twice and gone to bed. “First snow tonight,” said {grownup}, at the bottom of the stairs. “It always makes the whole village go quiet. Get some sleep.”",
+				"Nobody got any sleep. {pet} [[pet:dog=sat at the attic window with {pet.his} nose against the glass and whined, a very small, wobbling whine.|cat=sat on the window ledge with {pet.his} tail straight up, staring at the hill without once blinking.]]",
+				"{hero} knelt beside {pet} and looked out. The sky was thick with cloud, and the village was dark. But high on top of Ember Hill, inside the broken tower, a light was glowing. It was a deep, soft orange. It grew brighter, and faded, and grew brighter again, slowly, three times.",
+				"“Fire,” whispered {friend}.",
+				"“It’s not flickering,” said {hero}. “Fire flickers.”",
+				"The glow brightened once more. Then, quite clearly, across the whole dark valley, came a small sharp sound. Tick."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What did Mr Brannock take from {grownup}’s bag?",
+					"options": ["A torch", "The box of matches", "A map of the hill"],
+					"answer": 1,
+					"find": "box of matches",
+					"hint": "He wrote out a receipt for it."
+				},
+				{
+					"id": "q2",
+					"q": "What did Mr Vane carry?",
+					"options": ["A butterfly net", "A walking stick", "A bucket"],
+					"answer": 0,
+					"find": "butterfly net",
+					"hint": "It leaned against his chair."
+				},
+				{
+					"id": "q3",
+					"q": "What did {hero} see on top of Ember Hill?",
+					"options": [
+						"A flickering fire",
+						"A soft orange glow that grew and faded",
+						"A row of lanterns"
+					],
+					"answer": 1,
+					"find": "soft orange",
+					"hint": "It was not flickering."
+				}
+			]
+		},
+		{
+			"title": "The Warm Egg",
+			"scene": {
+				"mood": "night",
+				"elements": ["stars", "moon", "peaks", "tower"],
+				"alt": "The path up Ember Hill at night, with the broken tower against the clouds."
+			},
+			"blocks": [
+				"It was ten past nine. In the next bed, {friend} was already sitting up. “We’re going,” said {friend}. “Aren’t we?”",
+				"{hero} looked at the hill, and at the faint glow on top of it, and at {pet}, who was now scratching at the door. There was no good reason to go. There was no good reason not to, either, except Rule 1 and Mr Brannock and the dark.",
+				{
+					"choice": {
+						"id": "go-up",
+						"prompt": "How should {hero} go?",
+						"options": [
+							{
+								"id": "now",
+								"label": "Slip out of the window right now, before anyone can stop us",
+								"score": {
+									"brave": 1
+								},
+								"blocks": [
+									"“Now,” said {hero}. “Before I change my mind.” They pulled on coats and boots in the dark, climbed out onto the porch roof, and dropped down into the garden one at a time. {friend} landed in a flowerbed. Nobody said a word about it."
+								]
+							},
+							{
+								"id": "pack",
+								"label": "Pack a rucksack properly first, with everything we might need",
+								"score": {
+									"clever": 1
+								},
+								"blocks": [
+									"“If we’re going,” said {hero}, “we’re going properly.” In the rucksack went the torch from the hall, a coil of washing line, a blanket, and four cheese sandwiches from the larder. Then {hero} put pillows under the covers of both beds, in case anyone looked in. It took eleven minutes. It was the most sensible thing either of them had ever done at night."
+								]
+							},
+							{
+								"id": "note",
+								"label": "Leave a note for {grownup}, and take a hot water bottle for the cold",
+								"score": {
+									"kind": 1
+								},
+								"blocks": [
+									"“We can’t just disappear,” said {hero}. On the back of an envelope {hero} wrote GONE FOR A SHORT LOOK AT THE HILL, BACK SOON, SORRY, and propped it against the kettle where it would be found. Then {hero} filled a hot water bottle from the stove and tucked it inside {hero.his} coat. It was a strange thing to take up a mountain, but the night was already very cold."
+								]
+							}
+						]
+					}
+				},
+				"The path up Ember Hill was steep and stony, and it zigzagged back and forth like a piece of string dropped on a hillside. The wind pushed at them from the side. The cloud was low enough to touch. Halfway up, {friend} stopped and said that the hill felt warm, and it did. The stones under their feet were not cold, as stones are at night. They were as warm as a table beside a stove.",
+				"The broken tower had no door, only a doorway with an iron hinge hanging from it. Inside, the floor was littered with fallen stones. In the middle lay a ring of black ash, and in the ash sat an egg.",
+				"It was the size of a football and the colour of a burnt saucepan, dark grey and glossy, crossed with thin lines of orange that pulsed slowly, in and out. The whole tower smelled like a freshly lit match.",
+				"{pet} crept up to it and sniffed. Then {pet} sat down and looked at {hero}, with an expression that said the egg was not a thing that should be in a tower.",
+				"“It’s warm,” whispered {friend}, with one hand on the shell. “It’s really warm. And it’s… humming.”",
+				"Tick. A crack ran across the shell, bright orange inside. Tick, tick. A piece fell off. Out of the hole poked a snout, a tiny grey snout, with two nostrils like pinholes. It sneezed. A shower of sparks spat out of it and landed on {friend}’s scarf.",
+				"“My scarf!” yelled {friend}, slapping at it. “It’s on fire! My scarf is on fire!” The scarf was smoking gently. {hero} beat it out with a mitten. By the time the smoke had cleared, the egg was in two halves, and in the middle of them sat a dragon.",
+				"It was about the size of a loaf of bread. Its scales were the grey of wet slate, with a glow showing between them like coals in a grate, and its wings were folded tight on its back like a pair of closed umbrellas. It had yellow eyes, far too big for its head. It looked at {hero}. It hiccupped, and a spark flew out and fizzed on the floor.",
+				"Nobody said anything for a long time. {pet} stared at the dragon, [[pet:dog=tail going so fast that it knocked the ash into the air.|cat=with deep, personal offence, as if the dragon had taken {pet.his} chair.]]",
+				"“It’s looking at you,” said {friend}. “It thinks you’re its… you know. The first thing it sees.”",
+				"“I know,” said {hero}, who could not stop smiling. “Hello, {dragon}.” The name was out before {hero} had thought of it, and the little dragon cheeped, as though it had been waiting for exactly that.",
+				"{dragon} stood up on wobbly legs, walked across the ash to a lump of coal, picked it up in both front paws and ate it. Crunch, crunch. {dragon.He} looked satisfied. Then {dragon} tried to eat a button from {friend}’s coat, and then a shoelace, and after that {hero}’s left boot.",
+				"“No,” said {hero}. “Not the boot.”",
+				"The boot was let go. But as {dragon} stepped away, {hero} saw that {dragon.he} was shivering. The shell was already cooling. The orange lines had faded, and the stones had lost their warmth.",
+				"“It’s too cold up here,” said {hero}. “It’s getting colder every minute.”",
+				"Then {pet} growled, low in {pet.his} throat. On the path far below, a lantern was swinging, and with every step it came, something went clank."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What did the egg look like?",
+					"options": [
+						"Pale blue with spots",
+						"Dark grey with glowing orange lines",
+						"Bright gold"
+					],
+					"answer": 1,
+					"find": "burnt saucepan",
+					"hint": "It was the size of a football."
+				},
+				{
+					"id": "q2",
+					"q": "What did the hatchling eat first?",
+					"options": ["A lump of coal", "A cheese sandwich", "A button"],
+					"answer": 0,
+					"find": "ate it. Crunch",
+					"hint": "It was lying in the ash."
+				},
+				{
+					"id": "q3",
+					"q": "Why did {friend} yell?",
+					"options": [
+						"The egg rolled away",
+						"Her scarf caught fire",
+						"A bat flew past"
+					],
+					"answer": 1,
+					"find": "My scarf is on fire",
+					"hint": "The dragon sneezed."
+				}
+			],
+			"recap": [
+				"{hero}, {friend}, {pet} and {grownup} came to the mountain village of Kettleridge. Mr Brannock, the Fire Warden, banned everyone from Ember Hill after dark, and a neat stranger called Mr Vane kept asking about it.",
+				"That night an orange glow pulsed in the broken tower on top of the hill, and something went tick."
+			]
+		},
+		{
+			"title": "The Bucket",
+			"scene": {
+				"mood": "night",
+				"elements": ["stars", "moon", "tower", "glow"],
+				"alt": "Inside the broken tower, a single glow and a lantern coming up the path."
+			},
+			"blocks": [
+				"The clanking came closer. {friend} looked out through the doorway. “It’s the Warden,” {friend} whispered. “It’s Mr Brannock. And he’s got the bucket.”",
+				"There was nowhere to run. The tower had one door, one wall that had half fallen down, and a drop on the far side that went down into the dark. {dragon} could not be left in the open, because even in the dark {dragon.he} was glowing a little.",
+				{
+					"choice": {
+						"id": "hide",
+						"prompt": "What should {hero} do?",
+						"options": [
+							{
+								"id": "meet",
+								"label": "Walk out and meet him, and keep him away from the doorway",
+								"score": {
+									"brave": 1
+								},
+								"blocks": [
+									"“Wait here,” said {hero}, and walked straight out of the doorway, into the beam of the lantern, with {hero.his} hands held open so that he could see they were empty.",
+									"“Good evening, Mr Brannock,” said {hero}. {hero.His} voice came out steadier than expected. “We were just looking at the view.”",
+									"“It is dark,” said Mr Brannock. “There is a thick cloud. There is no view.”",
+									"“It’s a very good cloud,” said {hero}."
+								]
+							},
+							{
+								"id": "tuck",
+								"label": "Pack {dragon} into the rucksack, and ask {pet} to sit on top",
+								"score": {
+									"clever": 1
+								},
+								"blocks": [
+									"{hero} had {dragon} in the bag in three seconds, with the flap shut and {pet} sitting on top of it. “Stay,” {hero} said to {pet}. “Please stay. Just sit there and be ordinary.”",
+									"The rucksack gave a small, offended cheep. {pet} did not move. A pet sitting on a bag is the most normal thing in the world. Nobody ever looks under it."
+								]
+							},
+							{
+								"id": "warm",
+								"label": "Hold {dragon} close inside {hero.his} coat, and keep {dragon.him} warm and quiet",
+								"score": {
+									"kind": 1
+								},
+								"blocks": [
+									"{hero} scooped {dragon} up and held {dragon.him} against {hero.his} chest, under the coat, with both arms wrapped round. {dragon} was warm, like a hot-water bottle with a heartbeat. “Shh,” whispered {hero}. “It’s all right. It’s only a bucket.”",
+									"{dragon} stopped shivering. {dragon.He} pushed {dragon.his} nose into {hero}’s collar and, for the first time since hatching, was quiet."
+								]
+							}
+						]
+					}
+				},
+				"Mr Brannock came up the last of the path and stopped in the doorway. His moustache twitched. He lifted the lantern and looked at the ring of ash. He looked at the two halves of the broken shell, which were lying in plain sight. He looked at the scorch mark on {friend}’s scarf.",
+				"Then he sniffed the air, slowly, and said, “Toast.”",
+				"“Sorry?” said {hero}.",
+				"“Something smells of toast.” He looked at the shell again for a very long time. Then, in the most casual voice in the world, he looked at the roof, and said, “I am a very short-sighted man. I often see nothing at all. It is a great nuisance. Rule 12.”",
+				"“Rule 12?” said {friend}.",
+				"“I am not at liberty to say.” He put down the sack he had been carrying over his shoulder. It was a heavy canvas sack, and it landed with a hard, bumpy thud. “Coal,” he said. “Left behind by mistake, I expect. Anyone who found it would be welcome to it. Home by midnight, all of you, please. Snow by dawn.”",
+				"He turned to go. Then he turned back, and said, quite loudly, “And nobody is to cross the gorge. The rope bridge is closed. It is dangerous. It is the last place anybody should go.”",
+				"He clanked away down the path. {hero} watched the lantern go until it disappeared behind a rock, then listened to the clanking until it faded. When it was gone, the hill was very quiet.",
+				"“He knows,” whispered {friend}. “He definitely knows.”",
+				"“Then why didn’t he take it?” said {hero}.",
+				"Nobody had an answer. {hero} opened the sack. It was packed with black, glossy coal. {dragon} wriggled out and took a lump in both paws and began to eat, with the happy, noisy crunch of somebody eating toast. Within a minute the orange lines were glowing again, bright and strong, all the way down {dragon.his} back.",
+				"Then {dragon} stopped. {dragon.He} lifted {dragon.his} head and turned it slowly towards the north, to where the hill climbed up into the dark and the cloud. {dragon.He} sniffed. {dragon.He} gave a long, trembling cheep, and began to walk.",
+				"“I think,” said {hero}, “that {dragon.he} can smell {dragon.his} mother.”",
+				"A single, enormous snowflake landed on {hero}’s sleeve. Behind it came another. It was not yet midnight, but it was already starting."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What did Mr Brannock say the tower smelled of?",
+					"options": ["Toast", "Smoke", "Soup"],
+					"answer": 0,
+					"find": "Toast",
+					"hint": "He sniffed the air slowly."
+				},
+				{
+					"id": "q2",
+					"q": "What was in the sack he left behind?",
+					"options": ["Firewood", "Coal", "Matches"],
+					"answer": 1,
+					"find": "Coal",
+					"hint": "He said it was left by mistake."
+				},
+				{
+					"id": "q3",
+					"q": "What did he say nobody should cross?",
+					"options": ["The river", "The gorge", "The village green"],
+					"answer": 1,
+					"find": "cross the gorge",
+					"hint": "He said the rope bridge was closed."
+				}
+			],
+			"recap": [
+				"On Ember Hill, {hero} and {friend} found a warm egg in the old tower. It hatched into a baby dragon that sneezed sparks and ate coal, and {hero} named {dragon.him} {dragon}.",
+				{
+					"p": "They had slipped out of the window straight away.",
+					"when": {
+						"pick": "go-up",
+						"is": "now"
+					}
+				},
+				{
+					"p": "They had packed a rucksack with a torch, rope, a blanket and sandwiches.",
+					"when": {
+						"pick": "go-up",
+						"is": "pack"
+					}
+				},
+				{
+					"p": "They had left a note for {grownup} and brought a hot water bottle.",
+					"when": {
+						"pick": "go-up",
+						"is": "note"
+					}
+				},
+				"The hatchling was shivering, and a lantern was coming up the path."
+			]
+		},
+		{
+			"title": "The Rope Bridge",
+			"scene": {
+				"mood": "night",
+				"elements": ["stars", "peaks", "gorge"],
+				"alt": "A rope bridge stretching across a deep gorge at night."
+			},
+			"blocks": [
+				"Beyond the tower the hill climbed higher, and the ground turned from earth to bare rock. {dragon} trotted ahead, nose up, cheeping now and then, with {pet} padding behind and the others hurrying to keep up. The snow had started properly. It came down in large, slow flakes that melted on {dragon}’s back with a hiss and a puff of steam.",
+				"When {dragon} hiccupped, a spark flew out, and in the next minute the path was lit by a small trail of orange dots, like a line of tiny lamps. “That’s handy,” said {friend}. “That’s also,” said {hero}, “how anyone could follow us.”",
+				"After forty minutes, the path ended at the edge of the world. It was a gorge, a great crack in the mountain, so deep that the bottom was only a rumour of white water far below. On the other side stood a wall of rock, and in the wall, high up, a dark opening. A cave.",
+				"Between the two edges hung an old rope bridge. It was made of thick ropes and wooden planks, with a broken sign at one end that said, CLOSED. BY ORDER OF THE FIRE WARDEN. {friend} read it twice.",
+				"“It’s not very long,” said {friend}, hopefully.",
+				"It was not very long. It was, however, swinging in the wind, and two of the planks near the middle were missing. Through the gap, the white water roared.",
+				"At the edge of the bridge {dragon} stopped, and cheeped, and looked at {hero}. The cave was just on the other side. There was no other way across.",
+				{
+					"choice": {
+						"id": "bridge",
+						"prompt": "How should {hero} cross?",
+						"options": [
+							{
+								"id": "dash",
+								"label": "Run across, quickly, before the wind gets worse",
+								"score": {
+									"brave": 1
+								},
+								"blocks": [
+									"{hero} took a deep breath, grabbed {dragon} in one arm, and ran. The planks bounced. The ropes sang. The bridge swung out sideways over the gorge, and for one long second {hero} was running on nothing at all, and then the bridge swung back and {hero}’s boots hit wood. A plank cracked and fell, turning over and over into the dark.",
+									"“DON’T LOOK DOWN!” yelled {friend}. {hero} was already on the far side, gasping, with {dragon} wide-eyed in the crook of an arm. {pet} had crossed in four bounds and was waiting, looking pleased with {pet.self}."
+								]
+							},
+							{
+								"id": "test",
+								"label": "Test every plank first, and only step where it is safe",
+								"score": {
+									"clever": 1
+								},
+								"blocks": [
+									"“Wait,” said {hero}. {hero} knelt at the edge and pressed a hand on the first plank. Then the second. “These ones are old. They’ll hold if we spread our weight.” The rotten planks had a dull sound when knocked, and the good ones rang. {hero} marked each bad plank with a white stone, and the three of them crossed in a line, stepping only on the ones that rang.",
+									"It took a long time, and it was very slow. But nothing broke. When {hero} reached the far side, {friend} was right behind, and {pet} was last, treading each plank as though it were a hot stove."
+								]
+							},
+							{
+								"id": "carry",
+								"label": "Carry {dragon} inside {hero.his} coat, and cross slowly, talking to {dragon.him} all the way",
+								"score": {
+									"kind": 1
+								},
+								"blocks": [
+									"“It’s all right,” said {hero}, to {dragon}, as {hero} tucked {dragon.him} inside {hero.his} coat. “I’ve got you. You just keep still, and I’ll do the walking.” {hero} went across a plank at a time, with one hand on each rope, and talked the whole way, about nothing in particular. About the sandwiches. About school. About the time {hero.he} had once fallen off a chair.",
+									"The bridge swung and creaked, but the small warm bundle against {hero.his} chest did not wriggle once. It listened. On the far side, {dragon} gave a soft, sleepy cheep, as if to say that it had been a very good story."
+								]
+							}
+						]
+					}
+				},
+				{
+					"when": {
+						"pick": "go-up",
+						"is": "pack"
+					},
+					"blocks": [
+						"Behind them, {friend} untied the coil of washing line from the rucksack and looped it round a rock on the near side as a rail, which made the second crossing a great deal easier."
+					]
+				},
+				"On the far side of the gorge, the cave mouth was a tall black arch in the rock. Warm air was breathing out of it, steadily, in and out, like a very large sleeper. The snow around the entrance had melted into a ring of wet stone.",
+				"{dragon} gave a long, glad cheep and trotted straight in. There was nothing to do but follow. Behind them, the snow kept falling on the bridge, and on the path, and on the little line of orange sparks that led from the hill all the way to the cave."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What was missing from the bridge?",
+					"options": ["Two planks", "A rope", "The sign"],
+					"answer": 0,
+					"find": "two of the planks",
+					"hint": "They were near the middle."
+				},
+				{
+					"id": "q2",
+					"q": "What did the sparks from {dragon} leave on the path?",
+					"options": [
+						"Nothing at all",
+						"A trail of orange dots",
+						"Burnt grass"
+					],
+					"answer": 1,
+					"find": "orange dots",
+					"hint": "They looked like tiny lamps."
+				},
+				{
+					"id": "q3",
+					"q": "What was across the gorge?",
+					"options": ["A cave", "A cottage", "A second tower"],
+					"answer": 0,
+					"find": "A cave",
+					"hint": "It was high up in a wall of rock."
+				}
+			],
+			"recap": [
+				"Mr Brannock found the broken shell, claimed to be short-sighted, left a sack of coal and warned them off the gorge.",
+				{
+					"p": "{hero} had stepped out to meet him.",
+					"when": {
+						"pick": "hide",
+						"is": "meet"
+					}
+				},
+				{
+					"p": "{hero} had hidden {dragon} in the rucksack with {pet} on top.",
+					"when": {
+						"pick": "hide",
+						"is": "tuck"
+					}
+				},
+				{
+					"p": "{hero} had kept {dragon} warm and quiet inside a coat.",
+					"when": {
+						"pick": "hide",
+						"is": "warm"
+					}
+				},
+				"Then {dragon} smelled {dragon.his} mother and set off up the hill, with the first snow falling."
+			]
+		},
+		{
+			"title": "The Cave of Old Things",
+			"scene": {
+				"mood": "cave",
+				"elements": ["hoard", "glow"],
+				"alt": "A cave floor heaped with gold coins, teapots, spoons and one bicycle."
+			},
+			"blocks": [
+				"The tunnel sloped down, warm and dry and smelling of toast. {dragon} walked ahead with {dragon.his} tail in the air, and the glow along {dragon.his} back was bright enough to light the walls. There were scratches in the rock at about the height of a house. Whatever had made them had made them a very long time ago.",
+				"After about a hundred paces, the tunnel opened into a round chamber, and {friend} stopped so suddenly that {hero} walked into {friend.him}.",
+				"“Oh,” said {friend}. “Oh, wow.”",
+				"The floor of the cave had disappeared. In its place lay a great sloping heap of things. There were gold coins, thousands of them, and next to the coins lay an enormous pile of spoons. There were teapots, dozens of teapots, in every colour. There was a rocking horse, a trumpet, a canoe, a stuffed owl in a glass case, a bicycle with a bent wheel and a brass bell on the handlebars, and a gold crown with a small paper label tied to it that said LOST PROPERTY.",
+				"“It’s a hoard,” whispered {hero}. “It’s what dragons keep. Treasure.”",
+				"“It’s mostly spoons,” said {friend}.",
+				"“Dragons,” said {hero}, “are not fussy.”",
+				"{dragon} climbed straight up the nearest heap with great importance, and picked out the very smallest teaspoon. {dragon.He} carried it down in both paws and laid it carefully on a bare patch of floor, where it looked terribly lonely. Then {dragon} stood back and admired it, as if {dragon.he} had made a start on something big.",
+				"“That’s the beginning of a hoard,” said {friend}, with real respect. “That’s {dragon.his}.”",
+				"“A hoard of one spoon,” said {hero}.",
+				"{friend} found an old copper kettle with a luggage label on the spout. It read KETTLERIDGE SUMMER FETE 1923, FIRST PRIZE. “Somebody won this,” said {friend}, “and then a dragon took it.” {hero} found a very large wooden tray, marked with a cross. At the bottom of the tray was a smaller label, in a very old hand, that said, DO NOT TOUCH. THIS MEANS YOU.",
+				"“Everything on this hill says that,” said {friend}.",
+				"{pet} wandered over to the heap of teapots, [[pet:dog=sniffing at a gold one with great interest.|cat=gave it a long, thoughtful stare.]] Then {pet} put one paw on the bottom pot of a tall stack.",
+				"“No,” said {hero}.",
+				"The stack of teapots fell over. It fell with a long, ringing crash that went on for what felt like a full minute, because every teapot fell into another, and the cave carried the sound like a drum. It rang down every tunnel. It rolled out of the cave mouth. It rang in {hero}’s teeth.",
+				"Nobody moved. When the last teapot had stopped rolling, there was perfect silence.",
+				"Then, from somewhere deep beyond the hoard, there came another sound. It was slow, and low, and enormous. It rose and fell, once every ten seconds or so, and it was so big that {hero} felt it in the soles of {hero.his} feet before hearing it.",
+				"{dragon} cocked {dragon.his} head. {dragon.He} cheeped, very softly, and wriggled out of {hero}’s arms, and trotted on towards it.",
+				"“That’s her,” whispered {friend}. “That’s {dragon.his} mother. That’s her breathing.”",
+				"Behind them, at the cave mouth, something went clank.",
+				"They spun round. A lantern was swinging in the tunnel, and behind it a tall, thin shape was coming steadily on, with a leather bucket at its belt. It was swaying a little, and breathing as though it had been running up a hill for an hour.",
+				"“Ah,” said a voice, quite out of breath. “There you are. I thought so.”"
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What did the hatchling put on the bare patch of floor?",
+					"options": ["A teaspoon", "A gold coin", "A teapot"],
+					"answer": 0,
+					"find": "smallest teaspoon",
+					"hint": "It was a hoard of one."
+				},
+				{
+					"id": "q2",
+					"q": "What did the label on the crown say?",
+					"options": ["PRICELESS", "LOST PROPERTY", "KETTLERIDGE SUMMER FETE"],
+					"answer": 1,
+					"find": "LOST PROPERTY",
+					"hint": "It was a small paper label."
+				},
+				{
+					"id": "q3",
+					"q": "What did {pet} knock over?",
+					"options": ["A stack of teapots", "The trumpet", "The canoe"],
+					"answer": 0,
+					"find": "stack of teapots",
+					"hint": "It rang in {hero}’s teeth."
+				}
+			],
+			"recap": [
+				"The path ended at a gorge with an old rope bridge, and a cave on the far side.",
+				{
+					"p": "{hero} ran across and a plank fell away.",
+					"when": {
+						"pick": "bridge",
+						"is": "dash"
+					}
+				},
+				{
+					"p": "{hero} tested every plank and marked the rotten ones.",
+					"when": {
+						"pick": "bridge",
+						"is": "test"
+					}
+				},
+				{
+					"p": "{hero} carried {dragon} across, talking all the way.",
+					"when": {
+						"pick": "bridge",
+						"is": "carry"
+					}
+				},
+				"The cave breathed out warm air, and {dragon} trotted straight in."
+			]
+		},
+		{
+			"title": "What the Warden Knew",
+			"scene": {
+				"mood": "cave",
+				"elements": ["hoard", "glow"],
+				"alt": "Mr Brannock, out of breath, sitting on a barrel in a cave full of treasure."
+			},
+			"blocks": [
+				"It was Mr Brannock. His moustache was white with snow, his bucket was swinging, and his face was the colour of porridge. He lowered himself on to an upturned teapot, shut his eyes, and said, “I have just crossed that bridge.”",
+				"“You said it was closed,” said {friend}.",
+				"“I wrote the order,” said Mr Brannock. “I am allowed to break it. I would like you to know that I did not look down, and that I do not wish to discuss it.”",
+				"He opened his eyes and looked at the small grey figure sitting by the spoon, and for the first time his stern face softened all the way through. “So,” he said. “It hatched. Well done, little one. Well done.” {dragon} trotted over and wiped a smear of coal dust on his trousers. Mr Brannock did not move.",
+				"“You knew,” said {hero}.",
+				"“My grandfather knew, and my father, and now I do,” said Mr Brannock. “Every hundred years, on the last warm night before the first snow, the dragon of Ember Hill lays one egg, in the old tower. She cannot stay with it. She has to be in her cave, asleep, before the snow falls, or she will not survive the winter. So the egg hatches alone, and the hatchling has one night to climb up here before the snow covers the path. The Warden’s job is to keep everyone away from that tower until it does. That is why there are rules. That is why there is a hill nobody goes up.”",
+				"“And the bucket?” asked {friend}.",
+				"“Coal,” said Mr Brannock, a little proudly. “I carry a bucket of coal up the hill every week, in case.”",
+				"“Then why didn’t you take {dragon.him} up yourself?” asked {hero}.",
+				"“Because of Mr Vane.” He said the name with great dislike. “He arrived six days ago, with a net, a cage, and the biggest bank balance I have ever seen. He has asked about Ember Hill at every door in the village. He has been following me, politely, for three days. If I carried the hatchling to the cave, he would be right behind me, and he would have two dragons instead of one. I needed somebody he would not be watching.” He looked at {hero} and {friend}. “I’m afraid it was somebody small. I’m sorry.”",
+				"“Then you didn’t go away,” said {hero}, “because you wanted us to go on.”",
+				"“I didn’t go away,” said Mr Brannock, “because I am a short-sighted man, and could not possibly have been expected to see what was in plain view.” He almost smiled.",
+				{
+					"choice": {
+						"id": "trust",
+						"prompt": "What should {hero} say?",
+						"options": [
+							{
+								"id": "alone",
+								"label": "“We can take it from here. Please hold the tunnel behind us.”",
+								"score": {
+									"brave": 1
+								},
+								"blocks": [
+									"“We’ll take it from here,” said {hero}. “We’ve come this far. You hold the tunnel behind us, in case he turns up.”",
+									"Mr Brannock looked at {hero} for a long moment, and then he stood, and saluted, quite seriously. “It will be an honour, Warden,” he said, and {hero} found that {hero.he} had stood up a little straighter."
+								]
+							},
+							{
+								"id": "bucket",
+								"label": "Check the bucket, to be sure he is telling the truth",
+								"score": {
+									"clever": 1
+								},
+								"blocks": [
+									"{hero} looked at the bucket. “Can I see inside?” {hero} said. “A Fire Warden’s bucket should be full of water.”",
+									"Mr Brannock held it out. It was full to the top with coal, and underneath the coal was a small, worn notebook with a long list of dates in neat handwriting. “Six years of Sundays,” he said, “and not a single dragon until tonight.” That was a very hard thing to fake. {hero} gave the bucket back, and felt quite certain."
+								]
+							},
+							{
+								"id": "sit",
+								"label": "Ask if he is all right, and give him a moment to sit down",
+								"score": {
+									"kind": 1
+								},
+								"blocks": [
+									"“Are you all right?” asked {hero}. “You’re shaking.”",
+									"Nobody had asked Mr Brannock that in a very long time. He took a breath. “I am afraid of heights,” he said, in a small voice. “I have been afraid of heights all my life, and I am the Warden of a hill with a gorge on it. I have crossed that bridge once a week for six years, with my eyes shut, singing.”",
+									"{hero} sat beside him on a teapot for a minute and said nothing, and it helped more than anything else could have."
+								]
+							}
+						]
+					}
+				},
+				"Far down the tunnel behind them, boots began to echo. They were smooth, even boots, the sort that were made for shop floors, and they were coming closer. A voice, warm and very pleasant, floated up out of the dark.",
+				"“Mr Brannock? Is that you? Do forgive me. I seem to have taken a wrong turning.”",
+				"“Go,” whispered Mr Brannock. He was already on his feet, with the bucket in one hand and the lantern in the other. “Straight on, all the way, and do not stop for any reason. I shall see to him.” He strode into the tunnel mouth, and {hero} heard him call out, in a voice like a rolled-up newspaper, “Mr Vane. Rule 6. No netting without a permit.”",
+				"“Have you a permit?” said Mr Brannock. “I thought not.”"
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What was in Mr Brannock’s bucket?",
+					"options": ["Water", "Coal", "Matches"],
+					"answer": 1,
+					"find": "bucket of coal",
+					"hint": "He carried it up every week."
+				},
+				{
+					"id": "q2",
+					"q": "How long had Mr Vane been in the village?",
+					"options": ["Six days", "Six years", "Six hours"],
+					"answer": 0,
+					"find": "six days ago",
+					"hint": "He had a net and a cage."
+				},
+				{
+					"id": "q3",
+					"q": "What was Mr Brannock afraid of?",
+					"options": ["Dragons", "The dark", "Heights"],
+					"answer": 2,
+					"find": "afraid of heights",
+					"hint": "He crossed the bridge with his eyes shut."
+				}
+			],
+			"recap": [
+				"In the cave full of old treasure, {dragon} started a hoard with one teaspoon. {pet} knocked over a tower of teapots, and a huge, slow breathing answered from deep inside.",
+				"A lantern appeared behind them. It was Mr Brannock."
+			]
+		},
+		{
+			"title": "The Old One",
+			"scene": {
+				"mood": "cave",
+				"elements": ["hoard", "eye", "glow"],
+				"alt": "A vast cave, and in the dark one great yellow eye, just beginning to open."
+			},
+			"blocks": [
+				"The tunnel ended in a cave so big that the torch could not find the roof. Snow drifted in from a hole far above, and every flake melted before it reached the ground. {dragon} stopped at the edge of the light. And then {hero} saw her.",
+				"She lay curled around the whole cave, wall to wall, as long as a bus and a good deal taller, with her tail wrapped round her feet and her chin on the floor. Her scales were the dull red of old bricks, and each one was as large as a dinner plate. Her sides rose and fell, slowly, with a sound like a very big door opening and closing. She was fast asleep.",
+				"“She’s not going to wake up,” whispered {friend}. “Is she? The snow’s only just started, and she’s asleep already.”",
+				"{dragon} did not whisper. {dragon.He} ran straight up the length of the floor, scrambled up on the end of the great snout, and gave a loud, high, happy cheep right into her nostril.",
+				"Nothing happened. Then one enormous claw moved on the floor, quite slowly, without any hurry, and curled itself round the little shape on her nose. It lifted {dragon} down gently and tucked {dragon.him} against her warm side, under the curve of one folded wing. The wing settled on top. A small, contented hiccup came out from underneath, and a spark.",
+				"“Oh,” said {friend}, in a very small voice. “Oh, that’s lovely.”",
+				"Then, from the tunnel behind them, came the sound of two shiny boots on the stone floor.",
+				"Mr Vane was walking calmly out of the dark with his butterfly net over one shoulder, and he did not look at all like a man who had just lost an argument with Rule 6. There was a patch of coal dust on one sleeve, but otherwise he was as neat as a pin. On his back was a wide iron cage, with the door hanging open.",
+				"“Well,” he said, softly. “Well, well. Do you know, I was almost sure it was a fairy tale?” He looked at the great sleeping shape, and at the little glow beneath her wing, and he licked his lips. “Marvellous. A hatchling. And a mother. I have never had a pair.”",
+				"“Mr Brannock!” shouted {friend}.",
+				"“Mr Brannock is sitting down in the tunnel,” said Mr Vane, “with a very sore head, and wondering what happened. You should not leave an old man in a doorway. Now, children, if you would be so kind as to step out of the way.”",
+				{
+					"when": {
+						"pick": "trust",
+						"is": "alone"
+					},
+					"blocks": [
+						"{hero} did not move. {hero} stepped forward, directly in front of the hatchling, planted {hero.his} feet apart, and folded {hero.his} arms. It was not much of a wall. But it was the only one in the cave, and it was not going anywhere."
+					]
+				},
+				{
+					"when": {
+						"pick": "trust",
+						"is": "bucket"
+					},
+					"blocks": [
+						"{hero} did not move. {hero} had been looking at the floor, which was covered with spoons, thousands of silver spoons, lying in drifts across the stone from one wall to the other. And {hero} had just seen how smooth, how slick and how shiny the soles of Mr Vane’s boots were."
+					]
+				},
+				{
+					"when": {
+						"pick": "trust",
+						"is": "sit"
+					},
+					"blocks": [
+						"{hero} did not move. {hero} walked quietly over to the great chin of the sleeping dragon, laid a hand on her warm snout, and said, very gently, “Please wake up. We need you. Your baby’s here, and there’s somebody who wants to take {dragon.him} away.”"
+					]
+				},
+				"Mr Vane sighed, and swung the net.",
+				"It was a very good net. It came down over the little glow under the wing, and for a moment it was quiet. Then {dragon} hiccuped.",
+				"The spark landed on the net. It was a very dry net, made of fine cotton string, and it went up with a whoosh, all of it at once, in a ball of orange flame. Mr Vane let go of it very fast. “My net!” he said. “That was a very expensive net!”",
+				"Above him, the biggest eye in the world opened.",
+				"It was golden and round and as wide as a dustbin lid, with a thin black slit down the middle. It looked at Mr Vane. It looked at him for a full three seconds, without blinking. Then the mother dragon drew in a breath so big that every spoon in the cave slid an inch towards her, and her whole chest glowed red.",
+				"Mr Vane ran.",
+				"He did not get far. The floor was covered in spoons, the soles of his boots were very smooth, and he went across the cave at remarkable speed, with his arms going round, until he reached the top of the hoard, where he fell over, rolled down the heap of teapots with a noise like a hundred kettles being dropped down a staircase, and shot out of the cave and away down the tunnel in a cloud of clatter.",
+				"One shiny boot stayed behind. It slid to a stop beside {friend}’s foot. A faint, distant voice called “Not the cage!” and then there was the sound of a very long, very surprised fall.",
+				"The mother dragon looked after him for a while. Then she turned her great head and looked at {hero}."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "How big was the mother dragon?",
+					"options": [
+						"As long as a bus",
+						"As small as a horse",
+						"As big as a cottage"
+					],
+					"answer": 0,
+					"find": "as long as a bus",
+					"hint": "Her scales were the colour of old bricks."
+				},
+				{
+					"id": "q2",
+					"q": "What set Mr Vane’s net on fire?",
+					"options": [
+						"A spark from the hatchling",
+						"His own lantern",
+						"The mother’s breath"
+					],
+					"answer": 0,
+					"find": "The spark landed on the net",
+					"hint": "It was a hiccup."
+				},
+				{
+					"id": "q3",
+					"q": "What did Mr Vane leave behind?",
+					"options": ["His cage", "One shiny boot", "His waistcoat"],
+					"answer": 1,
+					"find": "One shiny boot",
+					"hint": "It slid to a stop beside {friend}’s foot."
+				}
+			],
+			"recap": [
+				"Mr Brannock explained that the dragon of Ember Hill lays one egg every hundred years, and that Mr Vane wanted to catch it for a cage. The Warden could not climb up with the hatchling, because Mr Vane was following him.",
+				{
+					"p": "{hero} told him to hold the tunnel while they went on.",
+					"when": {
+						"pick": "trust",
+						"is": "alone"
+					}
+				},
+				{
+					"p": "{hero} checked his bucket and found it full of coal.",
+					"when": {
+						"pick": "trust",
+						"is": "bucket"
+					}
+				},
+				{
+					"p": "{hero} sat with him, and he admitted he was afraid of heights.",
+					"when": {
+						"pick": "trust",
+						"is": "sit"
+					}
+				},
+				"Mr Brannock went to stop Mr Vane in the tunnel with Rule 6."
+			]
+		},
+		{
+			"title": "First Snow",
+			"scene": {
+				"mood": "dawn",
+				"elements": ["clouds", "peaks", "snow", "dragon"],
+				"alt": "Dawn on the mountain, snow falling, and a small dragon looking out from a cave mouth."
+			},
+			"blocks": [
+				"She looked for a long time, and {hero} found that {hero.he} was not afraid at all. The great golden eye took in {hero}, and {friend}, and {pet}, and the spoon sitting alone on the floor. Then she breathed out. It was a long, warm, slow breath, and it smelled of toast and woodsmoke and old stone. It blew {hero}’s hair back. It dried every damp patch on {hero}’s coat. And it melted the snow from every one of their boots, all at once.",
+				"Then she bent her great head to the floor, with her eye level with {hero}’s, and held it there. It was, quite clearly, a thank you.",
+				"Under her wing, a small sleepy shape poked out a snout, gave a very tired cheep, and went back in.",
+				"“He’s going to sleep,” said {friend}. “They both are. Until spring.”",
+				"{hero} swallowed. “Goodbye, {dragon},” said {hero}.",
+				"A small spark popped out from under the wing and landed on {hero}’s mitten. It did not burn. It sat there, a tiny warm point of orange, for a full minute before it faded.",
+				"They found Mr Brannock sitting on a teapot in the tunnel, rubbing a bump on his head, with one shiny boot under his arm and his bucket beside him. “Rule 6,” he said, with great satisfaction. “It’s an excellent rule.”",
+				"The snow had stopped by the time they came out onto the ledge above the gorge. It was dawn. The sky was a clear, very pale pink, and the whole mountain was white and new. Across the gorge, Ember Hill rose out of the snow, with the stump of the tower on top, and far below, in the valley, the village had begun to wake. A single chimney smoked. Then another.",
+				"The rope bridge was heavy with new snow. Mr Brannock stood at the end of it for a long time, looking down. “I have a suggestion,” he said. “We can take the long way round, which is four hours. Or I can cross it again with my eyes shut. I should like to sing something.”",
+				"“Sing,” said {friend}.",
+				"He sang the village anthem, all four verses, in a high, wobbling voice, and not one of them looked down.",
+				"At the bottom of the hill they could see a crowd already gathering by the café, because a man in one shiny boot had arrived on the green at four in the morning, shouting about dragons and spoons. The whole village was standing round him in their dressing gowns. Nobody believed a word.",
+				{
+					"when": {
+						"pick": "go-up",
+						"is": "note"
+					},
+					"blocks": [
+						"{grownup} was standing at the garden gate, holding the envelope, with a look that began as worry and ended as a sort of baffled relief. “A short look,” {grownup} said. “You were gone all night.”"
+					]
+				},
+				{
+					"when": {
+						"pick": "go-up",
+						"is": "now"
+					},
+					"blocks": [
+						"The cottage was exactly as they had left it. {grownup} had slept through the whole night, and was only now coming downstairs, yawning and in slippers, to start the porridge."
+					]
+				},
+				{
+					"when": {
+						"pick": "go-up",
+						"is": "pack"
+					},
+					"blocks": [
+						"The cottage was exactly as they had left it. {grownup} had slept through the whole night, and was only now coming downstairs, yawning, to find two perfectly made beds with a pillow in each. “Very tidy,” said {grownup}, suspiciously."
+					]
+				},
+				"Mr Brannock stopped at the garden gate. He took out the box of matches, still in its receipt, and held it out. “With the compliments of the Fire Warden,” he said.",
+				"Then he cleared his throat. “There is a question, however. Mr Vane has told the whole village. Most of them have decided he is a bit mad, which is useful. Some of them have not. And sooner or later someone will ask. What do you think Kettleridge should be told?”",
+				{
+					"choice": {
+						"id": "final",
+						"prompt": "What should {hero} say?",
+						"options": [
+							{
+								"id": "keep",
+								"label": "Nothing at all. Let Ember Hill keep its secret.",
+								"blocks": [
+									"{hero} looked up at the white hill and the grey tower. “Nothing,” said {hero}. “Let them think he’s mad. Some things are safest when nobody’s looking.” Mr Brannock nodded slowly, as if {hero} had said the thing he most hoped to hear."
+								]
+							},
+							{
+								"id": "tell",
+								"label": "Everything. Let the whole village know, so it is safe for good.",
+								"blocks": [
+									"“Tell them,” said {hero}. “All of it. If everybody knows, nobody can sneak up there with a net.” Mr Brannock let out a long breath. He did not say it was a bad idea, and he did not say it was a good one. He said, “It will be a very loud Tuesday.”"
+								]
+							},
+							{
+								"id": "promise",
+								"label": "That someone will always be watching over her, and that I will be part of it",
+								"blocks": [
+									"“Tell them it’s looked after,” said {hero}. “And that I’m coming back in the spring. If you’ll let me.” Mr Brannock was silent for a long moment. Then he took out a stub of pencil and a small, worn notebook, wrote something in it, and tore out the page."
+								]
+							}
+						]
+					}
+				}
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What did the mother dragon’s breath smell of?",
+					"options": ["Toast and woodsmoke", "Roses", "Fish"],
+					"answer": 0,
+					"find": "toast and woodsmoke",
+					"hint": "It was warm and slow."
+				},
+				{
+					"id": "q2",
+					"q": "What did Mr Brannock do to cross the bridge?",
+					"options": ["Ran", "Sang the village anthem", "Walked backwards"],
+					"answer": 1,
+					"find": "village anthem",
+					"hint": "He did not look down."
+				},
+				{
+					"id": "q3",
+					"q": "What did Mr Brannock give back at the gate?",
+					"options": ["The box of matches", "The coal", "The shiny boot"],
+					"answer": 0,
+					"find": "box of matches",
+					"hint": "It was still in its receipt."
+				}
+			],
+			"recap": [
+				"In the great cave, the mother dragon lay asleep and tucked the hatchling under her wing. Mr Vane arrived with a net and a cage, but a spark set his net on fire. The mother dragon woke, and Mr Vane ran away across the spoons, leaving one boot."
+			]
+		}
+	],
+	"endings": [
+		{
+			"id": "secret",
+			"title": "Spring on Ember Hill",
+			"when": {
+				"all": [
+					{
+						"pick": "final",
+						"is": "promise"
+					},
+					{
+						"score": "brave",
+						"atLeast": 1
+					},
+					{
+						"score": "clever",
+						"atLeast": 1
+					},
+					{
+						"score": "kind",
+						"atLeast": 1
+					}
+				]
+			},
+			"scene": {
+				"mood": "day",
+				"elements": ["clouds", "peaks", "village", "dragon"],
+				"alt": "A bright spring morning, and a small dragon on the roof of a village house."
+			},
+			"blocks": [
+				"The page that Mr Brannock tore from his notebook was a certificate. It was written in pencil, in very small, careful writing, and it said that {hero} was Junior Warden of Ember Hill, in the service of the dragon, to hold the office for as long as {hero} wanted it. It had a stamp, which was a thumbprint in coal.",
+				"In the spring holidays, {hero} came back to Kettleridge on the bus. The same driver was at the wheel, and he said, “Mind the hill, you know,” and then, quietly, looking straight ahead, “Give her my regards.”",
+				"It was a bright, warm morning, and all over the mountain the snow was running away down the streams. At the top of the village, standing on the ridge of the highest roof, was a small grey dragon with a glow all down {dragon.his} back. {dragon.He} had doubled in size. {dragon.He} had a collection of forty-one spoons, all sorted by size, and in the middle sat a gold crown with a paper label that said LOST PROPERTY. {dragon.He} saw {hero} and shot off the roof with a whoop and a plume of sparks.",
+				"The whole village was out on the green, because the whole village had known since the first week, in the way that villages do. Nobody had said a word. They had simply started to leave out a bucket of coal on every doorstep, and to whistle very quietly, which was against Rule 4.",
+				"Mr Brannock was waiting at the foot of the hill with a new sign. It said, in fresh white paint, RULE 10: BE KIND TO WHAT IS UP THERE. Underneath, in smaller letters, was a note. It said, BY ORDER OF THE JUNIOR WARDEN.",
+				"“It needs your signature,” said Mr Brannock. {hero} signed it. {dragon} landed on {hero}’s shoulder with a thump, and ate the pencil."
+			]
+		},
+		{
+			"id": "promise",
+			"title": "The Next Keeper",
+			"when": {
+				"pick": "final",
+				"is": "promise"
+			},
+			"scene": {
+				"mood": "day",
+				"elements": ["clouds", "peaks", "village", "snow"],
+				"alt": "The village in the morning snow, with Ember Hill above it."
+			},
+			"blocks": [
+				"The page that Mr Brannock tore from his notebook was a certificate. It was written in pencil, in very small, careful writing, and it said that {hero} was to be the next Keeper of Ember Hill, when the time came. It had a stamp, which was a thumbprint in coal.",
+				"“It’s a long way off,” said Mr Brannock. “I am only sixty-three. I intend to be extremely annoying for another thirty years.”",
+				"In the spring, {hero} came back to the village on the bus. The driver said, “Mind the hill, you know,” and then, quietly, “Give her my regards.” {hero} climbed the hill with Mr Brannock, who crossed the bridge with his eyes shut and sang the whole way, and in the cave, beneath her great red wing, a small grey dragon opened one sleepy yellow eye.",
+				"{dragon} had grown. {dragon.He} had a little collection of spoons, and a very large appetite, and when {dragon.he} saw {hero}, {dragon.he} sneezed so happily that the whole cave filled with sparks.",
+				"On the way home, there was a new sign at the foot of the hill. It said, RULE 10: BE KIND TO WHAT IS UP THERE. Nobody had said who wrote it. But when {hero} looked closely, the final full stop had been made by a thumb, and the thumb was black with coal."
+			]
+		},
+		{
+			"id": "keep",
+			"title": "What Kettleridge Knows",
+			"when": {
+				"pick": "final",
+				"is": "keep"
+			},
+			"scene": {
+				"mood": "day",
+				"elements": ["clouds", "peaks", "village", "snow"],
+				"alt": "Snow on the roofs of a quiet village, and smoke rising from every chimney."
+			},
+			"blocks": [
+				"Mr Vane left on the afternoon bus, wearing one shiny boot and one borrowed wellington. He told the driver about a dragon, a hundred teapots, and a spoon. The driver said that was very interesting, and that he would not be mentioning it to anyone.",
+				"For the rest of the week, {hero}, {friend} and {pet} wandered round the village, and drank hot chocolate at the café, and watched the snow fall again and again over the quiet hill. Every few hours, Mr Brannock walked past with his bucket, going up or coming down. He winked at {hero} once. It was the most alarming thing that had happened all holiday.",
+				"On the last night, {hero} stood at the attic window. High up on Ember Hill, inside the broken tower, a faint orange glow came and went. Just once. Then it went dark.",
+				"{pet} [[pet:dog=thumped {pet.his} tail against the window seat.|cat=gave a single slow blink at the hill, which is as close as a cat comes to waving.]] In the morning, there was an envelope on the doormat, addressed to {hero}. Inside it, folded small, was a receipt for one box of matches, and written underneath in pencil: RULE 12. SEE NOTHING. WELL DONE.",
+				"Nobody in Kettleridge ever told a stranger about the hill. They did not need to. The rules, and the sign, and the man with the bucket, did all the work. And every year, on the last warm night before the first snow, someone left a sack of coal at the foot of the hill, by mistake."
+			]
+		},
+		{
+			"id": "tell",
+			"title": "Everybody Looks Up",
+			"when": {
+				"pick": "final",
+				"is": "tell"
+			},
+			"scene": {
+				"mood": "day",
+				"elements": ["clouds", "peaks", "village", "snow"],
+				"alt": "The whole village standing in the snow on the green, all looking up at the hill."
+			},
+			"blocks": [
+				"Mr Brannock was right. It was a very loud Tuesday. By nine o’clock the whole village was standing on the green in the snow, in coats and slippers and dressing gowns, and {hero} stood on the café steps and told them everything, from the egg to the spoons.",
+				"There was a long silence. Then a very old woman at the front said, “I always thought there was something up there,” and everybody started talking at once.",
+				"It was not easy. There were arguments. Somebody wanted to put up a fence, and somebody else wanted a gift shop. Mr Brannock stood on a bench and read out the rules, all nine of them, until nobody could stand it any more. In the end, the village voted. Nobody would go up the hill after dark. Nobody would tell strangers. And the first person to sell a postcard of a dragon would be made to carry the coal.",
+				"Mr Vane left on the afternoon bus, wearing one shiny boot and one borrowed wellington. The driver listened to his whole story, and said that was very interesting. Then, as the bus went round the bend, he winked at the village, and the village winked back.",
+				"In the spring, the whole of Kettleridge climbed Ember Hill together, very quietly, in their best coats. At the top of the hill, on the roof of the old tower, sat a small grey dragon, glowing in the sunshine. {dragon.He} looked down at them all, and sneezed, and every single person in the village looked up."
+			]
+		}
+	]
+}
