@@ -6,6 +6,7 @@ import { APP_NAME, LEVELS } from "./config.js";
 import { askConfirm } from "./confirm.js";
 import { requirePin } from "./rewardsui.js";
 import * as I from "./insights.js";
+import { icon } from "./icons.js";
 
 const plural = (n, w) => `${n} ${w}${n === 1 ? "" : "s"}`;
 const WEEK_LETTERS = "SMTWTFS";
@@ -582,7 +583,7 @@ export async function showParent(root, nav, books) {
 								"aria-label": "Back to library",
 								onclick: () => nav("#/"),
 							},
-							"←",
+							icon("back"),
 						),
 						h("div", { class: "rw-title" }, "Reading report"),
 					),

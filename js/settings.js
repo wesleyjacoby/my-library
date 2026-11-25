@@ -42,7 +42,7 @@ function voiceRow(s) {
 			},
 		},
 		[
-			h("option", { value: "" }, "Automatic (best available)"),
+			h("option", { value: "" }, "Automatic"),
 			...voices.map((v) =>
 				h(
 					"option",
@@ -247,7 +247,7 @@ export function openSettings() {
 		h(
 			"div",
 			{ class: "srow" },
-			h("span", {}, "🎯 Reading Coach"),
+			h("span", {}, "Reading Coach"),
 			seg(
 				"coach",
 				[
@@ -281,12 +281,12 @@ export function openSettings() {
 							location.hash = "#/parent";
 						},
 					},
-					"📊 Report",
+					"Report",
 				),
 				h(
 					"button",
 					{ type: "button", class: "btn small", onclick: () => openGrownups() },
-					"🔒 Prizes & PIN",
+					"Prizes & PIN",
 				),
 			),
 		),

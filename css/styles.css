@@ -45,7 +45,7 @@ html[data-theme="paper"] {
 	--bg: #f5eedd;
 	--card: #fffaf0;
 	--ink: #2a2118;
-	--muted: #7a6c58;
+	--muted: #6a5c48;
 	--line: #e4d8bf;
 	--accent: #c4572f;
 	--accent-soft: rgba(196, 87, 47, 0.16);
@@ -239,7 +239,7 @@ button {
 .status {
 	margin: 0;
 	color: var(--muted);
-	font-size: 0.95rem;
+	font-size: 1.02rem;
 }
 .status {
 	font-weight: 700;
@@ -263,10 +263,8 @@ button {
 	padding: calc(env(safe-area-inset-top) + 0.35rem)
 		calc(env(safe-area-inset-right) + 0.6rem) 0.35rem
 		calc(env(safe-area-inset-left) + 0.6rem);
-	background: rgba(27, 37, 71, 0.94);
+	background: var(--navy);
 	color: #fff;
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
 }
 .bar-title {
 	flex: 1;
@@ -339,7 +337,7 @@ button {
 }
 .sublabel {
 	display: block;
-	font-size: 0.95rem;
+	font-size: 1rem;
 	color: var(--muted);
 	margin-bottom: 0.3rem;
 }
@@ -365,7 +363,8 @@ button {
 }
 .fine {
 	color: var(--muted);
-	font-size: 0.9rem;
+	font-size: 1rem;
+	line-height: 1.45;
 	margin: 1rem 0 0;
 }
 
@@ -620,7 +619,8 @@ button {
 	}
 }
 .srow select {
-	max-width: 14rem;
+	min-width: 0;
+	max-width: 100%;
 	font: 600 0.95rem var(--ui);
 	padding: 0.45em 0.7em;
 	border-radius: 12px;
@@ -645,7 +645,14 @@ button {
 }
 .row-ctrl {
 	display: flex;
+	align-items: center;
 	gap: 0.4rem;
+	min-width: 0;
+}
+.row-ctrl select {
+	flex: 1;
+	max-width: 15rem;
+	text-overflow: ellipsis;
 }
 .sheet .fine {
 	text-align: center;
@@ -1369,7 +1376,7 @@ html[data-focus="on"] .lookback-bar {
 }
 .p-name small {
 	display: block;
-	font: 600 0.85rem var(--ui);
+	font: 600 0.92rem var(--ui);
 	color: var(--muted);
 }
 .p-stars {
@@ -1494,7 +1501,7 @@ html[data-focus="on"] .lookback-bar {
 	border: 0;
 	background: none;
 	color: var(--muted);
-	font: 600 0.95rem var(--ui);
+	font: 600 1rem var(--ui);
 	text-decoration: underline;
 	cursor: pointer;
 	padding: 0.4em;
@@ -2023,7 +2030,7 @@ html[data-anim="on"] .rw-star {
 }
 .pv-label {
 	color: var(--muted);
-	font-size: 0.85rem;
+	font-size: 0.92rem;
 	font-weight: 700;
 }
 .pv-tile strong {
@@ -2031,7 +2038,7 @@ html[data-anim="on"] .rw-star {
 }
 .pv-tile small {
 	color: var(--muted);
-	font-size: 0.85rem;
+	font-size: 0.92rem;
 }
 .chart-wrap {
 	margin: 0 -0.2rem;
@@ -2098,7 +2105,7 @@ html[data-anim="on"] .rw-star {
 .pv-book-meta {
 	margin: 0;
 	color: var(--muted);
-	font-size: 0.92rem;
+	font-size: 1rem;
 	line-height: 1.5;
 }
 .pv-words {
@@ -2136,7 +2143,7 @@ html[data-anim="on"] .rw-star {
 .pv-words small,
 .pv-tricky small {
 	color: var(--muted);
-	font-size: 0.8rem;
+	font-size: 0.88rem;
 }
 .pv-tricky {
 	margin: 0;
@@ -2240,4 +2247,56 @@ html[data-anim="on"] .rw-star {
 		color: #777;
 		text-align: center;
 	}
+}
+
+/* ---------- iPad status bar: a solid cap so scrolled text never shows (or blurs) under the clock ---------- */
+body::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: env(safe-area-inset-top);
+	background: var(--navy);
+	z-index: 30;
+	pointer-events: none;
+}
+@media print {
+	body::before {
+		display: none;
+	}
+}
+
+/* ---------- line icons ---------- */
+.ico {
+	width: 24px;
+	height: 24px;
+	display: block;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	pointer-events: none;
+}
+.icon-btn,
+.rw-round {
+	display: inline-grid;
+	place-items: center;
+}
+.lib-head .ico {
+	width: 26px;
+	height: 26px;
+}
+.rw-round .ico {
+	width: 22px;
+	height: 22px;
+}
+.pf-edit .ico {
+	width: 20px;
+	height: 20px;
+}
+input::placeholder {
+	color: var(--muted);
+	opacity: 0.8;
 }

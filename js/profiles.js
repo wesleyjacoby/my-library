@@ -4,6 +4,7 @@ import { h } from "./dom.js";
 import * as store from "./store.js";
 import { askConfirm } from "./confirm.js";
 import { requirePin } from "./rewardsui.js";
+import { icon } from "./icons.js";
 
 // The small button in the library header showing who is reading.
 export function profileChip(onChange) {
@@ -76,7 +77,7 @@ export function openProfiles(onChange) {
 							if (await requirePin()) editView(p);
 						},
 					},
-					"✎",
+					icon("edit"),
 				),
 			);
 		});

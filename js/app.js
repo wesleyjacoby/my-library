@@ -8,6 +8,7 @@ import { applySettings, openSettings } from "./settings.js";
 import { profileChip } from "./profiles.js";
 import { showParent } from "./parent.js";
 import * as track from "./stats.js";
+import { icon } from "./icons.js";
 import { askConfirm } from "./confirm.js";
 import { renderReader, renderEnding } from "./reader.js";
 import * as tts from "./tts.js";
@@ -75,7 +76,7 @@ function showLibrary() {
 							title: "Reading report (grown-ups)",
 							onclick: () => nav("#/parent"),
 						},
-						"📊",
+						icon("chart"),
 					),
 					h(
 						"button",
@@ -85,7 +86,7 @@ function showLibrary() {
 							"aria-label": "Settings",
 							onclick: openSettings,
 						},
-						"⚙︎",
+						icon("gear"),
 					),
 				),
 			),
@@ -392,7 +393,7 @@ function showSetup(book) {
 						"aria-label": "Back",
 						onclick: () => nav("#/"),
 					},
-					"←",
+					icon("back"),
 				),
 				h("div", { class: "bar-title" }, book.title),
 			),

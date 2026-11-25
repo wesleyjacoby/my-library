@@ -11,6 +11,7 @@ import * as rewards from "./rewards.js";
 import * as track from "./stats.js";
 import { toast, celebrate, endingRewards } from "./rewardsui.js";
 import { bumpSize, openSettings, applySettings } from "./settings.js";
+import { icon } from "./icons.js";
 
 const st = (book) => store.getBook(book.id);
 const state = (book) => ({
@@ -128,13 +129,13 @@ function toolbar(book, nav, label, article) {
 			class: "icon-btn listen-btn",
 			"aria-label": "Read this chapter aloud",
 		},
-		"🔊",
+		icon("speaker"),
 	);
 	const stop = () => {
 		reading = false;
 		article.classList.remove("tts-on");
 		tts.cancel();
-		listen.textContent = "🔊";
+		listen.replaceChildren(icon("speaker"));
 		article
 			.querySelectorAll(".reading")
 			.forEach((e) => e.classList.remove("reading"));
@@ -149,7 +150,7 @@ function toolbar(book, nav, label, article) {
 		reading = true;
 		track.markAloud();
 		article.classList.add("tts-on");
-		listen.textContent = "⏹";
+		listen.replaceChildren(icon("stop"));
 		tts.readAll(
 			els.map((e) => e.textContent),
 			{
@@ -176,7 +177,7 @@ function toolbar(book, nav, label, article) {
 				"aria-label": "Back to library",
 				onclick: () => nav("#/"),
 			},
-			"←",
+			icon("back"),
 		),
 		h("div", { class: "bar-title" }, label),
 		h(
@@ -218,7 +219,7 @@ function toolbar(book, nav, label, article) {
 						e.currentTarget.setAttribute("aria-pressed", String(on));
 					},
 				},
-				"🎯",
+				icon("target"),
 			),
 			tts.available ? listen : null,
 			h(
@@ -229,7 +230,7 @@ function toolbar(book, nav, label, article) {
 					"aria-label": "Settings",
 					onclick: openSettings,
 				},
-				"⚙︎",
+				icon("gear"),
 			),
 		),
 	);

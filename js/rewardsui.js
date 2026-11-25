@@ -5,6 +5,7 @@ import * as store from "./store.js";
 import { sceneHTML } from "./scenes.js";
 import { askConfirm } from "./confirm.js";
 import { APP_NAME } from "./config.js";
+import { icon } from "./icons.js";
 
 let library = new Map();
 export const setLibrary = (m) => {
@@ -518,7 +519,7 @@ export function showRewardsPage(root, nav, books) {
 							"aria-label": "Back to library",
 							onclick: () => nav("#/"),
 						},
-						"←",
+						icon("back"),
 					),
 					h("div", { class: "rw-title" }, "My Rewards"),
 					h(
@@ -531,7 +532,7 @@ export function showRewardsPage(root, nav, books) {
 							onclick: () =>
 								openGrownups(() => showRewardsPage(root, nav, books), books),
 						},
-						"🔒",
+						icon("lock"),
 					),
 				),
 				h(
