@@ -159,11 +159,168 @@ function download(name, text) {
 }
 
 // ---------- printable word cards ----------
-// Builds a hidden print-only sheet and opens the print dialog (AirPrint on an iPad). Cards have dashed
-// edges so they can be cut out and stuck on the fridge. The sheet stays hidden on screen.
-function printWords(words, prof, books) {
+// In a normal browser this builds a hidden print-only sheet and opens the print dialog. An installed iPad app
+// cannot open that dialog, so there the cards are drawn as A4 page images and handed to the share sheet,
+// which has Print (and AirDrop, Save to Files). Cards have dashed edges to cut out and stick on the fridge.
+const isInstalled = () =>
+	(window.matchMedia && matchMedia("(display-mode: standalone)").matches) ||
+	navigator.standalone === true;
+
+function wrapLines(ctx, text, maxW) {
+	const out = [];
+	let line = "";
+	for (const w of text.split(" ")) {
+		const t = line ? `${line} ${w}` : w;
+		if (ctx.measureText(t).width > maxW && line) {
+			out.push(line);
+			line = w;
+		} else line = t;
+	}
+	if (line) out.push(line);
+	return out;
+}
+
+// Returns an array of PNG Files (A4 at 150 dpi), seven rows of two cards per page.
+export async function wordSheetImages(words, prof, dict) {
+	const FONT = '"Andika", system-ui, sans-serif';
+	try {
+		await Promise.all([
+			document.fonts.load(`700 60px ${FONT}`),
+			document.fonts.load(`400 30px ${FONT}`),
+		]);
+	} catch (e) {
+		/* use whatever is loaded */
+	}
+	const W = 1240,
+		H = 1754,
+		M = 90,
+		GAP = 36,
+		CARD_H = 200,
+		FOOT = 70;
+	const colW = (W - 2 * M - GAP) / 2;
+	const date = new Date().toLocaleDateString("en-GB", {
+		day: "numeric",
+		month: "long",
+		year: "numeric",
+	});
+	const pages = [];
+	const newPage = (first) => {
+		const c = document.createElement("canvas");
+		c.width = W;
+		c.height = H;
+		const ctx = c.getContext("2d");
+		ctx.fillStyle = "#fff";
+		ctx.fillRect(0, 0, W, H);
+		ctx.fillStyle = "#777";
+		ctx.font = `400 22px ${FONT}`;
+		ctx.textAlign = "center";
+		ctx.textBaseline = "alphabetic";
+		ctx.fillText(APP_NAME, W / 2, H - M / 2);
+		let y = M;
+		if (first) {
+			ctx.textAlign = "left";
+			ctx.fillStyle = "#000";
+			ctx.font = `700 64px ${FONT}`;
+			ctx.fillText("Words to practise", M, y + 56);
+			ctx.fillStyle = "#444";
+			ctx.font = `400 28px ${FONT}`;
+			ctx.fillText(`${prof.name} · ${date}`, M, y + 104);
+			ctx.fillStyle = "#000";
+			ctx.font = `400 26px ${FONT}`;
+			const lines = wrapLines(
+				ctx,
+				"Say the word, tap out the parts, then use it in a sentence. Tick the boxes when it feels easy.",
+				W - 2 * M,
+			);
+			lines.forEach((l, i) => ctx.fillText(l, M, y + 154 + i * 36));
+			y += 154 + lines.length * 36 + 30;
+		}
+		pages.push({ c, ctx });
+		return { ctx, y };
+	};
+	let cur = newPage(true),
+		col = 0,
+		y = cur.y;
+	for (const w of words) {
+		if (col === 0 && y + CARD_H > H - M - FOOT) {
+			cur = newPage(false);
+			y = cur.y;
+		}
+		const ctx = cur.ctx,
+			x = M + col * (colW + GAP);
+		ctx.save();
+		ctx.strokeStyle = "#666";
+		ctx.lineWidth = 3;
+		ctx.setLineDash([14, 10]);
+		ctx.beginPath();
+		if (ctx.roundRect) ctx.roundRect(x, y, colW, CARD_H, 22);
+		else ctx.rect(x, y, colW, CARD_H);
+		ctx.stroke();
+		ctx.restore();
+		ctx.textAlign = "center";
+		ctx.fillStyle = "#000";
+		let size = 72;
+		ctx.font = `700 ${size}px ${FONT}`;
+		while (ctx.measureText(w).width > colW - 50 && size > 30) {
+			size -= 4;
+			ctx.font = `700 ${size}px ${FONT}`;
+		}
+		ctx.fillText(w, x + colW / 2, y + 86);
+		const hy =
+			dict[w] && dict[w].includes("-") ? dict[w].split("-").join(" · ") : "";
+		if (hy) {
+			ctx.fillStyle = "#444";
+			ctx.font = `400 32px ${FONT}`;
+			ctx.fillText(hy, x + colW / 2, y + 134);
+		}
+		ctx.fillStyle = "#555";
+		ctx.font = `400 22px ${FONT}`;
+		ctx.fillText("☐ I can read it   ☐ I can use it", x + colW / 2, y + 178);
+		col = (col + 1) % 2;
+		if (col === 0) y += CARD_H + GAP;
+	}
+	const day = I.dayKey(new Date()),
+		who =
+			(prof.name || "reader")
+				.toLowerCase()
+				.replace(/[^a-z0-9]+/g, "-")
+				.replace(/^-|-$/g, "") || "reader";
+	return Promise.all(
+		pages.map(
+			({ c }, i) =>
+				new Promise((res, rej) =>
+					c.toBlob(
+						(b) =>
+							b
+								? res(
+										new File(
+											[b],
+											`word-cards-${who}-${day}${pages.length > 1 ? `-${i + 1}` : ""}.png`,
+											{ type: "image/png" },
+										),
+									)
+								: rej(new Error("image")),
+						"image/png",
+					),
+				),
+		),
+	);
+}
+
+async function printWords(words, prof, books) {
 	const dict = {};
 	for (const b of books.values()) Object.assign(dict, b.syllables || {});
+	if (isInstalled() && navigator.canShare) {
+		try {
+			const files = await wordSheetImages(words, prof, dict);
+			if (navigator.canShare({ files })) {
+				await navigator.share({ files, title: "Words to practise" });
+				return;
+			}
+		} catch (e) {
+			if (e && e.name === "AbortError") return;
+		}
+	}
 	document.getElementById("print-sheet")?.remove();
 	const cards = words.map((w) => {
 		const hy =
