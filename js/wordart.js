@@ -282,6 +282,84 @@ const ART = {
     <path d="M24 56 L32 52 M34 40 L42 36 M50 28 L56 26 M70 26 L76 28 M82 36 L88 40 M88 52 L96 56" stroke="${C.rock}" stroke-width="2" opacity=".8"/>
     <circle cx="60" cy="72" r="14" fill="${C.gold}" opacity=".2"/><rect x="56" y="66" width="8" height="12" rx="2" fill="${C.glow}" stroke="#a97d1f" stroke-width="1.6"/>
     <path d="M30 90 L90 90" stroke="${C.rock}" stroke-width="2"/>`,
+
+	bunting: () =>
+		bg(C.sky) +
+		`<path d="M0 22 Q30 48 60 30 T120 24" fill="none" stroke="${C.dark}" stroke-width="2"/>
+    ${[
+			[14, 32, C.red],
+			[30, 38, C.gold],
+			[46, 38, C.green],
+			[62, 30, C.red],
+			[78, 28, C.gold],
+			[94, 28, C.green],
+			[108, 26, C.red],
+		]
+			.map(
+				([x, y, c]) =>
+					`<path d="M${x - 6} ${y - 1} L${x + 6} ${y - 1} L${x} ${y + 15} Z" fill="${c}" stroke="${C.ink}" stroke-width="1.2" stroke-linejoin="round"/>`,
+			)
+			.join("")}
+    <rect x="0" y="76" width="120" height="14" fill="${C.green}"/>`,
+
+	trolley: () =>
+		bg(C.sand) +
+		`<rect x="18" y="52" width="84" height="6" rx="2" fill="${C.wood}" stroke="${C.dark}" stroke-width="1.6"/>
+    <rect x="18" y="72" width="84" height="5" rx="2" fill="${C.wood}" stroke="${C.dark}" stroke-width="1.6"/>
+    <path d="M26 52 L26 78 M94 52 L94 78 M94 52 L108 34" stroke="${C.dark}" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="30" cy="80" r="7" fill="${C.ink}"/><circle cx="30" cy="80" r="2.5" fill="${C.stone}"/>
+    <circle cx="90" cy="80" r="7" fill="${C.ink}"/><circle cx="90" cy="80" r="2.5" fill="${C.stone}"/>
+    <rect x="34" y="34" width="52" height="18" rx="3" fill="#f4e27a" stroke="${C.dark}" stroke-width="1.6"/>
+    <rect x="40" y="20" width="40" height="14" rx="3" fill="#f4e27a" stroke="${C.dark}" stroke-width="1.6"/>
+    <circle cx="60" cy="16" r="4" fill="${C.gold}" stroke="${C.dark}" stroke-width="1.2"/>`,
+
+	scarecrow: () =>
+		bg(C.dusk) +
+		`<rect x="0" y="70" width="120" height="20" fill="#8a7a3a"/>
+    <path d="M60 28 L60 78" stroke="${C.dark}" stroke-width="4"/><path d="M26 44 L94 44" stroke="${C.dark}" stroke-width="4" stroke-linecap="round"/>
+    <path d="M44 40 L76 40 L80 66 L40 66 Z" fill="#4a6fa5" stroke="${C.ink}" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M42 22 L78 22 L74 12 L46 12 Z" fill="#9a9a9a" stroke="${C.ink}" stroke-width="1.6" stroke-linejoin="round"/>
+    <rect x="46" y="22" width="28" height="14" rx="3" fill="${C.sand}" stroke="${C.ink}" stroke-width="1.6"/>
+    <circle cx="54" cy="28" r="1.8" fill="${C.ink}"/><circle cx="66" cy="28" r="1.8" fill="${C.ink}"/><path d="M54 33 Q60 36 66 33" fill="none" stroke="${C.ink}" stroke-width="1.4"/>
+    <path d="M24 42 L20 52 M28 42 L28 54 M96 42 L100 52 M92 42 L92 54" stroke="${C.gold}" stroke-width="2" stroke-linecap="round"/>`,
+
+	stile: () =>
+		bg(C.sky) +
+		`<rect x="0" y="62" width="120" height="28" fill="${C.green}"/>
+    <rect x="12" y="30" width="6" height="40" fill="${C.wood}"/><rect x="102" y="30" width="6" height="40" fill="${C.wood}"/>
+    <path d="M12 38 L108 38 M12 52 L108 52" stroke="${C.wood}" stroke-width="4"/>
+    <rect x="44" y="40" width="6" height="42" fill="${C.dark}"/><rect x="70" y="40" width="6" height="42" fill="${C.dark}"/>
+    <rect x="40" y="62" width="40" height="6" rx="1" fill="${C.wood}" stroke="${C.dark}" stroke-width="1.4"/>
+    <rect x="40" y="42" width="40" height="6" rx="1" fill="${C.wood}" stroke="${C.dark}" stroke-width="1.4"/>`,
+
+	millwheel: () =>
+		bg(C.sky) +
+		sea(66, C.deep) +
+		wave(72, 0, 120) +
+		`<rect x="6" y="20" width="44" height="50" fill="${C.sand}" stroke="${C.dark}" stroke-width="2"/>
+    <path d="M2 22 L28 4 L54 22 Z" fill="${C.red}" stroke="${C.dark}" stroke-width="2" stroke-linejoin="round"/>
+    <rect x="22" y="40" width="12" height="30" fill="${C.dark}"/><rect x="36" y="30" width="8" height="8" fill="${C.glow}"/>
+    <circle cx="80" cy="48" r="26" fill="none" stroke="${C.dark}" stroke-width="4"/><circle cx="80" cy="48" r="4" fill="${C.dark}"/>
+    ${[0, 45, 90, 135].map((a) => `<line x1="${80 + 26 * Math.cos((a * Math.PI) / 180)}" y1="${48 + 26 * Math.sin((a * Math.PI) / 180)}" x2="${80 - 26 * Math.cos((a * Math.PI) / 180)}" y2="${48 - 26 * Math.sin((a * Math.PI) / 180)}" stroke="${C.wood}" stroke-width="3"/>`).join("")}`,
+
+	stones: () =>
+		bg(C.sky) +
+		`<rect x="0" y="0" width="120" height="30" fill="${C.green}"/><rect x="0" y="30" width="120" height="60" fill="${C.sea}"/>` +
+		wave(40) +
+		wave(78, 10, 120) +
+		`<rect x="0" y="82" width="120" height="8" fill="${C.green}"/>
+    ${[
+			[16, 56, 11],
+			[38, 52, 10],
+			[60, 58, 11],
+			[82, 53, 10],
+			[102, 57, 9],
+		]
+			.map(
+				([x, y, r]) =>
+					`<ellipse cx="${x}" cy="${y}" rx="${r}" ry="${r - 4}" fill="${C.stone}" stroke="${C.rock}" stroke-width="2"/>`,
+			)
+			.join("")}`,
 };
 
 export const ART_NAMES = Object.keys(ART);

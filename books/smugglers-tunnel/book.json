@@ -876,6 +876,7 @@
 				},
 				"He led them down the slimy steps at the end of the quay and out onto the floor of the harbour. The sea had gone. In its place lay a great grey plain of mud, shining under the stars, with forty boats lying on it like sleeping cows. A path of old planks ran across it toward the boathouse.",
 				"“Keep to the planks,” said Mr Fenn. “Step off, and the mud takes your boot. Then it takes your leg.”",
+				"{cousin} asked, in a very small voice, whether the mud was the sort that gave things back. “Depends on the thing,” said Mr Fenn. {cousin} stayed on the planks.",
 				"Fog was creeping in off the sea, thin and cold. It wound around their ankles. {pet} [[pet:dog=pressed against {hero’s} knees at every step|cat=rode on {hero’s} shoulder, with claws, and made no apology]]. Halfway across, {cousin} stopped and could not be moved until {friend} took {cousin.his} hand.",
 				"The Old Boathouse was black and huge. Its big doors stood open one inch. On the ground in front of them lay a padlock, unlocked, with the key still in it.",
 				"{hero} noticed that, and did not yet know why it mattered.",
@@ -1156,6 +1157,7 @@
 				},
 				"The ladder was old and black and slick with weed. {friend} went first, then {cousin}, then {hero}, with {pet} [[pet:dog=tucked under {hero’s} arm, wriggling, outraged|cat=clinging to {hero’s} jumper with all four sets of claws]].",
 				"“Third rung!” called {friend}, from above. “The map said! Step over it!”",
+				"“Why is it always the third one?” muttered {cousin}, in the middle, with a shoe on the wrong foot. Nobody had time to tell {cousin.him}.",
 				{
 					"when": {
 						"pick": "carry",

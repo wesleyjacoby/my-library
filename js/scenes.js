@@ -77,6 +77,15 @@ const ORDER = [
 	"boat",
 	"house",
 	"trees",
+	"hall",
+	"farm",
+	"mill",
+	"stones",
+	"bull",
+	"bunting",
+	"cake",
+	"cart",
+	"sleepwalker",
 	"map",
 	"shop",
 	"attic",
@@ -500,6 +509,140 @@ const DRAW = {
 		`<path d="M300 228 Q282 256 296 296 L330 296 Q322 262 336 244Z" fill="none" stroke="#2a2232" stroke-width="3"/><path d="M290 244 H330 M288 262 H326 M290 280 H322 M300 232 V296 M312 236 V296" stroke="#2a2232" stroke-width="1.6" opacity=".8"/>` +
 		`<rect x="424" y="236" width="30" height="14" rx="2" fill="#d6a74e"/><path d="M424 242 H454" stroke="#8a6a3a" stroke-width="2"/>` +
 		`</g>`,
+
+	// ---- The Great Cake Chase kit ----
+
+	// The village hall: a squat building with a lit window, double doors, a clock and a small bell turret.
+	hall: ({ m }) =>
+		`<g><rect y="288" width="800" height="72" fill="${m.land}"/>` +
+		`<rect x="230" y="190" width="340" height="100" fill="${m.land}"/><polygon points="214,192 400,120 586,192" fill="${m.land}"/>` +
+		`<rect x="388" y="84" width="24" height="44" fill="${m.land}"/><polygon points="384,86 400,62 416,86" fill="${m.land}"/>` +
+		`<circle cx="400" cy="162" r="14" fill="#f1e6c4"/><path d="M400 152 V162 H407" stroke="#2a2118" stroke-width="2" fill="none"/>` +
+		`<rect class="flk" x="262" y="214" width="34" height="40" fill="#ffcf70"/><rect class="flk" x="504" y="214" width="34" height="40" fill="#ffcf70"/>` +
+		`<path d="M279 214 V254 M262 234 H296 M521 214 V254 M504 234 H538" stroke="#10131f" stroke-width="2.4"/>` +
+		`<rect x="372" y="226" width="56" height="64" fill="#10131f"/><path d="M400 226 V290" stroke="${m.land}" stroke-width="2.4"/></g>`,
+
+	// A string of small flags across the picture.
+	bunting: () => {
+		const cols = ["#d9534f", "#f0ad4e", "#5cb85c", "#5bc0de", "#e86a9a"];
+		let s =
+			'<g><path d="M-10 60 Q200 130 400 70 T810 62" fill="none" stroke="#2a2118" stroke-width="2.4"/>';
+		for (let i = 0; i < 17; i++) {
+			const x = 20 + i * 47;
+			const t = x / 800;
+			const y =
+				60 +
+				60 * Math.sin(t * Math.PI * 2 * 0.5 + 0.2) * (x < 400 ? 1 : 0.5) * 0.9;
+			s += `<polygon class="sway" style="--d:${(i * 0.3).toFixed(1)}s" points="${x - 11},${n0(y)} ${x + 11},${n0(y)} ${x},${n0(y + 26)}" fill="${cols[i % cols.length]}"/>`;
+		}
+		return s + "</g>";
+	},
+
+	// A pale figure in a nightcap and long nightshirt, arms out in front, small and calm.
+	sleepwalker: () =>
+		`<g><ellipse cx="560" cy="312" rx="42" ry="7" fill="#000" opacity=".25"/>` +
+		`<path d="M536 306 L544 214 Q560 204 576 214 L584 306Z" fill="#dfe6fa" stroke="#9aa6c8" stroke-width="2"/>` +
+		`<circle cx="560" cy="196" r="14" fill="#f0e2d0"/><path d="M546 192 Q548 168 568 176 L580 168 Q582 186 574 194Z" fill="#9aa6c8"/><circle cx="582" cy="167" r="4" fill="#dfe6fa"/>` +
+		`<path d="M546 190 H554 M566 190 H574" stroke="#2a2118" stroke-width="2"/>` +
+		`<path d="M544 224 L506 232 M576 224 L520 238" stroke="#dfe6fa" stroke-width="7" stroke-linecap="round"/>` +
+		`<rect x="546" y="306" width="10" height="10" fill="#c0392b"/><rect x="566" y="306" width="10" height="10" fill="#4a6fa5"/></g>`,
+
+	// A field on the way to the mill: fence, barn, a few sleeping sheep and a scarecrow.
+	farm: ({ m }) => {
+		const sheep = (x, y) =>
+			`<g><ellipse cx="${x}" cy="${y}" rx="22" ry="14" fill="#e8e4d8"/><ellipse cx="${x - 20}" cy="${y + 4}" rx="9" ry="8" fill="#2a2118"/><rect x="${x - 12}" y="${y + 10}" width="4" height="8" fill="#2a2118"/><rect x="${x + 8}" y="${y + 10}" width="4" height="8" fill="#2a2118"/></g>`;
+		let fence = "";
+		for (let x = 20; x < 380; x += 36)
+			fence += `<rect x="${x}" y="244" width="6" height="44" fill="${m.land}"/>`;
+		return (
+			`<g><rect y="288" width="800" height="72" fill="${m.land}"/>` +
+			`<rect x="470" y="196" width="130" height="94" fill="${m.land}"/><polygon points="456,198 535,148 614,198" fill="${m.land}"/><rect x="510" y="236" width="50" height="54" fill="#10131f"/>` +
+			fence +
+			`<path d="M14 256 H386 M14 274 H386" stroke="${m.land}" stroke-width="5"/>` +
+			sheep(110, 318) +
+			sheep(220, 330) +
+			sheep(330, 316) +
+			`<g transform="translate(690,0)"><path d="M0 214 V300" stroke="${m.land}" stroke-width="5"/><path d="M-30 236 H30" stroke="${m.land}" stroke-width="5"/><path d="M-14 232 L14 232 L10 266 L-10 266Z" fill="${m.far}"/>` +
+			`<path d="M-14 204 L-10 192 H10 L14 204 Z" fill="${m.land}"/><rect x="-10" y="204" width="20" height="14" fill="#c9b27a"/></g></g>`
+		);
+	},
+
+	// The mill: a stone building with a tall water wheel, a lit window and the brook underneath.
+	mill: ({ m }) => {
+		let spokes = "";
+		for (let a = 0; a < 180; a += 30) {
+			const c = Math.cos((a * Math.PI) / 180),
+				s2 = Math.sin((a * Math.PI) / 180);
+			spokes += `<line x1="${n0(560 - 70 * c)}" y1="${n0(230 - 70 * s2)}" x2="${n0(560 + 70 * c)}" y2="${n0(230 + 70 * s2)}" stroke="${m.land}" stroke-width="5"/>`;
+		}
+		return (
+			`<g><rect y="286" width="800" height="74" fill="${m.land}"/>` +
+			`<rect x="250" y="160" width="230" height="130" fill="${m.land}"/><polygon points="236,162 365,92 494,162" fill="${m.land}"/>` +
+			`<rect class="flk" x="330" y="190" width="38" height="46" fill="#ffd97a"/><rect x="396" y="236" width="40" height="54" fill="#10131f"/>` +
+			`<circle cx="560" cy="230" r="70" fill="none" stroke="${m.land}" stroke-width="8"/>${spokes}<circle cx="560" cy="230" r="8" fill="${m.land}"/>` +
+			`<rect x="0" y="296" width="800" height="22" fill="${m.sea}" opacity=".75"/><path d="M0 306 q30 -6 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0" fill="none" stroke="${m.wave}" stroke-width="2" opacity=".5"/></g>`
+		);
+	},
+
+	// Stepping stones across a brook, the mill on the far bank.
+	stones: ({ m }) =>
+		`<g><rect y="250" width="800" height="110" fill="${m.sea}"/>` +
+		`<path d="M0 270 q40 -8 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0" fill="none" stroke="${m.wave}" stroke-width="2" opacity=".45"/>` +
+		`<path d="M0 306 q40 -8 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0" fill="none" stroke="${m.wave}" stroke-width="2" opacity=".35"/>` +
+		`<rect y="238" width="800" height="16" fill="${m.land}"/>` +
+		[
+			[110, 300, 40],
+			[230, 292, 34],
+			[350, 304, 42],
+			[470, 294, 36],
+			[590, 302, 40],
+			[700, 296, 34],
+		]
+			.map(
+				([x, y, w]) =>
+					`<ellipse cx="${x}" cy="${y}" rx="${w}" ry="${n0(w / 3.4)}" fill="${m.far}" stroke="${m.land}" stroke-width="3"/>`,
+			)
+			.join("") +
+		`<rect x="590" y="170" width="140" height="70" fill="${m.land}"/><polygon points="580,172 660,128 740,172" fill="${m.land}"/><rect class="flk" x="640" y="190" width="22" height="26" fill="#ffd97a"/></g>`,
+
+	// A very large, very calm bull standing in a field.
+	bull: ({ m }) =>
+		`<g><rect y="290" width="800" height="70" fill="${m.land}"/>` +
+		`<ellipse cx="420" cy="296" rx="130" ry="9" fill="#000" opacity=".25"/>` +
+		`<path d="M300 250 Q300 196 380 190 L500 190 Q548 196 548 250 L548 290 L520 290 L520 262 L470 262 L470 290 L440 290 L440 262 L400 262 L400 290 L370 290 L370 262 L336 262 L336 290 L308 290Z" fill="#2c2420"/>` +
+		`<path d="M300 230 Q268 206 238 232 L226 262 Q240 286 276 280 L306 262Z" fill="#2c2420"/>` +
+		`<path d="M240 206 Q222 190 210 198 M268 204 Q280 186 296 190" fill="none" stroke="#e8e4d8" stroke-width="5" stroke-linecap="round"/>` +
+		`<circle cx="252" cy="236" r="3" fill="#f1e6c4"/><circle cx="238" cy="268" r="9" fill="none" stroke="#c9a24a" stroke-width="3"/>` +
+		`<path d="M548 220 Q580 226 574 262" fill="none" stroke="#2c2420" stroke-width="5"/></g>`,
+
+	// The Centenary Cake on its tea trolley: five lemon layers, a sugar duck on top.
+	cake: ({ id }) => {
+		let layers = "";
+		const cols = ["#f4e27a", "#f8eeaa", "#f4e27a", "#f8eeaa", "#f4e27a"];
+		for (let i = 0; i < 5; i++) {
+			const w = 220 - i * 26,
+				y = 266 - (i + 1) * 30;
+			layers += `<rect x="${400 - w / 2}" y="${y}" width="${w}" height="28" rx="5" fill="${cols[i]}" stroke="#c9a24a" stroke-width="2"/><path d="M${400 - w / 2 + 6} ${y + 6} q10 10 20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="#fff" stroke-width="3" opacity=".8"/>`;
+		}
+		return (
+			`<g><ellipse class="flk" cx="400" cy="170" rx="300" ry="170" fill="url(#warm${id})" opacity=".6"/>` +
+			`<rect x="250" y="268" width="300" height="14" rx="4" fill="#9a6b3c" stroke="#5b3b1d" stroke-width="2"/>` +
+			`<path d="M268 282 V330 M532 282 V330 M550 276 L580 240" stroke="#5b3b1d" stroke-width="6" stroke-linecap="round"/>` +
+			`<circle cx="282" cy="338" r="16" fill="#2a2118"/><circle cx="518" cy="338" r="16" fill="#2a2118"/>` +
+			layers +
+			`<g transform="translate(400,84)"><ellipse cx="0" cy="12" rx="16" ry="10" fill="#fff"/><circle cx="14" cy="-2" r="7" fill="#fff"/><polygon points="20,-2 30,0 20,3" fill="#f0a030"/><circle cx="16" cy="-4" r="1.4" fill="#2a2118"/></g></g>`
+		);
+	},
+
+	// The runaway trolley, small and fast, cake on top, speed lines behind it.
+	cart: () =>
+		`<g><g stroke="#fff" stroke-width="3" opacity=".5" stroke-linecap="round"><path d="M220 258 H330 M200 280 H320 M240 302 H340"/></g>` +
+		`<g transform="translate(430,0) rotate(-6 100 280)">` +
+		`<rect x="0" y="278" width="200" height="10" rx="3" fill="#9a6b3c" stroke="#5b3b1d" stroke-width="2"/>` +
+		`<path d="M14 288 V318 M186 288 V318 M200 284 L226 250" stroke="#5b3b1d" stroke-width="5" stroke-linecap="round"/>` +
+		`<circle cx="22" cy="322" r="13" fill="#2a2118"/><circle cx="178" cy="322" r="13" fill="#2a2118"/>` +
+		`<rect x="40" y="244" width="120" height="32" rx="4" fill="#f4e27a" stroke="#c9a24a" stroke-width="2"/><rect x="56" y="214" width="88" height="30" rx="4" fill="#f8eeaa" stroke="#c9a24a" stroke-width="2"/><rect x="70" y="186" width="60" height="28" rx="4" fill="#f4e27a" stroke="#c9a24a" stroke-width="2"/>` +
+		`<ellipse cx="100" cy="180" rx="10" ry="7" fill="#fff"/><circle cx="110" cy="171" r="5" fill="#fff"/></g></g>`,
 
 	// ---- Gull Rock extras ----
 

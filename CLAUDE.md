@@ -46,7 +46,7 @@ The owner wants prose that does not sound AI-written: **no em dashes**, avoid "l
 - Cache is `my-library-v10`.
 
 ## Book 2, profiles and the grown-ups report
-- Books: `gull-rock` and `smugglers-tunnel` ("The Smugglers' Tunnel", Saltwick, 8 chapters). Both have `"level": 2`. Each book uses its own scene elements; keep new books visually distinct from earlier ones. Scene kit order lives in `js/scenes.js`.
+- Books: `gull-rock`, `smugglers-tunnel` ("The Smugglers' Tunnel", Saltwick) and `cake-chase` ("The Great Cake Chase", Puddlecombe; a light comedy-adventure, 5 choices, no cousin slot). All have 8 chapters and `"level": 2`. Humour is light and never tied to a friend's personality: running gags (Mr Podmore's speeches, the squeaking trolley, Duchess the goat) plus the odd dry line in the older books, never inside the tense moments. Each book uses its own scene elements; keep new books visually distinct from earlier ones. Scene kit order lives in `js/scenes.js`.
 - Prose rules for new books: no em dashes, no "like the way" similes, and keep similes simple, concrete and realistic (things a 10-year-old can picture straight away, e.g. "as black as coal", never abstract or poetic ones).
 - Storage is `mylib.v2`: `{ profiles, order, current, pin }`. `js/store.js` keeps the same function names (`getBook`, `getSettings`, ...) but they act on the current reader. Never read `localStorage` directly in new code.
 - Reading stats (`js/stats.js`, per profile): sessions per chapter, tapped words, quiz tries. `js/insights.js` holds the pure maths (tested by `node` directly). `js/parent.js` is the report page, `js/profiles.js` the reader switcher.
@@ -77,3 +77,6 @@ The owner wants prose that does not sound AI-written: **no em dashes**, avoid "l
 - Do NOT rename these internals, because that would erase saved progress or break old backups: the storage keys `mylib.v2` / `mylib.v1`, the backup file's `app: 'my-library'` id (js/store.js, js/parent.js), the repo name `my-library` and the GitHub Pages URL, and the `my-library-vNN` cache prefix in sw.js. The installed iPad app is tied to the page URL, so moving to a new address later needs a backup and restore first (Grown-ups > Save backup, then Restore on the new address).
 - Icon: a green sprout that forks in two (the story choices) growing out of an open book, on the navy night gradient. Files: icons/icon-192.png, icon-512.png, icon-maskable-512.png (mark at 66% for the safe zone) and apple-touch-icon.png (180). The same mark is drawn in js/logo.js for the library header. iOS reads the Home Screen icon and title when the app is added, so the iPad needs the app removed and re-added to show the new icon and name (back up first).
 - Cache is `my-library-v39`.
+
+## Cake Chase scene elements (v40)
+`hall`, `bunting`, `sleepwalker`, `farm`, `mill`, `stones`, `bull`, `cake`, `cart` were added to `js/scenes.js` (and `ORDER`). Six word pictures were added to `js/wordart.js`: `bunting`, `trolley`, `scarecrow`, `stile`, `millwheel`, `stones`.

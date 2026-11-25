@@ -214,6 +214,7 @@
 				"“Can we go and see it?” asked {friend}.",
 				"“It’s been empty for years. The tide cuts that rock off twice a day, and nobody goes near it.” {grownup} glanced in the mirror. “Not that anyone would want to.”",
 				"{hero} looked at {friend}. {friend} looked at {hero}. That was exactly the sort of thing a grown-up says when they want you to want to.",
+				"{grownup} added that the chip shop shut at six, which was the most important fact about Gull Cove. Nobody argued.",
 				"In the back, {pet} [[pet:dog=stood up on the seat and growled at the window|cat=flattened both ears and stared at the tower without blinking]]. {pet} had never done that before.",
 				{
 					"scene": {
@@ -564,6 +565,7 @@
 				"The voice stopped. The tower went very quiet.",
 				"“Don’t answer it,” whispered {friend}.",
 				"“I wasn’t going to.”",
+				"“Good,” whispered {friend}. “Because then I would have had to leave.”",
 				"The stairs wound up and up, iron steps bolted into the curved wall, with a rope for a handrail. Every step rang under their shoes. {pet} went first, nose low, tail stiff. Every few steps, {pet.he} stopped, looked back to check they were still coming, and then went on.",
 				"On the first landing hung a row of yellow raincoats. They were old and stiff with salt. Every one of them was dripping, though the floor beneath was bone dry.",
 				"On the second landing, a window showed the sea. It was closer than it should have been. {hero} was sure the causeway had not been that narrow.",

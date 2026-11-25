@@ -1,0 +1,1354 @@
+{
+	"id": "cake-chase",
+	"title": "The Great Cake Chase",
+	"cover": {
+		"scene": {
+			"mood": "dusk",
+			"elements": ["cake"],
+			"alt": "A tall lemon cake with a sugar duck on top, sitting on a tea trolley.",
+			"align": "xMidYMid"
+		}
+	},
+	"traits": ["brave", "kind", "clever"],
+	"cast": [
+		{
+			"key": "hero",
+			"label": "Your name",
+			"placeholder": "Type your name",
+			"default": "Alex",
+			"required": true,
+			"pronouns": ["she", "he", "they"],
+			"pronounLabel": "Which fits you best?"
+		},
+		{
+			"key": "friend",
+			"label": "Your best friend’s name",
+			"placeholder": "Best friend",
+			"default": "Sam",
+			"altDefault": "Jess",
+			"pronouns": ["she", "he", "they"],
+			"pronounLabel": "Which fits your best friend?"
+		},
+		{
+			"key": "pet",
+			"label": "Your pet’s name",
+			"placeholder": "Pet",
+			"default": "Biscuit",
+			"altDefault": "Pepper",
+			"pronouns": ["he", "she", "it"],
+			"pronounDefault": "he",
+			"pronounLabel": "Is your pet a…",
+			"variants": {
+				"label": "Dog or cat?",
+				"options": [
+					{
+						"id": "dog",
+						"label": "Dog"
+					},
+					{
+						"id": "cat",
+						"label": "Cat"
+					}
+				]
+			}
+		},
+		{
+			"key": "grownup",
+			"label": "The grown-up staying with you (Mum, Gran, Uncle Pete…)",
+			"placeholder": "Mum, Gran, Dad…",
+			"default": "Gran",
+			"altDefault": "Grandpa",
+			"pronouns": ["she", "he", "they"],
+			"pronounLabel": "Which fits them?"
+		}
+	],
+	"tagline": "One hundred years of tradition. One missing cake. Six hours to find it.",
+	"blurb": "It is the night before the hundredth Puddlecombe Show, and the famous Centenary Cake has vanished. Your pet is the main suspect. A funny, fast adventure with choices that change who gets the blame.",
+	"ages": "8+",
+	"level": 2,
+	"syllables": {
+		"admit": "ad-mit",
+		"allowed": "al-lowed",
+		"amount": "a-mount",
+		"animal": "an-i-mal",
+		"annoyed": "an-noyed",
+		"annoying": "an-noy-ing",
+		"anthem": "an-them",
+		"anybody": "an-y-bod-y",
+		"anywhere": "an-y-where",
+		"apart": "a-part",
+		"aren": "aren",
+		"arrest": "ar-rest",
+		"arrive": "ar-rive",
+		"arrived": "ar-rived",
+		"attention": "at-ten-tion",
+		"audience": "au-di-ence",
+		"baker": "ba-ker",
+		"baking": "bak-ing",
+		"balance": "bal-ance",
+		"bales": "bales",
+		"beetroot": "beet-root",
+		"beginning": "be-gin-ning",
+		"begins": "be-gins",
+		"believe": "be-lieve",
+		"belongs": "be-longs",
+		"bitter": "bit-ter",
+		"bobble": "bob-ble",
+		"bucket": "buck-et",
+		"bunting": "bunt-ing",
+		"buttering": "but-ter-ing",
+		"cancelled": "can-celled",
+		"carefully": "care-ful-ly",
+		"centenary": "cen-ten-a-ry",
+		"cheerful": "cheer-ful",
+		"cheerfully": "cheer-ful-ly",
+		"chewing": "chew-ing",
+		"children": "chil-dren",
+		"climbing": "climb-ing",
+		"committed": "com-mit-ted",
+		"committee": "com-mit-tee",
+		"competition": "com-pe-ti-tion",
+		"completely": "com-plete-ly",
+		"conduct": "con-duct",
+		"conducted": "con-duct-ed",
+		"creatures": "crea-tures",
+		"cushion": "cush-ion",
+		"custard": "cus-tard",
+		"darker": "dark-er",
+		"daylight": "day-light",
+		"decide": "de-cide",
+		"decided": "de-cid-ed",
+		"deeply": "deep-ly",
+		"dewy": "dew-y",
+		"dignity": "dig-ni-ty",
+		"disasters": "dis-as-ters",
+		"downstairs": "down-stairs",
+		"dragging": "drag-ging",
+		"dramatic": "dra-mat-ic",
+		"drawer": "drawer",
+		"dreamy": "dream-y",
+		"dressing": "dress-ing",
+		"duchess": "duch-ess",
+		"easier": "eas-i-er",
+		"easy": "eas-y",
+		"eating": "eat-ing",
+		"eeeek": "eeeek",
+		"eeek": "eeek",
+		"effect": "ef-fect",
+		"elbows": "el-bows",
+		"eleven": "e-lev-en",
+		"enthusiasm": "en-thu-si-asm",
+		"everyone": "ev-ery-one",
+		"evidence": "ev-i-dence",
+		"except": "ex-cept",
+		"excuse": "ex-cuse",
+		"explained": "ex-plained",
+		"exploded": "ex-plod-ed",
+		"extremely": "ex-treme-ly",
+		"feeling": "feel-ing",
+		"finish": "fin-ish",
+		"firmly": "firm-ly",
+		"folding": "fold-ing",
+		"footbridge": "foot-bridge",
+		"forgive": "for-give",
+		"funny": "fun-ny",
+		"gentlest": "gen-tlest",
+		"gerald": "ger-ald",
+		"given": "giv-en",
+		"glaring": "glar-ing",
+		"handles": "han-dles",
+		"happen": "hap-pen",
+		"happens": "hap-pens",
+		"harvest": "har-vest",
+		"hasty": "hast-y",
+		"higher": "high-er",
+		"himself": "him-self",
+		"hundredth": "hun-dredth",
+		"icing": "ic-ing",
+		"idea": "i-de-a",
+		"interested": "in-ter-est-ed",
+		"ironed": "i-roned",
+		"island": "is-land",
+		"judging": "judg-ing",
+		"jumper": "jump-er",
+		"kindness": "kind-ness",
+		"lady": "la-dy",
+		"layer": "lay-er",
+		"layers": "lay-ers",
+		"lemon": "lem-on",
+		"lemons": "lem-ons",
+		"lemony": "lem-on-y",
+		"letters": "let-ters",
+		"licking": "lick-ing",
+		"listening": "lis-ten-ing",
+		"lowered": "low-ered",
+		"machinery": "ma-chin-er-y",
+		"marrow": "mar-row",
+		"mayor": "may-or",
+		"mention": "men-tion",
+		"mentioned": "men-tioned",
+		"missing": "miss-ing",
+		"money": "mon-ey",
+		"moonlight": "moon-light",
+		"mother": "moth-er",
+		"mouthful": "mouth-ful",
+		"neatest": "neat-est",
+		"nightcap": "night-cap",
+		"nineteen": "nine-teen",
+		"noisy": "nois-y",
+		"number": "num-ber",
+		"offer": "of-fer",
+		"outstanding": "out-stand-ing",
+		"panic": "pan-ic",
+		"pedal": "ped-al",
+		"pennyfeather": "pen-ny-feath-er",
+		"picking": "pick-ing",
+		"pile": "pile",
+		"pocket": "pock-et",
+		"podmore": "pod-more",
+		"polish": "pol-ish",
+		"polishing": "pol-ish-ing",
+		"polite": "po-lite",
+		"politely": "po-lite-ly",
+		"potatoes": "po-ta-toes",
+		"problem": "prob-lem",
+		"programme": "pro-gramme",
+		"proper": "prop-er",
+		"puddlecombe": "pud-dle-combe",
+		"purpose": "pur-pose",
+		"pushing": "push-ing",
+		"pyjama": "py-ja-ma",
+		"questions": "ques-tions",
+		"quickly": "quick-ly",
+		"quieter": "qui-et-er",
+		"quivering": "quiv-er-ing",
+		"rabbit": "rab-bit",
+		"rattle": "rat-tle",
+		"remove": "re-move",
+		"respect": "re-spect",
+		"rosette": "ro-sette",
+		"sausage": "sau-sage",
+		"scarecrow": "scare-crow",
+		"sentence": "sen-tence",
+		"series": "se-ries",
+		"serious": "se-ri-ous",
+		"settle": "set-tle",
+		"sharply": "sharp-ly",
+		"shining": "shin-ing",
+		"shoulder": "shoul-der",
+		"shoulders": "shoul-ders",
+		"shouting": "shout-ing",
+		"silence": "si-lence",
+		"silent": "si-lent",
+		"sitting": "sit-ting",
+		"sleeping": "sleep-ing",
+		"sleepwalked": "sleep-walked",
+		"sleepwalker": "sleep-walk-er",
+		"sleepwalkers": "sleep-walk-ers",
+		"sleepwalking": "sleep-walk-ing",
+		"slicer": "sli-cer",
+		"slipper": "slip-per",
+		"slippers": "slip-pers",
+		"slippery": "slip-per-y",
+		"slowing": "slow-ing",
+		"smile": "smile",
+		"sniffing": "sniff-ing",
+		"special": "spe-cial",
+		"spoken": "spo-ken",
+		"squeak": "squeak",
+		"squeaking": "squeak-ing",
+		"stile": "stile",
+		"stolen": "sto-len",
+		"stopping": "stop-ping",
+		"studied": "stud-ied",
+		"suddenly": "sud-den-ly",
+		"sugar": "sug-ar",
+		"surprisingly": "sur-pris-ing-ly",
+		"suspect": "sus-pect",
+		"suspects": "sus-pects",
+		"suspicious": "sus-pi-cious",
+		"tablecloth": "ta-ble-cloth",
+		"taken": "tak-en",
+		"taking": "tak-ing",
+		"taller": "tall-er",
+		"tartan": "tar-tan",
+		"tastier": "tast-i-er",
+		"teaspoons": "tea-spoons",
+		"teatime": "tea-time",
+		"testing": "test-ing",
+		"thirty": "thir-ty",
+		"thorough": "thor-ough",
+		"thoroughly": "thor-ough-ly",
+		"tinkle": "tin-kle",
+		"tiptoe": "tip-toe",
+		"tongue": "tongue",
+		"touching": "touch-ing",
+		"travel": "trav-el",
+		"travels": "trav-els",
+		"tremble": "trem-ble",
+		"trifle": "tri-fle",
+		"trolley": "trol-ley",
+		"trolleys": "trol-leys",
+		"trousers": "trou-sers",
+		"uncle": "un-cle",
+		"upright": "up-right",
+		"upstairs": "up-stairs",
+		"useful": "use-ful",
+		"vegetables": "veg-e-ta-bles",
+		"vicar": "vic-ar",
+		"waking": "wak-ing",
+		"wandered": "wan-dered",
+		"wearing": "wear-ing",
+		"welcome": "wel-come",
+		"wellingtons": "wel-ling-tons",
+		"wherever": "wher-ev-er",
+		"while": "while",
+		"wobble": "wob-ble",
+		"wobbling": "wob-bling",
+		"wobbly": "wob-bly",
+		"wondered": "won-dered",
+		"wooden": "wood-en",
+		"worried": "wor-ried"
+	},
+	"glossary": {
+		"bunting": {
+			"mean": "Little flags on a string, hung up to decorate a street or hall.",
+			"art": "bunting"
+		},
+		"centenary": {
+			"mean": "A hundredth birthday, or the day you celebrate it."
+		},
+		"trolley": {
+			"mean": "A small cart on wheels, pushed by hand. This one carries tea and cake.",
+			"art": "trolley",
+			"forms": ["trolleys"]
+		},
+		"scarecrow": {
+			"mean": "A figure made of old clothes, put in a field to frighten birds away.",
+			"art": "scarecrow",
+			"forms": ["scarecrows"]
+		},
+		"stile": {
+			"mean": "Steps built over a fence or wall, so that people can cross but animals cannot.",
+			"art": "stile"
+		},
+		"mill": {
+			"mean": "A building where grain is ground into flour, often by a big wheel turned by water.",
+			"art": "millwheel",
+			"forms": ["mills"]
+		},
+		"brook": {
+			"mean": "A small stream.",
+			"art": "stones",
+			"forms": ["brooks"]
+		},
+		"sleepwalking": {
+			"mean": "Walking about and doing things while you are fast asleep.",
+			"forms": ["sleepwalker", "sleepwalked"]
+		},
+		"suspect": {
+			"mean": "Someone you think might have done something wrong.",
+			"forms": ["suspects"]
+		},
+		"committee": {
+			"mean": "A small group of people chosen to make decisions together."
+		},
+		"marrow": {
+			"mean": "A huge, long green vegetable, a bit like a fat cucumber."
+		},
+		"tartan": {
+			"mean": "Cloth with a pattern of crossing stripes, usually from Scotland."
+		},
+		"dignity": {
+			"mean": "A calm, proud way of behaving that makes you look serious."
+		},
+		"thorough": {
+			"mean": "Careful and complete, leaving nothing out.",
+			"sounds": "thu-ruh"
+		},
+		"evidence": {
+			"mean": "Clues and facts that show what really happened."
+		},
+		"hasty": {
+			"mean": "Done too quickly, without thinking."
+		},
+		"anthem": {
+			"mean": "A special song for a country, a team or a village."
+		},
+		"brake": {
+			"mean": "The part of a wheeled thing that makes it slow down or stop.",
+			"forms": ["brakes"],
+			"sounds": "brayk"
+		}
+	},
+	"chapters": [
+		{
+			"title": "Please Mind the Ducks",
+			"scene": {
+				"mood": "day",
+				"elements": ["clouds", "hills", "village", "bunting"],
+				"alt": "Puddlecombe on a sunny afternoon, with bunting strung across the village."
+			},
+			"blocks": [
+				"The sign at the edge of the village said WELCOME TO PUDDLECOMBE. PLEASE MIND THE DUCKS.",
+				"{hero} looked out of the car window. There were no ducks. Then the car went round the bend, and there were nineteen ducks standing in the middle of the road, and not one of them had read the sign.",
+				"{grownup} stopped the car. “They do this,” said {grownup}. “Give it a minute.”",
+				"They gave it a minute. Then they gave it five. One duck sat down. [[pet:dog=In the back seat, {pet} breathed so hard at the window that the glass went white.|cat=On the back shelf, {pet} studied the ducks very carefully, in case any of them needed to be spoken to.]]",
+				"At last the ducks wandered off, one at a time, as if somebody had told them they could go. “Welcome to Puddlecombe,” said {grownup}. “Hundredth Show tomorrow. Everybody is going to be very, very serious about it.”",
+				"“What happens at a Show?” asked {friend}.",
+				"“Vegetables,” said {grownup}. “Jam. A dog who can balance a sausage on his nose. And the Centenary Cake.”",
+				"Every lamp post in the village had bunting on it. So did every tree, every gate and, as far as {hero} could tell, one very patient cow.",
+				{
+					"scene": {
+						"mood": "dusk",
+						"elements": ["hall", "bunting"],
+						"alt": "The village hall in the evening, bunting overhead, and a table with something big under a white cloth."
+					}
+				},
+				"The village hall smelled of floor polish and lemons. In the middle of it stood a table, and on the table stood something huge under a white cloth.",
+				"Beside it stood two grown-ups who were not getting on. One was a large, cheerful woman with flour on both elbows, who turned out to be Mrs Pennyfeather, the baker. The other was tall and thin, with a grey moustache so neat that it looked ironed. His name was Mr Podmore, and he was Chief Judge of the Show.",
+				"“In my forty years as Chief Judge,” said Mr Podmore, “I have seen eleven thousand scones, three hundred and four leeks and one extremely suspicious marrow.”",
+				"“Gerald,” said Mrs Pennyfeather. “The cake.”",
+				"“I was coming to the cake.”",
+				"“Then come to it faster. My arms are tired.”",
+				"She pulled off the cloth. Nobody said anything. It was the Centenary Cake, and it was five layers tall, with lemon icing the colour of custard and a tiny sugar duck on the very top. It was taller than {friend}. Mrs Pennyfeather had been baking it for three weeks. It had taken forty eggs, and a man to carry the flour.",
+				"“At noon tomorrow,” said Mrs Pennyfeather, “the Mayor cuts the first slice, and the Show begins.”",
+				"[[pet:dog={pet} trotted straight up to the table, sat down and gazed at the cake with the face of a dog who has just been told he is a good boy.|cat={pet} jumped onto a chair, then onto the edge of the table, and looked at the sugar duck as if it owed {pet.him} money.]]",
+				"Mr Podmore went very still. “Remove that animal,” he said. “I will say this once. If that animal so much as sniffs this cake, it is banned from the Show, banned from the green and banned from Puddlecombe for ever.”",
+				"“Oh, don’t be so dramatic, Gerald,” said Mrs Pennyfeather.",
+				"“I am never dramatic,” said Mr Podmore. “I am thorough.”",
+				"{hero} lifted {pet} down. Nobody saw the single drip of icing on the floor, or {pet} licking it up. Nobody except {hero}, and {hero} decided that this was not the moment to mention it.",
+				"Just then a goat walked in through the open door. She was brown and white, with yellow eyes, and she was chewing something. It was the Show programme.",
+				"“That’s Duchess,” said Mrs Pennyfeather. “She belongs to nobody. She’s allowed everywhere.”",
+				"Duchess looked at the bunting. Then she looked at {hero’s} sleeve. She could not decide which was tastier, so she tried both.",
+				"At nine o’clock Mr Podmore locked the hall with an iron key as long as a spoon. “This goes on the hook by my front door,” he said, “and I sleep with one ear open.”",
+				"Over supper at the cottage, {grownup} told them about the village ghost, because it turned out that every village had one. The Grey Lady of the Green walked only once every hundred years, on the night before the Show. “And this,” said {grownup}, cheerfully buttering a roll, “is the hundredth year.”",
+				"{friend} stopped chewing. {hero} said that ghosts were not real. {pet} [[pet:dog=crawled under the table and stayed there.|cat=left the room with great dignity.]]",
+				"That night {hero} and {friend} lay in the narrow bed upstairs, listening to the old cottage tick and settle. Tomorrow was the Show. Tonight, said {friend}, nothing could possibly happen.",
+				"It was the last time anybody in Puddlecombe was that sure of anything."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What was standing in the middle of the road?",
+					"options": [
+						"Nineteen ducks",
+						"One very patient cow",
+						"A goat with a programme"
+					],
+					"answer": 0,
+					"find": "nineteen ducks",
+					"hint": "It was on the sign at the edge of the village."
+				},
+				{
+					"id": "q2",
+					"q": "What did Mr Podmore say would happen if an animal sniffed the cake?",
+					"options": [
+						"It would be given a slice",
+						"It would be banned from Puddlecombe for ever",
+						"It would be sent home in the car"
+					],
+					"answer": 1,
+					"find": "banned from Puddlecombe for ever",
+					"hint": "He said it once, very slowly."
+				},
+				{
+					"id": "q3",
+					"q": "What is the name of the goat?",
+					"options": ["Duchess", "Gerald", "Penny"],
+					"answer": 0,
+					"find": "Duchess",
+					"hint": "She belongs to nobody and is allowed everywhere."
+				}
+			]
+		},
+		{
+			"title": "The Squeak in the Night",
+			"scene": {
+				"mood": "night",
+				"elements": ["stars", "moon", "village", "sleepwalker"],
+				"alt": "The village green in moonlight, with a tall pale figure pushing something covered with a cloth."
+			},
+			"blocks": [
+				"{hero} woke because something cold was touching {hero.his} face. [[pet:dog=It was {pet}’s nose. {pet} was standing on the bed, stiff and quivering, staring at the window.|cat=It was {pet}’s paw. {pet} was sitting on {hero}’s chest, stiff and glaring at the window, which is how cats wake people up when they mean it.]]",
+				"“What?” whispered {hero}. “It’s the middle of the night.”",
+				"Then {hero} heard it too. From somewhere out on the green came a thin, slow sound. Eeeek. A pause. Eeeek. A pause. Eeeek.",
+				"They went to the window. The green was white with moonlight. Across it, very slowly, a tall pale figure was walking. It was pushing something large and wobbly under a cloth. Every time one of its wheels went round, the thing squeaked.",
+				"“It’s the Grey Lady,” breathed {friend}. “She’s got a trolley.”",
+				"“Ghosts don’t need trolleys,” said {hero}. “They float.”",
+				"“Maybe she’s got a lot to carry.”",
+				"The figure reached the end of the green and turned up the lane towards the hills. The squeak faded away. {pet} did not stop staring.",
+				"Neither of them could have said why they went to the village hall. But a minute later, in pyjamas and wellingtons, with {pet} trotting ahead, they were standing in the doorway. The big door was wide open. The iron key was in the lock.",
+				"The table was bare. A white plate sat in the middle, with a few crumbs on it. There was no sign of the Centenary Cake at all. There was not even a sugar duck.",
+				"A line of yellow crumbs led out of the door and into the night. Beside it ran two thin wheel tracks. And at the end of the table, Duchess the goat was eating the tablecloth.",
+				"{friend} put both hands on {friend.his} head. “It’s gone. It’s completely gone.”",
+				"{pet} came back from the doorway. There was a yellow smear on {pet.his} nose. {pet} had been following the crumbs and eating them, which is what anyone would do.",
+				"“Oh no,” said {hero}. Everybody in Puddlecombe had heard what Mr Podmore said. If the cake had gone and {pet} had icing on {pet.his} nose, nobody was going to ask any questions.",
+				"The hall clock said ten past one. Mrs Pennyfeather would arrive at six, to polish things. That gave them five hours to find a five-layer lemon cake and the person who had taken it, or {pet} would be thrown out of Puddlecombe for ever.",
+				"{friend} looked at {hero}. {pet} looked at {hero}. Duchess, still chewing, looked at {hero} too.",
+				{
+					"choice": {
+						"id": "first-move",
+						"prompt": "What should {hero} do first?",
+						"options": [
+							{
+								"id": "crumbs",
+								"label": "Follow the crumbs and the wheel tracks right now",
+								"score": {
+									"brave": 1
+								},
+								"blocks": [
+									"“Crumbs,” said {hero}. “Crumbs are a plan.” And {hero} was out of the door.",
+									"Cake does not travel quickly, so whoever had taken it could not be far ahead. The thin wheel tracks shone silver on the dewy grass. {friend} grabbed a torch from the hook by the door and ran after {hero}, and {pet} ran after {friend}, and Duchess, who had not been asked, ran after everybody."
+								]
+							},
+							{
+								"id": "list",
+								"label": "Sit down and write a proper list of suspects first",
+								"score": {
+									"clever": 1
+								},
+								"blocks": [
+									"“Nobody solves anything without a list,” said {hero}. {hero} found a pencil stub, and the back of the Show programme, which was the half that Duchess had not finished.",
+									"SUSPECTS. 1. The Grey Lady. (Hard to arrest, being a ghost.) 2. The man who came second in the cake competition last year. (Bitter.) 3. The vicar. (Was seen near cake at the Harvest Supper.) 4. Duchess. (Obviously.)",
+									"Duchess ate suspect number one, and most of number two, before anyone could stop her. {hero} decided that this was a clue about Duchess, but not a very useful one.",
+									"“Wait,” said {hero}. “A thief who steals a cake that big has to push it. So it can’t have gone far, and it will stay on the flat. Come on.”"
+								]
+							},
+							{
+								"id": "wake",
+								"label": "Run back and wake {grownup}, and tell the truth",
+								"score": {
+									"kind": 1
+								},
+								"blocks": [
+									"{hero} and {friend} ran back across the green, up the cottage stairs and into {grownup}’s room. {grownup} was fast asleep on {grownup.his} back, snoring loudly enough to rattle the teaspoons downstairs.",
+									"“{grownup}?” said {hero}. Nothing. {friend} shook {grownup}’s shoulder. “Not now,” mumbled {grownup}. “The soufflé is nearly ready.” {hero} tried again, louder. “Soufflés don’t talk,” said {grownup}, and rolled over.",
+									"In the end {hero} left a note on the kettle, which is the first place every grown-up looks. CAKE STOLEN. GONE TO FIND IT. BACK BEFORE BREAKFAST. LOVE, {hero}. P.S. IT WAS NOT {pet}."
+								]
+							}
+						]
+					}
+				},
+				"The wheel tracks led out of the village and up the lane towards the hills. Up there, the moon was the only light there was. Somewhere ahead, very faint, came the squeak. Eeeek."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What sound did the thing on wheels make?",
+					"options": ["A rattle", "A squeak", "A bell"],
+					"answer": 1,
+					"find": "squeaked",
+					"hint": "Every time a wheel went round."
+				},
+				{
+					"id": "q2",
+					"q": "What was left on the table in the hall?",
+					"options": [
+						"A white plate with a few crumbs",
+						"The sugar duck",
+						"A tablecloth with a hole in it"
+					],
+					"answer": 0,
+					"find": "a few crumbs on it",
+					"hint": "There was not even a sugar duck."
+				},
+				{
+					"id": "q3",
+					"q": "What did the hall clock say?",
+					"options": ["Midnight", "Ten past one", "Six o’clock"],
+					"answer": 1,
+					"find": "ten past one",
+					"hint": "Mrs Pennyfeather would arrive at six, which was five hours away."
+				}
+			],
+			"recap": [
+				"It was the night before the hundredth Puddlecombe Show. {hero}, {friend} and {pet} watched Mrs Pennyfeather lock up the Centenary Cake, and Mr Podmore, the Chief Judge, warn that any animal that sniffed it would be banned for ever.",
+				"Then {pet} licked one drip of icing, and Duchess the goat ate the bunting."
+			]
+		},
+		{
+			"title": "The Crumb Trail",
+			"scene": {
+				"mood": "night",
+				"elements": ["stars", "moon", "hills", "farm"],
+				"alt": "A field of sleeping sheep in moonlight, with a scarecrow standing in the middle."
+			},
+			"blocks": [
+				"The lane climbed out of the village between two high hedges. It was darker than {hero} had expected, and quieter, apart from the squeak, which kept stopping and starting somewhere up ahead.",
+				"They followed the yellow crumbs. They were easy to see in the torchlight. Every few steps there was another one, and every few steps {pet} ate it.",
+				"“Stop eating the evidence,” whispered {friend}. {pet} did not stop.",
+				"The hedges ended at a gate, and the gate opened onto a field full of sheep. They were all asleep, sixty white lumps in the moonlight, and every one of them snored. {hero} had never known that sheep snored.",
+				"In the middle of the field stood a tall, ragged figure with its arms held out. {friend} gripped {hero’s} arm. “Is that the thief?” whispered {friend}.",
+				"“Excuse me,” said {hero}, very politely. “Have you seen a cake?”",
+				"The figure did not answer. It did not turn round. It had a bucket for a head, which explained a lot.",
+				"It was a scarecrow. {friend} cleared {friend.his} throat. “I knew that,” said {friend}. “I was testing you.”",
+				"They crept on between the sheep, on tiptoe, which is hard to do in wellingtons. On the far side was a wooden stile. On the top of the stile, hooked over a post, sat something small and soft. {hero} lifted it into the torchlight.",
+				"It was a slipper. It was a big man’s slipper, in brown tartan, with a bobble on the toe and a rabbit’s face stitched on the front. One of the rabbit’s ears had been chewed. Duchess, who had caught up, looked very interested in it.",
+				"“Who wears a slipper with a rabbit on it?” said {friend}.",
+				"“Somebody who isn’t worried about what people think,” said {hero}.",
+				"{pet} sniffed the slipper for a long time. Then {pet} looked at the gap in the hedge beside the stile, which was just wide enough for a trolley, and then at {hero}, as if to say: that way.",
+				"Climbing a stile in wellingtons is a bad idea. {friend} went over it in a series of small disasters. {pet} went under it, as sensible creatures do. Duchess went through the hedge, taking some of it with her.",
+				"That left four suspects, one slipper and a very long night. Far below, at the bottom of the slope, they could hear running water. And beyond it, thin and faint, came the squeak."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What did the scarecrow have for a head?",
+					"options": ["A pumpkin", "A bucket", "A hat"],
+					"answer": 1,
+					"find": "bucket for a head",
+					"hint": "{friend} said “I was testing you.”"
+				},
+				{
+					"id": "q2",
+					"q": "What was stitched on the front of the slipper?",
+					"options": ["A duck", "A goat", "A rabbit’s face"],
+					"answer": 2,
+					"find": "rabbit’s face",
+					"hint": "One of its ears had been chewed."
+				},
+				{
+					"id": "q3",
+					"q": "What were the sheep doing?",
+					"options": ["Snoring", "Eating the crumbs", "Chasing Duchess"],
+					"answer": 0,
+					"find": "snored",
+					"hint": "{hero} had never known they did this."
+				}
+			],
+			"recap": [
+				"In the night, {hero} heard a squeak and saw a pale figure pushing a trolley across the green. The hall was empty and the cake was gone. {pet} had icing on {pet.his} nose, and Mrs Pennyfeather would arrive at six.",
+				{
+					"p": "{hero} followed the crumbs at once.",
+					"when": {
+						"pick": "first-move",
+						"is": "crumbs"
+					}
+				},
+				{
+					"p": "{hero} wrote a list of suspects. Duchess ate it.",
+					"when": {
+						"pick": "first-move",
+						"is": "list"
+					}
+				},
+				{
+					"p": "{hero} woke {grownup}, who slept through it all and left a note on the kettle.",
+					"when": {
+						"pick": "first-move",
+						"is": "wake"
+					}
+				}
+			]
+		},
+		{
+			"title": "The Stepping Stones",
+			"scene": {
+				"mood": "night",
+				"elements": ["stars", "moon", "stones"],
+				"alt": "Seven stepping stones across a dark brook, with the old mill on the far bank."
+			},
+			"blocks": [
+				"At the bottom of the field ran a brook. It was only a little wider than a bed. In daylight, that would not have been a problem.",
+				"At night, there were seven stepping stones across it, one of them wobbling, and the water went by black and fast and very noisy. On the far bank a path climbed a slope, and at the top of the slope stood an old mill, with a great wooden wheel on one side, standing still against the stars.",
+				"The wheel tracks stopped at the edge of the water. A trolley could not cross seven slippery stones. But the squeak was fading, and the stones were right there.",
+				{
+					"choice": {
+						"id": "stones",
+						"prompt": "How should {hero} cross?",
+						"options": [
+							{
+								"id": "dash",
+								"label": "Hop across the stones, quickly, before the thief gets away",
+								"score": {
+									"brave": 1
+								},
+								"blocks": [
+									"{hero} stepped onto the first stone. It was fine. The second stone was fine. The third stone was the wobbly one. {hero} stood on it for exactly one second, with both arms going round, and then sat down in the brook.",
+									"It was freezing. It was also only knee-deep, which was the worst part, because it meant there was no excuse. {friend} laughed so much that {friend.he} had to hold on to the nearest stone.",
+									"“It’s not funny,” said {hero}. By the time they reached the far bank, both of them were wet to the knees, and every step after that went squelch."
+								]
+							},
+							{
+								"id": "bridge",
+								"label": "Follow the wheel tracks along the bank and see where they cross",
+								"score": {
+									"clever": 1
+								},
+								"blocks": [
+									"“A trolley can’t cross stones,” said {hero}. “So whoever pushed it had to go round. The tracks will show us where.” They turned left along the bank. {friend} grumbled that this was the long way. It was.",
+									"But two hundred steps later, there it was: a little wooden footbridge, just wide enough for a trolley, with a fresh line of crumbs along the planks. Nobody got wet. {friend} said that this was both clever and annoying."
+								]
+							},
+							{
+								"id": "carry",
+								"label": "Carry {pet} across, so {pet.he} does not get wet",
+								"score": {
+									"kind": 1
+								},
+								"blocks": [
+									"{hero} picked up {pet}. [[pet:dog={pet} weighed about as much as a sack of potatoes, and made {pet.self} heavier on purpose.|cat={pet} clung to {hero’s} jumper with every claw, and was not at all pleased.]]",
+									"Stone by careful stone, {hero} crossed. At the wobbly one, {friend} grabbed the back of {hero’s} coat and held on. All three of them reached the far side dry. {pet} gave {hero} a look of deep respect, which lasted almost five seconds."
+								]
+							}
+						]
+					}
+				},
+				"On the far bank the path climbed through the long grass. At the top, the old mill stood against the stars. And in one of its windows, a yellow light was glowing.",
+				"The squeak had stopped."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "How many stepping stones were there?",
+					"options": ["Five", "Seven", "Twelve"],
+					"answer": 1,
+					"find": "seven stepping stones",
+					"hint": "One of them wobbled."
+				},
+				{
+					"id": "q2",
+					"q": "What could a trolley not do?",
+					"options": ["Go up a slope", "Cross the stepping stones", "Squeak"],
+					"answer": 1,
+					"find": "A trolley could not cross",
+					"hint": "The stones were slippery."
+				},
+				{
+					"id": "q3",
+					"q": "What was glowing in a window of the mill?",
+					"options": ["A yellow light", "The moon", "A ghost"],
+					"answer": 0,
+					"find": "a yellow light was glowing",
+					"hint": "It was at the top of the slope."
+				}
+			],
+			"recap": [
+				"The cake had been taken on a squeaking trolley, so {hero}, {friend} and {pet} followed the crumb trail past sleeping sheep and a scarecrow with a bucket for a head. On a stile they found a tartan rabbit slipper.",
+				"It was long after one in the morning, and the cake had to be back by six."
+			]
+		},
+		{
+			"title": "The Mill at Midnight",
+			"scene": {
+				"mood": "night",
+				"elements": ["stars", "moon", "mill"],
+				"alt": "The old mill at night, its great wheel still, one window glowing yellow."
+			},
+			"blocks": [
+				"The mill door stood half open. Warm light spilled out of it across the grass.",
+				"{hero} crept up and looked round the edge. Inside was a big stone room, full of dust and sacks and old machinery. In the middle of it stood a tea trolley. On the trolley, shining under a single lamp, stood the Centenary Cake.",
+				"{friend} let out a long breath. {hero} counted the layers. Five. The sugar duck was still on top.",
+				"In front of the cake stood a man with his back to them. He was wearing striped pyjamas, a nightcap with a bobble, and one tartan slipper.",
+				"He was holding a fork. As {hero} watched, he cut a neat slice from the bottom layer, put it in his mouth, and said, in a dreamy voice, “More lemon, Mother.”",
+				{
+					"scene": {
+						"mood": "night",
+						"elements": ["mill", "sleepwalker", "glow"],
+						"alt": "Mr Podmore in striped pyjamas and a nightcap, eyes shut, eating a slice of cake beside the trolley."
+					}
+				},
+				"The man turned round. It was Mr Podmore. His eyes were completely shut.",
+				"He was walking, and eating, and talking, and he was fast asleep.",
+				"“He’s sleepwalking,” whispered {friend}. “My uncle does it. He once ate a whole trifle in his sleep and woke up with custard in his ears.”",
+				"That explained everything. The key on the hook. The open door. The squeak. Mr Podmore had not stolen the cake on purpose. Mr Podmore did not even know it was missing. In the morning he would wake up in his own bed with a lemony taste in his mouth, and a very odd feeling, and then he would blame the first animal he saw.",
+				"“Mother,” said Mr Podmore firmly, to the cake, “the icing is too sweet.” He cut another slice. It was, {hero} had to admit, the neatest cake crime anyone had ever committed.",
+				"{pet} watched the slice go into his mouth with the grave attention of somebody who was not allowed any.",
+				"Now they had to get the cake home before six o’clock. {friend} said that you must never shout at a sleepwalker. {hero} had always wondered what happened if you did.",
+				{
+					"choice": {
+						"id": "wake-him",
+						"prompt": "What should {hero} do?",
+						"options": [
+							{
+								"id": "shout",
+								"label": "Wake him up, loudly, and sort it out",
+								"score": {
+									"brave": 1
+								},
+								"blocks": [
+									"{hero} took a deep breath. “MR PODMORE!”",
+									"The effect was dramatic. Mr Podmore’s eyes flew open. He looked at the fork in his hand. He looked at the cake. He looked at his pyjamas. He looked at {hero}, {friend} and {pet}, and his face went from pink to white and back to pink again.",
+									"“I am not,” said Mr Podmore, in a very high voice, “wearing a nightcap.” He took it off. He dropped the fork. He stepped backwards into the trolley, and the trolley, which was parked at the top of a slope, began very slowly to roll out of the door.",
+									"Eeeek, said the trolley."
+								]
+							},
+							{
+								"id": "follow",
+								"label": "Say nothing, let him finish, and follow wherever he goes next",
+								"score": {
+									"clever": 1
+								},
+								"blocks": [
+									"“Don’t wake him,” whispered {hero}. “If he wakes up he’ll panic. If he stays asleep, he’ll go home, because that’s where sleepwalkers go. And so will the cake.”",
+									"They waited in the shadows behind the sacks. It took eleven minutes. {friend} counted the sacks. There were forty-one. At last Mr Podmore ate one more slice, wiped his moustache on the bobble of his nightcap, and took hold of the trolley handles with great dignity.",
+									"“Time for bed, Mother,” he said, and pushed the trolley out of the door. Eeeek. Eeeek. Eeeek. {hero}, {friend} and {pet} followed him out into the night."
+								]
+							},
+							{
+								"id": "whisper",
+								"label": "Speak to him softly, and ask him to come home",
+								"score": {
+									"kind": 1
+								},
+								"blocks": [
+									"{hero} stepped out of the shadows very slowly and said, in the gentlest voice {hero.he} had, “Mr Podmore? It’s very late. Shall we go home?”",
+									"Mr Podmore turned his shut eyes towards the voice and smiled. It was the first time {hero} had seen him smile, and it was a surprisingly nice one. “Yes, dear,” he said. “Is the cake coming?”",
+									"“It’s coming,” said {hero}. Mr Podmore took the trolley handles and set off through the door. Eeeek. Eeeek. Eeeek. {hero}, {friend} and {pet} followed him out into the night."
+								]
+							}
+						]
+					}
+				}
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What was Mr Podmore wearing?",
+					"options": [
+						"A suit",
+						"Striped pyjamas and a nightcap",
+						"A tartan dressing gown"
+					],
+					"answer": 1,
+					"find": "striped pyjamas",
+					"hint": "He had only one slipper."
+				},
+				{
+					"id": "q2",
+					"q": "What did {friend}’s uncle once eat in his sleep?",
+					"options": ["A whole trifle", "A bag of flour", "A birthday cake"],
+					"answer": 0,
+					"find": "a whole trifle",
+					"hint": "He woke up with custard in his ears."
+				},
+				{
+					"id": "q3",
+					"q": "What did Mr Podmore say to the cake?",
+					"options": [
+						"“Stop that trolley!”",
+						"“More lemon, Mother.”",
+						"“Banned for ever.”"
+					],
+					"answer": 1,
+					"find": "More lemon, Mother",
+					"hint": "He said it in a dreamy voice."
+				}
+			],
+			"recap": [
+				"The trail led to the stepping stones across the brook. A trolley could not cross them, so the thief had to have gone another way.",
+				{
+					"p": "{hero} dashed across and fell in.",
+					"when": {
+						"pick": "stones",
+						"is": "dash"
+					}
+				},
+				{
+					"p": "{hero} followed the bank to find where the wheels crossed.",
+					"when": {
+						"pick": "stones",
+						"is": "bridge"
+					}
+				},
+				{
+					"p": "{hero} carried {pet} across the stones.",
+					"when": {
+						"pick": "stones",
+						"is": "carry"
+					}
+				},
+				"On the far side stood an old mill. A yellow light was glowing in it, and the squeak had stopped."
+			]
+		},
+		{
+			"title": "A Very Calm Bull",
+			"scene": {
+				"mood": "night",
+				"elements": ["stars", "moon", "hills", "bull"],
+				"alt": "A huge bull standing in a moonlit field, watching a trolley go past."
+			},
+			"blocks": [
+				{
+					"when": {
+						"pick": "wake-him",
+						"is": "shout"
+					},
+					"blocks": [
+						"The trolley rolled out of the mill door and down the slope, with a slow, steady squeak, picking up speed. “THE CAKE!” yelled {friend}. They ran. Mr Podmore ran too, holding up his pyjama trousers with one hand and shouting “Stop that trolley!”, which was a sentence he had never expected to say.",
+						"The path ran straight through a field, and in the field stood the biggest bull in Puddlecombe. He had a ring in his nose and a face like a shut door.",
+						"“It’s fine,” panted {friend}. “Bulls are calm. It’s only red that they mind.” Everybody looked at Mr Podmore’s pyjamas. They were blue.",
+						"The trolley went past the bull. Then {hero}, {friend}, {pet}, Mr Podmore and a goat went past the bull, one after another. The bull turned his head and watched them go, with the look of somebody who had seen a great deal in forty years in this field and was not going to be surprised by anything now."
+					]
+				},
+				{
+					"when": {
+						"any": [
+							{
+								"pick": "wake-him",
+								"is": "follow"
+							},
+							{
+								"pick": "wake-him",
+								"is": "whisper"
+							}
+						]
+					},
+					"blocks": [
+						"The lane home ran through a field, and in the field stood the biggest bull in Puddlecombe. He had a ring in his nose and a face like a shut door.",
+						"He stood in the very middle of the path. He looked at Mr Podmore, who was asleep, in striped pyjamas, pushing a squeaking trolley with a cake on it and humming the village anthem. Mr Podmore did not look at the bull. Mr Podmore did not look at anything. He walked straight on with his nose in the air, and the bull stepped politely out of his way.",
+						"“It moved for him,” whispered {friend}.",
+						"“Sleepwalkers aren’t afraid of anything,” whispered {hero}. “They don’t know what’s going on.”",
+						"{hero}, {friend} and {pet} followed in a very tight, very silent line. The bull turned his head to watch them. Then he said, quite loudly, “MOO.” Nobody ran. They walked at exactly the speed of people who are not running."
+					]
+				},
+				"The lane came out at the top of Puddlecombe Hill. Down below, the village was asleep, with its bunting strung across the roofs and the green silver in the moonlight. A sign by the road said SLOW. THIS MEANS YOU. Nobody had thought about the hill.",
+				{
+					"when": {
+						"any": [
+							{
+								"pick": "wake-him",
+								"is": "follow"
+							},
+							{
+								"pick": "wake-him",
+								"is": "whisper"
+							}
+						]
+					},
+					"blocks": [
+						"Mr Podmore stopped. In his sleep, he let go of the trolley, because the village anthem had reached the loud part and he needed both hands to conduct it. Behind them, something small and brown and yellow-eyed climbed out of the hedge. Duchess had been following the smell of lemon the whole way, and now she had found it. She walked up to the back of the trolley, lowered her head, and gave it a polite little nudge."
+					]
+				},
+				{
+					"when": {
+						"pick": "wake-him",
+						"is": "shout"
+					},
+					"blocks": [
+						"The trolley shot out of the lane at the top of Puddlecombe Hill and, without slowing down at all, went over the edge."
+					]
+				},
+				"Eeeek, said the trolley. Eeeek. Eeek. Eek eek eek eek eek."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What did the bull have in his nose?",
+					"options": ["A ring", "A feather", "A bit of lemon icing"],
+					"answer": 0,
+					"find": "ring in his nose",
+					"hint": "He also had a face like a shut door."
+				},
+				{
+					"id": "q2",
+					"q": "What did the sign at the top of the hill say?",
+					"options": ["MIND THE DUCKS", "SLOW. THIS MEANS YOU.", "NO TROLLEYS"],
+					"answer": 1,
+					"find": "SLOW. THIS MEANS YOU",
+					"hint": "Nobody had thought about the hill."
+				},
+				{
+					"id": "q3",
+					"q": "What kind of animal had been following the smell of lemon?",
+					"options": ["A sheep", "A bull", "A goat"],
+					"answer": 2,
+					"find": "Duchess",
+					"hint": "She was allowed everywhere."
+				}
+			],
+			"recap": [
+				"In the mill, {hero} and {friend} found the thief. It was Mr Podmore, in striped pyjamas and one slipper, fast asleep and eating the cake with a fork.",
+				{
+					"p": "{hero} woke him with a shout, and the trolley rolled out of the door.",
+					"when": {
+						"pick": "wake-him",
+						"is": "shout"
+					}
+				},
+				{
+					"p": "{hero} did not wake him. Mr Podmore pushed the trolley out of the mill, and they followed.",
+					"when": {
+						"any": [
+							{
+								"pick": "wake-him",
+								"is": "follow"
+							},
+							{
+								"pick": "wake-him",
+								"is": "whisper"
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"title": "Runaway Cake",
+			"scene": {
+				"mood": "dawn",
+				"elements": ["clouds", "hills", "village", "bunting", "cart"],
+				"alt": "A tea trolley carrying a huge cake rushing down a steep village road at dawn."
+			},
+			"blocks": [
+				"Puddlecombe Hill was one hundred and twenty metres long, and most of it was steep. The trolley went down it with a noise like a very small, very worried bird. Eek eek eek eek eek.",
+				"The cake swayed. The sugar duck leaned over. At the bottom of the hill, the road bent sharply to the left, and straight ahead lay the village green, the Show tents, thirty-four rows of folding chairs and the pond.",
+				"{hero} ran. {friend} ran. {pet} was faster than both of them, [[pet:dog=with ears flat and tongue out.|cat=in enormous bounds, looking deeply annoyed.]] Duchess ran, because everyone else was.",
+				{
+					"when": {
+						"pick": "wake-him",
+						"is": "shout"
+					},
+					"blocks": [
+						"Behind them, Mr Podmore was running in his one slipper and shouting, “Not the duck! Save the duck!”"
+					]
+				},
+				{
+					"when": {
+						"any": [
+							{
+								"pick": "wake-him",
+								"is": "follow"
+							},
+							{
+								"pick": "wake-him",
+								"is": "whisper"
+							}
+						]
+					},
+					"blocks": [
+						"Behind them, at the top of the hill, Mr Podmore stood in the moonlight, still fast asleep, and conducted the last line of the anthem to an audience of nobody."
+					]
+				},
+				"Something had to stop that trolley, and there were only seconds left.",
+				{
+					"choice": {
+						"id": "stop-it",
+						"prompt": "What should {hero} do?",
+						"options": [
+							{
+								"id": "grab",
+								"label": "Dive at the trolley and grab the handle",
+								"score": {
+									"brave": 1
+								},
+								"blocks": [
+									"{hero} dived. For a moment {hero} was flying. Then {hero} had both hands on the handle, and the trolley was dragging {hero} down the road on {hero.his} stomach, over every bump.",
+									"“{friend}!” yelled {hero}, through a mouthful of road. “THERE MUST BE A BRAKE!”",
+									"{friend} found it, a small metal pedal at the back, and stamped on it. The trolley stopped so suddenly that the sugar duck toppled off the top, bounced twice, and landed on the road, standing up, looking surprised."
+								]
+							},
+							{
+								"id": "hay",
+								"label": "Run ahead and pile hay bales across the road",
+								"score": {
+									"clever": 1
+								},
+								"blocks": [
+									"Halfway down, beside an open farm gate, stood six round bales of hay, ready for the morning. {hero} did not stop to think. {hero} thought while running.",
+									"“Help me push!” {friend} and {hero} rolled the bales into the road, one on top of another, as the trolley came screaming round the last bend. Eek eek eek. It hit the hay and stopped dead. The whole cake gave one long, slow wobble, from the bottom layer to the top. Nobody breathed. The sugar duck swayed. It stayed.",
+									"Duchess arrived, looked at the hay, and began to eat it."
+								]
+							},
+							{
+								"id": "ducks",
+								"label": "Run ahead and clear the sleeping ducks off the road",
+								"score": {
+									"kind": 1
+								},
+								"blocks": [
+									"{hero} sprinted down the hill, round the bend, and found the nineteen ducks asleep in a row across the road. Of course they were. Nobody had told them about the trolley.",
+									"“Move!” said {hero}. They did not. {hero} picked up two ducks, {friend} picked up three, and {pet} herded the rest, [[pet:dog=with great enthusiasm and no skill.|cat=by staring at them until they gave up.]] The last duck flapped off the road just as the trolley shot past.",
+									"It went across the green and into the pond with a splash, and stopped with its wheels in the mud. The water came halfway up. The Centenary Cake sat in the middle of the pond like an island, perfectly dry, and nineteen ducks swam out to look at it."
+								]
+							}
+						]
+					}
+				},
+				"It was five o’clock, and the sky behind the hills had gone pale. The Centenary Cake had stopped moving. It had one wobble, one slice missing and a very small amount of road on it. It was still five layers high."
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "How many metres long was Puddlecombe Hill?",
+					"options": ["Twelve", "One hundred and twenty", "Thirty-four"],
+					"answer": 1,
+					"find": "one hundred and twenty metres",
+					"hint": "Most of it was steep."
+				},
+				{
+					"id": "q2",
+					"q": "Why did Duchess run?",
+					"options": [
+						"She was chasing the ducks",
+						"She was hungry",
+						"Because everyone else was"
+					],
+					"answer": 2,
+					"find": "because everyone else was",
+					"hint": "Nobody had asked her to."
+				},
+				{
+					"id": "q3",
+					"q": "What was at the bottom of the hill?",
+					"options": [
+						"The village green and the pond",
+						"The old mill",
+						"The bull"
+					],
+					"answer": 0,
+					"find": "the pond",
+					"hint": "The road bent sharply to the left."
+				}
+			],
+			"recap": [
+				"The trolley and the cake were heading for Puddlecombe Hill, where the sign said SLOW. THIS MEANS YOU.",
+				{
+					"p": "Mr Podmore had woken up and joined the chase in his one slipper.",
+					"when": {
+						"pick": "wake-him",
+						"is": "shout"
+					}
+				},
+				{
+					"p": "Mr Podmore was still asleep, conducting the village anthem. Duchess nudged the trolley and it rolled away.",
+					"when": {
+						"any": [
+							{
+								"pick": "wake-him",
+								"is": "follow"
+							},
+							{
+								"pick": "wake-him",
+								"is": "whisper"
+							}
+						]
+					}
+				},
+				"The village green and the pond lay at the bottom, and it was nearly five o’clock."
+			]
+		},
+		{
+			"title": "The Verdict",
+			"scene": {
+				"mood": "dawn",
+				"elements": ["clouds", "village", "bunting", "cake"],
+				"alt": "The village green at dawn, the Centenary Cake on its trolley, bunting overhead."
+			},
+			"blocks": [
+				{
+					"when": {
+						"any": [
+							{
+								"pick": "wake-him",
+								"is": "follow"
+							},
+							{
+								"pick": "wake-him",
+								"is": "whisper"
+							}
+						]
+					},
+					"blocks": [
+						"At last Mr Podmore came down the hill, still asleep, humming, in his one slipper. At the bottom he stopped walking. He swayed. He blinked. He opened his eyes. He was standing on the village green, in his pyjamas, at ten to six, beside a lemon cake on a trolley, with two children, a goat and {pet}.",
+						"“Ah,” said Mr Podmore."
+					]
+				},
+				{
+					"when": {
+						"pick": "wake-him",
+						"is": "shout"
+					},
+					"blocks": [
+						"Mr Podmore sat down on the grass, in his pyjamas, and put his head in his hands. “Ah,” said Mr Podmore."
+					]
+				},
+				"{hero} told him everything, quickly, because it was nearly six. When {hero} had finished, Mr Podmore was silent for a long time. He looked at the cake, with its missing slice. He looked at the trolley. He looked at his pyjamas, and his one slipper.",
+				"“I have never,” he said at last, “sleepwalked in my life.”",
+				"“You have tonight,” said {friend}.",
+				"“I am a thorough man. A thorough man does not eat cake in his sleep.” He wiped his moustache. There was lemon on it.",
+				"Down the lane, a door banged. Mrs Pennyfeather would be here in ten minutes with her polishing cloth, and half of Puddlecombe was waking up. Mr Podmore looked at {pet}. “I said I would ban that animal,” he said slowly. “From the Show. From the green. For ever.” Nobody said anything. “I am beginning to think,” said Mr Podmore, “that I may have been hasty.”",
+				"Then he looked at {hero}. “What happens next,” he said, “is up to you.”",
+				{
+					"choice": {
+						"id": "final",
+						"prompt": "What should {hero} do?",
+						"options": [
+							{
+								"id": "tell",
+								"label": "Tell everyone the truth, out loud, as soon as they arrive",
+								"blocks": [
+									"“We have to tell them,” said {hero}. “All of it. The whole truth, or they’ll never believe it wasn’t {pet}.” Mr Podmore went the colour of a beetroot. But he nodded."
+								]
+							},
+							{
+								"id": "deal",
+								"label": "Make a deal: nobody hears about this if {pet} is let off",
+								"blocks": [
+									"{hero} took a breath. “I won’t say a word,” said {hero}, “if the ban on {pet} is cancelled. For ever. And we get seats in the front row.” Mr Podmore’s moustache twitched. “That,” he said, “is a very thorough offer.”"
+								]
+							},
+							{
+								"id": "help",
+								"label": "Quietly help him put everything right before anyone sees",
+								"blocks": [
+									"“Nobody has to know,” said {hero}. “Not yet. Come on.” {hero} took one handle of the trolley and {friend} took the other, and Mr Podmore, who had not expected kindness, took off his nightcap and held it in both hands, as if he were in church."
+								]
+							}
+						]
+					}
+				}
+			],
+			"questions": [
+				{
+					"id": "q1",
+					"q": "What did Mr Podmore say he had never done?",
+					"options": ["Eaten cake", "Sleepwalked", "Judged a leek"],
+					"answer": 1,
+					"find": "sleepwalked in my life",
+					"hint": "{friend} reminded him that he had, tonight."
+				},
+				{
+					"id": "q2",
+					"q": "What was on his moustache?",
+					"options": ["Icing sugar", "Hay", "Lemon"],
+					"answer": 2,
+					"find": "There was lemon on it",
+					"hint": "He wiped it, but it did not help."
+				},
+				{
+					"id": "q3",
+					"q": "What did Mr Podmore say he may have been?",
+					"options": ["Hasty", "Thorough", "Dramatic"],
+					"answer": 0,
+					"find": "I may have been hasty",
+					"hint": "He said it about banning the animal."
+				}
+			],
+			"recap": [
+				"The runaway trolley was stopped at last.",
+				{
+					"p": "{hero} dived for the handle and found the brake.",
+					"when": {
+						"pick": "stop-it",
+						"is": "grab"
+					}
+				},
+				{
+					"p": "{hero} dragged hay bales across the road.",
+					"when": {
+						"pick": "stop-it",
+						"is": "hay"
+					}
+				},
+				{
+					"p": "{hero} cleared the sleeping ducks, and the trolley rolled into the pond.",
+					"when": {
+						"pick": "stop-it",
+						"is": "ducks"
+					}
+				},
+				"The cake had lost one slice, but it still had five layers. Mr Podmore was awake, and {pet} was still in danger of the ban."
+			]
+		}
+	],
+	"endings": [
+		{
+			"id": "secret",
+			"title": "Best Nose in Show",
+			"when": {
+				"all": [
+					{
+						"pick": "final",
+						"is": "help"
+					},
+					{
+						"score": "brave",
+						"atLeast": 1
+					},
+					{
+						"score": "clever",
+						"atLeast": 1
+					},
+					{
+						"score": "kind",
+						"atLeast": 1
+					}
+				]
+			},
+			"scene": {
+				"mood": "day",
+				"elements": ["clouds", "village", "bunting", "cake"],
+				"alt": "The Show in full swing, bunting everywhere, and the Centenary Cake being cut."
+			},
+			"blocks": [
+				"They had the cake back in the hall, on its table, and the cloth over it, and the iron key hanging on its hook, before the first bird sang. Mrs Pennyfeather arrived at six with her polishing cloth and found nothing wrong at all. If she noticed a very small amount of road on the bottom layer, she did not say so.",
+				"At five minutes to noon, the whole village packed into the hall. The Mayor lifted the knife. And Mr Podmore marched into the middle of the floor, in his best suit, and cleared his throat.",
+				"“In my forty years as Chief Judge,” he began, and everybody sighed, because they knew this one. “I have seen eleven thousand scones. I have never seen a night like last night.” And he told them all of it. The slippers. The trolley. The bull. The hill. The pond. He told it himself, because somebody had been kind to him, and that makes it easier to be brave.",
+				"For a moment nobody breathed. Then the hall exploded. Mrs Pennyfeather laughed so hard that she had to sit down on a bucket. The Mayor dropped the knife. Duchess ate Mr Podmore’s speech.",
+				"The ban was cancelled before the laughing had even stopped. {pet} was given a rosette that said BEST NOSE IN SHOW, and the very first slice of the Centenary Cake, which Mr Podmore cut himself, thoroughly.",
+				"He kept the iron key at the bottom of his sock drawer after that, and tied a small bell to his slipper. On quiet nights in Puddlecombe, you can still hear it tinkle across the green. Nobody has ever asked him about it. And on the sign at the edge of the village, in small, neat letters, somebody has added a line: THANK YOU, {hero}."
+			]
+		},
+		{
+			"id": "help",
+			"title": "A Very Quiet Slice",
+			"when": {
+				"pick": "final",
+				"is": "help"
+			},
+			"scene": {
+				"mood": "day",
+				"elements": ["clouds", "village", "bunting", "cake"],
+				"alt": "The Show in the morning sun, the Centenary Cake on its table in the hall."
+			},
+			"blocks": [
+				"They had the cake back in the hall, on its table, with the cloth over it, before the first bird sang. Mr Podmore turned the neat slice to the back, where nobody would see. Then {hero} walked him home, across the green, in his pyjamas, in the grey light, with {friend} going ahead to check that nobody was about.",
+				"At six, Mrs Pennyfeather arrived with her polishing cloth and found nothing wrong at all. If she noticed a very small amount of road on the bottom layer, she did not say so.",
+				"At noon, the Mayor cut the first slice. Mr Podmore sat very upright in the front row, in his best suit, and did not once look at anybody. At the end of the judging, he stood up and read out a special prize. It was a rosette, for outstanding sniffing, and it went to {pet}.",
+				"The ban was never mentioned again. Mr Podmore moved his iron key to the bottom of his sock drawer, and tied a bell to his slipper. Every night, in Puddlecombe, a faint tinkle drifts over the green. Nobody asks. But if you pass the Chief Judge in the street, he will always lift his hat to {hero}, a little higher than to anybody else."
+			]
+		},
+		{
+			"id": "tell",
+			"title": "Everybody Knows",
+			"when": {
+				"pick": "final",
+				"is": "tell"
+			},
+			"scene": {
+				"mood": "day",
+				"elements": ["clouds", "village", "bunting"],
+				"alt": "A crowd gathered on the green in the morning sun, bunting overhead."
+			},
+			"blocks": [
+				"Mrs Pennyfeather arrived at six, and behind her came the vicar, the Mayor and most of the committee, because word travels fast in a village that is about to have a Show. {hero} stood on the trolley, to be seen, and told the whole truth, loudly, from the very beginning.",
+				"The ducks. The icing. The ghost, who was not a ghost. The slipper. The mill. The bull. The hill. There were gasps. There was a very long silence when {hero} got to the pyjamas, and everybody turned to look at Mr Podmore, who was standing on the green in them, in front of the whole village, going slowly from pink to a deep, deep red.",
+				"Then somebody laughed. It was Mrs Pennyfeather. It started as a snort and ended with her holding on to the Mayor. And then everyone else laughed, and then, at last, with a tremble in his moustache, so did Mr Podmore.",
+				"The ban was cancelled at once. {pet} was carried to the Show on four pairs of shoulders. For ever after, in Puddlecombe, Mr Podmore was known as the Midnight Slicer, and he wore the name quite well.",
+				"It took him until lunch to forgive {hero}, and until teatime to laugh. But the next year, on the night before the Show, he left a note on his own front door. It said: PLEASE LOCK THIS. YOURS, G. PODMORE (ASLEEP)."
+			]
+		},
+		{
+			"id": "deal",
+			"title": "A Very Fair Deal",
+			"when": {
+				"pick": "final",
+				"is": "deal"
+			},
+			"scene": {
+				"mood": "day",
+				"elements": ["clouds", "village", "bunting", "cake"],
+				"alt": "The Show, with the front row of seats and the Centenary Cake on its table."
+			},
+			"blocks": [
+				"Mr Podmore held out his hand, and {hero} shook it. “One more thing,” said Mr Podmore. He took the iron key out of his pyjama pocket, tied it to his own wrist with the cord of his dressing gown, and tied the cord in a very thorough knot. “I shall not be going anywhere tonight.”",
+				"They put the cake back in the hall, and Mrs Pennyfeather arrived at six with her polishing cloth and found nothing wrong at all, except for one missing slice. She frowned at it. Then she looked at Duchess, who was standing in the doorway, chewing.",
+				"“That goat,” said Mrs Pennyfeather, “has gone too far.” Duchess was not told off, as she was a goat. But everybody agreed that it had been her.",
+				"At noon, in the front row, {hero} and {friend} sat on the best seats in the hall, with {pet} on a cushion between them. When the judging was over, Mr Podmore stood up and cleared his throat. “In my forty years as Chief Judge,” he began, and everybody sighed. “I have seen eleven thousand scones. I have never seen a more honest animal.” And he pinned a rosette on {pet}.",
+				"It was, {hero} thought, a very fair deal. Though Duchess, eating the Show programme at the back of the hall, was the only one who knew what she had really been blamed for."
+			]
+		}
+	]
+}
