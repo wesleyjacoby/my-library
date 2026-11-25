@@ -3,7 +3,7 @@ import { h } from "./dom.js";
 import * as store from "./store.js";
 import { compile, plain, evalCond, computeScores } from "./personalise.js";
 import { sceneHTML } from "./scenes.js";
-import { toFragment, glue, setGlossary } from "./syllables.js";
+import { toFragment, glue, setGlossary, closePopup } from "./syllables.js";
 import * as tts from "./tts.js";
 import { sentencify, initFocus } from "./coach.js";
 import { quizCard } from "./quiz.js";
@@ -71,6 +71,95 @@ function run(book, blocks, host, done) {
 		if (done) done();
 	};
 	step();
+}
+
+// "The story so far": a short recap of the earlier chapters, written per chapter in book.json ("recap": blocks,
+// the same format as the story, so names and the choices she made are used). Reading time is paused while it is open.
+function openRecap(book, idx, trigger) {
+	if (document.querySelector(".sheet-back")) return;
+	const wasPaused = track.isPaused();
+	track.pause();
+	const body = h("div", { class: "recap-body" });
+	run(book, book.chapters[idx].recap, body);
+	let speaking = false;
+	const listen = tts.available
+		? h("button", { type: "button", class: "btn small ghost" })
+		: null;
+	const sync = () => {
+		if (listen)
+			listen.replaceChildren(
+				icon(speaking ? "stop" : "speaker"),
+				speaking ? " Stop" : " Read it to me",
+			);
+	};
+	const close = () => {
+		tts.cancel();
+		closePopup();
+		document.removeEventListener("keydown", onKey);
+		back.remove();
+		if (!wasPaused) track.resume();
+		if (trigger && trigger.focus) trigger.focus();
+	};
+	const onKey = (e) => {
+		if (e.key === "Escape") close();
+	};
+	if (listen) {
+		sync();
+		listen.addEventListener("click", () => {
+			if (speaking) {
+				speaking = false;
+				tts.cancel();
+				sync();
+				return;
+			}
+			speaking = true;
+			sync();
+			tts.readAll(
+				[...body.querySelectorAll(".para")].map((e) => e.textContent),
+				{
+					rate: store.getSettings().rate,
+					onDone: () => {
+						speaking = false;
+						sync();
+					},
+				},
+			);
+		});
+	}
+	const sheet = h(
+		"div",
+		{
+			class: "sheet recap-sheet",
+			role: "dialog",
+			"aria-modal": "true",
+			"aria-labelledby": "recap-title",
+		},
+		h("h2", { id: "recap-title" }, "The story so far"),
+		body,
+		h(
+			"div",
+			{ class: "recap-actions" },
+			listen,
+			h(
+				"button",
+				{ type: "button", class: "btn primary", onclick: close },
+				"Back to the story",
+			),
+		),
+	);
+	const back = h(
+		"div",
+		{
+			class: "sheet-back",
+			onclick: (e) => {
+				if (e.target === back) close();
+			},
+		},
+		sheet,
+	);
+	document.addEventListener("keydown", onKey);
+	document.body.append(back);
+	sheet.querySelector(".btn.primary").focus({ preventScroll: true });
 }
 
 function renderChoice(book, choice, host, next) {
@@ -252,12 +341,30 @@ export function renderReader(root, book, idx, nav) {
 
 	const article = h("article", { class: "story" });
 	if (chapter.scene) article.append(scene(chapter.scene));
+	const recapBtn =
+		idx > 0 && chapter.recap && chapter.recap.length
+			? h(
+					"button",
+					{
+						type: "button",
+						class: "btn small recap-btn",
+						onclick: (e) => openRecap(book, idx, e.currentTarget),
+					},
+					icon("book"),
+					" Recap",
+				)
+			: null;
 	article.append(
 		h(
 			"div",
 			{ class: "chap-head" },
-			h("div", { class: "chap-num" }, `Chapter ${idx + 1}`),
-			h("h2", {}, chapter.title),
+			h(
+				"div",
+				{ class: "chap-titles" },
+				h("div", { class: "chap-num" }, `Chapter ${idx + 1}`),
+				h("h2", {}, chapter.title),
+			),
+			recapBtn,
 		),
 	);
 

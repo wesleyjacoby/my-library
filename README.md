@@ -28,6 +28,7 @@ Test locally with `python3 -m http.server` and open `http://localhost:8000`.
 
 - `level`: reading level 1, 2 or 3 (see `LEVELS` in `js/config.js`), shown on the book card and in the grown-ups report. `node tools/check-book.mjs` prints a readability score and a suggested level. Both current books are level 2. Level is about reading difficulty; `ages` is about interest.
 - `glossary`: short meanings (and optional pictures) for the hard words in a story. Underlined words open the meaning when tapped. See "Word meanings" in `CLAUDE.md` for how to write entries.
+- `recap` (chapters 2 and up): a short "story so far" for the Recap button. It can branch on earlier picks. See "Recap" in `CLAUDE.md`.
 - `cast`: the characters the reader fills in. Each has a `key`, `label`, `default`, optional `altDefault` (used if the default clashes with another name), `pronouns` options, and optional `variants` (e.g. dog or cat).
 - `traits`: hidden scores, e.g. `["brave", "kind", "clever"]`.
 - `syllables`: `"lighthouse": "light-house"`. Only listed words get a tap-for-syllables pop-up, and names never do. Common words live in `data/syllables.json` (shared by every book); a book's own list adds to or overrides it. Every 2+ syllable word is tappable and only 3+ syllable words get the dotted underline. List one-syllable words without a hyphen (`"through": "through"`) so the checker stops flagging them.

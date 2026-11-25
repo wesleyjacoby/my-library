@@ -97,6 +97,7 @@ export function end() {
 export const pause = () => {
 	if (cur) cur.paused = true;
 };
+export const isPaused = () => !!(cur && cur.paused);
 export const resume = () => {
 	if (cur) {
 		cur.paused = false;

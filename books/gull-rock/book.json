@@ -309,6 +309,10 @@
 				"elements": ["shadow"],
 				"alt": "A white light on the bedroom wall, and a hand-shaped shadow raised inside it."
 			},
+			"recap": [
+				"{hero}, {friend} and {pet} came to Gull Cove for a holiday with {grownup}. In the chip shop, old Mr Pascoe told them that his father, the lighthouse keeper, climbed the tower forty years ago and never came down. He warned them never to look at its light.",
+				"That night, the empty lighthouse switched itself on and flashed three short, three long, three short. The beam swung round to the cottage window, and a shadow that belonged to nobody in the room raised its hand."
+			],
 			"blocks": [
 				"Nobody moved.",
 				"The shadow on the wall had the shape of a person, but it was too tall and too thin, and its arm stretched all the way up to the ceiling. Its fingers were spread wide. Slowly, they began to open and close. Three short. Three long. Three short.",
@@ -432,6 +436,31 @@
 				"elements": ["stars", "moon", "sea", "causeway", "fog"],
 				"alt": "A long wet causeway shining under the moon, with nothing at the end of it but dark."
 			},
+			"recap": [
+				"At midnight, the empty lighthouse lit up and flashed a call for help. A strange shadow appeared on the bedroom wall, and then the light went out.",
+				"Wet, bare footprints led from the landing, through the kitchen and out into the garden. {hero} and {friend} decided to follow them to the causeway, the sandy path across the sea to the lighthouse.",
+				{
+					"when": {
+						"pick": "night-plan",
+						"is": "go"
+					},
+					"p": "{hero} rushed out at once, with the small torch and two different wellies."
+				},
+				{
+					"when": {
+						"pick": "night-plan",
+						"is": "plan"
+					},
+					"p": "{hero} checked the tide table first and took the big torch. They had about an hour before the sea covered the causeway."
+				},
+				{
+					"when": {
+						"pick": "night-plan",
+						"is": "note"
+					},
+					"p": "{hero} left {grownup} a note on the kettle, so that somebody would know where to look."
+				}
+			],
 			"blocks": [
 				{
 					"when": {
@@ -527,6 +556,10 @@
 				"elements": ["stairs", "glow"],
 				"alt": "A spiral staircase climbing inside the lighthouse, light sweeping the walls."
 			},
+			"recap": [
+				"{hero} and {friend} followed the wet footprints out onto the causeway, with {pet} close behind. Halfway across, {pet} stopped. A second set of bare footprints was walking a few steps behind theirs, and the sea seemed to whisper their names.",
+				"They reached the lighthouse and stepped inside. The door slammed behind them, and a soft, dry voice high above began to call their names."
+			],
 			"blocks": [
 				"The voice stopped. The tower went very quiet.",
 				"“Don’t answer it,” whispered {friend}.",
@@ -637,6 +670,31 @@
 				"elements": ["lens", "glow", "keeper"],
 				"alt": "The great lamp, its glass full of pale faces, and a dripping hooded shape beside it."
 			},
+			"recap": [
+				"{hero} and {friend} were inside the old lighthouse, and the door had slammed shut behind them. The voice at the top of the stairs kept calling their names.",
+				"They climbed the spiral stairs, past dripping yellow raincoats and a door marked KEEPER. The raincoats turned round to face them. At the top, they found the lamp room, with eight faces trapped in the glass. One of them was a small girl in a yellow raincoat, and she mouthed one word: Run.",
+				{
+					"when": {
+						"pick": "stairs-voice",
+						"is": "shout"
+					},
+					"p": "On the stairs, {hero} shouted back at the voice, and the whole tower shook."
+				},
+				{
+					"when": {
+						"pick": "stairs-voice",
+						"is": "listen"
+					},
+					"p": "On the stairs, {hero} stayed quiet and noticed that the voice was only repeating the same words, over and over."
+				},
+				{
+					"when": {
+						"pick": "stairs-voice",
+						"is": "comfort"
+					},
+					"p": "On the stairs, {hero} picked up {pet}, who was too scared to climb, and carried {pet.him} the rest of the way."
+				}
+			],
 			"blocks": [
 				"The great lens turned slowly, one rotation every ten seconds. Each time it came round, a different face slid into view.",
 				"A man with a moustache. A woman in a woolly hat. Two boys, side by side, with the same freckles. An old fisherman. A girl of about {hero’s} age with plaits and a surprised mouth, as if she had just been about to say something.",
@@ -758,6 +816,31 @@
 				"alt": "The lighthouse in a storm, waves breaking against the rock below.",
 				"align": "xMaxYMid"
 			},
+			"recap": [
+				"In the lamp room, a dripping figure called the Keeper told {hero} and {friend} that the light was hungry for a ninth face. It asked them to look into the great lens. In the glass, the small girl in the yellow raincoat pointed to a little brass lantern and mouthed a warning.",
+				{
+					"when": {
+						"pick": "keeper-face",
+						"is": "stand"
+					},
+					"p": "{hero} told the Keeper to let the faces go."
+				},
+				{
+					"when": {
+						"pick": "keeper-face",
+						"is": "trick"
+					},
+					"p": "{hero} asked the Keeper how the light worked, to buy some time."
+				},
+				{
+					"when": {
+						"pick": "keeper-face",
+						"is": "wren"
+					},
+					"p": "{hero} spoke kindly to the girl in the glass, and learned that her name was Wren."
+				},
+				"Then a huge wave hit the tower, and the tide began to climb the stairs."
+			],
 			"blocks": [
 				{
 					"when": {
@@ -849,6 +932,10 @@
 				"elements": ["flare"],
 				"alt": "The great lamp at full blaze, white light filling everything."
 			},
+			"recap": [
+				"The tide cut off the causeway and flooded the stairs. {hero} and {friend} escaped out onto a narrow balcony at the top of the tower, with the little brass lantern.",
+				"In the lantern, a tiny face appeared. It was Wren, one of the trapped children. She told them there were three ways to stop the light: break the big glass, turn the lens round, or make the light honest again. They had to choose right now. Then the light began to pull at {hero}, and {hero} looked into it."
+			],
 			"blocks": [
 				"White. That was all there was. White and very quiet.",
 				"{hero} could no longer feel the rain. {hero} could not feel {hero.his} hands. The faces in the glass had gone soft and far away, and the Keeper’s voice came from the bottom of a well. “That’s it. Just a little longer. Nobody will be cross.”",
@@ -928,6 +1015,31 @@
 				"elements": ["flare", "keeper", "glow"],
 				"alt": "The Keeper facing the white blaze, the little lantern held out between them."
 			},
+			"recap": [
+				"Wren said there were three ways to stop the Keeper's light. {hero} was caught in the white glare of the lamp, until {pet} bit down on {hero.his} sleeve and pulled {hero.him} free.",
+				"Back in the lamp room, the Keeper was only ten steps away. The great lens, a brass handle and an iron hammer were all in reach, and {friend} held the little lantern. {hero} had to choose.",
+				{
+					"when": {
+						"pick": "final",
+						"is": "smash"
+					},
+					"p": "{hero} chose the hammer."
+				},
+				{
+					"when": {
+						"pick": "final",
+						"is": "mirror"
+					},
+					"p": "{hero} chose the brass handle that turns the lens."
+				},
+				{
+					"when": {
+						"pick": "final",
+						"is": "lantern"
+					},
+					"p": "{hero} chose to carry the little lantern's flame to the great lamp."
+				}
+			],
 			"blocks": [
 				{
 					"when": {

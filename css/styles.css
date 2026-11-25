@@ -430,6 +430,48 @@ html {
 }
 .chap-head {
 	margin: 1rem 0 1.4rem;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 1rem;
+}
+.chap-titles {
+	min-width: 0;
+}
+/* "Recap" sits at the far right of the chapter heading and opens the story-so-far sheet. */
+.recap-btn {
+	flex: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45em;
+	margin-bottom: 0.25rem;
+}
+.recap-btn .ico {
+	width: 1.15em;
+	height: 1.15em;
+}
+.recap-sheet {
+	max-height: min(88vh, 40rem);
+}
+.recap-body {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+}
+.recap-body .para {
+	margin: 0.5rem 0;
+}
+.recap-actions {
+	display: flex;
+	gap: 0.6rem;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: center;
+}
+.recap-actions .btn .ico {
+	width: 1.1em;
+	height: 1.1em;
+	vertical-align: -0.2em;
 }
 .chap-num {
 	font: 700 0.95rem var(--ui);
@@ -566,7 +608,7 @@ html {
 /* ---------- syllable pop-up ---------- */
 #popup {
 	position: fixed;
-	z-index: 50;
+	z-index: 70;
 	background: var(--navy);
 	color: #fff;
 	border-radius: 18px;

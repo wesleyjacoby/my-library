@@ -493,6 +493,10 @@
 				"elements": ["attic"],
 				"alt": "The attic: a round window over the moonlit harbour, three beds, one small lantern."
 			},
+			"recap": [
+				"{hero}, {friend} and {cousin} came to Saltwick to stay with {friend}'s Gran, Mrs Ames, at the Old Rope Shop. On the quay, Mr Fenn the boatman told them that the lowest tide of the year would come at ten to midnight.",
+				"That night, in the attic, {hero} found half of a map hidden in an old lantern. It showed a tunnel under the harbour, and a message: Where the bell hangs silent, look up. The door is open for one hour at low water. Then someone crept into the shop downstairs, and the attic door handle began to turn."
+			],
 			"blocks": [
 				"{hero} shoved the map under the pillow and the lantern under the bed, and pulled the blanket up to {hero.his} chin. {friend} and {cousin} did the same, a little too fast. Three lumps in three beds. {cousin} began to snore. It was the worst snoring any of them had ever heard.",
 				"The door opened one inch. Then two.",
@@ -613,6 +617,32 @@
 				"elements": ["stars", "moon", "crates", "fog"],
 				"alt": "The quay at night: stacked crates, one shaded lantern, the boathouse beyond."
 			},
+			"recap": [
+				"A man in a green woolly cap searched the shop and went away. Then the children watched men with no lights carry crates into the Old Boathouse, where the map's tunnel begins, while a whistle called from the sea.",
+				"The lowest tide was less than forty minutes away. Mrs Ames could not hear without her hearing aid, and the police station was nine miles away.",
+				{
+					"when": {
+						"pick": "quay-night",
+						"is": "go"
+					},
+					"p": "{hero}, {friend} and {cousin} sneaked out to follow the men along the quay."
+				},
+				{
+					"when": {
+						"pick": "quay-night",
+						"is": "watch"
+					},
+					"p": "{hero} counted the crates from the window and worked out who was signalling to whom. Then they slipped out to the quay."
+				},
+				{
+					"when": {
+						"pick": "quay-night",
+						"is": "gran"
+					},
+					"p": "{hero} woke Mrs Ames, but Mr Fenn told her it was only fishermen, and she went back to sleep. Now the men knew someone was awake, so the children went out to the quay themselves."
+				},
+				"On the quay, a torch beam found {cousin}'s white trainers."
+			],
 			"blocks": [
 				"The beam held on the trainers. Then it climbed, up {cousin}’s legs, along the lobster pots, and settled with a click in the middle of {hero}’s face.",
 				"“Well, well,” said a voice. “Visitors.”",
@@ -752,6 +782,31 @@
 				"elements": ["stars", "moon", "bell", "fog"],
 				"alt": "The bell at the end of the quay, with a thin fog creeping in."
 			},
+			"recap": [
+				"The man in the green cap was called Rudd, and he caught the children on the quay at midnight.",
+				{
+					"when": {
+						"pick": "rudd",
+						"is": "lie"
+					},
+					"p": "{hero} said they were looking for {pet}, but Rudd did not believe it. He told them to stay where they were."
+				},
+				{
+					"when": {
+						"pick": "rudd",
+						"is": "blame"
+					},
+					"p": "{hero} said it was all {hero.his} idea. Rudd told them all to stay where they were."
+				},
+				{
+					"when": {
+						"pick": "rudd",
+						"is": "run"
+					},
+					"p": "{hero} grabbed the others and ran. They hid in a net locker until Rudd's boots went away."
+				},
+				"A whistle from the sea called Rudd away, and the children found the second half of the map in the old iron bell, hidden behind the clapper. Together, the two halves showed the tunnel, a ladder up to the bell, and a warning to mind the third rung. Then a hand landed on {hero}'s shoulder. It was Mr Fenn."
+			],
 			"blocks": [
 				"Mr Fenn pulled them all into the shadow of the net locker, just as a torch beam swept the stretch of quay where they had been crouching.",
 				"“Rudd’s hunting for you,” he breathed. “Three small ones by the lobster pots, he said. I told him I’d seen you running for the church. That buys us five minutes. Not six.”",
@@ -876,6 +931,31 @@
 				"elements": ["chamber"],
 				"alt": "A vaulted chamber stacked with crates, one lamp hanging over a table."
 			},
+			"recap": [
+				"Mr Fenn hid the children from Rudd. He said he would rather go to the tunnel with them than let them go alone. He led them across the mud of the harbour to the Old Boathouse and told them they had forty minutes before the sea filled the tunnel.",
+				{
+					"when": {
+						"pick": "trust",
+						"is": "show"
+					},
+					"p": "{hero} had shown him both pieces of the map. He gave them back and told {hero} to keep them safe."
+				},
+				{
+					"when": {
+						"pick": "trust",
+						"is": "keep"
+					},
+					"p": "{hero} had told him the map was only a game."
+				},
+				{
+					"when": {
+						"pick": "trust",
+						"is": "test"
+					},
+					"p": "{hero} had asked him how he knew where to find them, and his answer came a little too quickly."
+				},
+				"The children went down forty-one steps into the tunnel. Soon they saw a lamp coming towards them, and heard two men talking."
+			],
 			"blocks": [
 				"“Behind the crates!” hissed {hero}.",
 				"The tunnel had opened into a long, low chamber with an arched roof, and the crates stood in it in stacks as high as a man. There were dozens. Each one was stamped in black paint with the name of a ship. Marigold. Sea Hawk. Dorothea. Not one of them was from Saltwick.",
@@ -996,6 +1076,32 @@
 				"elements": ["chamber"],
 				"alt": "The crate chamber, with seawater creeping across its floor."
 			},
+			"recap": [
+				"In the tunnel, the children hid behind crates in a long chamber. They heard Rudd and a tall man in a dark coat say that tonight was their last night with the Back Way, because the coastguard would seal the boathouse tomorrow. They needed the missing corner of the map, which the children had.",
+				"Then {hero}, {friend} and {cousin} crossed the open floor to a table under a lamp, where a ledger lay open, full of ships' names and sums. Beyond it was a ladder up to the bell.",
+				{
+					"when": {
+						"pick": "cross",
+						"is": "dash"
+					},
+					"p": "They ran across the open floor, and Rudd's boots came after them."
+				},
+				{
+					"when": {
+						"pick": "cross",
+						"is": "wall"
+					},
+					"p": "They crept along the wall in the shadows, and it took a very long time."
+				},
+				{
+					"when": {
+						"pick": "cross",
+						"is": "alone"
+					},
+					"p": "{hero} crossed alone, so that only one of them could be caught. {friend} and {cousin} followed anyway."
+				},
+				"Then cold seawater began to creep across the floor. The tide had come early."
+			],
 			"blocks": [
 				"The water was at their ankles. It was cold enough to make {cousin} squeak.",
 				"Behind them, boots were coming back across the chamber. Rudd’s voice drifted over, grumbling, and the tall man’s lower voice answered. They would be at the table in a minute. Perhaps less.",
@@ -1121,6 +1227,31 @@
 				"elements": ["stars", "moon", "bell", "fog"],
 				"alt": "The old bell on the quay in thin fog, with the stone slab at its foot."
 			},
+			"recap": [
+				"The sea filled the tunnel, so the children climbed the long ladder up to the bell.",
+				{
+					"when": {
+						"pick": "carry",
+						"is": "whole"
+					},
+					"p": "{hero} carried the whole heavy ledger, and nearly fell when the third rung snapped."
+				},
+				{
+					"when": {
+						"pick": "carry",
+						"is": "page"
+					},
+					"p": "{hero} tore out the last page of the ledger and hid it in {hero.his} sock."
+				},
+				{
+					"when": {
+						"pick": "carry",
+						"is": "shoe"
+					},
+					"p": "{hero} left the ledger behind, to find {cousin}'s lost shoe so that nobody was left behind."
+				},
+				"They pushed up the stone slab and climbed out into the fog, beside the old bell. A boot stepped down next to {hero}'s hand. It was Mr Fenn, who had been waiting for them."
+			],
 			"blocks": [
 				"Mr Fenn stood on the quay with his lantern turned low. He did not look like a villain. He looked like a tired old man who had been up much too late, and who still had a long way to go.",
 				"“Don’t shout,” he said. “Please. Not yet.”",
@@ -1213,6 +1344,31 @@
 				"elements": ["stars", "moon", "bell", "headlamps", "fog"],
 				"alt": "The lorry’s headlamps washing over the old bell in the fog."
 			},
+			"recap": [
+				"Mr Fenn told {hero} the truth. For thirty years, he had helped the smugglers because of an old debt. He left the boathouse door unlocked and kept watch on the quay. He had known the tide would be lowest at ten to midnight, and he had known about the map.",
+				{
+					"when": {
+						"pick": "trust",
+						"is": "show"
+					},
+					"p": "He said he could have taken both pieces of the map when {hero} showed him, but he could not do it."
+				},
+				{
+					"when": {
+						"pick": "trust",
+						"is": "keep"
+					},
+					"p": "He said he knew {hero} was nobody's fool when {hero} told him the map was only a game."
+				},
+				{
+					"when": {
+						"pick": "trust",
+						"is": "test"
+					},
+					"p": "He said that a good man would have had an answer ready when {hero} asked how he knew where to find them."
+				},
+				"He held out his hand for what {hero} was carrying. Now a boat with no lights was coming into the harbour, a lorry was backing down the quay, and Rudd was climbing up out of the tunnel, furious about his ledger. Mr Fenn asked {hero} to decide, right now."
+			],
 			"blocks": [
 				"The lorry’s headlamps swung across the fog and lit up the old bell.",
 				"Boots rang up the ladder, one rung at a time. Rudd’s head would be in the shaft in moments. Out on the water, the engine of the dark boat dropped to a low, slow growl.",

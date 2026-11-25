@@ -86,6 +86,71 @@ function checkCond(c, where) {
 }
 
 (book.chapters || []).forEach((ch, i) => walk(ch.blocks, `chapter ${i + 1}`));
+
+// --- recaps ("The story so far" sheet): chapter 2 onwards, spoiler-safe, short ---
+const choiceChapter = new Map(); // choice id -> chapter index it appears in
+const findChoices = (blocks, i) =>
+	(blocks || []).forEach((b) => {
+		if (!b || typeof b === "string") return;
+		if (b.choice) {
+			choiceChapter.set(b.choice.id, i);
+			b.choice.options.forEach((o) => findChoices(o.blocks, i));
+		}
+		if (b.blocks) findChoices(b.blocks, i);
+	});
+(book.chapters || []).forEach((ch, i) => findChoices(ch.blocks, i));
+(book.chapters || []).forEach((ch, i) => {
+	const where = `chapter ${i + 1} recap`;
+	const rc = ch.recap;
+	if (i === 0) {
+		if (rc)
+			problems.push(`${where}: chapter 1 has nothing to recap, remove it`);
+		return;
+	}
+	if (!Array.isArray(rc) || !rc.length) {
+		console.log(
+			`  Note: chapter ${i + 1} has no "recap" (the Recap button only shows when there is one).`,
+		);
+		return;
+	}
+	const byPick = new Map();
+	let base = 0;
+	for (const b of rc) {
+		const text = typeof b === "string" ? b : b && b.p;
+		if (typeof text !== "string" || !text.trim()) {
+			problems.push(`${where}: each block must be a string or { p, when }`);
+			continue;
+		}
+		if (b && (b.choice || b.blocks || b.scene))
+			problems.push(
+				`${where}: recaps are plain paragraphs (no choices, scenes or nested blocks)`,
+			);
+		if (/—|–/.test(text)) problems.push(`${where}: has a dash; no em dashes`);
+		if (/like the way/i.test(text))
+			problems.push(`${where}: uses "like the way"`);
+		const n = text.split(/\s+/).length;
+		if (b && b.when) {
+			checkCond(b.when, where);
+			for (const c of [].concat(b.when.all || b.when.any || b.when)) {
+				const id = c && c.pick;
+				if (
+					id !== undefined &&
+					choiceChapter.has(id) &&
+					choiceChapter.get(id) >= i
+				)
+					problems.push(
+						`${where}: mentions the choice "${id}" from chapter ${choiceChapter.get(id) + 1}, which she has not made yet (spoiler)`,
+					);
+				if (id !== undefined) byPick.set(id, Math.max(byPick.get(id) || 0, n));
+			}
+		} else base += n;
+	}
+	const longest = base + [...byPick.values()].reduce((a, b) => a + b, 0);
+	if (longest > 130)
+		problems.push(
+			`${where}: ${longest} words on the longest path; keep a recap to about 130 words or fewer`,
+		);
+});
 (book.chapters || []).forEach((ch, i) => {
 	const texts = [];
 	const collect = (blocks) =>

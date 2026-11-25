@@ -52,7 +52,7 @@ The owner wants prose that does not sound AI-written: **no em dashes**, avoid "l
 - Reading stats (`js/stats.js`, per profile): sessions per chapter, tapped words, quiz tries. `js/insights.js` holds the pure maths (tested by `node` directly). `js/parent.js` is the report page, `js/profiles.js` the reader switcher.
 - Text wrapping: `glue()` in `js/syllables.js` keeps punctuation attached to its word.
 - `tools/check-book.mjs` now also prints a readability score (Flesch-Kincaid) and a suggested level.
-- Cache is `my-library-v30`.
+- Cache is `my-library-v38`.
 - iOS/iPadOS 26.1+ paints a system blur ("scroll edge" / Liquid Glass) over the top of an installed web app that uses `apple-mobile-web-app-status-bar-style: black-translucent`, and the page cannot switch it off. So `index.html` uses `default` (opaque status bar, the page starts below it; `black` was tried first and still blurred on iPad). iOS reads this when the app is added to the Home Screen, so changing it needs the app to be removed and re-added. Back up first with the report's "Save backup" (installed web apps have their own storage that is erased with the app). The top `.bar` is opaque, full width and `position: fixed`, and the document (not an inner container) scrolls; keep it that way.
 - The reader/setup top bar (`.bar`) is `position: fixed` (not sticky) with `--bar-h` padding on `.reader` and `.setup-page`. iPadOS 26 skips its blur over the top edge only when it finds a solid fixed bar there.
 
@@ -66,3 +66,8 @@ The owner wants prose that does not sound AI-written: **no em dashes**, avoid "l
 - `forms` lists other spellings of the same word (plurals, -ed, -ing). `sounds` is a respelling for the voice when the spelling misleads (quay says "key"); it also fixes endings (quays says "keys").
 - Only words that appear in the story text or quiz questions belong in the glossary (words that appear only in scene descriptions are never tappable).
 - `node tools/check-book.mjs books/<id>/book.json` validates the glossary and lists hard-looking words that have no entry yet.
+
+## Recap ("The story so far"), v38
+- Chapters 2 and up show a "Recap" button at the right of the chapter heading. It opens a sheet with the chapter's `"recap"` array (same block format as `blocks`, so `{when:{pick,is}, p}` and `{hero}` tokens work). Chapter 1 has none. Code: `openRecap` in js/reader.js. Words in it are tappable; reading time pauses while it is open (only if it was running); "Read it to me" reads it aloud; Escape, backdrop tap or "Back to the story" close it.
+- Writing rules: at most 130 words on any path, past tense, no em dashes, no hints at what comes next. Only branch on picks made in EARLIER chapters (a pick from the current chapter would spoil it). Cover who, where, what they are trying to do, and what changed since the last chapter.
+- `node tools/check-book.mjs` validates all of this and fails on a recap in chapter 1, a spoiler pick, a dash or an over-long path.
