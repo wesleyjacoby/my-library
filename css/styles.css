@@ -269,6 +269,17 @@ button {
 	background: var(--navy);
 	color: #fff;
 }
+/* Navy cap above the bar: on iPadOS 26 the page scrolls under the status area, so cover that strip too. */
+.bar::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 100%;
+	height: 160px;
+	background: var(--navy);
+	pointer-events: none;
+}
 /* The bar is fixed (not sticky): iPadOS 26 only skips its own blur over the top edge when it finds a solid FIXED bar there. */
 .reader,
 .setup-page {
