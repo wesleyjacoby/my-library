@@ -269,15 +269,31 @@ export function openSettings() {
 			{ class: "srow" },
 			h("span", {}, "Grown-ups"),
 			h(
-				"button",
-				{ type: "button", class: "btn small", onclick: () => openGrownups() },
-				"🔒 Prizes & PIN",
+				"div",
+				{ class: "row-ctrl" },
+				h(
+					"button",
+					{
+						type: "button",
+						class: "btn small",
+						onclick: () => {
+							close();
+							location.hash = "#/parent";
+						},
+					},
+					"📊 Report",
+				),
+				h(
+					"button",
+					{ type: "button", class: "btn small", onclick: () => openGrownups() },
+					"🔒 Prizes & PIN",
+				),
 			),
 		),
 		h(
 			"div",
 			{ class: "srow" },
-			h("span", {}, "Progress"),
+			h("span", {}, "Everything"),
 			h(
 				"button",
 				{
@@ -289,7 +305,7 @@ export function openSettings() {
 							icon: "🗑️",
 							title: "Erase everything?",
 							message:
-								"This removes all reading progress, stars, prizes, postcards and saved names on this device.",
+								"This removes every reader, with all their reading progress, stars, prizes, postcards, saved names and reading stats on this device.",
 							yes: "Erase it all",
 							no: "Keep it",
 							danger: true,
@@ -302,7 +318,7 @@ export function openSettings() {
 						}
 					},
 				},
-				"Erase progress",
+				"Erase all readers",
 			),
 		),
 		h(

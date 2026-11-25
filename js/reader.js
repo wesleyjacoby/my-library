@@ -8,6 +8,7 @@ import * as tts from "./tts.js";
 import { sentencify, initFocus } from "./coach.js";
 import { quizCard } from "./quiz.js";
 import * as rewards from "./rewards.js";
+import * as track from "./stats.js";
 import { toast, celebrate, endingRewards } from "./rewardsui.js";
 import { bumpSize, openSettings, applySettings } from "./settings.js";
 
@@ -25,6 +26,11 @@ const para = (book, str) => {
 	glue(p);
 	return p;
 };
+const countWords = (article) =>
+	[...article.querySelectorAll(".para, .choice-prompt")].reduce(
+		(n, e) => n + (e.textContent.match(/[A-Za-z][A-Za-z’'-]*/g) || []).length,
+		0,
+	);
 const scene = (def) => h("div", { class: "scene-wrap", html: sceneHTML(def) });
 
 // Runs a list of blocks into `host`. Stops at an unanswered choice and carries on after the answer.
@@ -101,8 +107,10 @@ function renderChoice(book, choice, host, next) {
 			return;
 		}
 	}
+	track.pause(); // time spent deciding (or asking a grown-up) is not reading time
 	buttons.forEach((b, i) =>
 		b.addEventListener("click", () => {
+			track.resume();
 			const opt = choice.options[i];
 			const picks = { ...st(book).picks, [choice.id]: opt.id };
 			store.patchBook(book.id, { picks });
@@ -139,6 +147,7 @@ function toolbar(book, nav, label, article) {
 		const els = [...article.querySelectorAll(".para, .choice-prompt")];
 		if (!els.length) return;
 		reading = true;
+		track.markAloud();
 		article.classList.add("tts-on");
 		listen.textContent = "⏹";
 		tts.readAll(
@@ -255,6 +264,7 @@ export function renderReader(root, book, idx, nav) {
 	root.replaceChildren(readerEl);
 	initFocus(article, readerEl);
 	document.title = `${chapter.title} · ${book.title}`;
+	track.start(book, idx, () => countWords(article));
 
 	run(book, chapter.blocks, article, () => {
 		const end = h("nav", { class: "chapter-end" });
@@ -266,7 +276,10 @@ export function renderReader(root, book, idx, nav) {
 					{
 						type: "button",
 						class: "btn primary big",
-						onclick: () => nav(`#/b/${book.id}/read/${idx + 1}`),
+						onclick: () => {
+							track.readingDone();
+							nav(`#/b/${book.id}/read/${idx + 1}`);
+						},
 					},
 					"Turn the page →",
 				),
@@ -279,7 +292,10 @@ export function renderReader(root, book, idx, nav) {
 					{
 						type: "button",
 						class: "btn primary big",
-						onclick: () => nav(`#/b/${book.id}/end`),
+						onclick: () => {
+							track.readingDone();
+							nav(`#/b/${book.id}/end`);
+						},
 					},
 					"Find out how it ends →",
 				),

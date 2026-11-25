@@ -1834,3 +1834,316 @@ html[data-anim="on"] .rw-star {
 .tk {
 	white-space: nowrap;
 }
+
+/* ---------- reader profiles ---------- */
+.lib-tools {
+	display: flex;
+	align-items: center;
+	gap: 0.15rem;
+}
+.profile-chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+	max-width: 11rem;
+	margin-right: 0.3rem;
+	padding: 0.3rem 0.85rem 0.3rem 0.4rem;
+	border: 2px solid var(--line);
+	border-radius: 999px;
+	background: var(--card);
+	color: var(--ink);
+	font: 700 1rem var(--ui);
+	cursor: pointer;
+	touch-action: manipulation;
+}
+.profile-chip:active {
+	transform: scale(0.97);
+}
+.pc-av {
+	display: grid;
+	place-items: center;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	background: var(--accent-soft);
+	font-size: 1.2rem;
+	line-height: 1;
+}
+.pc-name {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.pf-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+}
+.pf-row {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+}
+.pf-pick {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	padding: 0.6rem 0.9rem;
+	border: 2px solid var(--line);
+	border-radius: 18px;
+	background: var(--bg);
+	color: var(--ink);
+	font: 700 1.15rem var(--ui);
+	text-align: left;
+	cursor: pointer;
+	touch-action: manipulation;
+}
+.pf-row.now .pf-pick {
+	border-color: var(--accent);
+	background: var(--accent-soft);
+}
+.pf-av {
+	font-size: 1.9rem;
+	line-height: 1;
+}
+.pf-name {
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.pf-now {
+	color: var(--accent);
+	font-size: 0.85rem;
+}
+.pf-edit {
+	color: var(--muted);
+}
+.pf-input {
+	width: 100%;
+	font: 700 1.2rem var(--ui);
+	padding: 0.6em 0.8em;
+	border: 2px solid var(--line);
+	border-radius: 14px;
+	background: var(--bg);
+	color: var(--ink);
+}
+.pf-input.bad {
+	border-color: #b3261e;
+}
+.pf-avatars {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 0.4rem;
+}
+.pf-avatars button {
+	aspect-ratio: 1;
+	border: 2px solid var(--line);
+	border-radius: 14px;
+	background: var(--bg);
+	font-size: 1.6rem;
+	cursor: pointer;
+	touch-action: manipulation;
+}
+.pf-avatars button.on {
+	border-color: var(--accent);
+	background: var(--accent-soft);
+}
+.profiles-sheet .btn {
+	align-self: center;
+}
+
+/* ---------- grown-ups report ---------- */
+.lvl {
+	display: inline-block;
+	padding: 0.05em 0.55em;
+	border-radius: 999px;
+	background: var(--accent-soft);
+	color: var(--accent);
+	font-weight: 800;
+	font-size: 0.85em;
+}
+.pv-head {
+	padding: calc(env(safe-area-inset-top) + 0.9rem) 1.25rem 1.4rem;
+	color: #fff;
+	background: linear-gradient(160deg, #1b2547, #2d3868);
+	border-radius: 0 0 36px 36px;
+}
+.pv-who {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	max-width: 40rem;
+	margin: 1.1rem auto 0;
+}
+.pv-av {
+	display: grid;
+	place-items: center;
+	width: 3.2rem;
+	height: 3.2rem;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.16);
+	font-size: 1.9rem;
+}
+.pv-who h1 {
+	margin: 0;
+	font: 800 1.9rem var(--serif);
+}
+.pv-tabs {
+	max-width: 40rem;
+	margin: 1rem auto 0;
+	display: flex;
+}
+.pv-tabs button {
+	background: rgba(255, 255, 255, 0.1);
+	border-color: rgba(255, 255, 255, 0.25);
+	color: #fff;
+}
+.pv-tabs button.on {
+	background: var(--gold);
+	border-color: var(--gold);
+	color: #3a2a00;
+}
+.pv-tiles {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.8rem;
+	margin-top: 1.2rem;
+}
+.pv-tile {
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+	padding: 0.9rem 1rem;
+	background: var(--card);
+	border: 1px solid var(--line);
+	border-radius: 20px;
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+}
+.pv-label {
+	color: var(--muted);
+	font-size: 0.85rem;
+	font-weight: 700;
+}
+.pv-tile strong {
+	font: 800 1.55rem var(--serif);
+}
+.pv-tile small {
+	color: var(--muted);
+	font-size: 0.85rem;
+}
+.chart-wrap {
+	margin: 0 -0.2rem;
+}
+.chart {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.ch-grid {
+	stroke: var(--line);
+	stroke-width: 1;
+}
+.ch-med {
+	stroke: var(--muted);
+	stroke-width: 1.2;
+	stroke-dasharray: 4 4;
+}
+.ch-line {
+	fill: none;
+	stroke: var(--accent);
+	stroke-width: 2.4;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+}
+.ch-dot {
+	fill: var(--accent);
+	stroke: var(--card);
+	stroke-width: 1.5;
+}
+.ch-bar {
+	fill: var(--accent);
+	opacity: 0.55;
+}
+.ch-bar.today {
+	opacity: 1;
+}
+.ch-txt {
+	fill: var(--muted);
+	font: 600 10px var(--ui);
+}
+.pv-book {
+	padding: 0.7rem 0;
+	border-top: 1px solid var(--line);
+}
+.pv-book:first-of-type {
+	border-top: 0;
+	padding-top: 0;
+}
+.pv-book-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.6rem;
+	font-size: 1.05rem;
+}
+.pv-bar {
+	margin: 0.5rem 0 0.4rem;
+	background: var(--line);
+}
+.pv-bar i {
+	background: var(--accent);
+}
+.pv-book-meta {
+	margin: 0;
+	color: var(--muted);
+	font-size: 0.92rem;
+	line-height: 1.5;
+}
+.pv-words {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.pv-words li {
+	display: flex;
+	flex-direction: column;
+	padding: 0.4rem 0.8rem;
+	border-radius: 14px;
+	background: var(--bg);
+	border: 1px solid var(--line);
+}
+.pv-words strong {
+	font: 800 1.1rem var(--serif);
+}
+.pv-words small,
+.pv-tricky small {
+	color: var(--muted);
+	font-size: 0.8rem;
+}
+.pv-tricky {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.7rem;
+}
+.pv-tricky li {
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+}
+.pv-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+}
+.pv-bar i {
+	background: var(--accent);
+	box-shadow: none;
+}

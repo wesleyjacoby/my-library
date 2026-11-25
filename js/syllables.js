@@ -3,6 +3,7 @@
 import { h } from "./dom.js";
 import * as tts from "./tts.js";
 import * as store from "./store.js";
+import * as track from "./stats.js";
 
 export function pieces(word, hyph) {
 	const segs = hyph.split("-");
@@ -153,6 +154,7 @@ function ensure() {
 		const word = current.getAttribute("data-w");
 		const sy = (current.getAttribute("data-s") || word).split("-");
 		const rate = store.getSettings().rate;
+		track.help(word);
 		if (b.dataset.act === "say") tts.say(word, { rate });
 		else tts.sayParts(sy, word, { rate: Math.min(rate, 0.7) });
 	});
@@ -179,6 +181,7 @@ function open(btn) {
 		return;
 	}
 	current = btn;
+	track.tap(btn.getAttribute("data-w"));
 	const hasSyl = btn.hasAttribute("data-s");
 	const syl = (
 		hasSyl ? btn.getAttribute("data-s") : btn.getAttribute("data-w")

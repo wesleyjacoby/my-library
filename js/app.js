@@ -1,10 +1,13 @@
 import { h } from "./dom.js";
-import { APP_NAME } from "./config.js";
+import { APP_NAME, LEVELS } from "./config.js";
 import * as store from "./store.js";
 import { sceneHTML } from "./scenes.js";
 import { initSyllables, closePopup } from "./syllables.js";
 import { cleanName, PRONOUN_LABELS } from "./personalise.js";
 import { applySettings, openSettings } from "./settings.js";
+import { profileChip } from "./profiles.js";
+import { showParent } from "./parent.js";
+import * as track from "./stats.js";
 import { askConfirm } from "./confirm.js";
 import { renderReader, renderEnding } from "./reader.js";
 import * as tts from "./tts.js";
@@ -57,14 +60,33 @@ function showLibrary() {
 					h("h1", {}, APP_NAME),
 				),
 				h(
-					"button",
-					{
-						type: "button",
-						class: "icon-btn",
-						"aria-label": "Settings",
-						onclick: openSettings,
-					},
-					"⚙︎",
+					"div",
+					{ class: "lib-tools" },
+					profileChip(() => {
+						applySettings();
+						showLibrary();
+					}),
+					h(
+						"button",
+						{
+							type: "button",
+							class: "icon-btn",
+							"aria-label": "Grown-ups reading report",
+							title: "Reading report (grown-ups)",
+							onclick: () => nav("#/parent"),
+						},
+						"📊",
+					),
+					h(
+						"button",
+						{
+							type: "button",
+							class: "icon-btn",
+							"aria-label": "Settings",
+							onclick: openSettings,
+						},
+						"⚙︎",
+					),
 				),
 			),
 			h(
@@ -174,7 +196,22 @@ function card(book) {
 			"div",
 			{ class: "card-body" },
 			h("p", { class: "tagline" }, book.tagline || ""),
-			h("p", { class: "meta" }, `Ages ${book.ages || ""} · ${n} chapters`),
+			h(
+				"p",
+				{ class: "meta" },
+				`Ages ${book.ages || ""}`,
+				book.level
+					? [
+							" · ",
+							h(
+								"span",
+								{ class: "lvl", title: (LEVELS[book.level] || {}).blurb || "" },
+								`Level ${book.level}`,
+							),
+						]
+					: null,
+				` · ${n} chapters`,
+			),
 			h("p", { class: "status" }, status),
 			h("div", { class: "card-btns" }, buttons),
 		),
@@ -373,11 +410,13 @@ function showSetup(book) {
 // ---------- Router ----------
 
 function route() {
+	track.end();
 	tts.cancel();
 	closePopup();
 	window.scrollTo(0, 0);
 	const seg = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
 	if (seg[0] === "rewards") return showRewardsPage(root, nav, books);
+	if (seg[0] === "parent") return showParent(root, nav, books);
 	if (seg[0] !== "b") return showLibrary();
 	const book = books.get(seg[1]);
 	if (!book || book.soon) {

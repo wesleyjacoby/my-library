@@ -3,29 +3,36 @@
 //   node tools/check-book.mjs books/gull-rock/book.json
 // Reports: structure problems, syllable entries whose letters don't match the word,
 // and longer words (7+ letters) that have no syllable entry yet.
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync } from "node:fs";
 
 const file = process.argv[2];
-if (!file) { console.error('Usage: node tools/check-book.mjs path/to/book.json'); process.exit(1); }
-const book = JSON.parse(readFileSync(file, 'utf8'));
+if (!file) {
+	console.error("Usage: node tools/check-book.mjs path/to/book.json");
+	process.exit(1);
+}
+const book = JSON.parse(readFileSync(file, "utf8"));
 const problems = [];
-const sharedPath = new URL('../data/syllables.json', import.meta.url);
-const shared = existsSync(sharedPath) ? JSON.parse(readFileSync(sharedPath, 'utf8')) : {};
+const sharedPath = new URL("../data/syllables.json", import.meta.url);
+const shared = existsSync(sharedPath)
+	? JSON.parse(readFileSync(sharedPath, "utf8"))
+	: {};
 const dict = { ...shared, ...(book.syllables || {}) };
 
 // Rough syllable estimate, only used to decide which words to ask you to check.
 function estimate(word) {
-  let w = word.toLowerCase();
-  if (w.length <= 3) return 1;
-  w = w.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '').replace(/^y/, '');
-  const m = w.match(/[aeiouy]{1,2}/g);
-  return m ? m.length : 1;
+	let w = word.toLowerCase();
+	if (w.length <= 3) return 1;
+	w = w.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, "").replace(/^y/, "");
+	const m = w.match(/[aeiouy]{1,2}/g);
+	return m ? m.length : 1;
 }
 
 // --- syllable dictionary sanity (shared file and this book) ---
 for (const [word, hy] of Object.entries(dict)) {
-  if (hy.replace(/-/g, '') !== word) problems.push(`syllables: "${word}" -> "${hy}" does not spell the word`);
-  if (word !== word.toLowerCase()) problems.push(`syllables: key "${word}" must be lower case`);
+	if (hy.replace(/-/g, "") !== word)
+		problems.push(`syllables: "${word}" -> "${hy}" does not spell the word`);
+	if (word !== word.toLowerCase())
+		problems.push(`syllables: key "${word}" must be lower case`);
 }
 
 // --- collect prose ---
@@ -36,70 +43,192 @@ const choiceIds = new Set();
 const traits = new Set(book.traits || []);
 
 function walk(blocks, where) {
-  for (const b of blocks || []) {
-    if (typeof b === 'string') { prose.push(b); continue; }
-    if (b.p) prose.push(b.p);
-    if (b.when) checkCond(b.when, where);
-    if (b.blocks) walk(b.blocks, where);
-    if (b.choice) {
-      const c = b.choice;
-      if (!c.id) problems.push(`${where}: choice without id`);
-      if (choiceIds.has(c.id)) problems.push(`${where}: duplicate choice id "${c.id}"`);
-      choiceIds.add(c.id);
-      prose.push(c.prompt || '');
-      const seen = new Set();
-      for (const o of c.options || []) {
-        if (!o.id) problems.push(`${where}: option without id in "${c.id}"`);
-        if (seen.has(o.id)) problems.push(`${where}: duplicate option id "${o.id}" in "${c.id}"`);
-        seen.add(o.id);
-        optIds.add(`${c.id}:${o.id}`);
-        prose.push(o.label || '');
-        for (const t of Object.keys(o.score || {})) if (!traits.has(t)) problems.push(`${where}: score uses unknown trait "${t}"`);
-        walk(o.blocks || (typeof o.text === 'string' ? [o.text] : o.text), where);
-      }
-    }
-  }
+	for (const b of blocks || []) {
+		if (typeof b === "string") {
+			prose.push(b);
+			continue;
+		}
+		if (b.p) prose.push(b.p);
+		if (b.when) checkCond(b.when, where);
+		if (b.blocks) walk(b.blocks, where);
+		if (b.choice) {
+			const c = b.choice;
+			if (!c.id) problems.push(`${where}: choice without id`);
+			if (choiceIds.has(c.id))
+				problems.push(`${where}: duplicate choice id "${c.id}"`);
+			choiceIds.add(c.id);
+			prose.push(c.prompt || "");
+			const seen = new Set();
+			for (const o of c.options || []) {
+				if (!o.id) problems.push(`${where}: option without id in "${c.id}"`);
+				if (seen.has(o.id))
+					problems.push(`${where}: duplicate option id "${o.id}" in "${c.id}"`);
+				seen.add(o.id);
+				optIds.add(`${c.id}:${o.id}`);
+				prose.push(o.label || "");
+				for (const t of Object.keys(o.score || {}))
+					if (!traits.has(t))
+						problems.push(`${where}: score uses unknown trait "${t}"`);
+				walk(
+					o.blocks || (typeof o.text === "string" ? [o.text] : o.text),
+					where,
+				);
+			}
+		}
+	}
 }
 
 const condsToCheck = [];
-function checkCond(c, where) { condsToCheck.push([c, where]); }
+function checkCond(c, where) {
+	condsToCheck.push([c, where]);
+}
 
 (book.chapters || []).forEach((ch, i) => walk(ch.blocks, `chapter ${i + 1}`));
-(book.endings || []).forEach((e) => { if (e.when) checkCond(e.when, `ending ${e.id}`); walk(e.blocks, `ending ${e.id}`); });
+(book.chapters || []).forEach((ch, i) => {
+	const texts = [];
+	const collect = (blocks) =>
+		(blocks || []).forEach((b) => {
+			if (typeof b === "string") texts.push(b);
+			else if (b) {
+				if (b.p) texts.push(b.p);
+				if (b.blocks) collect(b.blocks);
+				if (b.choice) b.choice.options.forEach((o) => collect(o.blocks));
+			}
+		});
+	collect(ch.blocks);
+	(ch.questions || []).forEach((q, n) => {
+		const where = `chapter ${i + 1} question ${n + 1}`;
+		if (!Array.isArray(q.options) || q.options.length < 2)
+			problems.push(`${where}: needs at least 2 options`);
+		else if (
+			!Number.isInteger(q.answer) ||
+			q.answer < 0 ||
+			q.answer >= q.options.length
+		)
+			problems.push(`${where}: answer index is not an option`);
+		if (!q.find || !texts.some((t) => t.includes(q.find)))
+			problems.push(`${where}: "find" text is not in the chapter`);
+	});
+});
+(book.endings || []).forEach((e) => {
+	if (e.when) checkCond(e.when, `ending ${e.id}`);
+	walk(e.blocks, `ending ${e.id}`);
+});
 
 function validateCond(c, where) {
-  if (c.all) c.all.forEach((x) => validateCond(x, where));
-  if (c.any) c.any.forEach((x) => validateCond(x, where));
-  if (c.not) validateCond(c.not, where);
-  if (c.pick !== undefined) {
-    if (!choiceIds.has(c.pick)) problems.push(`${where}: condition refers to unknown choice "${c.pick}"`);
-    for (const k of ['is', 'isNot']) if (c[k] !== undefined && !optIds.has(`${c.pick}:${c[k]}`)) problems.push(`${where}: condition refers to unknown option "${c.pick}:${c[k]}"`);
-  }
-  for (const k of ['score', 'top']) if (c[k] && !traits.has(c[k])) problems.push(`${where}: condition uses unknown trait "${c[k]}"`);
+	if (c.all) c.all.forEach((x) => validateCond(x, where));
+	if (c.any) c.any.forEach((x) => validateCond(x, where));
+	if (c.not) validateCond(c.not, where);
+	if (c.pick !== undefined) {
+		if (!choiceIds.has(c.pick))
+			problems.push(`${where}: condition refers to unknown choice "${c.pick}"`);
+		for (const k of ["is", "isNot"])
+			if (c[k] !== undefined && !optIds.has(`${c.pick}:${c[k]}`))
+				problems.push(
+					`${where}: condition refers to unknown option "${c.pick}:${c[k]}"`,
+				);
+	}
+	for (const k of ["score", "top"])
+		if (c[k] && !traits.has(c[k]))
+			problems.push(`${where}: condition uses unknown trait "${c[k]}"`);
 }
 condsToCheck.forEach(([c, w]) => validateCond(c, w));
 
 // --- tokens ---
-const text = prose.join('\n');
+const text = prose.join("\n");
 for (const m of text.matchAll(/\{(\w+)(?:’s|'s)?(?:\.(\w+))?\}/g)) {
-  if (!slotKeys.has(m[1])) problems.push(`unknown character slot in token ${m[0]}`);
-  if (m[2] && !['he', 'him', 'his', 'hers', 'self', 'is', 'has', 'was', 'does', 's'].includes(m[2].toLowerCase())) problems.push(`unknown pronoun token ${m[0]}`);
+	if (!slotKeys.has(m[1]))
+		problems.push(`unknown character slot in token ${m[0]}`);
+	if (
+		m[2] &&
+		![
+			"he",
+			"him",
+			"his",
+			"hers",
+			"self",
+			"is",
+			"has",
+			"was",
+			"does",
+			"s",
+		].includes(m[2].toLowerCase())
+	)
+		problems.push(`unknown pronoun token ${m[0]}`);
 }
-for (const m of text.matchAll(/\[\[(\w+):/g)) if (!slotKeys.has(m[1])) problems.push(`unknown slot in switch ${m[0]}...`);
-if (/[—–]/.test(text)) problems.push('prose contains a dash character (— or –)');
+for (const m of text.matchAll(/\[\[(\w+):/g))
+	if (!slotKeys.has(m[1])) problems.push(`unknown slot in switch ${m[0]}...`);
+if (/[—–]/.test(text))
+	problems.push("prose contains a dash character (— or –)");
 
 // --- missing syllable entries ---
 const clean = text
-  .replace(/\[\[\w+:([^\]]+)\]\]/g, (m, o) => o.split('|').map((p) => p.slice(p.indexOf('=') + 1)).join(' '))
-  .replace(/\{[^}]+\}/g, ' ');
-const words = new Set((clean.match(/[A-Za-z]{4,}/g) || []).map((w) => w.toLowerCase()));
-const missing = [...words].filter((w) => !(w in dict) && estimate(w) >= 2).sort();
+	.replace(/\[\[\w+:([^\]]+)\]\]/g, (m, o) =>
+		o
+			.split("|")
+			.map((p) => p.slice(p.indexOf("=") + 1))
+			.join(" "),
+	)
+	.replace(/\{[^}]+\}/g, " ");
+const words = new Set(
+	(clean.match(/[A-Za-z]{4,}/g) || []).map((w) => w.toLowerCase()),
+);
+const missing = [...words]
+	.filter((w) => !(w in dict) && estimate(w) >= 2)
+	.sort();
 
-if (problems.length) { console.log('PROBLEMS:'); problems.forEach((p) => console.log('  - ' + p)); }
-else console.log('Structure OK.');
+// --- readability (Flesch-Kincaid grade, a rough guide only) ---
+// Level thresholds: 1 = grade up to 1.3, 2 = up to 3.0, 3 = above (calibrated so the two 8+ books are level 2). Dialogue-heavy chapter books score low
+// because the sentences are short, so judge the level by the grade AND by reading the text aloud.
+const plainText = prose
+	.join(" ")
+	.replace(/\[\[\w+:([^\]|]+)[^\]]*\]\]/g, (m, o) =>
+		o.slice(o.indexOf("=") + 1),
+	)
+	.replace(/\{\w+(?:’s|'s)?\.(?:he|she|they)\}/g, "he")
+	.replace(/\{\w+(?:’s|'s)?\.[a-z]+\}/g, "him")
+	.replace(/\{[^}]+\}/g, "Sam");
+const sentences = plainText
+	.split(/(?<=[.!?])["”’']*\s+/)
+	.filter((s) => /[A-Za-z]/.test(s));
+const rwords = plainText.match(/[A-Za-z]+(?:[’'][A-Za-z]+)*/g) || [];
+const sylOf = (w) => {
+	const k = w.toLowerCase();
+	return k in dict && dict[k].includes("-")
+		? dict[k].split("-").length
+		: estimate(k.replace(/[’'].*$/, ""));
+};
+const syls = rwords.map(sylOf);
+const wps = rwords.length / Math.max(1, sentences.length);
+const spw = syls.reduce((a, b) => a + b, 0) / Math.max(1, rwords.length);
+const long = syls.filter((s) => s >= 3).length / Math.max(1, rwords.length);
+const grade = 0.39 * wps + 11.8 * spw - 15.59;
+const suggested = grade <= 1.3 ? 1 : grade <= 3.0 ? 2 : 3;
+console.log(
+	`Readability: grade ${grade.toFixed(1)} (${wps.toFixed(1)} words per sentence, ${spw.toFixed(2)} syllables per word, ${(long * 100).toFixed(0)}% words with 3+ syllables). Suggested level ${suggested}.`,
+);
+if (book.level === undefined)
+	console.log(
+		`  No "level" in the book yet. Add  "level": ${suggested}  to book.json.`,
+	);
+else if (book.level !== suggested)
+	console.log(
+		`  Note: the book says level ${book.level} but the text scores like level ${suggested}. Check the text, or change "level".`,
+	);
+else console.log(`  Matches the book's level (${book.level}).`);
+console.log("");
+
+if (problems.length) {
+	console.log("PROBLEMS:");
+	problems.forEach((p) => console.log("  - " + p));
+} else console.log("Structure OK.");
 if (missing.length) {
-  console.log('\nWords that look like 2+ syllables but have no entry. Add each to data/syllables.json (shared) or the book\'s "syllables".');
-  console.log('If one is really a single syllable, add it with no hyphen (e.g. "through": "through") so it is not flagged again:');
-  console.log('  ' + missing.join(', '));
-} else console.log('All multi-syllable words have entries.');
+	console.log(
+		'\nWords that look like 2+ syllables but have no entry. Add each to data/syllables.json (shared) or the book\'s "syllables".',
+	);
+	console.log(
+		'If one is really a single syllable, add it with no hyphen (e.g. "through": "through") so it is not flagged again:',
+	);
+	console.log("  " + missing.join(", "));
+} else console.log("All multi-syllable words have entries.");
 process.exit(problems.length ? 1 : 0);

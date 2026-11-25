@@ -44,3 +44,12 @@ The owner wants prose that does not sound AI-written: **no em dashes**, avoid "l
 - Prizes are star-total milestones (`{id,name,stars,given}`), set on the PIN-protected grown-ups sheet (Settings > Prizes & PIN, or the lock on the rewards page). PIN is a SHA-256 hash stored on the device; "Forgot the PIN?" erases everything.
 - One postcard per finished book (cover scene + hero name + date). Reading days feed the "This week" row.
 - Cache is `my-library-v10`.
+
+## Book 2, profiles and the grown-ups report
+- Books: `gull-rock` and `smugglers-tunnel` ("The Smugglers' Tunnel", Saltwick, 8 chapters). Both have `"level": 2`. Each book uses its own scene elements; keep new books visually distinct from earlier ones. Scene kit order lives in `js/scenes.js`.
+- Prose rules for new books: no em dashes, no "like the way" similes, and keep similes simple, concrete and realistic (things a 10-year-old can picture straight away, e.g. "as black as coal", never abstract or poetic ones).
+- Storage is `mylib.v2`: `{ profiles, order, current, pin }`. `js/store.js` keeps the same function names (`getBook`, `getSettings`, ...) but they act on the current reader. Never read `localStorage` directly in new code.
+- Reading stats (`js/stats.js`, per profile): sessions per chapter, tapped words, quiz tries. `js/insights.js` holds the pure maths (tested by `node` directly). `js/parent.js` is the report page, `js/profiles.js` the reader switcher.
+- Text wrapping: `glue()` in `js/syllables.js` keeps punctuation attached to its word.
+- `tools/check-book.mjs` now also prints a readability score (Flesch-Kincaid) and a suggested level.
+- Cache is `my-library-v23`.

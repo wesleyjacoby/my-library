@@ -158,7 +158,7 @@ export function maxStars(books) {
 		);
 }
 
-// ---- grown-ups PIN ----
+// ---- grown-ups PIN (one PIN for the whole device, kept in the store) ----
 async function hash(pin) {
 	const data = new TextEncoder().encode(`mylib|${pin}`);
 	if (globalThis.crypto && crypto.subtle) {
@@ -169,11 +169,10 @@ async function hash(pin) {
 	}
 	return `p:${pin}`;
 }
-export const hasPin = () => !!R().pin;
+export const hasPin = () => !!store.getPinHash();
 export async function setPin(pin) {
-	R().pin = await hash(pin);
-	save();
+	store.setPinHash(await hash(pin));
 }
 export async function checkPin(pin) {
-	return R().pin === (await hash(pin));
+	return store.getPinHash() === (await hash(pin));
 }

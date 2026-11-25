@@ -26,6 +26,7 @@ Test locally with `python3 -m http.server` and open `http://localhost:8000`.
 
 ## Book format (see `books/gull-rock/book.json`)
 
+- `level`: reading level 1, 2 or 3 (see `LEVELS` in `js/config.js`), shown on the book card and in the grown-ups report. `node tools/check-book.mjs` prints a readability score and a suggested level. Both current books are level 2. Level is about reading difficulty; `ages` is about interest.
 - `cast`: the characters the reader fills in. Each has a `key`, `label`, `default`, optional `altDefault` (used if the default clashes with another name), `pronouns` options, and optional `variants` (e.g. dog or cat).
 - `traits`: hidden scores, e.g. `["brave", "kind", "clever"]`.
 - `syllables`: `"lighthouse": "light-house"`. Only listed words get a tap-for-syllables pop-up, and names never do. Common words live in `data/syllables.json` (shared by every book); a book's own list adds to or overrides it. Every 2+ syllable word is tappable and only 3+ syllable words get the dotted underline. List one-syllable words without a hyphen (`"through": "through"`) so the checker stops flagging them.
@@ -56,5 +57,7 @@ New elements go in `js/scenes.js` (a draw function) and `css/styles.css` (an ani
 
 ## Notes
 
-- Progress, names and settings are stored in the browser on that device only. Clearing Safari website data erases them.
+- Progress, names and settings are stored in the browser on that device only (`localStorage` key `mylib.v2`). Clearing Safari website data erases them. The grown-ups report has "Save backup" and "Restore backup" for this.
+- **Readers (profiles):** each reader has their own progress, stars, prizes, names, settings and reading stats. The grown-ups PIN is shared by the device. Adding, editing and deleting readers needs the PIN. The old single-reader save (`mylib.v1`) is migrated into the first profile ("Reader") automatically and left in place as a backup.
+- **Grown-ups report** (`#/parent`, the 📊 button, behind the PIN): time read, streak, a reading speed estimate, quick-check accuracy, words to practise, and a copyable summary. Reading speed is words divided by active reading time. Time is paused while a story choice is waiting and while she is idle (2 minutes), and chapters that were heard read-aloud, re-read, or flicked through are left out. Reading ends when she answers the first quick-check question or turns the page.
 - Read-aloud and the pop-up's "Say it" use the device's built-in voices, so they work offline. Quality varies a lot: on an iPad, download an Enhanced or Premium English voice under Settings > Accessibility > Spoken Content > Voices, then pick it in the app's Settings.

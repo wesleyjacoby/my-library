@@ -4,6 +4,7 @@ import { h } from "./dom.js";
 import * as store from "./store.js";
 import { compile, plain } from "./personalise.js";
 import { toFragment, glue } from "./syllables.js";
+import * as track from "./stats.js";
 
 function lookBack(article, find, card) {
 	const els = [...article.querySelectorAll(".sn")].filter(
@@ -67,12 +68,14 @@ export function quizCard(book, chapter, article, onDone) {
 		);
 		buttons.forEach((b, i) =>
 			b.addEventListener("click", () => {
+				track.readingDone();
 				if (i === q.answer) {
 					b.classList.add("right");
 					buttons.forEach((x) => {
 						x.disabled = true;
 					});
 					if (wrong === 0) firstTry += 1;
+					track.quiz(q.id, wrong);
 					msg.textContent =
 						wrong === 0
 							? "Yes! Spot on."
