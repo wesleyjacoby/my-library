@@ -134,12 +134,12 @@ async function copyText(text) {
 
 // On an iPad the share sheet is the reliable way to save a file (Save to Files, AirDrop, Mail). Falls back to a download.
 async function saveBackup() {
-	const name = `my-library-backup-${I.dayKey(new Date())}.json`;
+	const name = `plotling-backup-${I.dayKey(new Date())}.json`;
 	const text = JSON.stringify(store.exportAll(), null, 2);
 	try {
 		const file = new File([text], name, { type: "application/json" });
 		if (navigator.canShare && navigator.canShare({ files: [file] })) {
-			await navigator.share({ files: [file], title: "My Library backup" });
+			await navigator.share({ files: [file], title: "Plotling backup" });
 			return;
 		}
 	} catch (e) {

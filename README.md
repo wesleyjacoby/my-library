@@ -1,4 +1,6 @@
-# My Library
+# Plotling
+
+(Formerly "My Library". The repo folder, storage key and backup id keep the old name on purpose, see CLAUDE.md.)
 
 Interactive chapter books where the reader is the hero. A static PWA: no build step, no server, works offline on an iPad.
 

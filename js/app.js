@@ -1,5 +1,6 @@
 import { h } from "./dom.js";
 import { APP_NAME, LEVELS } from "./config.js";
+import { logo } from "./logo.js";
 import * as store from "./store.js";
 import { sceneHTML } from "./scenes.js";
 import { initSyllables, closePopup } from "./syllables.js";
@@ -59,7 +60,7 @@ function showLibrary() {
 				h(
 					"div",
 					{ class: "lib-title" },
-					h("span", { class: "logo", "aria-hidden": "true" }, "🌙"),
+					h("span", { class: "logo", "aria-hidden": "true" }, logo()),
 					h("h1", {}, APP_NAME),
 				),
 				h(

@@ -1,6 +1,6 @@
 // Change APP_NAME to rename the app inside the interface.
 // (The home-screen name comes from manifest.webmanifest and index.html.)
-export const APP_NAME = "My Library";
+export const APP_NAME = "Plotling";
 export const STORAGE_KEY = "mylib.v2";
 export const LEGACY_KEY = "mylib.v1"; // the old single-reader save, migrated into the first profile
 

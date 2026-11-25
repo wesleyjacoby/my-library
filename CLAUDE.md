@@ -1,4 +1,4 @@
-# My Library: project notes for Claude Code
+# Plotling (formerly My Library): project notes for Claude Code
 
 This file carries over the decisions from the planning chat on claude.ai, so a fresh Claude Code session starts with the same context.
 
@@ -71,3 +71,9 @@ The owner wants prose that does not sound AI-written: **no em dashes**, avoid "l
 - Chapters 2 and up show a "Recap" button at the right of the chapter heading. It opens a sheet with the chapter's `"recap"` array (same block format as `blocks`, so `{when:{pick,is}, p}` and `{hero}` tokens work). Chapter 1 has none. Code: `openRecap` in js/reader.js. Words in it are tappable; reading time pauses while it is open (only if it was running); "Read it to me" reads it aloud; Escape, backdrop tap or "Back to the story" close it.
 - Writing rules: at most 130 words on any path, past tense, no em dashes, no hints at what comes next. Only branch on picks made in EARLIER chapters (a pick from the current chapter would spoil it). Cover who, where, what they are trying to do, and what changed since the last chapter.
 - `node tools/check-book.mjs` validates all of this and fails on a recap in chapter 1, a spoiler pick, a dash or an over-long path.
+
+## Name and icon (v39)
+- The app is called **Plotling** (`APP_NAME` in js/config.js, plus index.html title, manifest name and short name). Trademark and store checks for the name were clear at the time of choosing; planned domains are plotlingstories.com and plotling.co.za.
+- Do NOT rename these internals, because that would erase saved progress or break old backups: the storage keys `mylib.v2` / `mylib.v1`, the backup file's `app: 'my-library'` id (js/store.js, js/parent.js), the repo name `my-library` and the GitHub Pages URL, and the `my-library-vNN` cache prefix in sw.js. The installed iPad app is tied to the page URL, so moving to a new address later needs a backup and restore first (Grown-ups > Save backup, then Restore on the new address).
+- Icon: a green sprout that forks in two (the story choices) growing out of an open book, on the navy night gradient. Files: icons/icon-192.png, icon-512.png, icon-maskable-512.png (mark at 66% for the safe zone) and apple-touch-icon.png (180). The same mark is drawn in js/logo.js for the library header. iOS reads the Home Screen icon and title when the app is added, so the iPad needs the app removed and re-added to show the new icon and name (back up first).
+- Cache is `my-library-v39`.
