@@ -131,6 +131,22 @@ async function copyText(text) {
 	return ok;
 }
 
+// On an iPad the share sheet is the reliable way to save a file (Save to Files, AirDrop, Mail). Falls back to a download.
+async function saveBackup() {
+	const name = `my-library-backup-${I.dayKey(new Date())}.json`;
+	const text = JSON.stringify(store.exportAll(), null, 2);
+	try {
+		const file = new File([text], name, { type: "application/json" });
+		if (navigator.canShare && navigator.canShare({ files: [file] })) {
+			await navigator.share({ files: [file], title: "My Library backup" });
+			return;
+		}
+	} catch (e) {
+		if (e && e.name === "AbortError") return;
+	}
+	download(name, text);
+}
+
 function download(name, text) {
 	const url = URL.createObjectURL(
 		new Blob([text], { type: "application/json" }),
@@ -513,15 +529,7 @@ export async function showParent(root, nav, books) {
 				copyBtn,
 				h(
 					"button",
-					{
-						type: "button",
-						class: "btn small",
-						onclick: () =>
-							download(
-								`my-library-backup-${I.dayKey(new Date())}.json`,
-								JSON.stringify(store.exportAll(), null, 2),
-							),
-					},
+					{ type: "button", class: "btn small", onclick: saveBackup },
 					"Save backup",
 				),
 				h(

@@ -2249,24 +2249,6 @@ html[data-anim="on"] .rw-star {
 	}
 }
 
-/* ---------- iPad status bar: a solid cap so scrolled text never shows (or blurs) under the clock ---------- */
-body::before {
-	content: "";
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: env(safe-area-inset-top);
-	background: var(--navy);
-	z-index: 30;
-	pointer-events: none;
-}
-@media print {
-	body::before {
-		display: none;
-	}
-}
-
 /* ---------- line icons ---------- */
 .ico {
 	width: 24px;
