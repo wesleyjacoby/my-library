@@ -52,4 +52,4 @@ The owner wants prose that does not sound AI-written: **no em dashes**, avoid "l
 - Reading stats (`js/stats.js`, per profile): sessions per chapter, tapped words, quiz tries. `js/insights.js` holds the pure maths (tested by `node` directly). `js/parent.js` is the report page, `js/profiles.js` the reader switcher.
 - Text wrapping: `glue()` in `js/syllables.js` keeps punctuation attached to its word.
 - `tools/check-book.mjs` now also prints a readability score (Flesch-Kincaid) and a suggested level.
-- Cache is `my-library-v23`.
+- Cache is `my-library-v24`.

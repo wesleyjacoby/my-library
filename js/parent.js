@@ -141,6 +141,45 @@ function download(name, text) {
 	setTimeout(() => URL.revokeObjectURL(url), 5000);
 }
 
+// ---------- printable word cards ----------
+// Builds a hidden print-only sheet and opens the print dialog (AirPrint on an iPad). Cards have dashed
+// edges so they can be cut out and stuck on the fridge. The sheet stays hidden on screen.
+function printWords(words, prof, books) {
+	const dict = {};
+	for (const b of books.values()) Object.assign(dict, b.syllables || {});
+	document.getElementById("print-sheet")?.remove();
+	const cards = words.map((w) => {
+		const hy =
+			dict[w] && dict[w].includes("-") ? dict[w].split("-").join(" · ") : "";
+		return h(
+			"div",
+			{ class: "ps-card" },
+			h("div", { class: "ps-word" }, w),
+			hy ? h("div", { class: "ps-syl" }, hy) : null,
+			h("div", { class: "ps-tick" }, "☐ I can read it   ☐ I can use it"),
+		);
+	});
+	const sheet = h(
+		"div",
+		{ id: "print-sheet" },
+		h("h1", {}, "Words to practise"),
+		h(
+			"p",
+			{ class: "ps-sub" },
+			`${prof.name} · ${new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}`,
+		),
+		h(
+			"p",
+			{ class: "ps-tip" },
+			"Say the word, tap out the parts, then use it in a sentence. Tick the boxes when it feels easy.",
+		),
+		h("div", { class: "ps-grid" }, cards),
+		h("p", { class: "ps-foot" }, APP_NAME),
+	);
+	document.body.append(sheet);
+	window.print();
+}
+
 // ---------- the page ----------
 
 export async function showParent(root, nav, books) {
@@ -150,6 +189,7 @@ export async function showParent(root, nav, books) {
 	}
 	document.title = `Reading report · ${APP_NAME}`;
 	let viewId = store.currentId();
+	const off = new Set(); // practice words left off the printed list
 
 	const card = (title, ...kids) =>
 		h("section", { class: "rw-card pv-card" }, h("h2", {}, title), ...kids);
@@ -193,6 +233,7 @@ export async function showParent(root, nav, books) {
 									"aria-checked": String(p.id === prof.id),
 									onclick: () => {
 										viewId = p.id;
+										off.clear();
 										render();
 									},
 								},
@@ -313,7 +354,16 @@ export async function showParent(root, nav, books) {
 					),
 		);
 
-		const words = I.practiceWords(s, 14);
+		const words = I.practiceWords(s, 16);
+		const printBtn = h("button", { type: "button", class: "btn small" });
+		const chosen = () => words.map((w) => w.word).filter((w) => !off.has(w));
+		const syncPrint = () => {
+			const n = chosen().length;
+			printBtn.textContent = `🖨 Print word cards (${n})`;
+			printBtn.disabled = !n;
+		};
+		printBtn.addEventListener("click", () => printWords(chosen(), prof, books));
+		syncPrint();
 		const wordsCard = card(
 			"Words to practise",
 			words.length
@@ -324,11 +374,28 @@ export async function showParent(root, nav, books) {
 							h(
 								"li",
 								{},
-								h("strong", {}, w.word),
 								h(
-									"small",
-									{},
-									`${w.n} tap${w.n === 1 ? "" : "s"}${w.said ? ` · heard ${w.said}×` : ""}`,
+									"button",
+									{
+										type: "button",
+										class: `pv-word${off.has(w.word) ? " off" : ""}`,
+										"aria-pressed": String(!off.has(w.word)),
+										title: "Tap to leave this word off the printed list",
+										onclick: (e) => {
+											const on = off.has(w.word);
+											if (on) off.delete(w.word);
+											else off.add(w.word);
+											e.currentTarget.classList.toggle("off", !on);
+											e.currentTarget.setAttribute("aria-pressed", String(on));
+											syncPrint();
+										},
+									},
+									h("strong", {}, w.word),
+									h(
+										"small",
+										{},
+										`${w.n} tap${w.n === 1 ? "" : "s"}${w.said ? ` · heard ${w.said}×` : ""}`,
+									),
 								),
 							),
 						),
@@ -338,10 +405,11 @@ export async function showParent(root, nav, books) {
 						{ class: "fine" },
 						"Words she taps for help will collect here.",
 					),
+			words.length ? h("div", { class: "pv-actions" }, printBtn) : null,
 			h(
 				"p",
 				{ class: "fine" },
-				"The words tapped most, with hearing a word counted extra. Good ones to say together or put on a card.",
+				"The words tapped most, with hearing a word counted extra. Tap a word to leave it off the printed cards, which are made to cut out and stick on the fridge.",
 			),
 		);
 

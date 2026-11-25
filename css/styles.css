@@ -2109,13 +2109,26 @@ html[data-anim="on"] .rw-star {
 	padding: 0;
 	list-style: none;
 }
-.pv-words li {
+.pv-word {
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
 	padding: 0.4rem 0.8rem;
 	border-radius: 14px;
 	background: var(--bg);
-	border: 1px solid var(--line);
+	border: 2px solid var(--accent);
+	color: var(--ink);
+	font-family: var(--ui);
+	text-align: left;
+	cursor: pointer;
+	touch-action: manipulation;
+}
+.pv-word.off {
+	border-color: var(--line);
+	opacity: 0.5;
+}
+.pv-word.off strong {
+	text-decoration: line-through;
 }
 .pv-words strong {
 	font: 800 1.1rem var(--serif);
@@ -2143,7 +2156,88 @@ html[data-anim="on"] .rw-star {
 	flex-wrap: wrap;
 	gap: 0.6rem;
 }
+.pv-card .fine + .pv-actions,
+.pv-card .pv-words + .pv-actions {
+	margin-top: 1.2rem;
+}
+.pv-card .pv-words + .pv-actions {
+	margin-top: 1rem;
+}
+.pv-card .btn:disabled {
+	opacity: 0.5;
+	cursor: default;
+}
 .pv-bar i {
 	background: var(--accent);
 	box-shadow: none;
+}
+
+/* ---------- printable word cards (only shown when printing) ---------- */
+#print-sheet {
+	display: none;
+}
+@page {
+	margin: 14mm;
+}
+@media print {
+	html,
+	body {
+		background: #fff !important;
+	}
+	body > *:not(#print-sheet) {
+		display: none !important;
+	}
+	#print-sheet {
+		display: block;
+		color: #000;
+		font-family: "Andika", system-ui, sans-serif;
+	}
+	#print-sheet h1 {
+		margin: 0 0 2mm;
+		font-size: 26pt;
+	}
+	.ps-sub {
+		margin: 0 0 3mm;
+		font-size: 12pt;
+		color: #444;
+	}
+	.ps-tip {
+		margin: 0 0 6mm;
+		font-size: 11pt;
+	}
+	.ps-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 5mm;
+	}
+	.ps-card {
+		break-inside: avoid;
+		border: 0.5mm dashed #666;
+		border-radius: 4mm;
+		padding: 6mm 5mm 4mm;
+		text-align: center;
+	}
+	.ps-word {
+		font-size: 34pt;
+		font-weight: 700;
+		line-height: 1.1;
+		overflow-wrap: anywhere;
+	}
+	.ps-syl {
+		margin-top: 2mm;
+		font-size: 15pt;
+		color: #444;
+		letter-spacing: 0.03em;
+	}
+	.ps-tick {
+		margin-top: 4mm;
+		font-size: 9pt;
+		color: #555;
+	}
+	.ps-foot {
+		margin: 8mm 0 0;
+		font-size: 9pt;
+		color: #777;
+		text-align: center;
+	}
 }
