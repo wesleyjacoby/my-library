@@ -119,6 +119,15 @@ export function practiceWords(stats, limit = 12) {
 		.slice(0, limit);
 }
 
+// Words whose meaning she opened, most often first: [{word, d}]
+export function meaningWords(stats, limit = 12) {
+	return Object.entries(stats.taps || {})
+		.filter(([, e]) => e.d > 0)
+		.map(([word, e]) => ({ word, d: e.d }))
+		.sort((a, b) => b.d - a.d || a.word.localeCompare(b.word))
+		.slice(0, limit);
+}
+
 // Questions that took more than one go, worst first: [{b, c, q, tries, count}]
 export function trickyQuestions(stats, limit = 5) {
 	const m = new Map();

@@ -4,6 +4,14 @@ import { h } from "./dom.js";
 import * as tts from "./tts.js";
 import * as store from "./store.js";
 import * as track from "./stats.js";
+import { lookup, spoken } from "./glossary.js";
+import { artSvg } from "./wordart.js";
+
+// The open book's word meanings (set by the reader), so tapped words can show them.
+let glossIndex = null;
+export function setGlossary(index) {
+	glossIndex = index || null;
+}
 
 export function pieces(word, hyph) {
 	const segs = hyph.split("-");
@@ -50,7 +58,7 @@ export function glue(root) {
 	return root;
 }
 
-export function toFragment(parts, dict) {
+export function toFragment(parts, dict, gloss) {
 	const frag = document.createDocumentFragment();
 	let q = false; // inside speech
 	const dl = (cls) => (q ? `${cls} dlg` : cls);
@@ -60,12 +68,13 @@ export function toFragment(parts, dict) {
 		const ps = pieces(w, hy);
 		return ps.length > 1 ? ps : null;
 	};
+	const gl = (w) => (lookup(gloss, w) ? " gl" : ""); // words with a meaning get an underline
 	const sylNode = (w, ps) =>
 		frag.append(
 			h(
 				"button",
 				{
-					class: dl(ps.length >= 3 ? "syl ul" : "syl"),
+					class: dl((ps.length >= 3 ? "syl ul" : "syl") + gl(w)),
 					type: "button",
 					"data-w": w,
 					"data-s": ps.join("-"),
@@ -74,7 +83,7 @@ export function toFragment(parts, dict) {
 			),
 		);
 	const plainWord = (w) =>
-		frag.append(h("span", { class: dl("wd"), "data-w": w }, w));
+		frag.append(h("span", { class: dl("wd" + gl(w)), "data-w": w }, w));
 
 	const word = (bit) => {
 		if (/[’']/.test(bit)) {
@@ -140,11 +149,23 @@ function ensure() {
 		"div",
 		{ id: "popup", role: "dialog", "aria-label": "Word helper", hidden: true },
 		h("div", { class: "pop-word" }),
+		h("div", { class: "pop-sounds", hidden: true }),
+		h(
+			"div",
+			{ class: "pop-mean", hidden: true },
+			h("div", { class: "pop-art", hidden: true }),
+			h("p", { class: "pop-text" }),
+		),
 		h(
 			"div",
 			{ class: "pop-btns" },
 			h("button", { type: "button", "data-act": "say" }, "🔊 Say it"),
 			h("button", { type: "button", "data-act": "slow" }, "🐢 Slowly"),
+			h(
+				"button",
+				{ type: "button", "data-act": "mean", hidden: true },
+				"📖 Read it to me",
+			),
 		),
 	);
 	document.body.append(pop);
@@ -154,9 +175,19 @@ function ensure() {
 		const word = current.getAttribute("data-w");
 		const sy = (current.getAttribute("data-s") || word).split("-");
 		const rate = store.getSettings().rate;
+		const entry = lookup(glossIndex, word);
+		if (b.dataset.act === "mean") {
+			if (entry) tts.say(entry.mean, { rate });
+			return;
+		}
 		track.help(word);
-		if (b.dataset.act === "say") tts.say(word, { rate });
-		else tts.sayParts(sy, word, { rate: Math.min(rate, 0.7) });
+		if (b.dataset.act === "say") tts.say(spoken(entry, word), { rate });
+		else
+			tts.sayParts(
+				entry && entry.sounds ? [spoken(entry, word)] : sy,
+				spoken(entry, word),
+				{ rate: Math.min(rate, 0.7) },
+			);
 	});
 	return pop;
 }
@@ -195,6 +226,24 @@ function open(btn) {
 			if (i < syl.length - 1) kids.push(h("i", {}, "·"));
 		});
 	p.querySelector(".pop-word").replaceChildren(...kids);
+	// meaning (and picture, when there is one) for words in the book's glossary
+	const w0 = btn.getAttribute("data-w");
+	const entry = lookup(glossIndex, w0);
+	const mean = p.querySelector(".pop-mean"),
+		art = p.querySelector(".pop-art"),
+		sounds = p.querySelector(".pop-sounds");
+	mean.hidden = !entry;
+	p.querySelector("[data-act=mean]").hidden = !entry;
+	sounds.hidden = !(entry && entry.sounds);
+	if (entry) {
+		track.meaning(w0);
+		p.querySelector(".pop-text").textContent = entry.mean;
+		const svg = entry.art ? artSvg(entry.art) : null;
+		art.hidden = !svg;
+		art.innerHTML = svg || "";
+		if (entry.sounds) sounds.textContent = `sounds like “${spoken(entry, w0)}”`;
+	}
+	p.classList.toggle("has-mean", !!entry);
 	p.hidden = false;
 	place(btn, p);
 }

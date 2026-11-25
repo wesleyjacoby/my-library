@@ -130,7 +130,7 @@ export function quizCard(book, chapter, article, onDone) {
 				h(
 					"p",
 					{ class: "quiz-q" },
-					toFragment(compile(q.q, cast), book.syllables || {}),
+					toFragment(compile(q.q, cast), book.syllables || {}, book.glossIndex),
 				),
 			),
 			h("div", { class: "choice-options" }, buttons),

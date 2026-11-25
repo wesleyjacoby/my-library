@@ -476,6 +476,14 @@ html {
 .syl:active {
 	background: var(--accent-soft);
 }
+/* Words with a meaning in the book's glossary: a solid underline (the dotted one means "long word"). */
+.gl,
+.syl.ul.gl {
+	text-decoration: underline solid var(--accent);
+	text-decoration-thickness: 2px;
+	text-underline-offset: 0.13em;
+	text-decoration-skip-ink: none;
+}
 
 .choice {
 	margin: 1.8rem 0;
@@ -588,8 +596,44 @@ html {
 .sy2 {
 	color: #ffadc7;
 }
+/* meaning and picture inside the word helper */
+.pop-sounds {
+	margin-top: 0.15rem;
+	font: 700 0.95rem var(--ui);
+	color: #ffd166;
+}
+.pop-mean {
+	display: flex;
+	align-items: center;
+	gap: 0.9rem;
+	margin-top: 0.7rem;
+	text-align: left;
+	max-width: 26rem;
+}
+.pop-mean[hidden],
+.pop-sounds[hidden],
+.pop-art[hidden] {
+	display: none;
+}
+.pop-art {
+	flex: 0 0 8.5rem;
+}
+.pop-art .wordart {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+}
+.pop-text {
+	margin: 0;
+	font: 600 1.12rem/1.4 var(--serif);
+}
+#popup.has-mean {
+	max-width: min(30rem, 94vw);
+}
 .pop-btns {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 0.5rem;
 	justify-content: center;
 	margin-top: 0.6rem;
@@ -2174,6 +2218,37 @@ html[data-anim="on"] .rw-star {
 }
 .pv-words strong {
 	font: 800 1.1rem var(--serif);
+}
+.pv-meanings {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.7rem;
+}
+.pv-meanings li {
+	display: grid;
+	grid-template-columns: 8.5rem 1fr auto;
+	gap: 0.2rem 0.9rem;
+	align-items: baseline;
+	padding-bottom: 0.7rem;
+	border-bottom: 1px solid var(--line);
+}
+.pv-meanings li:last-child {
+	border-bottom: 0;
+	padding-bottom: 0;
+}
+.pv-meanings strong {
+	font: 800 1.1rem var(--serif);
+}
+.pv-meanings span {
+	font-size: 1rem;
+}
+.pv-meanings small {
+	color: var(--muted);
+	font-size: 0.88rem;
+	white-space: nowrap;
 }
 .pv-words small,
 .pv-tricky small {

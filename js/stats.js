@@ -129,6 +129,16 @@ const key = (w) =>
 		.toLowerCase()
 		.replace(/[^a-z’']/g, "");
 
+// She opened a word's meaning (words in the book's glossary only).
+export function meaning(word) {
+	const k = key(word);
+	if (!k) return;
+	const s = store.getStats();
+	const e = s.taps[k] || (s.taps[k] = { n: 0, s: 0 });
+	e.d = (e.d || 0) + 1;
+	save();
+}
+
 // She tapped a word to open the helper.
 export function tap(word) {
 	const k = key(word);

@@ -2,8 +2,10 @@
 // Authoring check for a book.json.
 //   node tools/check-book.mjs books/gull-rock/book.json
 // Reports: structure problems, syllable entries whose letters don't match the word,
-// and longer words (7+ letters) that have no syllable entry yet.
+// longer words (7+ letters) that have no syllable entry yet, the glossary (word meanings and pictures),
+// and hard-looking words that have no glossary entry yet.
 import { readFileSync, existsSync } from "node:fs";
+import { ART_NAMES } from "../js/wordart.js";
 
 const file = process.argv[2];
 if (!file) {
@@ -216,6 +218,98 @@ else if (book.level !== suggested)
 		`  Note: the book says level ${book.level} but the text scores like level ${suggested}. Check the text, or change "level".`,
 	);
 else console.log(`  Matches the book's level (${book.level}).`);
+console.log("");
+
+// --- glossary (word meanings) ---
+const gl = book.glossary || {};
+const glSpellings = new Map();
+const quizText = (book.chapters || [])
+	.flatMap((c) => (c.questions || []).map((q) => q.q || ""))
+	.join(" ");
+const proseLower =
+	" " +
+	(plainText + " " + quizText).toLowerCase().replace(/[^a-z’' ]+/g, " ") +
+	" ";
+let withArt = 0;
+for (const [head, e] of Object.entries(gl)) {
+	if (head !== head.toLowerCase())
+		problems.push(`glossary: key "${head}" must be lower case`);
+	if (!e || typeof e.mean !== "string" || !e.mean.trim()) {
+		problems.push(`glossary: "${head}" has no "mean"`);
+		continue;
+	}
+	if (e.mean.length > 150)
+		problems.push(
+			`glossary: "${head}" meaning is ${e.mean.length} characters; keep it to one or two short sentences (150 max)`,
+		);
+	if (/—|–/.test(e.mean))
+		problems.push(`glossary: "${head}" meaning has a dash; no em dashes`);
+	if (/like the way/i.test(e.mean))
+		problems.push(`glossary: "${head}" meaning uses "like the way"`);
+	if (e.art) {
+		withArt++;
+		if (!ART_NAMES.includes(e.art))
+			problems.push(
+				`glossary: "${head}" art "${e.art}" is not in js/wordart.js (${ART_NAMES.join(", ")})`,
+			);
+	}
+	if (
+		e.forms !== undefined &&
+		!(Array.isArray(e.forms) && e.forms.every((f) => typeof f === "string"))
+	)
+		problems.push(`glossary: "${head}" forms must be a list of words`);
+	const spellings = [head, ...(Array.isArray(e.forms) ? e.forms : [])].map(
+		(x) => x.toLowerCase(),
+	);
+	for (const w of spellings) {
+		if (glSpellings.has(w))
+			problems.push(
+				`glossary: "${w}" is listed under both "${glSpellings.get(w)}" and "${head}"`,
+			);
+		glSpellings.set(w, head);
+	}
+	if (
+		!spellings.some(
+			(w) => proseLower.includes(` ${w} `) || proseLower.includes(` ${w}’s `),
+		)
+	)
+		console.log(
+			`  Note: glossary word "${head}" never appears in the story text.`,
+		);
+}
+if (Object.keys(gl).length) {
+	const mw = Object.values(gl)
+		.map((e) => e.mean || "")
+		.join(" ");
+	const ms = mw.split(/(?<=[.!?])\s+/).filter(Boolean).length || 1;
+	const mwords = mw.match(/[A-Za-z]+/g) || [];
+	const mg =
+		0.39 * (mwords.length / ms) +
+		11.8 *
+			(mwords.map((w) => sylOf(w)).reduce((a, b) => a + b, 0) /
+				Math.max(1, mwords.length)) -
+		15.59;
+	console.log(
+		`Glossary: ${Object.keys(gl).length} words, ${withArt} with pictures. The meanings read at about grade ${mg.toFixed(1)} (aim for no higher than the story).`,
+	);
+} else
+	console.log(
+		'Glossary: none yet. Add a "glossary" so hard words can show a meaning (see CLAUDE.md).',
+	);
+const unexplained = [...words]
+	.filter(
+		(w) =>
+			w.length >= 7 &&
+			estimate(w) >= 3 &&
+			!glSpellings.has(w) &&
+			!/(?:ing|ed|ly|ness|ful|less|ers?|ies|s)$/.test(w),
+	)
+	.sort();
+if (unexplained.length)
+	console.log(
+		"  Hard-looking words with no glossary entry (explain any a child might not know):\n    " +
+			unexplained.join(", "),
+	);
 console.log("");
 
 if (problems.length) {

@@ -3,7 +3,7 @@ import { h } from "./dom.js";
 import * as store from "./store.js";
 import { compile, plain, evalCond, computeScores } from "./personalise.js";
 import { sceneHTML } from "./scenes.js";
-import { toFragment, glue } from "./syllables.js";
+import { toFragment, glue, setGlossary } from "./syllables.js";
 import * as tts from "./tts.js";
 import { sentencify, initFocus } from "./coach.js";
 import { quizCard } from "./quiz.js";
@@ -18,8 +18,14 @@ const state = (book) => ({
 	picks: st(book).picks,
 	scores: computeScores(book, st(book).picks),
 });
-const frag = (book, str) =>
-	toFragment(compile(str, st(book).cast), book.syllables || {});
+const frag = (book, str) => {
+	setGlossary(book.glossIndex);
+	return toFragment(
+		compile(str, st(book).cast),
+		book.syllables || {},
+		book.glossIndex,
+	);
+};
 const para = (book, str) => {
 	const p = h("p", { class: "para" }, frag(book, str));
 	sentencify(p);

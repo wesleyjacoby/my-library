@@ -85,6 +85,112 @@
 		"relieved": "re-lieved",
 		"wobbly": "wob-bly"
 	},
+	"glossary": {
+		"causeway": {
+			"mean": "A path across the sea. You can walk on it when the tide is out, but the water covers it when the tide is in.",
+			"art": "causeway",
+			"forms": ["causeways"]
+		},
+		"lighthouse": {
+			"mean": "A tall tower by the sea with a bright light at the top. The light shows ships where the rocks are.",
+			"art": "lighthouse",
+			"forms": ["lighthouses"]
+		},
+		"lantern": {
+			"mean": "A lamp you can carry. The flame is kept safe inside a case of glass.",
+			"art": "lantern",
+			"forms": ["lanterns"]
+		},
+		"lens": {
+			"mean": "A curved piece of glass that bends light. In a lighthouse, the lens turns a small light into a strong beam.",
+			"art": "lens",
+			"forms": ["lenses"]
+		},
+		"beam": {
+			"mean": "A long strip of light shining in one direction.",
+			"art": "beam",
+			"forms": ["beams"]
+		},
+		"keeper": {
+			"mean": "A person whose job is to look after something. A lighthouse keeper looks after the light.",
+			"forms": ["keepers"]
+		},
+		"tide": {
+			"mean": "The sea moving up the beach and then back down again. It happens about twice a day.",
+			"art": "tide",
+			"forms": ["tides"]
+		},
+		"harbour": {
+			"mean": "A safe place by the shore where boats can stay out of the waves.",
+			"art": "harbour",
+			"forms": ["harbours"]
+		},
+		"skipper": {
+			"mean": "The person in charge of a boat.",
+			"forms": ["skippers"]
+		},
+		"kindled": {
+			"mean": "Began to glow or burn.",
+			"forms": ["kindle", "kindles"]
+		},
+		"council": {
+			"mean": "A group of people who look after a town and decide things for it."
+		},
+		"rotate": {
+			"mean": "To turn round and round, like a wheel.",
+			"forms": ["rotates", "rotated", "rotating"]
+		},
+		"rotation": {
+			"mean": "One whole turn round.",
+			"forms": ["rotations"]
+		},
+		"signal": {
+			"mean": "A sign you use to tell someone something, such as a flash of light.",
+			"forms": ["signals"]
+		},
+		"prisms": {
+			"mean": "Pieces of glass that bend light and can split it into colours.",
+			"forms": ["prism"]
+		},
+		"spiral": {
+			"mean": "A shape that winds round and round, like the inside of a snail shell.",
+			"art": "spiral",
+			"forms": ["spirals"]
+		},
+		"gallery": {
+			"mean": "Here, a narrow balcony that goes all the way round the top of a lighthouse.",
+			"forms": ["galleries"]
+		},
+		"trapdoor": {
+			"mean": "A small door in a floor or ceiling. You lift it up to go through.",
+			"art": "trapdoor",
+			"forms": ["trapdoors"]
+		},
+		"wellington": {
+			"mean": "A tall rubber boot that keeps your feet dry. Most people call them wellies.",
+			"art": "wellington",
+			"forms": ["wellingtons", "wellies", "welly"]
+		},
+		"wrench": {
+			"mean": "To pull or twist something very hard.",
+			"forms": ["wrenched", "wrenches", "wrenching"]
+		},
+		"bewildered": {
+			"mean": "Very puzzled and mixed up."
+		},
+		"emergency": {
+			"mean": "A sudden, dangerous time when you must act fast.",
+			"forms": ["emergencies"]
+		},
+		"seaweed": {
+			"mean": "A plant that grows in the sea. It is slippery and often washes up on the beach.",
+			"art": "seaweed"
+		},
+		"syllable": {
+			"mean": "One beat of a word. “Pen” has one syllable. “Pencil” has two.",
+			"forms": ["syllables"]
+		}
+	},
 	"chapters": [
 		{
 			"title": "Three Short, Three Long",

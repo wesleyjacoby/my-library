@@ -290,6 +290,114 @@
 		"shaky": "shak-y",
 		"thumping": "thump-ing"
 	},
+	"glossary": {
+		"quay": {
+			"mean": "A stone landing place beside the water, where boats tie up.",
+			"art": "quay",
+			"forms": ["quays"],
+			"sounds": "key"
+		},
+		"ledger": {
+			"mean": "A big book where someone writes lists of names, goods or money.",
+			"art": "ledger",
+			"forms": ["ledgers"]
+		},
+		"dinghy": {
+			"mean": "A small open boat. Some are made of rubber and filled with air.",
+			"art": "dinghy",
+			"forms": ["dinghies"]
+		},
+		"cutter": {
+			"mean": "A fast boat used by the coastguard.",
+			"forms": ["cutters"]
+		},
+		"coastguard": {
+			"mean": "People whose job is to keep boats safe at sea and to stop anyone breaking the rules there.",
+			"forms": ["coastguards"]
+		},
+		"clapper": {
+			"mean": "The metal part inside a bell. It swings and hits the side to make the ring.",
+			"art": "bell",
+			"forms": ["clappers"]
+		},
+		"oilskin": {
+			"mean": "A coat made of cloth covered in oil, so the rain slides off it.",
+			"art": "oilskin",
+			"forms": ["oilskins"]
+		},
+		"headlamps": {
+			"mean": "The big lights on the front of a car or lorry.",
+			"forms": ["headlamp"]
+		},
+		"compass": {
+			"mean": "A tool with a needle that always points north, so you can find your way.",
+			"art": "compass",
+			"forms": ["compasses"]
+		},
+		"buoy": {
+			"mean": "A marker that floats on the sea. It shows boats where to go or where there is danger.",
+			"art": "buoy",
+			"forms": ["buoys"],
+			"sounds": "boy"
+		},
+		"chamber": {
+			"mean": "A large room. Here, it is a hidden room inside the cave.",
+			"forms": ["chambers"]
+		},
+		"cramped": {
+			"mean": "Squashed into too small a space."
+		},
+		"evidence": {
+			"mean": "Things that show what really happened, so people can prove it."
+		},
+		"hesitate": {
+			"mean": "To stop for a moment because you are not sure what to do.",
+			"forms": ["hesitated", "hesitates"]
+		},
+		"villain": {
+			"mean": "The bad person in a story, who does wrong things.",
+			"forms": ["villains"]
+		},
+		"boathouse": {
+			"mean": "A shed beside the water where boats are kept.",
+			"art": "boathouse",
+			"forms": ["boathouses"]
+		},
+		"crate": {
+			"mean": "A strong box made of wood, used to carry things.",
+			"art": "crate",
+			"forms": ["crates"]
+		},
+		"tunnel": {
+			"mean": "A long passage under the ground or through a hill.",
+			"art": "tunnel",
+			"forms": ["tunnels"]
+		},
+		"hoarse": {
+			"mean": "With a rough, croaky voice, often from shouting."
+		},
+		"outraged": {
+			"mean": "Very, very angry because something is wrong or unfair."
+		},
+		"diesel": {
+			"mean": "A heavy fuel that runs some engines. It has a strong smell."
+		},
+		"lantern": {
+			"mean": "A lamp you can carry. The flame is kept safe inside a case of glass.",
+			"art": "lantern",
+			"forms": ["lanterns"]
+		},
+		"harbour": {
+			"mean": "A safe place by the shore where boats can stay out of the waves.",
+			"art": "harbour",
+			"forms": ["harbours"]
+		},
+		"lobster": {
+			"mean": "A sea animal with a hard shell and two big claws. People catch lobsters in traps called pots.",
+			"art": "lobster",
+			"forms": ["lobsters"]
+		}
+	},
 	"chapters": [
 		{
 			"title": "The Lantern with a Secret",

@@ -3,6 +3,7 @@ import { APP_NAME, LEVELS } from "./config.js";
 import * as store from "./store.js";
 import { sceneHTML } from "./scenes.js";
 import { initSyllables, closePopup } from "./syllables.js";
+import { buildIndex } from "./glossary.js";
 import { cleanName, PRONOUN_LABELS } from "./personalise.js";
 import { applySettings, openSettings } from "./settings.js";
 import { profileChip } from "./profiles.js";
@@ -35,6 +36,7 @@ async function loadBooks() {
 			const b = await (await fetch(`books/${id}/book.json`)).json();
 			b.baseUrl = `books/${id}/`;
 			b.syllables = { ...shared, ...(b.syllables || {}) };
+			b.glossIndex = buildIndex(b.glossary);
 			return b;
 		}),
 	);

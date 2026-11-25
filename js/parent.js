@@ -7,6 +7,7 @@ import { askConfirm } from "./confirm.js";
 import { requirePin } from "./rewardsui.js";
 import * as I from "./insights.js";
 import { icon } from "./icons.js";
+import { lookupAny } from "./glossary.js";
 
 const plural = (n, w) => `${n} ${w}${n === 1 ? "" : "s"}`;
 const WEEK_LETTERS = "SMTWTFS";
@@ -587,6 +588,37 @@ export async function showParent(root, nav, books) {
 			),
 		);
 
+		const looked = I.meaningWords(s, 10)
+			.map((m) => ({ ...m, e: lookupAny(books, m.word) }))
+			.filter((m) => m.e);
+		const meaningsCard = card(
+			"Meanings she looked up",
+			looked.length
+				? h(
+						"ul",
+						{ class: "pv-meanings" },
+						looked.map((m) =>
+							h(
+								"li",
+								{},
+								h("strong", {}, m.word),
+								h("span", {}, m.e.mean),
+								h("small", {}, `opened ${m.d}×`),
+							),
+						),
+					)
+				: h(
+						"p",
+						{ class: "fine" },
+						"Words from the stories that she taps to find out what they mean will collect here.",
+					),
+			h(
+				"p",
+				{ class: "fine" },
+				"Underlined words in a story have a short meaning and sometimes a picture. These are the ones she opened most.",
+			),
+		);
+
 		const tricky = I.trickyQuestions(s, 5)
 			.map((t) => {
 				const book = books.get(t.b);
@@ -768,6 +800,7 @@ export async function showParent(root, nav, books) {
 					perDay,
 					booksCard,
 					wordsCard,
+					meaningsCard,
 					trickyCard,
 					share,
 				),
