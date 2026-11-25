@@ -468,10 +468,19 @@ html {
 	justify-content: flex-end;
 	align-items: center;
 }
+.recap-actions .btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5em;
+}
 .recap-actions .btn .ico {
 	width: 1.1em;
 	height: 1.1em;
-	vertical-align: -0.2em;
+	flex: none;
+}
+.recap-listen {
+	min-width: 10.5rem;
 }
 .chap-num {
 	font: 700 0.95rem var(--ui);

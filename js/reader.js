@@ -83,13 +83,13 @@ function openRecap(book, idx, trigger) {
 	run(book, book.chapters[idx].recap, body);
 	let speaking = false;
 	const listen = tts.available
-		? h("button", { type: "button", class: "btn small ghost" })
+		? h("button", { type: "button", class: "btn recap-listen" })
 		: null;
 	const sync = () => {
 		if (listen)
 			listen.replaceChildren(
 				icon(speaking ? "stop" : "speaker"),
-				speaking ? " Stop" : " Read it to me",
+				h("span", {}, speaking ? "Stop" : "Read it to me"),
 			);
 	};
 	const close = () => {
