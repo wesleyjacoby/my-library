@@ -181,44 +181,47 @@ export function openProfiles(onChange) {
 			}
 		});
 		const canDelete = p && store.profiles().length > 1;
+		// native replaceChildren turns null into the text "null", so empty slots are filtered out
 		box.replaceChildren(
-			h("h2", {}, p ? "Edit reader" : "New reader"),
-			input,
-			grid,
-			h(
-				"button",
-				{ type: "button", class: "btn primary", onclick: save },
-				p ? "Save" : "Add reader",
-			),
-			h(
-				"button",
-				{ type: "button", class: "btn ghost", onclick: listView },
-				"Cancel",
-			),
-			canDelete
-				? h(
-						"button",
-						{
-							type: "button",
-							class: "btn small danger",
-							onclick: async () => {
-								const yes = await askConfirm({
-									icon: "🗑️",
-									title: `Delete ${p.name}?`,
-									message: `All of ${p.name}’s progress, stars, prizes, postcards and reading stats on this device will be erased.`,
-									yes: "Delete",
-									no: "Keep",
-									danger: true,
-								});
-								if (!yes) return;
-								store.removeProfile(p.id);
-								onChange();
-								close();
+			...[
+				h("h2", {}, p ? "Edit reader" : "New reader"),
+				input,
+				grid,
+				h(
+					"button",
+					{ type: "button", class: "btn primary", onclick: save },
+					p ? "Save" : "Add reader",
+				),
+				h(
+					"button",
+					{ type: "button", class: "btn ghost", onclick: listView },
+					"Cancel",
+				),
+				canDelete
+					? h(
+							"button",
+							{
+								type: "button",
+								class: "btn small danger",
+								onclick: async () => {
+									const yes = await askConfirm({
+										icon: "🗑️",
+										title: `Delete ${p.name}?`,
+										message: `All of ${p.name}’s progress, stars, prizes, postcards and reading stats on this device will be erased.`,
+										yes: "Delete",
+										no: "Keep",
+										danger: true,
+									});
+									if (!yes) return;
+									store.removeProfile(p.id);
+									onChange();
+									close();
+								},
 							},
-						},
-						`Delete ${p.name}`,
-					)
-				: null,
+							`Delete ${p.name}`,
+						)
+					: null,
+			].filter(Boolean),
 		);
 		input.focus();
 	};
