@@ -74,7 +74,15 @@
 	"blurb": "You are on holiday in the seaside village of Gull Cove. The old lighthouse has been empty for forty years. Tonight, its light came on. A scary adventure with choices that change how the night ends.",
 	"ages": "8+",
 	"syllables": {
-		"periwinkle": "per-i-win-kle"
+		"periwinkle": "per-i-win-kle",
+		"echoed": "ech-oed",
+		"finally": "fi-nal-ly",
+		"fizzy": "fiz-zy",
+		"flickering": "flick-er-ing",
+		"howling": "howl-ing",
+		"jelly": "jel-ly",
+		"relieved": "re-lieved",
+		"wobbly": "wob-bly"
 	},
 	"chapters": [
 		{
@@ -213,7 +221,7 @@
 				"“It wants us to follow,” said {hero}, and was surprised at how steady {hero.his} voice sounded.",
 				"{friend} swallowed. “We could wake {grownup}.”",
 				"“And say what?”",
-				"They stood in the cold kitchen. The sea was louder in here, as if it had crept up to the house to listen.",
+				"They stood in the cold kitchen. The sea sounded very loud in here.",
 				{
 					"choice": {
 						"id": "night-plan",
@@ -349,7 +357,7 @@
 						"The torch was a medium torch, neither good nor bad, and it lit the way well enough. Every so often, {hero} glanced back at the one small window of the cottage, where a note sat propped against a kettle. It didn’t feel like much. It felt like something."
 					]
 				},
-				"The causeway was a ribbon of wet sand, no wider than a road, with the sea lying flat and black on either side. It smelled of seaweed. It sounded like breathing.",
+				"The causeway was a strip of wet sand, no wider than a road, with the sea lying flat and black on either side. It smelled of seaweed. It sounded like breathing.",
 				"Halfway across, {pet} stopped.",
 				"{pet} [[pet:dog=planted all four paws in the sand and would not move|cat=sat down in the middle of the causeway and began to wash one paw, very slowly]]. Then {pet.he} looked back the way they had come.",
 				"“What is it?” said {hero}. “What’s wrong?”",
@@ -413,7 +421,7 @@
 				"alt": "A spiral staircase climbing inside the lighthouse, light sweeping the walls."
 			},
 			"blocks": [
-				"The voice stopped. The tower held its breath.",
+				"The voice stopped. The tower went very quiet.",
 				"“Don’t answer it,” whispered {friend}.",
 				"“I wasn’t going to.”",
 				"The stairs wound up and up, iron steps bolted into the curved wall, with a rope for a handrail. Every step rang under their shoes. {pet} went first, nose low, tail stiff. Every few steps, {pet.he} stopped, looked back to check they were still coming, and then went on.",
@@ -421,7 +429,7 @@
 				"On the second landing, a window showed the sea. It was closer than it should have been. {hero} was sure the causeway had not been that narrow.",
 				"On the third landing, a door. A brass plate was screwed to it, green with age. KEEPER. Behind the door, something scraped across the floor. Then it stopped, as if it had heard them.",
 				"They climbed faster after that.",
-				"{friend} counted the steps under {friend.his} breath. At sixty, the light from above changed. It stopped sweeping and began to pulse, slowly, like a lantern held by someone breathing. At a hundred, the walls began to hum. At a hundred and fifty, {hero} noticed that the raincoats on the landings had all been hung facing the wall.",
+				"{friend} counted the steps under {friend.his} breath. At sixty, the light from above changed. It stopped sweeping and began to pulse, slowly, like a heartbeat. At a hundred, the walls began to hum. At a hundred and fifty, {hero} noticed that the raincoats on the landings had all been hung facing the wall.",
 				"Now they were facing the stairs.",
 				"“I’m not looking,” said {hero}, to nobody. “I’m looking at my feet.”",
 				"At two hundred, the voice came again. It was no longer far away. It came from just round the curve of the stair, patient and dry and kind.",
@@ -527,7 +535,7 @@
 				"A man with a moustache. A woman in a woolly hat. Two boys, side by side, with the same freckles. An old fisherman. A girl of about {hero’s} age with plaits and a surprised mouth, as if she had just been about to say something.",
 				"And the small one in the yellow raincoat, who looked about seven, and who had not stopped mouthing the same word.",
 				"“They’re alive,” whispered {friend}. “Look. They’re blinking.”",
-				"{hero} did look. The faces blinked slowly, in turn, like a row of candles guttering in a draught. None of them could move anything else.",
+				"{hero} did look. The faces blinked slowly, in turn, like a row of candles flickering in the wind. None of them could move anything else.",
 				"Behind {hero}, something went drip.",
 				"Drip.",
 				"Drip.",
@@ -559,7 +567,7 @@
 								"blocks": [
 									"{hero} stood as straight as {hero.he} could. {hero’s} knees were not at all straight, but nobody could see them under the coat.",
 									"“You can’t keep people,” said {hero}. “They’re not yours. Let them go.”",
-									"The Keeper stopped moving. The drip stopped too. For one long second, even the sea seemed to listen."
+									"The Keeper stopped moving. The drip stopped too. For one long second, nobody made a sound."
 								]
 							},
 							{
@@ -569,7 +577,7 @@
 									"clever": 1
 								},
 								"blocks": [
-									"“How does it work?” asked {hero}, keeping {hero.his} voice as level as a ruler. “The light, I mean. How does it catch people?”",
+									"“How does it work?” asked {hero}, keeping {hero.his} voice calm and steady. “The light, I mean. How does it catch people?”",
 									"The Keeper turned its head. Nobody had asked it anything in forty years.",
 									"“It takes the first thing it sees,” it began, almost eagerly. “A face that looks. A face that wonders. If nothing looks, it has nothing to take, and so it sleeps. But it never sleeps, because always someone looks. Always.”",
 									"{friend} was staring at the lamp. {friend’s} lips were moving. {hero} could see {friend.him} working it out."
@@ -674,8 +682,8 @@
 				"Seawater swept across the floor, an inch deep, then two. It was freezing. It rose from the trapdoor in a smooth black dome and spilled over the edge. The only way back down the stairs was under it.",
 				"{pet} bolted. {pet.He} shot straight between the Keeper’s legs, spun round on the wet boards and leapt at the hook on the wall. The lantern fell. It hit the floor, rolled, and {friend} snatched it up before it could go out.",
 				"“Door!” shouted {friend}. “There’s a door!”",
-				"A little iron door stood open in the glass wall of the lamp room, with a gale screaming through the gap. {hero} grabbed {friend’s} sleeve and they threw themselves at it. Behind them, the Keeper’s boots ground slowly through the water.",
-				"They burst out onto the gallery. The wind hit {hero} like a shove from a giant. A narrow iron balcony ran round the outside of the tower, with a rail that came up only to {hero’s} hip. Below it there was nothing at all.",
+				"A little iron door stood open in the glass wall of the lamp room, with a gale howling through the gap. {hero} grabbed {friend’s} sleeve and they threw themselves at it. Behind them, the Keeper’s boots ground slowly through the water.",
+				"They burst out onto the gallery. The wind hit {hero} like a hard shove. A narrow iron balcony ran round the outside of the tower, with a rail that came up only to {hero’s} hip. Below it there was nothing at all.",
 				"The sky had gone black and ragged. Rain came sideways in handfuls. Out on the bay, the lights of Gull Cove shone small and warm and impossibly far away. Between the village and the rock, where the causeway should have been, there was only the sea. White waves marched across the sand where {hero} had walked an hour ago.",
 				"“It’s gone,” whispered {friend}. “We can’t get home. The tide’s covered it.”",
 				"{hero} did not answer. {hero} was clutching the rail, because the iron was shaking. A voice had begun to speak at {hero’s} elbow. It was small, and it did not belong to the Keeper. It was coming from the lantern in {friend’s} hand.",
@@ -685,7 +693,7 @@
 				"“Why now?” said {hero}.",
 				"The iron door behind them boomed, and the Keeper filled the doorway, water streaming from its coat. It raised one long white hand.",
 				"“Because,” said Wren, “it has already started to look at you.”",
-				"{hero} felt it. It was a gentle, warm pull behind {hero’s} eyes, as if someone were drawing a curtain across the back of {hero’s} head. It felt nice. It felt like falling asleep in the car.",
+				"{hero} felt it. It was a gentle, warm pull behind {hero’s} eyes, and {hero’s} head grew heavy. It felt nice. It felt like falling asleep in the car.",
 				"{hero} turned, very slowly, and looked at the light."
 			],
 			"questions": [
@@ -738,7 +746,7 @@
 				"White. That was all there was. White and very quiet.",
 				"{hero} could no longer feel the rain. {hero} could not feel {hero.his} hands. The faces in the glass had gone soft and far away, and the Keeper’s voice came from the bottom of a well. “That’s it. Just a little longer. Nobody will be cross.”",
 				"Then something warm and wet and furious bit down on {hero’s} sleeve.",
-				"{pet} hauled backwards with every ounce of {pet.his} weight. {hero’s} head snapped round. The light slid off {hero’s} face like water off a window, and the cold hit all at once, the wind and the rain and the stink of the sea.",
+				"{pet} hauled backwards with every ounce of {pet.his} weight. {hero’s} head snapped round. The light slid off {hero’s} face like rain running down a window, and the cold hit all at once, the wind and the rain and the stink of the sea.",
 				"“Choose!” screamed {friend}. “{hero}, choose!”",
 				"The lamp room was back in front of them. The Keeper was ten steps away, and its hood was lifting. The little lantern burned in {friend’s} fist. On the far wall stood the three things Wren had pointed out. The lens, huge and blazing. A long brass handle on the wall, with a rusted sign above it that read ROTATE LENS. And a heavy iron hammer hanging beside the lamp, with a sign that said, quite simply, EMERGENCY.",
 				"{hero} looked at them all and drew a breath. There was no time for another.",
@@ -820,7 +828,7 @@
 						"is": "smash"
 					},
 					"blocks": [
-						"The hammer came down on the great lens with a crack like a gunshot.",
+						"The hammer came down on the great lens with a crack that echoed round the room.",
 						"Nothing happened. Then a hairline ran across the glass, from top to bottom, silver and perfect. The Keeper screamed. It was the first sound it had made that was not a word, and it was the worst thing {hero} had ever heard.",
 						"{hero} swung again."
 					]
@@ -956,7 +964,7 @@
 				"The lens burst. A thousand pieces of glass flew out into the night, and each piece, for one bright second, held a face. Then every one of them was gone, as if a window had been thrown open.",
 				"Eight gulls rose from the lamp room. They were white and enormous and screaming with joy. They circled the tower once, twice, and flew out across the sea to the east, where the sky was starting to turn grey.",
 				"The Keeper was nowhere. A yellow coat lay in the water on the floor, empty. The hood floated for a moment, then sank.",
-				"The tide went out at dawn. {hero}, {friend} and {pet} walked home along the causeway on legs that did not feel like their own, with shards of glass crunching under their shoes. {grownup} met them halfway, in pyjamas and one wellington boot, and did not say a single word until the hugging was over.",
+				"The tide went out at dawn. {hero}, {friend} and {pet} walked home along the causeway on legs as wobbly as jelly, with shards of glass crunching under their shoes. {grownup} met them halfway, in pyjamas and one wellington boot, and did not say a single word until the hugging was over.",
 				"The lighthouse never lit again. The council came and put a fence around it, and a sign, and a padlock.",
 				"But {hero} noticed, for the rest of that week, that eight gulls followed {hero.him} everywhere. They sat on the roof of Periwinkle Cottage and watched {hero} eat chips, and when {hero} laughed, they laughed too, in their harsh, wild way.",
 				"One of them was smaller than the others, and its feathers were a little yellow at the edges.",
@@ -977,9 +985,9 @@
 			},
 			"blocks": [
 				"In the great glass, the light folded back on itself. The Keeper’s own face stared out at it, enormous, from every one of the lens’s hundred prisms.",
-				"It was an old face. A tired, kind, ordinary one, with grey stubble and white eyebrows. It looked puzzled. It looked as though it had been trying to remember something for forty years and had just been handed it.",
+				"It was an old face. A tired, kind, ordinary one, with grey stubble and white eyebrows. It looked puzzled. Then it looked relieved, like someone who has finally found their lost keys.",
 				"“Oh,” said the Keeper, in a different voice. “Oh, I see. I only wanted someone to come.”",
-				"The faces in the glass began to drift out one at a time, like bubbles rising in a glass. The little girl in the yellow raincoat was last. She squeezed {hero’s} hand, and was gone.",
+				"The faces in the glass began to float out one at a time, like bubbles in a fizzy drink. The little girl in the yellow raincoat was last. She squeezed {hero’s} hand, and was gone.",
 				"By morning, the tower was empty, and the sea had gone back out. {hero} and {friend} walked home along the causeway in the first thin sunlight, with {pet} trotting ahead as if nothing had happened.",
 				"Mr Pascoe was waiting at the garden gate. He did not ask a single question. He looked at {hero} for a long time, and then he took off his cap and held it against his chest.",
 				"“Thank you,” he said. “Thank you for turning the light round.”",

@@ -284,7 +284,10 @@
 		"smile": "smile",
 		"miles": "miles",
 		"using": "using",
-		"dorothea": "dor-o-the-a"
+		"dorothea": "dor-o-the-a",
+		"marbles": "mar-bles",
+		"shaky": "shak-y",
+		"thumping": "thump-ing"
 	},
 	"chapters": [
 		{
@@ -300,7 +303,7 @@
 				"{hero}, {friend} and {cousin} stood in a row with their bags. {pet} [[pet:dog=sat down on the wet stones and sighed|cat=climbed into the biggest bag and refused to come out]].",
 				"“She said she’d meet us,” said {friend}. “She’s probably forgotten.”",
 				"“Forgotten what?” said a voice.",
-				"On the bench behind them sat an old man with a white beard, mending a fishing net. He had a tin of ginger biscuits open on his knee, and one thumbnail was as black as a tarred plank.",
+				"On the bench behind them sat an old man with a white beard, mending a fishing net. He had a tin of ginger biscuits open on his knee, and one thumbnail was as black as coal.",
 				"“You’ll be Tilda Ames’s lot,” he said. “Up at the Old Rope Shop. Biscuit?”",
 				"Nobody said no. They were very good biscuits.",
 				"“Fenn,” said the old man, shaking {hero’s} hand with one finger, because the rest of his hand was full of net. “Mr Fenn. Boatman. Fifty years. Ask me anything about Saltwick.”",
@@ -385,7 +388,7 @@
 				"{hero} shoved the map under the pillow and the lantern under the bed, and pulled the blanket up to {hero.his} chin. {friend} and {cousin} did the same, a little too fast. Three lumps in three beds. {cousin} began to snore. It was the worst snoring any of them had ever heard.",
 				"The door opened one inch. Then two.",
 				"A torch came round the edge of it, pointing at the floor. Behind the torch, in the dark, a man stood and breathed. {hero} could see one boot, a green woolly cap, and a gap where one of his front teeth should have been.",
-				"The beam crossed the beds. It crossed {pet}, who [[pet:dog=lifted one lip and said nothing, which was the bravest thing {hero} had ever seen {pet.him} do|cat=stared straight into it, without blinking, with eyes like two green coins]].",
+				"The beam crossed the beds. It crossed {pet}, who [[pet:dog=lifted one lip and said nothing, which was the bravest thing {hero} had ever seen {pet.him} do|cat=stared straight into it, without blinking, with eyes like two green marbles]].",
 				"The beam travelled up the wall, over the sloping ceiling, to the round window, and stopped there for a very long time. {hero} did not breathe at all.",
 				"“Nothing up here,” the man muttered, to nobody. He pulled the door shut.",
 				"Footsteps went down. The bell over the shop door went clack. Then, from the quay, came a whistle: two short notes and one long. From somewhere out on the dark water, the same whistle answered.",
@@ -558,7 +561,7 @@
 						"is": "run"
 					},
 					"blocks": [
-						"Outside the locker, Rudd stood very still, listening with his whole body. “Not now,” he muttered. Then his boots went away."
+						"Outside the locker, Rudd stood very still, listening hard. “Not now,” he muttered. Then his boots went away."
 					]
 				},
 				{
@@ -712,7 +715,7 @@
 				"Fog was creeping in off the sea, thin and cold. It wound around their ankles. {pet} [[pet:dog=pressed against {hero’s} knees at every step|cat=rode on {hero’s} shoulder, with claws, and made no apology]]. Halfway across, {cousin} stopped and could not be moved until {friend} took {cousin.his} hand.",
 				"The Old Boathouse was black and huge. Its big doors stood open one inch. On the ground in front of them lay a padlock, unlocked, with the key still in it.",
 				"{hero} noticed that, and did not yet know why it mattered.",
-				"Inside, it smelled of tar and old rope. In the middle of the stone floor stood an iron hatch, propped open. Cold air breathed up out of it, smelling of wet stone and diesel.",
+				"Inside, it smelled of tar and old rope. In the middle of the stone floor stood an iron hatch, propped open. Cold air blew up out of it, smelling of wet stone and diesel.",
 				"“I’ll keep watch up here,” said Mr Fenn. “Rudd’s lot are on the quay. The other lot are out on the water. If anyone comes, I’ll whistle. Two short, one long.”",
 				"“That’s their whistle,” said {friend}.",
 				"“Is it?” said Mr Fenn. “Well. Fancy that.”",
@@ -785,7 +788,7 @@
 				"“Rats,” said Rudd.",
 				"“Big rats,” said the tall man. He took one slow step toward the crates.",
 				"{hero} put a hand over {pet}. Nobody breathed. A drip fell from the roof, plink, into the dark. {cousin} was shaking so hard that {cousin.his} teeth clicked, and {friend} held on to {cousin} with both arms.",
-				"From far away came a sound like a door slamming at the other end of the world. Both men looked up, toward the sea end of the tunnel.",
+				"From far away came a sound like a heavy door slamming a long way off. Both men looked up, toward the sea end of the tunnel.",
 				"“Tide’s turned early,” said Rudd.",
 				"“It does not matter,” said the tall man. “Bring the rest. Quickly, and keep the lamp low.”",
 				"They went away toward the boathouse with the lantern, and the dark poured back into the chamber behind them. But they had left one lamp, hanging at the far end of the chamber, over a table. It lit the table, a patch of bare floor, and, beyond it, a low stone arch.",
@@ -829,13 +832,13 @@
 								"blocks": [
 									"“Wait here,” whispered {hero}. “If I’m caught, run for the steps.”",
 									"“Don’t be stupid,” breathed {friend}. “Don’t,” said {cousin}. But {hero} was already moving.",
-									"Twenty paces is a long way when you are alone. {hero} did it on tiptoe, with {hero.his} breath held, and every step took a year. Behind {hero}, {friend} and {cousin} crept after in the dark, because neither of them could bear to be left behind."
+									"Twenty paces is a long way when you are alone. {hero} did it on tiptoe, with {hero.his} breath held, and every step felt very slow. Behind {hero}, {friend} and {cousin} crept after in the dark, because neither of them could bear to be left behind."
 								]
 							}
 						]
 					}
 				},
-				"They reached the table in a heap, in the lamplight, with their hearts going like drums.",
+				"They reached the table in a heap, in the lamplight, with their hearts thumping.",
 				"The ledger lay open under the lamp. Its pages were crowded with cramped black writing: names of ships down one side and sums down the other. At the bottom of the last page, in ink so fresh it was still wet, were four words. Tonight. Back Way. Lorry. Quay.",
 				"Beyond the table was the arch, and beyond the arch, in the lamplight, a stone shaft rose into the dark. An iron ladder was bolted to its wall. Very far above, there was a small grey square. It might have been the sky.",
 				"“We can go up,” whispered {cousin}. “We can just go.”",
@@ -912,7 +915,7 @@
 									"clever": 1
 								},
 								"blocks": [
-									"{hero} held the book flat, gripped the last page, and tore it out in one long ripping sound that seemed to fill the whole chamber. Then {hero} folded it into a square and pushed it into {hero.his} sock. A page weighs nothing at all. That was the point."
+									"{hero} held the book flat, gripped the last page, and tore it out in one long ripping sound that filled the whole chamber. Then {hero} folded it into a square and pushed it into {hero.his} sock. A page weighs nothing at all. That was the point."
 								]
 							},
 							{
@@ -965,7 +968,7 @@
 						"Nobody shouted. There was nothing missing to shout about. But the water was at {hero’s} knees when {hero} swung onto the ladder, and the next moment a lamp swung into the shaft below them, and Rudd looked up. “Oi!” he roared, and his boots hit the bottom rung."
 					]
 				},
-				"The shaft seemed endless. {cousin} counted aloud, in a whisper. Ten. Twenty. Thirty. At forty, {friend} stopped, and a hand came down in the dark and pulled {cousin} up beside {friend}, and then reached for {hero}.",
+				"The shaft went up and up. {cousin} counted aloud, in a whisper. Ten. Twenty. Thirty. At forty, {friend} stopped, and a hand came down in the dark and pulled {cousin} up beside {friend}, and then reached for {hero}.",
 				"At the top was a slab of stone, dead overhead, with a thread of grey light around its edge. “Push,” whispered {friend}.",
 				"They pushed. Nothing. They pushed again, all three, with their shoulders, and the slab ground upward one inch, and cold air came pouring down. Another inch. A gap. A foot. They heaved it clear, and one by one they crawled out onto wet paving, under the stars.",
 				"The fog hung low. The harbour lay silent. Directly above them, huge against the sky, hung the old bell. It was silent. Of course it was.",
@@ -1102,7 +1105,7 @@
 				"alt": "The lorry’s headlamps washing over the old bell in the fog."
 			},
 			"blocks": [
-				"The lorry’s headlamps swung across the fog and lit the old bell like a lantern.",
+				"The lorry’s headlamps swung across the fog and lit up the old bell.",
 				"Boots rang up the ladder, one rung at a time. Rudd’s head would be in the shaft in moments. Out on the water, the engine of the dark boat dropped to a low, slow growl.",
 				"{hero} looked at Mr Fenn. Mr Fenn was looking at the bell.",
 				"It hung there in the glow. Big, green, silent for twenty years. Where the bell hangs silent, look up. Whoever had hidden the map had known that a bell was the one thing in Saltwick that every sleeping person would hear.",
@@ -1227,9 +1230,9 @@
 			},
 			"blocks": [
 				"Mr Fenn did not move for what felt like a whole minute. Headlamps washed over him. Down in the shaft, boots rang closer.",
-				"“My name,” he said, in a voice as thin as paper, “is Daniel Fenn. I opened the door tonight. I have been opening it for thirty years. I am sorry.”",
+				"“My name,” he said, in a thin, shaky voice, “is Daniel Fenn. I opened the door tonight. I have been opening it for thirty years. I am sorry.”",
 				"Then he took the iron bar from the post, and he swung it at the bell.",
-				"The sound went through Saltwick like a wave. Once. Twice. Every window on the quay lit up, one after another. Doors banged. Dogs barked. A dozen fishermen in pyjamas and wellingtons came pouring down the street with boat hooks, and Mrs Ames came last of all, in her yellow raincoat, with the big torch in one hand and a teacup in the other, and her hearing aid in her ear.",
+				"The sound rolled across Saltwick, over the rooftops and out to sea. Once. Twice. Every window on the quay lit up, one after another. Doors banged. Dogs barked. A dozen fishermen in pyjamas and wellingtons came pouring down the street with boat hooks, and Mrs Ames came last of all, in her yellow raincoat, with the big torch in one hand and a teacup in the other, and her hearing aid in her ear.",
 				"Rudd came up out of the shaft into six boat hooks, and had the grace to look embarrassed. The tall man in the dark coat never made it out of the tunnel. The tide had got there first, and the coastguard fished him out at dawn, soaked to the skin and perfectly calm. The lorry reversed into a lamp-post. The boat with no lights turned for the open sea and met the coastguard cutter coming the other way.",
 				{
 					"when": {
@@ -1328,7 +1331,7 @@
 				"{hero} swung the bar at the bell with both arms.",
 				"The sound was enormous. It rolled over the harbour and up the street and shook the fog out of the air. {hero} swung again. And again.",
 				"Windows lit up. Doors banged. Dogs barked. A dozen fishermen in pyjamas and wellingtons came pouring down the street with boat hooks, and Mrs Ames came last, in her yellow raincoat, with the big torch.",
-				"Mr Fenn did not try to stop {hero}. He stood very still, with his hands at his sides, and listened to the bell with an odd, quiet look on his face, as if it were a song he had known once.",
+				"Mr Fenn did not try to stop {hero}. He stood very still, with his hands at his sides, and listened to the bell with an odd, quiet look on his face, as if it were a song he used to know.",
 				"Then, as the first fishermen reached the quay, he stepped back into the fog, and there was the sound of oars. When they looked for him, there was only the dinghy of the Dolly May, drifting out past the harbour mouth. Nobody saw Mr Fenn in Saltwick again.",
 				"Rudd was caught coming up the slab. The tall man was caught by the tide. The lorry was found in a ditch.",
 				{
