@@ -37,6 +37,7 @@
 		"Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia,
 		serif;
 	--scale: 1;
+	--bar-h: calc(3.45rem + env(safe-area-inset-top));
 }
 html[data-font="clean"] {
 	--serif: "Andika", var(--ui);
@@ -254,17 +255,27 @@ button {
 
 /* ---------- bars ---------- */
 .bar {
-	position: sticky;
+	position: fixed;
 	top: 0;
+	left: 0;
+	right: 0;
 	z-index: 20;
+	height: var(--bar-h);
 	display: flex;
 	align-items: center;
 	gap: 0.4rem;
-	padding: calc(env(safe-area-inset-top) + 0.35rem)
-		calc(env(safe-area-inset-right) + 0.6rem) 0.35rem
+	padding: env(safe-area-inset-top) calc(env(safe-area-inset-right) + 0.6rem) 0
 		calc(env(safe-area-inset-left) + 0.6rem);
 	background: var(--navy);
 	color: #fff;
+}
+/* The bar is fixed (not sticky): iPadOS 26 only skips its own blur over the top edge when it finds a solid FIXED bar there. */
+.reader,
+.setup-page {
+	padding-top: var(--bar-h);
+}
+html {
+	scroll-padding-top: calc(var(--bar-h) + 0.5rem);
 }
 .bar-title {
 	flex: 1;

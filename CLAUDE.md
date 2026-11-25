@@ -52,5 +52,6 @@ The owner wants prose that does not sound AI-written: **no em dashes**, avoid "l
 - Reading stats (`js/stats.js`, per profile): sessions per chapter, tapped words, quiz tries. `js/insights.js` holds the pure maths (tested by `node` directly). `js/parent.js` is the report page, `js/profiles.js` the reader switcher.
 - Text wrapping: `glue()` in `js/syllables.js` keeps punctuation attached to its word.
 - `tools/check-book.mjs` now also prints a readability score (Flesch-Kincaid) and a suggested level.
-- Cache is `my-library-v27`.
+- Cache is `my-library-v28`.
 - iOS/iPadOS 26.1+ paints a system blur ("scroll edge" / Liquid Glass) over the top of an installed web app that uses `apple-mobile-web-app-status-bar-style: black-translucent`, and the page cannot switch it off. So `index.html` uses `black` (opaque status bar, the page starts below it). iOS reads this when the app is added to the Home Screen, so changing it needs the app to be removed and re-added. Back up first with the report's "Save backup" (installed web apps have their own storage that is erased with the app). If `black` ever looks wrong, `default` is the other opaque option.
+- The reader/setup top bar (`.bar`) is `position: fixed` (not sticky) with `--bar-h` padding on `.reader` and `.setup-page`. iPadOS 26 skips its blur over the top edge only when it finds a solid fixed bar there.
