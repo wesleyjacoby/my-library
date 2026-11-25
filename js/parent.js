@@ -617,6 +617,7 @@ export async function showParent(root, nav, books) {
 			),
 		);
 		window.scrollTo(0, 0);
+		document.getElementById("app")?.scrollTo(0, 0);
 	};
 
 	render();

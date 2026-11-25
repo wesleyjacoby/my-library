@@ -415,6 +415,7 @@ function route() {
 	tts.cancel();
 	closePopup();
 	window.scrollTo(0, 0);
+	document.getElementById("app")?.scrollTo(0, 0);
 	const seg = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
 	if (seg[0] === "rewards") return showRewardsPage(root, nav, books);
 	if (seg[0] === "parent") return showParent(root, nav, books);

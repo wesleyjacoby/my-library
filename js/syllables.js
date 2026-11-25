@@ -214,7 +214,10 @@ export function initSyllables() {
 		}
 		if (pop && !pop.contains(e.target)) closePopup();
 	});
-	window.addEventListener("scroll", closePopup, { passive: true });
+	window.addEventListener("scroll", closePopup, {
+		passive: true,
+		capture: true,
+	});
 	document.addEventListener("keydown", (e) => {
 		if (e.key === "Escape") closePopup();
 	});

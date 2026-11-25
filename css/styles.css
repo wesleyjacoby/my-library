@@ -269,7 +269,8 @@ button {
 	background: var(--navy);
 	color: #fff;
 }
-/* Installed app on iPadOS 26: the system fades the top few pixels of the page, so keep them as plain navy. */
+/* Installed app on iPadOS 26: the system fades the top few pixels of the page, so keep them as plain navy.
+   The page also scrolls inside #app (not the document), so text is clipped at the top edge and can never show up behind the status strip. */
 @media (display-mode: standalone) {
 	:root {
 		--bar-h: calc(3.45rem + 1rem + env(safe-area-inset-top));
@@ -277,16 +278,19 @@ button {
 	.bar {
 		padding-top: calc(env(safe-area-inset-top) + 1rem);
 	}
-	/* The page scrolls up behind the status strip, so paint a solid block there in the page colour. */
-	.bar::before {
-		content: "";
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 100%;
-		height: 240px;
-		background: var(--bg);
-		pointer-events: none;
+	html,
+	body {
+		height: 100%;
+		overflow: hidden;
+	}
+	#app {
+		position: fixed;
+		inset: 0;
+		overflow-x: hidden;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		overscroll-behavior-y: contain;
+		scroll-padding-top: calc(var(--bar-h) + 0.5rem);
 	}
 }
 /* The bar is fixed (not sticky): iPadOS 26 only skips its own blur over the top edge when it finds a solid FIXED bar there. */
